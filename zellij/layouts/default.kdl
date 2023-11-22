@@ -1,0 +1,55 @@
+// Alacritty colors
+// foreground: #a0a8b8
+// background: #1a1c23
+// black: #2c323c
+// red: #e55561
+// green: #8ebd6b
+// yellow: #e2b86b
+// blue: #4fa6ed
+// magenta: #bf68d9
+// cyan: #48b0bd
+// white: #a0a8b7
+
+layout {
+    pane split_direction="vertical" {
+        pane
+    }
+
+    pane size=1 borderless=true {
+        plugin location="file:/home/mike/.config/zellij/plugins/zjstatus.wasm" {
+            format_left  "{mode}#[fg=#1a1c23,bg=#4fa6ed,bold] {session} #[bg=#4fa6ed,fg=#1a1c23]{tabs}"
+            format_right "#[fg=#1a1c23,bg=#4fa6ed,bold]{datetime}"
+            format_space "#[bg=#1a1c23]"
+
+            border_enabled  "false"
+
+            hide_frame_for_single_pane "true"
+
+            tab_normal              "#[fg=#1a1c23,bg=#4C4C59] {index}  {name} #[bg=#4C4C59,fg=#1a1c23]"
+            tab_normal_fullscreen   "#[fg=#1a1c23,bg=#4C4C59] {index}  {name} Z #[bg=#4C4C59,fg=#1a1c23]"
+            tab_normal_sync         "#[fg=#1a1c23,bg=#4C4C59] {index}  {name} S #[bg=#4C4C59,fg=#1a1c23]"
+            tab_active              "#[fg=#1a1c23,bg=#ffffff,bold] {index}  {name} #[bg=#ffffff,fg=#1a1c23]"
+            tab_active_fullscreen   "#[fg=#1a1c23,bg=#ffffff,bold] {index}  {name} Z #[bg=#ffffff,fg=#1a1c23]"
+            tab_active_sync         "#[fg=#1a1c23,bg=#ffffff,bold] {index}  {name} S #[bg=#ffffff,fg=#1a1c23]"
+
+            datetime        "#[fg=#1a1c23,bg=#4fa6ed,bold] {format} "
+            datetime_format "%A, %Y%m%d %H%M"
+            datetime_timezone "America/Los_Angeles"
+
+            mode_normal        "#[fg=#1a1c23,bg=#4fa6ed,bold]  NORMAL "
+            mode_locked        "#[fg=#1a1c23,bg=#e55561,bold]  LOCKED #[bg=#e55561,fg=#4fa6ed]"
+            mode_resize        "#[fg=#1a1c23,bg=#e2b86b,bold]  RESIZE #[bg=#e2b86b,fg=#4fa6ed]"
+            mode_pane          "#[fg=#1a1c23,bg=#e2b86b,bold]   PANE  #[bg=#e2b86b,fg=#4fa6ed]"
+            mode_tab           "#[fg=#1a1c23,bg=#e2b86b,bold]   TAB   #[bg=#e2b86b,fg=#4fa6ed]"
+            mode_scroll        "#[fg=#1a1c23,bg=#e2b86b,bold]  SCROLL #[bg=#e2b86b,fg=#4fa6ed]"
+            mode_enter_search  "#[fg=#1a1c23,bg=#e2b86b,bold] ENTER SEARCH #[bg=#e2b86b,fg=#4fa6ed]"
+            mode_search        "#[fg=#1a1c23,bg=#e2b86b,bold]  SEARCH #[bg=#e2b86b,fg=#4fa6ed]"
+            mode_rename_tab    "#[fg=#1a1c23,bg=#e2b86b,bold] RENAME TAB #[bg=#e2b86b,fg=#4fa6ed]"
+            mode_rename_pane   "#[fg=#1a1c23,bg=#e2b86b,bold] RENAME PANE #[bg=#e2b86b,fg=#4fa6ed]"
+            mode_session       "#[fg=#1a1c23,bg=#e2b86b,bold] SESSION #[bg=#e2b86b,fg=#4fa6ed]"
+            mode_move          "#[fg=#1a1c23,bg=#e2b86b,bold]   MOVE  #[bg=#e2b86b,fg=#4fa6ed]"
+            mode_prompt        "#[fg=#1a1c23,bg=#e2b86b,bold]  PROMPT #[bg=#e2b86b,fg=#4fa6ed]"
+            mode_tmux          "#[fg=#1a1c23,bg=#8ebd6b,bold]   TMUX  #[bg=#8ebd6b,fg=#4fa6ed]"
+        }
+    }
+}

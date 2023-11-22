@@ -1,0 +1,23 @@
+#!/bin/bash
+
+mode="$(optimus-manager --print-mode)"
+
+case $mode in
+"Current GPU mode : integrated")
+    echo "intel"
+    ;;
+
+"Current GPU mode : hybrid")
+    echo "hybrid"
+    ;;
+
+"Current GPU mode : nvidia")
+    echo "nvidia"
+    ;;
+*"pending"*)
+    echo "pending"
+    ;;
+*)
+    echo "disabled"
+    ;;
+esac

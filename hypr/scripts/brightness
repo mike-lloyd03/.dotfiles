@@ -1,0 +1,35 @@
+#!/bin/bash
+
+DUNST_ID=345097
+STEP_SIZE=5
+NOTIFY_CMD="dunstify -r $DUNST_ID -h string:x-dunst-stack-tag:popup"
+
+function brightness_up() {
+  xbacklight -inc $STEP_SIZE
+  notify
+}
+
+function brightness_down() {
+  xbacklight -dec $STEP_SIZE
+  notify
+}
+
+function notify() {
+  brightness=$(xbacklight -get)
+  $NOTIFY_CMD "Brightness: $brightness%" -h "int:value:$brightness"
+}
+
+case "$1" in
+up)
+  brightness_up
+  ;;
+
+down)
+  brightness_down
+  ;;
+
+*)
+  echo "Subcommand $1 invalid"
+  exit 1
+  ;;
+esac

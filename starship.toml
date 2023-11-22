@@ -1,0 +1,133 @@
+command_timeout = 1000
+format = """
+${custom.corner_top}\
+$username\
+$hostname\
+$shlvl\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$package\
+$dart\
+$golang\
+$helm\
+$java\
+$kotlin\
+$nodejs\
+$python\
+$rust\
+$terraform\
+$zig\
+$nix_shell\
+$endline\
+$line_break\
+${custom.corner_bot}\
+$jobs\
+$battery\
+$status\
+$character\
+"""
+
+right_format = """$kubernetes"""
+
+[character]
+vimcmd_symbol = '[❯](bold green)'
+vimcmd_visual_symbol = '[❯](bold purple)'
+vimcmd_replace_one_symbol = '[❯](bold red)'
+vimcmd_replace_symbol = '[❯](bold red)'
+success_symbol = '[❯](bold blue)'
+error_symbol = '[❯](bold red)'
+
+[custom.corner_top]
+symbol = "╭─ "
+style = "bold white"
+when = true
+
+[custom.corner_bot]
+symbol = "╰"
+style = "bold white"
+when = true
+
+[cmd_duration]
+disabled = true
+
+[dart]
+format = " [$symbol($version )]($style)"
+symbol = " "
+
+[directory]
+read_only = " "
+truncate_to_repo = false
+truncation_symbol = "…/"
+repo_root_style = "bold underline"
+
+[git_branch]
+symbol = " "
+
+[golang]
+format = " [$symbol($version )]($style)"
+symbol = " "
+
+[hostname]
+format = "[@$hostname]($style):"
+style = "bold #5192df"
+
+[java]
+format = " [${symbol}(${version} )]($style)"
+symbol = " "
+detect_extensions = ["java", "class", "jar", "cljs", "cljc"]
+detect_files = [
+  "pom.xml",
+  "build.sbt",
+  ".java-version",
+  "deps.edn",
+  "project.clj",
+  "build.boot",
+]
+
+[kotlin]
+format = " [$symbol($version )]($style)"
+symbol = " "
+
+[kubernetes]
+disabled = false
+format = '[$symbol$context( \($namespace\) )]($style)'
+symbol = "☸ "
+# format = "[$symbol$context]($style)"
+style = "blue bold"
+
+[memory_usage]
+symbol = " "
+
+[nodejs]
+format = " [$symbol($version )]($style)"
+
+[package]
+format = " [$symbol$version]($style) "
+symbol = "󰏗 "
+
+[python]
+symbol = " "
+format = ' [${symbol}](yellow)[${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+python_binary = ["python3", "python2"]
+
+[rust]
+format = " [$symbol($version )]($style) "
+symbol = " "
+
+[time]
+disabled = false
+time_format = "%H%M"
+
+[terraform]
+format = " [$symbol$workspace]($style) "
+disabled = true
+
+[username]
+format = "[$user]($style)"
+style_user = "bold #5192df"
+
+[nix_shell]
+format = ' [$symbol$state( \($name\))]($style) '

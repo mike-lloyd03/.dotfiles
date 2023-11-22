@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# if [ "$(tailscale status --json | jq -r '.Self.Online')" == "true" ]; then
+#     echo "up"
+# else
+#     echo "down"
+# fi
+
+if pgrep tailscaled >/dev/null; then
+    STATUS=$(tailscale status --json | jq -r '.Peer[] | select(.["Active"] == true) | .HostName')
+
+    if [ -z "$STATUS" ]; then
+        echo "down"
+    else
+        echo "$STATUS"
+    fi
+else
+    echo "disabled"
+fi

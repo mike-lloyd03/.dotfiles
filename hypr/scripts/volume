@@ -1,0 +1,47 @@
+#!/bin/bash
+#
+MAX_VOLUME=150 # percent
+
+function is_muted() {
+    mute_status="$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}')"
+    if [ "$mute_status" = 'yes' ]; then
+        return 0
+    fi
+    return 1
+}
+
+function volume_up() {
+    if is_muted; then
+        toggle_mute
+    else
+        swayosd-client --max-volume $MAX_VOLUME --output-volume raise
+    fi
+}
+
+function volume_down() {
+    if is_muted; then
+        toggle_mute
+    else
+        swayosd-client --max-volume $MAX_VOLUME --output-volume lower
+    fi
+}
+
+function toggle_mute() {
+    swayosd-client --max-volume $MAX_VOLUME --output-volume mute-toggle
+}
+
+case "$1" in
+up)
+    volume_up
+    ;;
+down)
+    volume_down
+    ;;
+mute)
+    toggle_mute
+    ;;
+*)
+    echo "Subcommand $1 invalid"
+    exit 1
+    ;;
+esac

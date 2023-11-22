@@ -1,0 +1,6 @@
+black==22.1.0
+isort==5.10.1
+jedi-language-server==0.35.1
+neovim==0.3.1
+pylint==2.12.2
+pynvim==0.4.3

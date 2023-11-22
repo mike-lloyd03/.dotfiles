@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+DUNST_STATUS="$(dunstctl is-paused 2>&1)"
+
+if [ "$DUNST_STATUS" = "true" ]; then
+    echo ""
+elif [ "$DUNST_STATUS" = "false" ]; then
+    echo
+else
+    echo "Error"
+fi

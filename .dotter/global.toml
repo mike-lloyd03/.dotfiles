@@ -1,0 +1,41 @@
+[helpers]
+
+[alacritty.files]
+"alacritty.yml" = "~/.config/alacritty.yml"
+
+[fish.files]
+fish = "~/.config/fish"
+
+[helix.files]
+helix = "~/.config/helix"
+
+[hypr.files]
+hypr = "~/.config/hypr"
+
+[karabiner.files]
+karabiner = "~/.config/karabiner"
+
+[keyd.files]
+keyd = "/etc/keyd"
+# keyd = {target = "/etc/keyd", owner = "root" }
+
+[leftwm.files]
+leftwm = "~/.config/leftwm"
+
+[nushell.files]
+nushell = "~/.config/nushell"
+
+[nvim.files]
+nvim = "~/.config/nvim"
+
+[nvimpager.files]
+nvimpager = "~/.config/nvimpager"
+
+[starship.files]
+"starship.toml" = "~/.config/starship.toml"
+
+[tealdeer.files]
+tealdeer = "~/.config/tealdeer"
+
+[zellij.files]
+zellij = "~/.config/zellij"

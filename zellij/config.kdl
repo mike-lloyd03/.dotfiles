@@ -1,0 +1,116 @@
+layout_dir "/home/mike/.config/zellij/layouts"
+// default_layout "compact"
+
+// styled_underlines false
+
+keybinds {
+    session {
+        unbind "Ctrl o"
+        bind "Ctrl d" { SwitchToMode "Normal"; }
+        bind "Ctrl s" { SwitchToMode "Scroll"; }
+        bind "d" { Detach; }
+    }
+    scroll {
+        bind "j" { ScrollDown; }
+        bind "k" { ScrollUp; }
+        bind "Ctrl j" { HalfPageScrollDown; }
+        bind "Ctrl k" { HalfPageScrollUp; }
+    }
+    move {
+        bind "Ctrl h" { SwitchToMode "Normal"; }
+    }
+    pane {
+        bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
+        bind "f" { ToggleFloatingPanes; SwitchToMode "Normal"; }
+    }
+    tmux {
+        unbind "Ctrl b"
+        unbind "\""
+        unbind "%"
+        bind "Ctrl a" { Write 2; SwitchToMode "Normal"; }
+        bind "b" { NewPane "Down"; SwitchToMode "Normal"; }
+        bind "r" { NewPane "Right"; SwitchToMode "Normal"; }
+        bind "a" { ToggleTab; SwitchToMode "Normal"; }
+        bind "w" { SwitchToMode "Tab"; }
+        bind "x" { CloseFocus; SwitchToMode "Normal"; }
+        // bind "i" { ToggleActiveSyncTab; }
+        bind "Ctrl h" { Resize "Left"; }
+        bind "Ctrl j" { Resize "Down"; }
+        bind "Ctrl k" { Resize "Up"; }
+        bind "Ctrl l" { Resize "Right"; }
+        bind "1" { GoToTab 1; SwitchToMode "Normal"; }
+        bind "2" { GoToTab 2; SwitchToMode "Normal"; }
+        bind "3" { GoToTab 3; SwitchToMode "Normal"; }
+        bind "4" { GoToTab 4; SwitchToMode "Normal"; }
+        bind "5" { GoToTab 5; SwitchToMode "Normal"; }
+        bind "6" { GoToTab 6; SwitchToMode "Normal"; }
+        bind "7" { GoToTab 7; SwitchToMode "Normal"; }
+        bind "8" { GoToTab 8; SwitchToMode "Normal"; }
+        bind "9" { GoToTab 9; SwitchToMode "Normal"; }
+    }
+    shared_except "locked" {
+        unbind "Alt h"
+        unbind "Alt j"
+        unbind "Alt k"
+        unbind "Alt l"
+        unbind "Left"
+        unbind "Right"
+        unbind "Down"
+        unbind "Up"
+        bind "Alt H" { MoveFocusOrTab "Left"; }
+        bind "Alt J" { MoveFocus "Down"; }
+        bind "Alt K" { MoveFocus "Up"; }
+        bind "Alt L" { MoveFocusOrTab "Right"; }
+    }
+    shared_except "resize" "locked" {
+        unbind "Ctrl n"
+        bind "Ctrl e" { SwitchToMode "Resize"; }
+    }
+    shared_except "move" "locked" {
+        bind "Ctrl h" { SwitchToMode "Move"; }
+    }
+    shared_except "tmux" "locked" {
+        unbind "Ctrl b"
+        bind "Ctrl a" { SwitchToMode "Tmux"; }
+    }
+    shared_except "session" "locked" {
+        unbind "Ctrl o"
+        bind "Ctrl d" { SwitchToMode "Session"; }
+    }
+    shared {
+        unbind "Ctrl q"
+    }
+}
+
+plugins {
+    tab-bar { path "tab-bar"; }
+    status-bar { path "status-bar"; }
+    strider { path "strider"; }
+    compact-bar { path "compact-bar"; }
+}
+
+ui {
+    pane_frames {
+        rounded_corners true
+    }
+}
+
+themes {
+    onedark-deep {
+        fg 147 164 195
+        bg 69 85 116
+        black 12 14 21
+        red 246 88 102
+        // green 139 205 91
+        blue 139 205 91
+        yellow 239 189 93
+        // blue 65 167 252
+        green 65 167 252
+        magenta 199 90 232
+        cyan 52 191 208
+        white 233 225 254
+        orange 221 144 70
+    }
+}
+
+theme "onedark-deep"
