@@ -7,7 +7,8 @@
 fish = "~/.config/fish"
 
 [helix.files]
-helix = "~/.config/helix"
+# helix = { target = "~/.config/helix" }
+helix = "~/.config/helix" 
 
 [hypr.files]
 hypr = "~/.config/hypr"
@@ -30,6 +31,9 @@ nvim = "~/.config/nvim"
 
 [nvimpager.files]
 nvimpager = "~/.config/nvimpager"
+
+[rofi.files]
+rofi = "~/.config/rofi"
 
 [starship.files]
 "starship.toml" = "~/.config/starship.toml"

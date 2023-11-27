@@ -1,2 +1,1 @@
-# packages = ["nvim", "fish", "helix", "hypr", "leftwm", "nushell", "nvimpager", "tealdeer", "zellij", "alacritty", "starship"]
-packages = ["nvim", "fish", "helix", "hypr", "nushell", "nvimpager", "tealdeer", "zellij", "alacritty", "starship"]
+packages = ["nvim", "fish", "helix", "hypr", "nushell", "nvimpager", "tealdeer", "zellij", "alacritty", "rofi", "starship"]
