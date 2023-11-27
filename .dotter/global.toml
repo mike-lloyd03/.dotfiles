@@ -4,42 +4,40 @@
 "alacritty.yml" = "~/.config/alacritty.yml"
 
 [fish.files]
-fish = "~/.config/fish"
+fish = {target="~/.config/fish", type = "symbolic", recurse = false }
 
 [helix.files]
-# helix = { target = "~/.config/helix" }
-helix = "~/.config/helix" 
+helix = { target = "~/.config/helix", type = "symbolic", recurse = false }
 
 [hypr.files]
-hypr = "~/.config/hypr"
+hypr = { target = "~/.config/hypr", type = "symbolic", recurse = false }
 
 [karabiner.files]
-karabiner = "~/.config/karabiner"
+karabiner = { target = "~/.config/karabiner", type = "symbolic", recurse = false }
 
 [keyd.files]
-keyd = "/etc/keyd"
-# keyd = {target = "/etc/keyd", owner = "root" }
+keyd = { target = "/etc/keyd", type = "symbolic", recurse = false, owner = "root" }
 
 [leftwm.files]
-leftwm = "~/.config/leftwm"
+leftwm = { target = "~/.config/leftwm", type = "symbolic", recurse = false }
 
 [nushell.files]
 nushell = "~/.config/nushell"
 
 [nvim.files]
-nvim = "~/.config/nvim"
+nvim = { target = "~/.config/nvim", type = "symbolic", recurse = false }
 
 [nvimpager.files]
-nvimpager = "~/.config/nvimpager"
+nvimpager = { target = "~/.config/nvimpager", type = "symbolic", recurse = false }
 
 [rofi.files]
-rofi = "~/.config/rofi"
+rofi = { target = "~/.config/rofi", type = "symbolic", recurse = false }
 
 [starship.files]
 "starship.toml" = "~/.config/starship.toml"
 
 [tealdeer.files]
-tealdeer = "~/.config/tealdeer"
+tealdeer = { target = "~/.config/tealdeer", type = "symbolic", recurse = false }
 
 [zellij.files]
-zellij = "~/.config/zellij"
+zellij = { target = "~/.config/zellij", type = "symbolic", recurse = false }
