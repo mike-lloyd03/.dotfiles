@@ -1,0 +1,11 @@
+#!/bin/bash
+
+status=$(tailscale status --json 2>/dev/null | jq '.Self.Online' 2>/dev/null)
+
+if [ "$status" = "true" ]; then
+    echo 
+elif [ "$status" = "false" ]; then
+    echo 
+else
+    echo 
+fi

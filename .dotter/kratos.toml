@@ -1,1 +1,16 @@
-packages = ["nvim", "fish", "helix", "hypr", "nushell", "nvimpager", "tealdeer", "zellij", "alacritty", "rofi", "starship", "keyd"]
+packages = [
+  "alacritty",
+  "fish",
+  "helix",
+  "hypr",
+  "keyd",
+  "leftwm",
+  "nushell",
+  "nvim",
+  "nvimpager",
+  "rofi",
+  "starship",
+  "tealdeer",
+  "waybar",
+  "zellij",
+]

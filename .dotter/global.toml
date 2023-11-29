@@ -1,10 +1,8 @@
-[helpers]
-
 [alacritty.files]
 "alacritty.yml" = "~/.config/alacritty.yml"
 
 [fish.files]
-fish = {target="~/.config/fish", type = "symbolic", recurse = false }
+fish = { target = "~/.config/fish", type = "symbolic", recurse = false }
 
 [helix.files]
 helix = { target = "~/.config/helix", type = "symbolic", recurse = false }
@@ -38,6 +36,9 @@ rofi = { target = "~/.config/rofi", type = "symbolic", recurse = false }
 
 [tealdeer.files]
 tealdeer = { target = "~/.config/tealdeer", type = "symbolic", recurse = false }
+
+[waybar.files]
+waybar = { target = "~/.config/waybar", type = "symbolic", recurse = false }
 
 [zellij.files]
 zellij = { target = "~/.config/zellij", type = "symbolic", recurse = false }
