@@ -11,6 +11,7 @@ command -v rg &>/dev/null && alias rgih="rg --no-ignore --hidden"
 command -v exa &>/dev/null && alias ls="exa --group-directories-first" && alias ll="exa -lg --group-directories-first" && alias la="exa -lga --group-directories-first"
 command -v journalctl &>/dev/null && alias jc='sudo journalctl -xe'
 alias svenv="source .venv/bin/activate.fish"
+alias decode="base64 -d"
 
 function last_history_item
     echo $history[1]
@@ -110,7 +111,7 @@ alias kdn="kubectl describe nodes"
 alias kl="kubectl logs"
 alias ke="kubectl exec"
 alias keit="kubectl exec -it"
-alias kdelete="kubectl delete"
+alias kdel="kubectl delete"
 
 # Home Manager
 alias hmswitch="home-manager switch"
