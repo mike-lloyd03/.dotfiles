@@ -1,10 +1,10 @@
 blocks:
-  - permission
+  - name
   - user
   - group
+  - permission
   - size
   - date
-  - name
 
 date: "+%Y-%m-%d %H%M"
 
