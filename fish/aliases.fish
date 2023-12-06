@@ -8,7 +8,7 @@ alias jc="sudo journalctl -xe"
 alias om=optimus-manager
 alias sf="source ~/.config/fish/config.fish"
 command -v rg &>/dev/null && alias rgih="rg --no-ignore --hidden"
-command -v exa &>/dev/null && alias ls="exa --group-directories-first" && alias ll="exa -lg --group-directories-first" && alias la="exa -lga --group-directories-first"
+command -v lsd &>/dev/null && alias ls="lsd --group-directories-first" && alias ll="lsd -l" && alias la="lsd -la"
 command -v journalctl &>/dev/null && alias jc='sudo journalctl -xe'
 alias svenv="source .venv/bin/activate.fish"
 alias decode="base64 -d"
@@ -23,10 +23,10 @@ if [ (uname) = "Linux" ]
     alias xpaste="xclip -out -selection clipboard"
 end
 
-if command -v nvimpager &> /dev/null
-    alias less="nvimpager -p"
-    alias lesss="/usr/bin/less"
-end
+# if command -v nvimpager &> /dev/null
+#     alias less="nvimpager -p"
+#     alias lesss="/usr/bin/less"
+# end
 
 if [ "$(uname -n)" = TD-C02FK3H8MD6T ]
     alias kdev='kubectl config use-context appsec-dev'

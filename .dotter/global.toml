@@ -4,6 +4,9 @@
 [fish.files]
 fish = { target = "~/.config/fish", type = "symbolic", recurse = false }
 
+[git.files]
+git = { target = "~/.config/git", type = "symbolic", recurse = false }
+
 [helix.files]
 helix = { target = "~/.config/helix", type = "symbolic", recurse = false }
 
@@ -18,6 +21,9 @@ keyd = { target = "/etc/keyd", type = "symbolic", recurse = false, owner = "root
 
 [leftwm.files]
 leftwm = { target = "~/.config/leftwm", type = "symbolic", recurse = false }
+
+[lsd.files]
+lsd = { target = "~/.config/lsd", type = "symbolic", recurse = false }
 
 [nushell.files]
 nushell = "~/.config/nushell"

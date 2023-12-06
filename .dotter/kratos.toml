@@ -5,6 +5,7 @@ packages = [
   "hypr",
   "keyd",
   "leftwm",
+  "lsd",
   "nushell",
   "nvim",
   "nvimpager",
@@ -13,4 +14,5 @@ packages = [
   "tealdeer",
   "waybar",
   "zellij",
+  "git",
 ]

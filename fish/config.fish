@@ -9,11 +9,11 @@ set fish_cursor_replace_one underscore
 set fish_cursor_visual block
 
 # Environment
-if command -v nvimpager > /dev/null
-    set -Ux PAGER nvimpager
-else
-    set -Ux PAGER less
-end
+# if command -v nvimpager > /dev/null
+#     set -Ux PAGER nvimpager
+# else
+set -Ux PAGER less
+# end
 set -Ux EDITOR nvim
 set -U fish_greeting ""
 

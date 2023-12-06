@@ -1,1 +1,12 @@
-packages = ["nvim", "fish", "helix", "nushell", "nvimpager", "tealdeer", "zellij", "starship"]
+packages = [
+  "fish",
+  "helix",
+  "lsd",
+  "nushell",
+  "nvim",
+  "nvimpager",
+  "starship",
+  "tealdeer",
+  "zellij",
+  "git",
+]

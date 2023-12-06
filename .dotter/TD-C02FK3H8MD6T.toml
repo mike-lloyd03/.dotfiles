@@ -1,1 +1,10 @@
-packages = ["nvim", "fish", "nvimpager", "tealdeer", "zellij", "alacritty", "starship"]
+packages = [
+  "git",
+  "nvim",
+  "fish",
+  "nvimpager",
+  "tealdeer",
+  "zellij",
+  "alacritty",
+  "starship",
+]

@@ -1,0 +1,14 @@
+blocks:
+  - permission
+  - user
+  - group
+  - size
+  - date
+  - name
+
+date: "+%Y-%m-%d %H%M"
+
+layout: oneline
+
+sorting:
+  dir-grouping: first
