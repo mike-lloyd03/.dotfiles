@@ -23,10 +23,10 @@ if [ (uname) = "Linux" ]
     alias xpaste="xclip -out -selection clipboard"
 end
 
-# if command -v nvimpager &> /dev/null
-#     alias less="nvimpager -p"
-#     alias lesss="/usr/bin/less"
-# end
+if command -v nvimpager &> /dev/null
+    alias less="nvimpager"
+    alias lesss="/usr/bin/less"
+end
 
 if [ "$(uname -n)" = TD-C02FK3H8MD6T ]
     alias kdev='kubectl config use-context appsec-dev'
