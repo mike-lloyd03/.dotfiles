@@ -33,6 +33,7 @@ nvim = { target = "~/.config/nvim", type = "symbolic", recurse = false }
 
 [nvimpager.files]
 nvimpager = { target = "~/.config/nvimpager", type = "symbolic", recurse = false }
+nvimpager-wrapper = { target = "~/.local/bin/nvimpager", type = "symbolic"  }
 
 [rofi.files]
 rofi = { target = "~/.config/rofi", type = "symbolic", recurse = false }

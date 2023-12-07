@@ -1,0 +1,5 @@
+#!/bin/bash
+
+args="${@:1}"
+
+/usr/bin/nvimpager $args -p <&0
