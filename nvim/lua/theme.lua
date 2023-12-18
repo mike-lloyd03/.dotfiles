@@ -19,12 +19,14 @@ require("onedark").setup({
         IncSearch = { bg = "$fg" },
         Search = { bg = "$blue" },
 
+        ["@operator.rust"] = { fg = "$red" },
+        ["@operator.@punctuation.bracket.rust"] = { fg = "$purple" },
+
         FoldColumn = { bg = "$bg0" },
     },
     diagnostics = {
-        darker = true, -- darker colors for diagnostic
-        undercurl = true, -- use undercurl instead of underline for diagnostics
-        -- background = true, -- use background color for virtual text
+        darker = true,
+        undercurl = true,
     },
 })
 require("onedark").load()

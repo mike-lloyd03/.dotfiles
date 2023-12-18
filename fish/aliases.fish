@@ -113,5 +113,10 @@ alias ke="kubectl exec"
 alias keit="kubectl exec -it"
 alias kdel="kubectl delete"
 
-# Home Manager
-alias hmswitch="home-manager switch"
+# Cargo
+alias cr="cargo run"
+alias crr="cargo run --release"
+alias cb="cargo build"
+alias cbr="cargo build --release"
+alias ca="cargo add"
+alias cg="cargo feature"

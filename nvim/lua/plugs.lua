@@ -375,7 +375,7 @@ require("lazy").setup({
         dependencies = {
             "kyazdani42/nvim-web-devicons",
         },
-        config = {
+        opts = {
             signs = {
                 error = "●",
                 warning = "●",
@@ -595,7 +595,7 @@ require("lazy").setup({
         "NoahTheDuke/vim-just",
         ft = "just",
     },
-    { "ellisonleao/glow.nvim", config = {
+    { "ellisonleao/glow.nvim", opts = {
         width = 120,
         border = "rounded",
     }, cmd = "Glow" },

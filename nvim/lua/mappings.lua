@@ -97,7 +97,7 @@ nmap("<space>wr", "<CMD>lua vim.lsp.buf.remove_workspace_folder()<CR>")
 nmap("<space>wp", "<CMD>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>")
 nmap("<space>D", "<CMD>lua vim.lsp.buf.type_definition()<CR>")
 nmap("<space>r", "<CMD>lua vim.lsp.buf.rename()<CR>")
-nmap("<space>l", "<CMD>TSEnable highlight<CR>")
+nmap("<space>l", "<CMD>TSToggle highlight<CR>")
 
 -- Go Imports
 function FormatAndOrgImports(wait_ms)
