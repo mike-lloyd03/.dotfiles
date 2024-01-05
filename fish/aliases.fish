@@ -43,8 +43,8 @@ if [ "$(uname -n)" = dev ]
     alias kdev='kubectl config use-context appsec-dev'
     alias kprodr='kubectl config use-context appsec-prod-rancher'
     alias kprod="kubectl config use-context appsec-prod"
-    alias klogin="kubectl vsphere login --server=10.22.124.2 --tanzu-kubernetes-cluster-name appsec-prod --tanzu-kubernetes-cluster-namespace app-sec-prd-ns  --insecure-skip-tls-verify --vsphere-username ml255064@td.teradata.com"
-    alias klogindev="kubectl vsphere login --server=10.22.124.2 --tanzu-kubernetes-cluster-name appsec-dev --tanzu-kubernetes-cluster-namespace app-sec-dev-ns --insecure-skip-tls-verify --vsphere-username ml255064@td.teradata.com"
+    alias klogin="kubectl vsphere login --server=10.22.24.2  --insecure-skip-tls-verify --vsphere-username ml255064@td.teradata.com --tanzu-kubernetes-cluster-name appsec-prod --tanzu-kubernetes-cluster-namespace appsec-ns"
+    alias klogindev="kubectl vsphere login --server=10.22.24.2  --insecure-skip-tls-verify --vsphere-username ml255064@td.teradata.com --tanzu-kubernetes-cluster-name appsec-dev --tanzu-kubernetes-cluster-namespace appsec-ns"
     alias ac=armorcode
 end
 
@@ -98,20 +98,27 @@ alias k=kubectl
 alias kc="kubectl create"
 alias kcd="kubectl create deployment"
 alias kcj="kubectl create job"
+
 alias kg="kubectl get"
 alias kgp="kubectl get pods"
 alias kgn="kubectl get nodes"
 alias kgd="kubectl get deployments"
 alias kgj="kubectl get jobs"
 alias kgcj="kubectl get cronjobs"
+
 alias kd="kubectl describe"
-alias kdd="kubectl describe deployments"
-alias kdp="kubectl describe pods"
-alias kdn="kubectl describe nodes"
+alias kdd="kubectl describe deployment"
+alias kdp="kubectl describe pod"
+alias kdj="kubectl describe job"
+alias kdcj="kubectl describe cronjob"
+
 alias kl="kubectl logs"
+alias klf="kubectl logs -f"
 alias ke="kubectl exec"
 alias keit="kubectl exec -it"
 alias kdel="kubectl delete"
+
+abbr -a kcjfrom --set-cursor kubectl create job --from=%
 
 # Cargo
 alias cr="cargo run"
