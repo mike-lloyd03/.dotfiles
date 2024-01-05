@@ -29,8 +29,8 @@ require("nvim-tree").setup({
     },
     filters = {
         dotfiles = false,
-        custom = { "\\.git", "__pycache__", "\\.venv", "\\.pytest_cache", "node_modules", ".svelte-kit" },
-        exclude = {},
+        custom = { "\\.git$", "__pycache__", "\\.venv", "\\.pytest_cache", "node_modules", ".svelte-kit" },
+        git_ignored = false,
     },
     git = {
         enable = true,
@@ -47,7 +47,7 @@ require("nvim-tree").setup({
     renderer = {
         group_empty = true,
         highlight_opened_files = "name",
-        root_folder_label = false,
+        root_folder_label = true,
         icons = {
             git_placement = "after",
             padding = " ",
