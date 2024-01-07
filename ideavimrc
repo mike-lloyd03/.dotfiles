@@ -1,0 +1,72 @@
+set nu
+set relativenumber
+set showmode
+set incsearch
+
+Plug 'vim-surround'
+Plug 'vim-commentary'
+
+nmap md <Plug>DSurround
+nmap mr <Plug>CSurround
+nmap ms <Plug>YSurround
+xmap ms <Plug>VSurround
+
+" Indentation
+nnoremap . >>
+nnoremap , <<
+vnoremap . >gv
+vnoremap , <gv
+
+" Scrolling
+nnoremap <C-j> <C-e>
+nnoremap <C-k> <C-y>
+inoremap <C-j> <C-e>
+inoremap <C-k> <C-y>
+vnoremap <C-j> <C-e>
+vnoremap <C-k> <C-y>
+
+" Helix inspiration
+nnoremap gh 0
+nnoremap gl $
+nnoremap gs _
+nnoremap ge G
+
+vnoremap gh 0
+vnoremap gl $
+vnoremap gs _
+vnoremap ge G
+
+onoremap gh 0
+onoremap gl $
+onoremap gs _
+onoremap ge G
+
+nnoremap <space>w <C-w>
+nnoremap U <C-r>
+vnoremap > >gv
+vnoremap < <gv
+vnoremap <space>y "+y
+nnoremap <space>y "+y
+nnoremap <space>p "+p
+nnoremap <space>P "+P
+vnoremap <space>p "+p
+vnoremap <space>P "+P
+nnoremap mm %
+vnoremap mm %
+
+" Find and replace under cursor
+nnoremap <leader>s :%s/<C-r><C-w>/
+vnoremap <leader>s "ry:%s/<C-r>r/
+
+" Clear hightlight after search
+nnoremap <C-_> <CMD>nohlsearch<CR>
+
+" LSP Actions
+nmap [g <Action>(GotoPreviousError)
+nmap ]g <Action>(GotoNextError)
+nmap <space>r  <Action>(RenameElement)
+
+" Telescopeish
+map <space>g <Action>(FindInPath)
+map <space>f <Action>(GotoFile)
+map <space>a <Action>(ShowIntentionActions)

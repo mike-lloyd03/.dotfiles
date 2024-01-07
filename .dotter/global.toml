@@ -13,6 +13,9 @@ helix = { target = "~/.config/helix", type = "symbolic", recurse = false }
 [hypr.files]
 hypr = { target = "~/.config/hypr", type = "symbolic", recurse = false }
 
+[ideavim.files]
+"ideavimrc" = { target = "~/.ideavimrc", type = "symbolic" }
+
 [karabiner.files]
 karabiner = { target = "~/.config/karabiner", type = "symbolic", recurse = false }
 
@@ -33,7 +36,7 @@ nvim = { target = "~/.config/nvim", type = "symbolic", recurse = false }
 
 [nvimpager.files]
 nvimpager = { target = "~/.config/nvimpager", type = "symbolic", recurse = false }
-nvimpager-wrapper = { target = "~/.local/bin/nvimpager", type = "symbolic"  }
+nvimpager-wrapper = { target = "~/.local/bin/nvimpager", type = "symbolic" }
 
 [rofi.files]
 rofi = { target = "~/.config/rofi", type = "symbolic", recurse = false }

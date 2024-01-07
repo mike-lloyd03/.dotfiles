@@ -3,6 +3,7 @@ packages = [
   "fish",
   "helix",
   "hypr",
+  "ideavim",
   "keyd",
   "leftwm",
   "lsd",
