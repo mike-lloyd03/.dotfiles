@@ -46,6 +46,7 @@ rofi = { target = "~/.config/rofi", type = "symbolic", recurse = false }
 
 [tealdeer.files]
 tealdeer = { target = "~/.config/tealdeer", type = "symbolic", recurse = false }
+"tealdeer.local" = { target = "~/.local/share/tealdeer", type = "symbolic", recurse = false }
 
 [waybar.files]
 waybar = { target = "~/.config/waybar", type = "symbolic", recurse = false }
