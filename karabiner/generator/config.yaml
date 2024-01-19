@@ -9,6 +9,7 @@ bundle_identifiers:
   - "^com\\.jetbrains\\.intellij\\.ce$"
   - "^net\\.kovidgoyal\\.kitty$"
   - "^md\\.obsidian$"
+  - "^com\\.github\\.wez\\.wezterm$"
 keys:
   - c
   - v

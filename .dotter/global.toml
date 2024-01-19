@@ -51,5 +51,8 @@ tealdeer = { target = "~/.config/tealdeer", type = "symbolic", recurse = false }
 [waybar.files]
 waybar = { target = "~/.config/waybar", type = "symbolic", recurse = false }
 
+[wezterm.files]
+"wezterm.lua" = "~/.wezterm.lua"
+
 [zellij.files]
 zellij = { target = "~/.config/zellij", type = "symbolic", recurse = false }

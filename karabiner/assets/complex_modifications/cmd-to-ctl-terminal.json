@@ -18,7 +18,8 @@
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
                                 "^net\\.kovidgoyal\\.kitty$",
-                                "^md\\.obsidian$"
+                                "^md\\.obsidian$",
+                                "^com\\.github\\.wez\\.wezterm$"
                             ]
                         }
                     ],
@@ -53,7 +54,8 @@
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
                                 "^net\\.kovidgoyal\\.kitty$",
-                                "^md\\.obsidian$"
+                                "^md\\.obsidian$",
+                                "^com\\.github\\.wez\\.wezterm$"
                             ]
                         }
                     ],
@@ -88,7 +90,8 @@
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
                                 "^net\\.kovidgoyal\\.kitty$",
-                                "^md\\.obsidian$"
+                                "^md\\.obsidian$",
+                                "^com\\.github\\.wez\\.wezterm$"
                             ]
                         }
                     ],
@@ -123,7 +126,8 @@
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
                                 "^net\\.kovidgoyal\\.kitty$",
-                                "^md\\.obsidian$"
+                                "^md\\.obsidian$",
+                                "^com\\.github\\.wez\\.wezterm$"
                             ]
                         }
                     ],
@@ -158,7 +162,8 @@
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
                                 "^net\\.kovidgoyal\\.kitty$",
-                                "^md\\.obsidian$"
+                                "^md\\.obsidian$",
+                                "^com\\.github\\.wez\\.wezterm$"
                             ]
                         }
                     ],
@@ -193,7 +198,8 @@
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
                                 "^net\\.kovidgoyal\\.kitty$",
-                                "^md\\.obsidian$"
+                                "^md\\.obsidian$",
+                                "^com\\.github\\.wez\\.wezterm$"
                             ]
                         }
                     ],
@@ -228,7 +234,8 @@
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
                                 "^net\\.kovidgoyal\\.kitty$",
-                                "^md\\.obsidian$"
+                                "^md\\.obsidian$",
+                                "^com\\.github\\.wez\\.wezterm$"
                             ]
                         }
                     ],
@@ -263,7 +270,8 @@
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
                                 "^net\\.kovidgoyal\\.kitty$",
-                                "^md\\.obsidian$"
+                                "^md\\.obsidian$",
+                                "^com\\.github\\.wez\\.wezterm$"
                             ]
                         }
                     ],
@@ -298,7 +306,8 @@
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
                                 "^net\\.kovidgoyal\\.kitty$",
-                                "^md\\.obsidian$"
+                                "^md\\.obsidian$",
+                                "^com\\.github\\.wez\\.wezterm$"
                             ]
                         }
                     ],
@@ -333,7 +342,8 @@
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
                                 "^net\\.kovidgoyal\\.kitty$",
-                                "^md\\.obsidian$"
+                                "^md\\.obsidian$",
+                                "^com\\.github\\.wez\\.wezterm$"
                             ]
                         }
                     ],
@@ -368,7 +378,8 @@
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
                                 "^net\\.kovidgoyal\\.kitty$",
-                                "^md\\.obsidian$"
+                                "^md\\.obsidian$",
+                                "^com\\.github\\.wez\\.wezterm$"
                             ]
                         }
                     ],
@@ -403,7 +414,8 @@
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
                                 "^net\\.kovidgoyal\\.kitty$",
-                                "^md\\.obsidian$"
+                                "^md\\.obsidian$",
+                                "^com\\.github\\.wez\\.wezterm$"
                             ]
                         }
                     ],
@@ -438,7 +450,8 @@
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
                                 "^net\\.kovidgoyal\\.kitty$",
-                                "^md\\.obsidian$"
+                                "^md\\.obsidian$",
+                                "^com\\.github\\.wez\\.wezterm$"
                             ]
                         }
                     ],
@@ -473,7 +486,8 @@
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
                                 "^net\\.kovidgoyal\\.kitty$",
-                                "^md\\.obsidian$"
+                                "^md\\.obsidian$",
+                                "^com\\.github\\.wez\\.wezterm$"
                             ]
                         }
                     ],
@@ -508,7 +522,8 @@
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
                                 "^net\\.kovidgoyal\\.kitty$",
-                                "^md\\.obsidian$"
+                                "^md\\.obsidian$",
+                                "^com\\.github\\.wez\\.wezterm$"
                             ]
                         }
                     ],
@@ -543,7 +558,8 @@
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
                                 "^net\\.kovidgoyal\\.kitty$",
-                                "^md\\.obsidian$"
+                                "^md\\.obsidian$",
+                                "^com\\.github\\.wez\\.wezterm$"
                             ]
                         }
                     ],
@@ -578,7 +594,8 @@
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
                                 "^net\\.kovidgoyal\\.kitty$",
-                                "^md\\.obsidian$"
+                                "^md\\.obsidian$",
+                                "^com\\.github\\.wez\\.wezterm$"
                             ]
                         }
                     ],
@@ -613,7 +630,8 @@
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
                                 "^net\\.kovidgoyal\\.kitty$",
-                                "^md\\.obsidian$"
+                                "^md\\.obsidian$",
+                                "^com\\.github\\.wez\\.wezterm$"
                             ]
                         }
                     ],
@@ -648,7 +666,8 @@
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
                                 "^net\\.kovidgoyal\\.kitty$",
-                                "^md\\.obsidian$"
+                                "^md\\.obsidian$",
+                                "^com\\.github\\.wez\\.wezterm$"
                             ]
                         }
                     ],
@@ -683,7 +702,8 @@
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
                                 "^net\\.kovidgoyal\\.kitty$",
-                                "^md\\.obsidian$"
+                                "^md\\.obsidian$",
+                                "^com\\.github\\.wez\\.wezterm$"
                             ]
                         }
                     ],
@@ -718,7 +738,8 @@
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
                                 "^net\\.kovidgoyal\\.kitty$",
-                                "^md\\.obsidian$"
+                                "^md\\.obsidian$",
+                                "^com\\.github\\.wez\\.wezterm$"
                             ]
                         }
                     ],
@@ -753,7 +774,8 @@
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
                                 "^net\\.kovidgoyal\\.kitty$",
-                                "^md\\.obsidian$"
+                                "^md\\.obsidian$",
+                                "^com\\.github\\.wez\\.wezterm$"
                             ]
                         }
                     ],
@@ -788,7 +810,8 @@
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
                                 "^net\\.kovidgoyal\\.kitty$",
-                                "^md\\.obsidian$"
+                                "^md\\.obsidian$",
+                                "^com\\.github\\.wez\\.wezterm$"
                             ]
                         }
                     ],
