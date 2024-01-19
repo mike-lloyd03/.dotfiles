@@ -16,12 +16,14 @@ config.window_padding = {
 config.window_background_gradient = {
     orientation = "Vertical",
     colors = {
-        "#1a1c23",
-        "#343434",
-        "#1a1c23",
+        "#0e0f13",
+        "#14161c",
+        "#0e0f13",
     },
 }
-
+config.text_background_opacity = 0.7
+config.window_background_opacity = 0.7
+config.macos_window_background_blur = 20
 config.color_scheme = "One Dark (Gogh)"
 
 config.keys = {
