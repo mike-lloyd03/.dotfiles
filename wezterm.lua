@@ -16,11 +16,15 @@ config.window_padding = {
 config.window_background_gradient = {
     orientation = 'Vertical',
     colors = {
-        '#020024',
-        '#094873',
-        '#032229',
+        '#1a1c23',
+        '#343434',
+        '#1a1c23',
     },
 }
+
+config.color_scheme = 'Catppuccin Mocha'
+
+config.front_end = "Software"
 
 config.keys = {
     {key = 'c', mods = 'CMD|SHIFT', action = act.CopyTo 'Clipboard'},

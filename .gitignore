@@ -1,3 +1,4 @@
 .dotter/cache.toml
 fish/completions
 fish/fish_variables
+.venv
