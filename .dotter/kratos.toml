@@ -1,6 +1,7 @@
 packages = [
   "alacritty",
   "fish",
+  "git",
   "helix",
   "hypr",
   "ideavim",
@@ -14,6 +15,6 @@ packages = [
   "starship",
   "tealdeer",
   "waybar",
+  "wezterm",
   "zellij",
-  "git",
 ]
