@@ -29,7 +29,7 @@ config.color_scheme = "OneDark (base16)"
 config.keys = {
     { key = "c", mods = "CMD|SHIFT", action = act.CopyTo("Clipboard") },
     { key = "v", mods = "CMD|SHIFT", action = act.PasteFrom("Clipboard") },
-    { key = "w", mods = "CMD|SHIFT", action = act.CloseCurrentTab({ confirm = true }) },
+    { key = "w", mods = "CMD|SHIFT", action = act.CloseCurrentTab({ confirm = false }) },
 }
 
 return config
