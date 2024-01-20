@@ -17,20 +17,20 @@ layout {
 
     pane size=1 borderless=true {
         plugin location="file:/home/mike/.config/zellij/plugins/zjstatus.wasm" {
-            format_left  "{mode}#[fg=#1a1c23,bg=#4fa6ed,bold] {session} #[bg=#4fa6ed,fg=#1a1c23]{tabs}"
-            format_right "#[fg=#1a1c23,bg=#4fa6ed,bold]{datetime}"
-            format_space "#[bg=#1a1c23]"
+            format_left  "{mode}#[fg=#1a1c23,bg=#4fa6ed,bold] {session} #[fg=#4fa6ed]{tabs}"
+            format_right "#[fg=#4fa6ed,bold]{datetime}"
+            format_space "#[]"
 
             border_enabled  "false"
 
             hide_frame_for_single_pane "true"
 
-            tab_normal              "#[fg=#1a1c23,bg=#4C4C59] {index}  {name} #[bg=#4C4C59,fg=#1a1c23]"
-            tab_normal_fullscreen   "#[fg=#1a1c23,bg=#4C4C59] {index}  {name} Z #[bg=#4C4C59,fg=#1a1c23]"
-            tab_normal_sync         "#[fg=#1a1c23,bg=#4C4C59] {index}  {name} S #[bg=#4C4C59,fg=#1a1c23]"
-            tab_active              "#[fg=#1a1c23,bg=#ffffff,bold] {index}  {name} #[bg=#ffffff,fg=#1a1c23]"
-            tab_active_fullscreen   "#[fg=#1a1c23,bg=#ffffff,bold] {index}  {name} Z #[bg=#ffffff,fg=#1a1c23]"
-            tab_active_sync         "#[fg=#1a1c23,bg=#ffffff,bold] {index}  {name} S #[bg=#ffffff,fg=#1a1c23]"
+            tab_normal              "#[fg=#4C4C59]#[fg=#1a1c23,bg=#4C4C59]{index}  {name} #[fg=#4C4C59]"
+            tab_normal_fullscreen   "#[fg=#4C4C59]#[fg=#1a1c23,bg=#4C4C59]{index}  {name} Z #[fg=#4C4C59]"
+            tab_normal_sync         "#[fg=#4C4C59]#[fg=#1a1c23,bg=#4C4C59]{index}  {name} S #[fg=#4C4C59]"
+            tab_active              "#[fg=#ffffff]#[fg=#1a1c23,bg=#ffffff,bold] {index}  {name} #[fg=#ffffff]"
+            tab_active_fullscreen   "#[fg=#ffffff]#[fg=#1a1c23,bg=#ffffff,bold] {index}  {name} Z #[fg=#ffffff]"
+            tab_active_sync         "#[fg=#ffffff]#[fg=#1a1c23,bg=#ffffff,bold] {index}  {name} S #[fg=#ffffff]"
 
             datetime        "#[fg=#1a1c23,bg=#4fa6ed,bold] {format} "
             datetime_format "%A, %Y%m%d %H%M"
