@@ -21,10 +21,12 @@ config.window_background_gradient = {
         "#0e0f13",
     },
 }
-config.text_background_opacity = 0.7
+-- config.text_background_opacity = 0.7
 config.window_background_opacity = 0.7
 config.macos_window_background_blur = 20
 config.color_scheme = "OneDark (base16)"
+
+config.front_end = "OpenGL"
 
 config.keys = {
     { key = "c", mods = "CMD|SHIFT", action = act.CopyTo("Clipboard") },
