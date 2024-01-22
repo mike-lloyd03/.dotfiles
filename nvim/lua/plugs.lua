@@ -484,14 +484,10 @@ require("lazy").setup({
                             { text = { builtin.foldfunc }, click = "v:lua.ScFa" },
                         },
                     })
+                    vim.api.nvim_set_hl(0, "FoldColumn", {}) -- Clear the FoldColumn HL group so it's bg is transparent
                 end,
             },
         },
-        -- config = {
-        --     provider_selector = function(bufnr, filetype, buftype)
-        --         return { "treesitter", "indent" }
-        --     end,
-        -- },
         config = function()
             local capabilities = vim.lsp.protocol.make_client_capabilities()
             capabilities.textDocument.foldingRange = {

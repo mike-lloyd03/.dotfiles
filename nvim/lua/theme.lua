@@ -1,6 +1,7 @@
 -- Color scheme config
 require("onedark").setup({
     style = "deep",
+    transparent = true,
     toggle_style_key = "<leader>ts",
     lualine = {
         transparent = true,
