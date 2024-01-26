@@ -5,6 +5,7 @@ $username\
 $hostname\
 $shlvl\
 $directory\
+$direnv\
 $git_branch\
 $git_commit\
 $git_state\
@@ -62,6 +63,16 @@ read_only = " "
 truncate_to_repo = false
 truncation_symbol = "…/"
 repo_root_style = "bold underline"
+
+[direnv]
+disabled = false
+format = '[$symbol$allowed/$loaded]($style) '
+symbol = ' '
+allowed_msg = '󰗠'
+denied_msg = ''
+loaded_msg = '󰗠'
+unloaded_msg = ''
+style = 'bold red'
 
 [git_branch]
 symbol = " "
