@@ -130,7 +130,6 @@ nmap("<space>tw", "<cmd>TroubleToggle workspace_diagnostics<cr>")
 nmap("<space>td", "<cmd>TroubleToggle document_diagnostics<cr>")
 nmap("<space>tq", "<cmd>TroubleToggle quickfix<cr>")
 nmap("<space>tl", "<cmd>TroubleToggle loclist<cr>")
-nmap("gR", "<cmd>TroubleToggle lsp_references<cr>")
 
 -- Format
 nmap("<C-f>", "<CMD>Format<CR>")
@@ -153,72 +152,112 @@ vim.cmd([[
     smap <expr> <S-Tab> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>'
 ]])
 
--- Register which-key names
-local wk = require("which-key")
-wk.register({
-    ["<space>"] = {
-        b = { "Buffers" },
-        f = { "Find files" },
-        g = { "Live grep" },
-        h = { "Search help tags" },
-        s = { "Document symbols" },
-        S = { "Workspace symbols" },
-        a = { "Code actions" },
-        r = { "Rename" },
-        D = { "Type definition" },
-        k = { "Show docs for item under cursor" },
-        w = { "Window" },
-        wa = { "Add workspace folder" },
-        wp = { "Print workspace folders" },
-        wr = { "Remove workspace folders" },
-        ["'"] = { "Open last picker" },
-        y = { "Yank selection to system clipboard" },
-        p = { "Paste system clipboard after cursor" },
-        P = { "Paste system clipboard before cursor" },
-        z = { "Show spelling suggestions" },
+local miniclue = require("mini.clue")
+miniclue.setup({
+    triggers = {
+        { mode = "n", keys = "<C-w>" },
+        { mode = "n", keys = "<Leader>" },
+        { mode = "n", keys = "<Space>" },
+        { mode = "n", keys = "[" },
+        { mode = "n", keys = "]" },
+        { mode = "n", keys = "c" },
+        { mode = "n", keys = "cr" },
+        { mode = "n", keys = "g" },
+        { mode = "n", keys = "m" },
+        { mode = "n", keys = "z" },
+        { mode = "n", keys = '"' },
+
+        { mode = "v", keys = "g" },
+        { mode = "v", keys = "m" },
     },
-    g = {
-        c = { "Toggle comment" },
-        d = { "Go to definition" },
-        D = { "Go to definition in new vsplit" },
-        r = { "Go to references" },
-        h = { "Line start" },
-        l = { "Line end" },
-        s = { "First non-blank in line" },
-        e = { "Last line" },
-        ["."] = { "Last modification" },
+    clues = {
+        miniclue.gen_clues.builtin_completion(),
+        -- miniclue.gen_clues.g(),
+        miniclue.gen_clues.marks(),
+        miniclue.gen_clues.registers(),
+        miniclue.gen_clues.windows(),
+        miniclue.gen_clues.z(),
+
+        -- <Space>
+        miniclue.set_mapping_desc("n", "<Space>'", "Open last picker"),
+        miniclue.set_mapping_desc("n", "<Space>D", "Type definition"),
+        miniclue.set_mapping_desc("n", "<Space>P", "Paste system clipboard before cursor"),
+        miniclue.set_mapping_desc("n", "<Space>S", "Workspace symbols"),
+        miniclue.set_mapping_desc("n", "<Space>a", "Code actions"),
+        miniclue.set_mapping_desc("n", "<Space>b", "Buffers"),
+        miniclue.set_mapping_desc("n", "<Space>f", "Find files"),
+        miniclue.set_mapping_desc("n", "<Space>f", "Open file picker"),
+        miniclue.set_mapping_desc("n", "<Space>g", "Live grep"),
+        miniclue.set_mapping_desc("n", "<Space>g", "Live grep"),
+        miniclue.set_mapping_desc("n", "<Space>h", "Search help tags"),
+        miniclue.set_mapping_desc("n", "<Space>k", "Show docs for item under cursor"),
+        miniclue.set_mapping_desc("n", "<Space>l", "Toggle Treesitter highlight"),
+        miniclue.set_mapping_desc("n", "<Space>m", "Treesitter Symbols"),
+        miniclue.set_mapping_desc("n", "<Space>p", "Paste system clipboard after cursor"),
+        miniclue.set_mapping_desc("n", "<Space>r", "Rename"),
+        miniclue.set_mapping_desc("n", "<Space>s", "Document symbols"),
+        miniclue.set_mapping_desc("n", "<Space>t", "Trouble"),
+        miniclue.set_mapping_desc("n", "<Space>td", "Document"),
+        miniclue.set_mapping_desc("n", "<Space>tl", "Loclist"),
+        miniclue.set_mapping_desc("n", "<Space>tq", "Quickfix"),
+        miniclue.set_mapping_desc("n", "<Space>tw", "Workspace"),
+        miniclue.set_mapping_desc("n", "<Space>w", "Window"),
+        miniclue.set_mapping_desc("n", "<Space>wa", "Add workspace folder"),
+        miniclue.set_mapping_desc("n", "<Space>wp", "Print workspace folders"),
+        miniclue.set_mapping_desc("n", "<Space>wr", "Remove workspace folders"),
+        miniclue.set_mapping_desc("n", "<Space>y", "Yank selection to system clipboard"),
+        miniclue.set_mapping_desc("n", "<Space>z", "Show spelling suggestions"),
+
+        -- g
+        miniclue.set_mapping_desc("n", "g.", "Last modification"),
+        miniclue.set_mapping_desc("n", "gD", "Go to definition in new vsplit"),
+        miniclue.set_mapping_desc("n", "gc", "Comment"),
+        miniclue.set_mapping_desc("n", "gcc", "Toggle comment"),
+        miniclue.set_mapping_desc("n", "gd", "Go to definition"),
+        miniclue.set_mapping_desc("n", "ge", "Last line"),
+        miniclue.set_mapping_desc("n", "gh", "Go to line start"),
+        miniclue.set_mapping_desc("n", "gi", "Go to implementation"),
+        miniclue.set_mapping_desc("n", "gl", "Go to line end"),
+        miniclue.set_mapping_desc("n", "gr", "Go to references"),
+        miniclue.set_mapping_desc("n", "gs", "First non-blank in line"),
+
+        -- [ ]
+        miniclue.set_mapping_desc("n", "[c", "Previous hunk"),
+        miniclue.set_mapping_desc("n", "[g", "Previous diagnostic"),
+        miniclue.set_mapping_desc("n", "]c", "Next hunk"),
+        miniclue.set_mapping_desc("n", "]g", "Next diagnostic"),
+
+        -- <Leader>
+        miniclue.set_mapping_desc("n", "<Leader>s", "Find and replace under cursor"),
+
+        -- m
+        miniclue.set_mapping_desc("n", "mm", "Goto matching bracket"),
+        miniclue.set_mapping_desc("n", "ms", "Surround add"),
+        miniclue.set_mapping_desc("n", "mr", "Surround replace"),
+        miniclue.set_mapping_desc("n", "md", "Surround delete"),
+        miniclue.set_mapping_desc("v", "mm", "Goto matching bracket"),
+        miniclue.set_mapping_desc("v", "ms", "Surround add"),
+
+        -- cr
+        miniclue.set_mapping_desc("n", "cr", "Coerse"),
+        -- miniclue.set_mapping_desc("n", "crc", "Coerse to camelCase"),
+        -- miniclue.set_mapping_desc("n", "crm", "Coerce to MixedCase"),
+        -- miniclue.set_mapping_desc("n", "crs", "Coerse to snake_case"),
+        -- miniclue.set_mapping_desc("n", "crt", "Coerse to Title Case"),
+        -- miniclue.set_mapping_desc("n", "cru", "Coerse to UPPER_SNAKE_CASE"),
+        -- miniclue.set_mapping_desc("n", "cr-", "Coerse to dash-case"),
+        -- miniclue.set_mapping_desc("n", "cr.", "Coerse to dot.case"),
+        -- miniclue.set_mapping_desc("n", "cr ", "Coerse to space case"),
+
+        -- z
+        miniclue.set_mapping_desc("n", "zt", "Scroll cursor to top of screen"),
+        miniclue.set_mapping_desc("n", "zz", "Center cursor on screen"),
+        miniclue.set_mapping_desc("n", "zb", "Scroll curose to bottom of screen"),
     },
-    ["["] = {
-        c = { "Previous hunk" },
-        g = { "Previous diagnostic" },
-    },
-    ["]"] = {
-        c = { "Next hunk" },
-        g = { "Next diagnostic" },
-    },
-    ["<leader>"] = {
-        s = { "Find and replace under cursor" },
-        sv = { "Source vimrc" },
-        vr = { "Search dotfiles" },
-        ts = { "onedark theme toggle" },
-    },
-    m = {
-        m = { "Goto matching bracket" },
-        s = { "Surround add" },
-        r = { "Surround replace" },
-        d = { "Surround delete" },
-    },
-    cr = {
-        c = { "Coerse to camelCase" },
-        m = { "Coerce to MixedCase" },
-        s = { "Coerse to snake_case" },
-        t = { "Coerse to Title Case" },
-        u = { "Coerse to UPPER_SNAKE_CASE" },
-        ["-"] = { "Coerse to dash-case" },
-        ["."] = { "Coerse to dot.case" },
-        [" "] = { "Coerse to space case" },
-    },
-    X = {
-        X = { "Write quit all" },
+    window = {
+        delay = 250,
+        config = {
+            width = "auto",
+        },
     },
 })

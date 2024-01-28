@@ -55,10 +55,6 @@ keybinds {
         unbind "Right"
         unbind "Down"
         unbind "Up"
-        bind "Alt H" { MoveFocusOrTab "Left"; }
-        bind "Alt J" { MoveFocus "Down"; }
-        bind "Alt K" { MoveFocus "Up"; }
-        bind "Alt L" { MoveFocusOrTab "Right"; }
     }
     shared_except "resize" "locked" {
         unbind "Ctrl n"

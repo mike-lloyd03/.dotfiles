@@ -215,35 +215,51 @@ require("lazy").setup({
         config = true,
     },
     {
-        "folke/which-key.nvim",
-        opts = {
-            plugins = {
-                spelling = {
-                    enabled = false,
-                },
+        "echasnovski/mini.move",
+        version = false,
+        config = {
+            mappings = {
+                left = "<M-S-h>",
+                right = "<M-S-l>",
+                up = "<M-S-k>",
+                down = "<M-S-j>",
+                line_left = "<M-S-h>",
+                line_right = "<M-S-l>",
+                line_up = "<M-S-k>",
+                line_down = "<M-S-j>",
             },
-            window = {
-                border = "none", -- none, single, double, shadow
-                position = "bottom", -- bottom, top
-            },
-            icons = {
-                breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
-                separator = "", -- symbol used between a key and it's label
-                group = "+", -- symbol prepended to a group
-            },
-            layout = {
-                height = { min = 1, max = 50 }, -- min and max height of the columns
-                width = { min = 5, max = 50 }, -- min and max width of the columns
-                spacing = 1, -- spacing between columns
-                align = "right", -- align columns left, center or right
-            },
-            popup_mappings = {
-                scroll_down = "<c-j>", -- binding to scroll down inside the popup
-                scroll_up = "<c-k>", -- binding to scroll up inside the popup
-            },
-            hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " },
         },
     },
+    -- {
+    --     "folke/which-key.nvim",
+    --     opts = {
+    --         plugins = {
+    --             spelling = {
+    --                 enabled = false,
+    --             },
+    --         },
+    --         window = {
+    --             border = "none", -- none, single, double, shadow
+    --             position = "bottom", -- bottom, top
+    --         },
+    --         icons = {
+    --             breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
+    --             separator = "", -- symbol used between a key and it's label
+    --             group = "+", -- symbol prepended to a group
+    --         },
+    --         layout = {
+    --             height = { min = 1, max = 50 }, -- min and max height of the columns
+    --             width = { min = 5, max = 50 }, -- min and max width of the columns
+    --             spacing = 1, -- spacing between columns
+    --             align = "right", -- align columns left, center or right
+    --         },
+    --         popup_mappings = {
+    --             scroll_down = "<c-j>", -- binding to scroll down inside the popup
+    --             scroll_up = "<c-k>", -- binding to scroll up inside the popup
+    --         },
+    --         hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " },
+    --     },
+    -- },
     "stevearc/dressing.nvim",
     {
         "rcarriga/nvim-notify",
@@ -502,6 +518,10 @@ require("lazy").setup({
             end
             require("ufo").setup()
         end,
+    },
+    {
+        "echasnovski/mini.clue",
+        version = false,
     },
 
     -----------------------------------------------
