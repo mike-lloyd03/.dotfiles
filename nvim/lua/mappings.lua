@@ -64,6 +64,8 @@ nmap("<space>b", "<CMD>lua require('telescope.builtin').buffers{}<CR>")
 nmap("<space>f", "<CMD>Telescope find_files<CR>")
 nmap("<space>g", "<CMD>Telescope live_grep<CR>")
 nmap("<space>h", "<CMD>Telescope help_tags<CR>")
+nmap("<space>j", "<CMD>Telescope jumplist<CR>")
+nmap("<space>d", "<CMD>Telescope diagnostics<CR>")
 nmap("<space>'", "<CMD>Telescope resume<CR>")
 nmap("<space>s", "<CMD>lua require('telescope.builtin').lsp_document_symbols{}<CR>")
 nmap("<space>S", "<CMD>Navbuddy<CR>")
@@ -190,10 +192,10 @@ miniclue.setup({
         miniclue.set_mapping_desc("n", "<Space>S", "Workspace symbols"),
         miniclue.set_mapping_desc("n", "<Space>a", "Code actions"),
         miniclue.set_mapping_desc("n", "<Space>b", "Buffers"),
-        miniclue.set_mapping_desc("n", "<Space>f", "Find files"),
         miniclue.set_mapping_desc("n", "<Space>f", "Open file picker"),
         miniclue.set_mapping_desc("n", "<Space>g", "Live grep"),
-        miniclue.set_mapping_desc("n", "<Space>g", "Live grep"),
+        miniclue.set_mapping_desc("n", "<Space>d", "Diagnostics"),
+        miniclue.set_mapping_desc("n", "<Space>j", "Jumplist"),
         miniclue.set_mapping_desc("n", "<Space>h", "Search help tags"),
         miniclue.set_mapping_desc("n", "<Space>k", "Show docs for item under cursor"),
         miniclue.set_mapping_desc("n", "<Space>l", "Toggle Treesitter highlight"),

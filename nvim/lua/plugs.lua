@@ -268,6 +268,7 @@ require("lazy").setup({
             return {
                 max_width = 80,
                 top_down = false,
+                background_colour = "#000000"
             }
         end,
     },
