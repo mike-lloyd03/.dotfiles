@@ -152,6 +152,11 @@ vim.cmd([[
     smap <expr> <S-Tab> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>'
 ]])
 
+-- specs
+nmap("<Space><Space>", '<CMD>lua require("specs").show_specs()<CR>')
+nmap("n", 'n<CMD>lua require("specs").show_specs()<CR>')
+nmap("N", 'N<CMD>lua require("specs").show_specs()<CR>')
+
 local miniclue = require("mini.clue")
 miniclue.setup({
     triggers = {
@@ -209,17 +214,17 @@ miniclue.setup({
         miniclue.set_mapping_desc("n", "<Space>z", "Show spelling suggestions"),
 
         -- g
-        miniclue.set_mapping_desc("n", "g.", "Last modification"),
-        miniclue.set_mapping_desc("n", "gD", "Go to definition in new vsplit"),
+        miniclue.set_mapping_desc("n", "g.", "Goto last modification"),
+        miniclue.set_mapping_desc("n", "gD", "Goto definition in new vsplit"),
         miniclue.set_mapping_desc("n", "gc", "Comment"),
         miniclue.set_mapping_desc("n", "gcc", "Toggle comment"),
-        miniclue.set_mapping_desc("n", "gd", "Go to definition"),
-        miniclue.set_mapping_desc("n", "ge", "Last line"),
-        miniclue.set_mapping_desc("n", "gh", "Go to line start"),
-        miniclue.set_mapping_desc("n", "gi", "Go to implementation"),
-        miniclue.set_mapping_desc("n", "gl", "Go to line end"),
-        miniclue.set_mapping_desc("n", "gr", "Go to references"),
-        miniclue.set_mapping_desc("n", "gs", "First non-blank in line"),
+        miniclue.set_mapping_desc("n", "gd", "Goto definition"),
+        miniclue.set_mapping_desc("n", "ge", "Goto last line"),
+        miniclue.set_mapping_desc("n", "gh", "Goto line start"),
+        miniclue.set_mapping_desc("n", "gi", "Goto implementation"),
+        miniclue.set_mapping_desc("n", "gl", "Goto line end"),
+        miniclue.set_mapping_desc("n", "gr", "Goto references"),
+        miniclue.set_mapping_desc("n", "gs", "Goto first non-blank in line"),
 
         -- [ ]
         miniclue.set_mapping_desc("n", "[c", "Previous hunk"),
@@ -228,7 +233,7 @@ miniclue.setup({
         miniclue.set_mapping_desc("n", "]g", "Next diagnostic"),
 
         -- <Leader>
-        miniclue.set_mapping_desc("n", "<Leader>s", "Find and replace under cursor"),
+        -- miniclue.set_mapping_desc("n", "<Leader>s", "Find and replace under cursor"),
 
         -- m
         miniclue.set_mapping_desc("n", "mm", "Goto matching bracket"),
@@ -252,7 +257,7 @@ miniclue.setup({
         -- z
         miniclue.set_mapping_desc("n", "zt", "Scroll cursor to top of screen"),
         miniclue.set_mapping_desc("n", "zz", "Center cursor on screen"),
-        miniclue.set_mapping_desc("n", "zb", "Scroll curose to bottom of screen"),
+        miniclue.set_mapping_desc("n", "zb", "Scroll cursor to bottom of screen"),
     },
     window = {
         delay = 250,

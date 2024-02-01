@@ -523,6 +523,17 @@ require("lazy").setup({
         "echasnovski/mini.clue",
         version = false,
     },
+    {
+        "edluffy/specs.nvim",
+        opts = {
+            show_jumps = true,
+            popup = {
+                inc_ms = 20,
+                blend = 10,
+                winhl = "TermCursor",
+            },
+        },
+    },
 
     -----------------------------------------------
     -- Language Support
