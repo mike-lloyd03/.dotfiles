@@ -2,6 +2,8 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 local config = {}
 
+config.term = "wezterm"
+
 config.font = wezterm.font("JetBrainsMono Nerd Font Mono")
 config.hide_tab_bar_if_only_one_tab = true
 config.enable_wayland = true
