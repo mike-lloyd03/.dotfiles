@@ -52,7 +52,7 @@ if status is-interactive
     atuin init fish --disable-up-arrow | source
 
     zoxide init fish --cmd cd | source
-end
 
-# direnv
-direnv hook fish | source
+    # direnv
+    direnv hook fish | source
+end
