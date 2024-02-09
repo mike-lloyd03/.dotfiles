@@ -53,6 +53,8 @@ if status is-interactive
 
     zoxide init fish --cmd cd | source
 
-    # direnv
-    direnv hook fish | source
+
+    if command -v direnv &> /dev/null
+        direnv hook fish | source
+    end
 end
