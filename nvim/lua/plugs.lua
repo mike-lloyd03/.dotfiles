@@ -230,6 +230,14 @@ require("lazy").setup({
             },
         },
     },
+    {
+        "echasnovski/mini.indentscope",
+        version = false,
+        opts = {
+            symbol = "│",
+            options = { try_as_border = true },
+        },
+    },
     -- {
     --     "folke/which-key.nvim",
     --     opts = {
@@ -268,7 +276,7 @@ require("lazy").setup({
             return {
                 max_width = 80,
                 top_down = false,
-                background_colour = "#000000"
+                background_colour = "#000000",
             }
         end,
     },
@@ -282,7 +290,7 @@ require("lazy").setup({
             },
             indent = {
                 char = "│",
-                highlight = "VertSplit",
+                -- highlight = "VertSplit",
             },
         },
     },
@@ -292,7 +300,6 @@ require("lazy").setup({
     -----------------------------------------------
     {
         "rmagatti/auto-session",
-        commit = "21033c6815f249a7839c3a85fc8a6b44d74925c9", -- bug in latest prevents sessions from working
         opts = function()
             local function close_all_floating_wins()
                 for _, win in ipairs(vim.api.nvim_list_wins()) do
