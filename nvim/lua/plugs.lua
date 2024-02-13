@@ -343,7 +343,12 @@ require("lazy").setup({
     {
         "folke/persistence.nvim",
         event = "BufReadPre",
-        opts = { options = vim.opt.sessionoptions:get() },
+        opts = {
+            options = { "buffers", "tabpages", "winsize" },
+            pre_save = function()
+                vim.cmd("tabdo NvimTreeClose")
+            end,
+        },
         -- stylua: ignore
         keys = {
           { "<space>qs", function() require("persistence").load() end, desc = "Restore session" },
