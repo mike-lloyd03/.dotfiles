@@ -23,17 +23,17 @@ nmap("<C-R>", "q:")
 nmap("q:", "")
 
 -- Better indentation
-vmap(".", ">gv")
-vmap(",", "<gv")
-nmap(".", ">>")
-nmap(",", "<<")
+vmap(".", ">gv", { desc = "Indent line" })
+vmap(",", "<gv", { desc = "Outdent line" })
+nmap(".", ">>", { desc = "Indent line" })
+nmap(",", "<<", { desc = "Outdent line" })
 
 -- Helix inspiration
-nmap("gh", "0")
-nmap("gl", "$")
-nmap("gs", "_")
-nmap("ge", "G")
-nmap("g.", "g;")
+nmap("gh", "0", { desc = "Goto line start" })
+nmap("gl", "$", { desc = "Goto line end" })
+nmap("gs", "_", { desc = "Goto first non-blank in line" })
+nmap("ge", "G", { desc = "Goto last line" })
+nmap("g.", "g;", { desc = "Goto last modification" })
 
 vmap("gh", "0")
 vmap("gl", "$")
@@ -45,61 +45,66 @@ omap("gl", "$")
 omap("gs", "_")
 omap("ge", "G")
 
-nmap("<space>w", "<C-w>")
-nmap("U", "<C-r>")
-vmap(">", ">gv")
-vmap("<", "<gv")
-vmap("<space>y", '"+y')
-nmap("<space>y", '"+y')
-nmap("<space>p", '"+p')
-nmap("<space>P", '"+P')
-vmap("<space>p", '"+p')
-vmap("<space>P", '"+P')
-nmap("mm", "%")
-vmap("mm", "%")
+nmap("<space>w", "<C-w>", { desc = "Window" })
+nmap("U", "<C-r>", { desc = "Redo" })
+vmap(">", ">gv", { desc = "Indent line" })
+vmap("<", "<gv", { desc = "Outdent line" })
+vmap("<space>y", '"+y', { desc = "Yank to system clipboard" })
+nmap("<space>y", '"+y', { desc = "Yank to system clipboard" })
+nmap("<space>p", '"+p', { desc = "Paste system clipboard after cursor" })
+nmap("<space>P", '"+P', { desc = "Paste system clipboard before cursor" })
+vmap("<space>p", '"+p', { desc = "Paste system clipboard after cursor" })
+vmap("<space>P", '"+P', { desc = "Paste system clipboard before cursor" })
+nmap("mm", "%", { desc = "Goto matching bracket" })
+vmap("mm", "%", { desc = "Goto matching bracket" })
 nmap("<space>ya", "<CMD>%y+<CR>")
 
 -- Telescope
-nmap("<space>b", "<CMD>lua require('telescope.builtin').buffers{}<CR>")
-nmap("<space>f", "<CMD>Telescope find_files<CR>")
-nmap("<space>g", "<CMD>Telescope live_grep<CR>")
-nmap("<space>h", "<CMD>Telescope help_tags<CR>")
-nmap("<space>j", "<CMD>Telescope jumplist<CR>")
-nmap("<space>d", "<CMD>Telescope diagnostics<CR>")
-nmap("<space>'", "<CMD>Telescope resume<CR>")
-nmap("<space>s", "<CMD>lua require('telescope.builtin').lsp_document_symbols{}<CR>")
-nmap("<space>S", "<CMD>Navbuddy<CR>")
-nmap("<space>a", "<CMD>lua vim.lsp.buf.code_action()<CR>")
-vmap("<space>a", "<CMD>lua vim.lsp.buf.code_action()<CR>")
-nmap("gr", "<CMD>lua require('telescope.builtin').lsp_references{}<CR>")
-nmap("<space>z", "<CMD>lua require('telescope.builtin').spell_suggest{}<CR>")
-nmap("gd", "<CMD>lua require('telescope.builtin').lsp_definitions{}<CR>")
-nmap("gD", "<CMD>lua require('telescope.builtin').lsp_definitions{jump_type='vsplit'}<CR>")
-nmap("<leader>sv", "<CMD>source ~/.config/nvim/init.lua<CR>")
-nmap("<space>m", "<CMD>lua require('telescope.builtin').treesitter{}<CR>")
+nmap("<space>b", "<CMD>lua require('telescope.builtin').buffers{}<CR>", { desc = "Buffers" })
+nmap("<space>f", "<CMD>Telescope find_files<CR>", { desc = "Open file picker" })
+nmap("<space>g", "<CMD>Telescope live_grep<CR>", { desc = "Live grep" })
+nmap("<space>h", "<CMD>Telescope help_tags<CR>", { desc = "Search help tags" })
+nmap("<space>j", "<CMD>Telescope jumplist<CR>", { desc = "Jumplist" })
+nmap("<space>d", "<CMD>Telescope diagnostics<CR>", { desc = "Diagnostics" })
+nmap("<space>'", "<CMD>Telescope resume<CR>", { desc = "Open last picker" })
+nmap("<space>s", "<CMD>lua require('telescope.builtin').lsp_document_symbols{}<CR>", { desc = "Document symbols" })
+nmap("<space>S", "<CMD>Navbuddy<CR>", { desc = "Workspace symbols" })
+nmap("<space>a", "<CMD>lua vim.lsp.buf.code_action()<CR>", { desc = "Code actions" })
+nmap("gr", "<CMD>lua require('telescope.builtin').lsp_references{}<CR>", { desc = "Goto references" })
+nmap("<space>z", "<CMD>lua require('telescope.builtin').spell_suggest{}<CR>", { desc = "Show spelling suggestions" })
+nmap("gd", "<CMD>lua require('telescope.builtin').lsp_definitions{}<CR>", { desc = "Goto definition" })
+nmap(
+    "gD",
+    "<CMD>lua require('telescope.builtin').lsp_definitions{jump_type='vsplit'}<CR>",
+    { desc = "Goto definition in new vsplit" }
+)
+nmap("<space>m", "<CMD>lua require('telescope.builtin').treesitter{}<CR>", { desc = "Treesitter Symbols" })
 
 -- nvim.notify
 nmap("<space>nn", "<CMD>Telescope notify<CR>")
 nmap("<space>nd", "<CMD>lua require('notify').dismiss()<CR>")
 
 -- Find and replace under cursor
-nmap("<leader>s", ":%s/<C-r><C-w>/")
-vmap("<leader>s", '"ry:%s/<C-r>r/')
+nmap("<leader>s", ":%s/<C-r><C-w>/", { desc = "Find and replace under cursor" })
+vmap("<leader>s", '"ry:%s/<C-r>r/', { desc = "Find and replace under cursor" })
 
 -- Clear hightlight after search
 nmap("<C-_>", "<CMD>nohlsearch<CR>")
 
 -- LSP/Diagnostics
-nmap("[g", "<CMD>lua vim.diagnostic.goto_prev()<CR>")
-nmap("]g", "<CMD>lua vim.diagnostic.goto_next()<CR>")
-nmap("<space>k", "<CMD>lua vim.lsp.buf.hover()<CR>")
-nmap("gi", "<CMD>lua vim.lsp.buf.implementation()<CR>")
-nmap("<space>wa", "<CMD>lua vim.lsp.buf.add_workspace_folder()<CR>")
-nmap("<space>wr", "<CMD>lua vim.lsp.buf.remove_workspace_folder()<CR>")
-nmap("<space>wp", "<CMD>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>")
-nmap("<space>D", "<CMD>lua vim.lsp.buf.type_definition()<CR>")
-nmap("<space>r", "<CMD>lua vim.lsp.buf.rename()<CR>")
-nmap("<space>l", "<CMD>TSToggle highlight<CR>")
+nmap("[g", "<CMD>lua vim.diagnostic.goto_prev()<CR>", { desc = "Previous diagnostic" })
+nmap("]g", "<CMD>lua vim.diagnostic.goto_next()<CR>", { desc = "Next diagnostic" })
+nmap("<space>k", "<CMD>lua vim.lsp.buf.hover()<CR>", { desc = "Show docs for item under cursor" })
+nmap("<space>wa", "<CMD>lua vim.lsp.buf.add_workspace_folder()<CR>", { desc = "Add workspace folder" })
+nmap("<space>wr", "<CMD>lua vim.lsp.buf.remove_workspace_folder()<CR>", { desc = "Remove workspace folders" })
+nmap(
+    "<space>wp",
+    "<CMD>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>",
+    { desc = "Print workspace folders" }
+)
+nmap("<space>D", "<CMD>lua vim.lsp.buf.type_definition()<CR>", { desc = "Type definition" })
+nmap("<space>r", "<CMD>lua vim.lsp.buf.rename()<CR>", { desc = "Rename" })
+nmap("<space>l", "<CMD>TSToggle highlight<CR>", { desc = "Toggle Treesitter highlight" })
 
 -- Go Imports
 function FormatAndOrgImports(wait_ms)
@@ -117,27 +122,28 @@ function FormatAndOrgImports(wait_ms)
     end
 end
 
-nmap("gi", "<CMD>lua FormatAndOrgImports(1000)<CR>")
+nmap("gi", "<CMD>lua FormatAndOrgImports(1000)<CR>", { desc = "Format imports (Go)" })
 
 -- NvimTree
-nmap("<C-n>", "<CMD>NvimTreeToggle<CR>")
+nmap("<C-n>", "<CMD>NvimTreeToggle<CR>", { desc = "Open file explorer" })
+nmap("<space>e", "<CMD>NvimTreeToggle<CR>", { desc = "Open file explorer" })
 
 -- gitsigns
 nmap("]c", "&diff ? ']c' : '<CMD>Gitsigns next_hunk<CR>'", { expr = true })
 nmap("[c", "&diff ? '[c' : '<CMD>Gitsigns prev_hunk<CR>'", { expr = true })
 
 -- Trouble
-nmap("<space>t", "<cmd>TroubleToggle<cr>")
-nmap("<space>tw", "<cmd>TroubleToggle workspace_diagnostics<cr>")
-nmap("<space>td", "<cmd>TroubleToggle document_diagnostics<cr>")
-nmap("<space>tq", "<cmd>TroubleToggle quickfix<cr>")
-nmap("<space>tl", "<cmd>TroubleToggle loclist<cr>")
+nmap("<space>t", "<cmd>TroubleToggle<cr>", { desc = "Trouble" })
+nmap("<space>tw", "<cmd>TroubleToggle workspace_diagnostics<cr>", { desc = "Workspace" })
+nmap("<space>td", "<cmd>TroubleToggle document_diagnostics<cr>", { desc = "Document" })
+nmap("<space>tq", "<cmd>TroubleToggle quickfix<cr>", { desc = "Quickfix" })
+nmap("<space>tl", "<cmd>TroubleToggle loclist<cr>", { desc = "Loclist" })
 
 -- Format
-nmap("<C-f>", "<CMD>Format<CR>")
+nmap("<C-f>", "<CMD>Format<CR>", { desc = "Format buffer" })
 
 -- Lualine
-nmap("<C-w>,", ":LualineRenameTab ")
+nmap("<C-w>,", ":LualineRenameTab ", { desc = "Rename tab" })
 
 -- write quit all
 nmap("<C-x>", ":xa<CR>")
@@ -155,7 +161,7 @@ vim.cmd([[
 ]])
 
 -- specs
-nmap("<Space><Space>", '<CMD>lua require("specs").show_specs()<CR>')
+nmap("<Space><Space>", '<CMD>lua require("specs").show_specs()<CR>', { desc = "Show cursor location" })
 nmap("n", 'n<CMD>lua require("specs").show_specs()<CR>')
 nmap("N", 'N<CMD>lua require("specs").show_specs()<CR>')
 
@@ -185,65 +191,13 @@ miniclue.setup({
         miniclue.gen_clues.windows(),
         miniclue.gen_clues.z(),
 
-        -- <Space>
-        miniclue.set_mapping_desc("n", "<Space>'", "Open last picker"),
-        miniclue.set_mapping_desc("n", "<Space>D", "Type definition"),
-        miniclue.set_mapping_desc("n", "<Space>P", "Paste system clipboard before cursor"),
-        miniclue.set_mapping_desc("n", "<Space>S", "Workspace symbols"),
-        miniclue.set_mapping_desc("n", "<Space>a", "Code actions"),
-        miniclue.set_mapping_desc("n", "<Space>b", "Buffers"),
-        miniclue.set_mapping_desc("n", "<Space>f", "Open file picker"),
-        miniclue.set_mapping_desc("n", "<Space>g", "Live grep"),
-        miniclue.set_mapping_desc("n", "<Space>d", "Diagnostics"),
-        miniclue.set_mapping_desc("n", "<Space>j", "Jumplist"),
-        miniclue.set_mapping_desc("n", "<Space>h", "Search help tags"),
-        miniclue.set_mapping_desc("n", "<Space>k", "Show docs for item under cursor"),
-        miniclue.set_mapping_desc("n", "<Space>l", "Toggle Treesitter highlight"),
-        miniclue.set_mapping_desc("n", "<Space>m", "Treesitter Symbols"),
-        miniclue.set_mapping_desc("n", "<Space>p", "Paste system clipboard after cursor"),
-        miniclue.set_mapping_desc("n", "<Space>r", "Rename"),
-        miniclue.set_mapping_desc("n", "<Space>s", "Document symbols"),
-        miniclue.set_mapping_desc("n", "<Space>t", "Trouble"),
-        miniclue.set_mapping_desc("n", "<Space>td", "Document"),
-        miniclue.set_mapping_desc("n", "<Space>tl", "Loclist"),
-        miniclue.set_mapping_desc("n", "<Space>tq", "Quickfix"),
-        miniclue.set_mapping_desc("n", "<Space>tw", "Workspace"),
-        miniclue.set_mapping_desc("n", "<Space>w", "Window"),
-        miniclue.set_mapping_desc("n", "<Space>wa", "Add workspace folder"),
-        miniclue.set_mapping_desc("n", "<Space>wp", "Print workspace folders"),
-        miniclue.set_mapping_desc("n", "<Space>wr", "Remove workspace folders"),
-        miniclue.set_mapping_desc("n", "<Space>y", "Yank selection to system clipboard"),
-        miniclue.set_mapping_desc("n", "<Space>z", "Show spelling suggestions"),
-
         -- g
-        miniclue.set_mapping_desc("n", "g.", "Goto last modification"),
-        miniclue.set_mapping_desc("n", "gD", "Goto definition in new vsplit"),
         miniclue.set_mapping_desc("n", "gc", "Comment"),
         miniclue.set_mapping_desc("n", "gcc", "Toggle comment"),
-        miniclue.set_mapping_desc("n", "gd", "Goto definition"),
-        miniclue.set_mapping_desc("n", "ge", "Goto last line"),
-        miniclue.set_mapping_desc("n", "gh", "Goto line start"),
-        miniclue.set_mapping_desc("n", "gi", "Goto implementation"),
-        miniclue.set_mapping_desc("n", "gl", "Goto line end"),
-        miniclue.set_mapping_desc("n", "gr", "Goto references"),
-        miniclue.set_mapping_desc("n", "gs", "Goto first non-blank in line"),
 
         -- [ ]
         miniclue.set_mapping_desc("n", "[c", "Previous hunk"),
-        miniclue.set_mapping_desc("n", "[g", "Previous diagnostic"),
         miniclue.set_mapping_desc("n", "]c", "Next hunk"),
-        miniclue.set_mapping_desc("n", "]g", "Next diagnostic"),
-
-        -- <Leader>
-        -- miniclue.set_mapping_desc("n", "<Leader>s", "Find and replace under cursor"),
-
-        -- m
-        miniclue.set_mapping_desc("n", "mm", "Goto matching bracket"),
-        miniclue.set_mapping_desc("n", "ms", "Surround add"),
-        miniclue.set_mapping_desc("n", "mr", "Surround replace"),
-        miniclue.set_mapping_desc("n", "md", "Surround delete"),
-        miniclue.set_mapping_desc("v", "mm", "Goto matching bracket"),
-        miniclue.set_mapping_desc("v", "ms", "Surround add"),
 
         -- cr
         miniclue.set_mapping_desc("n", "cr", "Coerse"),

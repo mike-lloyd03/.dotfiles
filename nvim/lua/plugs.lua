@@ -341,27 +341,15 @@ require("lazy").setup({
     -- Functionality
     -----------------------------------------------
     {
-        "rmagatti/auto-session",
-        opts = function()
-            local function close_all_floating_wins()
-                for _, win in ipairs(vim.api.nvim_list_wins()) do
-                    local config = vim.api.nvim_win_get_config(win)
-                    if config.relative ~= "" then
-                        vim.api.nvim_win_close(win, false)
-                    end
-                end
-            end
-
-            vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
-            vim.g.auto_session_pre_save_cmds = {
-                close_all_floating_wins,
-                "tabdo NvimTreeClose",
-            }
-            return {
-                log_level = "error",
-                auto_session_suppress_dirs = { "~/", "/tmp/", "/" },
-            }
-        end,
+        "folke/persistence.nvim",
+        event = "BufReadPre",
+        opts = { options = vim.opt.sessionoptions:get() },
+        -- stylua: ignore
+        keys = {
+          { "<space>qs", function() require("persistence").load() end, desc = "Restore session" },
+          { "<space>ql", function() require("persistence").load({ last = true }) end, desc = "Restore last session" },
+          { "<space>qd", function() require("persistence").stop() end, desc = "Don't save current session" },
+        },
     },
     "tpope/vim-fugitive",
     "preservim/vim-lexical",
