@@ -230,44 +230,6 @@ require("lazy").setup({
             },
         },
     },
-    {
-        "echasnovski/mini.indentscope",
-        version = false,
-        opts = {
-            symbol = "│",
-            options = { try_as_border = true },
-        },
-    },
-    -- {
-    --     "folke/which-key.nvim",
-    --     opts = {
-    --         plugins = {
-    --             spelling = {
-    --                 enabled = false,
-    --             },
-    --         },
-    --         window = {
-    --             border = "none", -- none, single, double, shadow
-    --             position = "bottom", -- bottom, top
-    --         },
-    --         icons = {
-    --             breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
-    --             separator = "", -- symbol used between a key and it's label
-    --             group = "+", -- symbol prepended to a group
-    --         },
-    --         layout = {
-    --             height = { min = 1, max = 50 }, -- min and max height of the columns
-    --             width = { min = 5, max = 50 }, -- min and max width of the columns
-    --             spacing = 1, -- spacing between columns
-    --             align = "right", -- align columns left, center or right
-    --         },
-    --         popup_mappings = {
-    --             scroll_down = "<c-j>", -- binding to scroll down inside the popup
-    --             scroll_up = "<c-k>", -- binding to scroll up inside the popup
-    --         },
-    --         hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " },
-    --     },
-    -- },
     "stevearc/dressing.nvim",
     {
         "rcarriga/nvim-notify",
@@ -275,7 +237,7 @@ require("lazy").setup({
             vim.notify = require("notify")
             return {
                 max_width = 80,
-                top_down = false,
+                top_down = true,
                 background_colour = "#000000",
                 on_open = function(win)
                     vim.api.nvim_win_set_config(win, { zindex = 100 })
@@ -303,6 +265,27 @@ require("lazy").setup({
                 },
             },
         },
+    },
+    {
+        "echasnovski/mini.indentscope",
+        version = false,
+        opts = {
+            symbol = "│",
+            options = { try_as_border = true },
+        },
+        init = function()
+            vim.api.nvim_create_autocmd("FileType", {
+                pattern = {
+                    "alpha",
+                    "lazy",
+                    "trouble",
+                    "Trouble",
+                },
+                callback = function()
+                    vim.b.miniindentscope_disable = true
+                end,
+            })
+        end,
     },
     {
         "folke/noice.nvim",
@@ -350,25 +333,50 @@ require("lazy").setup({
         init = false,
         opts = function()
             local dashboard = require("alpha.themes.dashboard")
-            local logo = [[
-            Neovim
-    ]]
+            vim.api.nvim_set_hl(0, "DashboardLogo1", { fg = "#41a7fc" })
+            vim.api.nvim_set_hl(0, "DashboardLogo2", { fg = "#8bcd5b", bg = "#41a7fc" })
+            vim.api.nvim_set_hl(0, "DashboardLogo3", { fg = "#8bcd5b" })
+            vim.api.nvim_set_hl(0, "DashboardLogoText", { fg = "#93a4c3", bold = true })
 
-            dashboard.section.header.val = vim.split(logo, "\n")
-    -- stylua: ignore
-    dashboard.section.buttons.val = {
-      dashboard.button("n", " " .. " New file",        "<cmd> ene <BAR> startinsert <cr>"),
-      dashboard.button("s", " " .. " Restore Session", [[<cmd> lua require("persistence").load() <cr>]]),
-      dashboard.button("q", " " .. " Quit",            "<cmd> qa <cr>"),
-    }
+            dashboard.section.header.val = {
+                [[     █  █     ]],
+                [[     ██ ██     ]],
+                [[     █████     ]],
+                [[     ██ ███     ]],
+                [[     █  █     ]],
+                [[]],
+                [[N  E  O  V  I  M]],
+            }
+            dashboard.section.header.opts.hl = {
+                { { "DashboardLogo1", 6, 8 }, { "DashboardLogo3", 9, 22 } },
+                {
+                    { "DashboardLogo1", 6, 8 },
+                    { "DashboardLogo2", 9, 11 },
+                    { "DashboardLogo3", 12, 24 },
+                },
+                { { "DashboardLogo1", 6, 11 }, { "DashboardLogo3", 12, 26 } },
+                { { "DashboardLogo1", 6, 11 }, { "DashboardLogo3", 12, 24 } },
+                { { "DashboardLogo1", 6, 11 }, { "DashboardLogo3", 12, 22 } },
+                {},
+                { { "DashboardLogoText", 0, 26 } },
+            }
+            dashboard.section.buttons.val = {
+                dashboard.button("n", " " .. " New file", "<cmd> ene <BAR> startinsert <cr>"),
+                dashboard.button(
+                    "c",
+                    " " .. " Open config",
+                    "<cmd> cd ~/.config/nvim | e ~/.config/nvim/init.lua <cr>"
+                ),
+                dashboard.button("s", " " .. " Restore session", "<cmd> lua require('persistence').load() <cr>"),
+                dashboard.button("q", " " .. " Quit", "<cmd> qa <cr>"),
+            }
             for _, button in ipairs(dashboard.section.buttons.val) do
                 button.opts.hl = "AlphaButtons"
                 button.opts.hl_shortcut = "AlphaShortcut"
             end
-            dashboard.section.header.opts.hl = "AlphaHeader"
             dashboard.section.buttons.opts.hl = "AlphaButtons"
             dashboard.section.footer.opts.hl = "AlphaFooter"
-            dashboard.opts.layout[1].val = 8
+            dashboard.opts.layout[1].val = 3
             return dashboard
         end,
         config = function(_, dashboard)

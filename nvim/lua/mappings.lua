@@ -19,7 +19,6 @@ local function omap(shortcut, command, opts)
 end
 
 -- This always screws me up
-nmap("<C-R>", "q:")
 nmap("q:", "")
 
 -- Better indentation
@@ -129,8 +128,8 @@ nmap("<C-n>", "<CMD>NvimTreeToggle<CR>", { desc = "Open file explorer" })
 nmap("<space>e", "<CMD>NvimTreeToggle<CR>", { desc = "Open file explorer" })
 
 -- gitsigns
-nmap("]c", "&diff ? ']c' : '<CMD>Gitsigns next_hunk<CR>'", { expr = true })
-nmap("[c", "&diff ? '[c' : '<CMD>Gitsigns prev_hunk<CR>'", { expr = true })
+nmap("]c", "&diff ? ']c' : '<CMD>Gitsigns next_hunk<CR>'", { expr = true, desc = "Next hunk" })
+nmap("[c", "&diff ? '[c' : '<CMD>Gitsigns prev_hunk<CR>'", { expr = true, desc = "Previous hunk" })
 
 -- Trouble
 nmap("<space>t", "<cmd>TroubleToggle<cr>", { desc = "Trouble" })
@@ -194,10 +193,6 @@ miniclue.setup({
         -- g
         miniclue.set_mapping_desc("n", "gc", "Comment"),
         miniclue.set_mapping_desc("n", "gcc", "Toggle comment"),
-
-        -- [ ]
-        miniclue.set_mapping_desc("n", "[c", "Previous hunk"),
-        miniclue.set_mapping_desc("n", "]c", "Next hunk"),
 
         -- cr
         miniclue.set_mapping_desc("n", "cr", "Coerse"),
