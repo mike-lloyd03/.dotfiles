@@ -473,7 +473,12 @@ require("lazy").setup({
                     cpp = require("formatter.filetypes.cpp").clangformat,
                     css = require("formatter.defaults.prettier"),
                     dart = require("formatter.filetypes.dart").dartformat,
-                    go = require("formatter.filetypes.go").gofmt,
+                    go = function()
+                        return {
+                            exe = "GOFUMPT_SPLIT_LONG_LINES=on gofumpt",
+                            stdin = true,
+                        }
+                    end,
                     html = require("formatter.defaults.prettier"),
                     javascript = require("formatter.defaults.prettier"),
                     json = require("formatter.defaults.prettier"),
