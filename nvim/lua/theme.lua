@@ -15,6 +15,7 @@ require("onedark").setup({
         TelescopePreviewBorder = { fg = "$light_grey" },
         TelescopeMatching = { fg = "$orange", fmt = "bold" },
         TelescopePromptPrefix = { fg = "$red" },
+        TelescopeTitle = { fg = "$blue", fmt = "bold" },
 
         CurSearch = { bg = "$fg" },
         IncSearch = { bg = "$fg" },

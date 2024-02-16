@@ -269,10 +269,13 @@ require("lazy").setup({
     {
         "echasnovski/mini.indentscope",
         version = false,
-        opts = {
-            symbol = "│",
-            options = { try_as_border = true },
-        },
+        opts = function()
+            vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", { link = "MoreMsg" })
+            return {
+                symbol = "│",
+                options = { try_as_border = true },
+            }
+        end,
         init = function()
             vim.api.nvim_create_autocmd("FileType", {
                 pattern = {
@@ -290,41 +293,53 @@ require("lazy").setup({
     {
         "folke/noice.nvim",
         event = "VeryLazy",
-        opts = {
-            views = {
-                mini = {
-                    win_options = {
-                        winblend = 0,
-                    },
-                },
-            },
-            lsp = {
-                override = {
-                    ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-                    ["vim.lsp.util.stylize_markdown"] = true,
-                    ["cmp.entry.get_documentation"] = true,
-                },
-            },
-            routes = {
-                {
-                    filter = {
-                        event = "msg_show",
-                        any = {
-                            { find = "%d+L, %d+B" },
-                            { find = "; after #%d+" },
-                            { find = "; before #%d+" },
+        opts = function()
+            vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { link = "TelescopeBorder" })
+            vim.api.nvim_set_hl(0, "NoiceCmdlinePopupTitle", { link = "TelescopeTitle" })
+            vim.api.nvim_set_hl(0, "NoiceCmdlineIconCmdline", { link = "TelescopePromptPrefix" })
+            return {
+                views = {
+                    mini = {
+                        win_options = {
+                            winblend = 0,
                         },
                     },
-                    view = "mini",
                 },
-            },
-            presets = {
-                bottom_search = true,
-                command_palette = true,
-                long_message_to_split = true,
-                inc_rename = true,
-            },
-        },
+                cmdline = {
+                    format = {
+                        cmdline = { pattern = "^:", icon = "❯", lang = "vim" },
+                    },
+                },
+                lsp = {
+                    override = {
+                        ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+                        ["vim.lsp.util.stylize_markdown"] = true,
+                        ["cmp.entry.get_documentation"] = true,
+                    },
+                },
+                messages = {
+                    enabled = false,
+                },
+                routes = {
+                    {
+                        filter = {
+                            event = "msg_show",
+                            any = {
+                                { find = "%d+L, %d+B" },
+                                { find = "; after #%d+" },
+                                { find = "; before #%d+" },
+                            },
+                        },
+                        view = "mini",
+                    },
+                },
+                presets = {
+                    bottom_search = true,
+                    command_palette = true,
+                    inc_rename = true,
+                },
+            }
+        end,
     },
     {
         "goolord/alpha-nvim",
@@ -435,7 +450,7 @@ require("lazy").setup({
                 end
             end
 
-            vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+            vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
             vim.g.auto_session_pre_save_cmds = {
                 close_all_floating_wins,
                 "tabdo NvimTreeClose",
