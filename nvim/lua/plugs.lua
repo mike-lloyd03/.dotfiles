@@ -367,7 +367,7 @@ require("lazy").setup({
                     " " .. " Open config",
                     "<cmd> cd ~/.config/nvim | e ~/.config/nvim/init.lua <cr>"
                 ),
-                dashboard.button("s", " " .. " Restore session", "<cmd> lua require('persistence').load() <cr>"),
+                dashboard.button("s", " " .. " Restore session", "<cmd> SessionRestore <cr>"),
                 dashboard.button("q", " " .. " Quit", "<cmd> qa <cr>"),
             }
             for _, button in ipairs(dashboard.section.buttons.val) do
@@ -417,28 +417,32 @@ require("lazy").setup({
     -- Functionality
     -----------------------------------------------
     {
-        "folke/persistence.nvim",
-        event = "BufReadPre",
+        "rmagatti/auto-session",
         opts = {
-            options = { "buffers", "tabpages", "winsize" },
-            pre_save = function()
-                vim.cmd("tabdo NvimTreeClose")
-            end,
-        },
-        -- stylua: ignore
-        keys = {
-          { "<space>qs", function() require("persistence").load() end, desc = "Restore session" },
-          { "<space>ql", function() require("persistence").load({ last = true }) end, desc = "Restore last session" },
-          { "<space>qd", function() require("persistence").stop() end, desc = "Don't save current session" },
+            log_level = "error",
+            auto_session_suppress_dirs = { "~/", "/tmp/", "/" },
+            auto_session_enabled = true,
+            auto_save_enabled = true,
+            auto_restore_enabled = false,
         },
         init = function()
-            vim.api.nvim_create_autocmd({ "BufWinEnter", "TabEnter", "WinEnter", "WinResized" }, {
-                callback = function()
-                    require("persistence").save()
-                end,
-            })
+            local function close_all_floating_wins()
+                for _, win in ipairs(vim.api.nvim_list_wins()) do
+                    local config = vim.api.nvim_win_get_config(win)
+                    if config.relative ~= "" then
+                        vim.api.nvim_win_close(win, false)
+                    end
+                end
+            end
+
+            vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+            vim.g.auto_session_pre_save_cmds = {
+                close_all_floating_wins,
+                "tabdo NvimTreeClose",
+            }
         end,
     },
+
     "tpope/vim-fugitive",
     "preservim/vim-lexical",
     "dhruvasagar/vim-zoom",
