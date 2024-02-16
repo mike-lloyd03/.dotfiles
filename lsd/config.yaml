@@ -6,7 +6,7 @@ blocks:
   - size
   - date
 
-date: "+%Y-%m-%d %H%M"
+date: "+%Y-%m-%d %H%M:%S"
 
 layout: oneline
 

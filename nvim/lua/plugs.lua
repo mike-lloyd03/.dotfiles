@@ -431,6 +431,13 @@ require("lazy").setup({
           { "<space>ql", function() require("persistence").load({ last = true }) end, desc = "Restore last session" },
           { "<space>qd", function() require("persistence").stop() end, desc = "Don't save current session" },
         },
+        init = function()
+            vim.api.nvim_create_autocmd({ "BufWinEnter", "TabEnter", "WinEnter", "WinResized" }, {
+                callback = function()
+                    require("persistence").save()
+                end,
+            })
+        end,
     },
     "tpope/vim-fugitive",
     "preservim/vim-lexical",
@@ -651,6 +658,11 @@ require("lazy").setup({
                 winhl = "TermCursor",
             },
         },
+    },
+    {
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = true,
     },
 
     -----------------------------------------------

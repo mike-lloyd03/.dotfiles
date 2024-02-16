@@ -164,6 +164,24 @@ nmap("<Space><Space>", '<CMD>lua require("specs").show_specs()<CR>', { desc = "S
 nmap("n", 'n<CMD>lua require("specs").show_specs()<CR>')
 nmap("N", 'N<CMD>lua require("specs").show_specs()<CR>')
 
+vim.keymap.set("n", "]t", function()
+    require("todo-comments").jump_next()
+end, { desc = "Next todo comment" })
+
+vim.keymap.set("n", "[t", function()
+    require("todo-comments").jump_prev()
+end, { desc = "Previous todo comment" })
+
+-- todo-comments
+vim.keymap.set("n", "]t", function()
+    require("todo-comments").jump_next()
+end, { desc = "Next todo comment" })
+
+vim.keymap.set("n", "[t", function()
+    require("todo-comments").jump_prev()
+end, { desc = "Previous todo comment" })
+nmap("<Space>xt", "<CMD>TodoTelescope<CR>", { desc = "Todo List" })
+
 local miniclue = require("mini.clue")
 miniclue.setup({
     triggers = {
