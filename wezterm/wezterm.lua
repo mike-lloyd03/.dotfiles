@@ -24,16 +24,31 @@ config.window_background_gradient = {
     },
 }
 -- config.text_background_opacity = 0.7
-config.window_background_opacity = 0.7
+-- config.window_background_opacity = 0.7
 config.macos_window_background_blur = 20
 config.color_scheme = "OneDark (base16)"
 
 config.front_end = "OpenGL"
 
+wezterm.on("toggle-opacity", function(window, pane)
+    local overrides = window:get_config_overrides() or {}
+    if not overrides.window_background_opacity then
+        overrides.window_background_opacity = 0.7
+    else
+        overrides.window_background_opacity = nil
+    end
+    window:set_config_overrides(overrides)
+end)
+
 config.keys = {
     { key = "c", mods = "CMD|SHIFT", action = act.CopyTo("Clipboard") },
     { key = "v", mods = "CMD|SHIFT", action = act.PasteFrom("Clipboard") },
     { key = "w", mods = "CMD|SHIFT", action = act.CloseCurrentTab({ confirm = false }) },
+    {
+        key = "u",
+        mods = "CTRL",
+        action = wezterm.action.EmitEvent("toggle-opacity"),
+    },
 }
 
 return config
