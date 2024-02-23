@@ -1,5 +1,5 @@
 [alacritty.files]
-"alacritty.yml" = "~/.config/alacritty.yml"
+"alacritty.toml" = "~/.config/alacritty.toml"
 
 [fish.files]
 fish = { target = "~/.config/fish", type = "symbolic", recurse = false }
