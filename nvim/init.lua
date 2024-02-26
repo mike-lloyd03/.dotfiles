@@ -52,9 +52,11 @@ if vim.fn.hostname() == "dev" then
         name = "ssh",
         copy = {
             ["+"] = { "ssh", "mac", "pbcopy" },
+            ["*"] = { "ssh", "mac", "pbcopy" },
         },
         paste = {
             ["+"] = { "ssh", "mac", "pbpaste" },
+            ["*"] = { "ssh", "mac", "pbpaste" },
         },
     }
 end
