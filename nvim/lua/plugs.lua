@@ -529,8 +529,9 @@ require("lazy").setup({
         },
     },
     {
-        "windwp/nvim-autopairs",
-        config = true,
+        "echasnovski/mini.pairs",
+        event = "VeryLazy",
+        opts = {},
     },
     {
         "windwp/nvim-ts-autotag",

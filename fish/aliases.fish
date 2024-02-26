@@ -9,6 +9,7 @@ alias om=optimus-manager
 alias sf="source ~/.config/fish/config.fish"
 command -v rg &>/dev/null && alias rgih="rg --no-ignore --hidden"
 command -v lsd &>/dev/null && alias ls="lsd --group-directories-first" && alias ll="lsd -l" && alias la="lsd -la"
+command -v bat &>/dev/null && alias cat="bat --paging=never"
 command -v journalctl &>/dev/null && alias jc='sudo journalctl -xe'
 alias svenv="source .venv/bin/activate.fish"
 alias decode="base64 -d"
