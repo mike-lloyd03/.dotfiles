@@ -148,7 +148,8 @@
               "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.apple\\.terminal$",
-                "^org\\.vim\\.macvim$"
+                "^org\\.vim\\.macvim$",
+                "^com\\.github\\.wez\\.wezterm$"
               ]
             }
           ]
@@ -178,7 +179,8 @@
               "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.apple\\.terminal$",
-                "^org\\.vim\\.macvim$"
+                "^org\\.vim\\.macvim$",
+                "^com\\.github\\.wez\\.wezterm$"
               ]
             }
           ]
