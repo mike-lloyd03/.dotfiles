@@ -28,7 +28,7 @@ config.window_background_gradient = {
 config.macos_window_background_blur = 20
 config.color_scheme = "OneDark (base16)"
 
-config.front_end = "OpenGL"
+-- config.front_end = "OpenGL"
 
 wezterm.on("toggle-opacity", function(window, pane)
     local overrides = window:get_config_overrides() or {}

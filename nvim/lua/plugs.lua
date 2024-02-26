@@ -33,7 +33,7 @@ require("lazy").setup({
     -- LSP
     -----------------------------------------------
     "neovim/nvim-lspconfig",
-    "jose-elias-alvarez/null-ls.nvim",
+    "nvimtools/none-ls.nvim",
     {
         "hrsh7th/nvim-cmp",
         event = "InsertEnter",
@@ -391,7 +391,7 @@ require("lazy").setup({
             end
             dashboard.section.buttons.opts.hl = "AlphaButtons"
             dashboard.section.footer.opts.hl = "AlphaFooter"
-            dashboard.opts.layout[1].val = 3
+            dashboard.opts.layout[1].val = 4
             return dashboard
         end,
         config = function(_, dashboard)
@@ -783,4 +783,9 @@ require("lazy").setup({
     }, cmd = "Glow" },
     "Glench/Vim-Jinja2-Syntax",
     "folke/neodev.nvim",
+    {
+        "kaarmu/typst.vim",
+        ft = "typst",
+        lazy = false,
+    },
 })
