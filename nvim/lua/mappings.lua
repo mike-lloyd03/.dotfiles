@@ -82,6 +82,7 @@ nmap(
 nmap("<space>m", "<CMD>lua require('telescope.builtin').treesitter{}<CR>", { desc = "Treesitter Symbols" })
 
 -- nvim.notify
+nmap("<space>n", "<CMD><CR>", { desc = "Notifications" })
 nmap("<space>nn", "<CMD>Telescope notify<CR>")
 nmap("<space>nd", "<CMD>lua require('notify').dismiss()<CR>")
 
@@ -134,7 +135,7 @@ nmap("]c", "&diff ? ']c' : '<CMD>Gitsigns next_hunk<CR>'", { expr = true, desc =
 nmap("[c", "&diff ? '[c' : '<CMD>Gitsigns prev_hunk<CR>'", { expr = true, desc = "Previous hunk" })
 
 -- Trouble
-nmap("<space>t", "<cmd>TroubleToggle<cr>", { desc = "Trouble" })
+nmap("<space>t", "<cmd><cr>", { desc = "Trouble" })
 nmap("<space>tw", "<cmd>TroubleToggle workspace_diagnostics<cr>", { desc = "Workspace" })
 nmap("<space>td", "<cmd>TroubleToggle document_diagnostics<cr>", { desc = "Document" })
 nmap("<space>tq", "<cmd>TroubleToggle quickfix<cr>", { desc = "Quickfix" })
@@ -166,6 +167,7 @@ nmap("<Space><Space>", '<CMD>lua require("specs").show_specs()<CR>', { desc = "S
 nmap("n", 'n<CMD>lua require("specs").show_specs()<CR>')
 nmap("N", 'N<CMD>lua require("specs").show_specs()<CR>')
 
+-- todo-comments
 vim.keymap.set("n", "]t", function()
     require("todo-comments").jump_next()
 end, { desc = "Next todo comment" })
@@ -184,6 +186,13 @@ vim.keymap.set("n", "[t", function()
 end, { desc = "Previous todo comment" })
 nmap("<Space>xt", "<CMD>TodoTelescope<CR>", { desc = "Todo List" })
 
+-- auto-session
+nmap("<Space>q", "<CMD><CR>", { desc = "Session" })
+nmap("<Space>qr", "<CMD>SessionRestore<CR>", { desc = "Restore session" })
+nmap("<Space>qd", "<CMD>SessionDelete<CR>", { desc = "Delete session" })
+nmap("<Space>qs", "<CMD>SessionSave<CR>", { desc = "Save session" })
+
+-- mini.clue
 local miniclue = require("mini.clue")
 miniclue.setup({
     triggers = {
