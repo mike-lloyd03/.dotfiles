@@ -28,9 +28,10 @@ keybinds {
         bind "b" { NewPane "Down"; SwitchToMode "Normal"; }
         bind "r" { NewPane "Right"; SwitchToMode "Normal"; }
         bind "a" { ToggleTab; SwitchToMode "Normal"; }
-        bind "w" { SwitchToMode "Tab"; }
+        bind "t" { SwitchToMode "Tab"; }
+        bind "p" { SwitchToMode "Pane"; }
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
-        // bind "i" { ToggleActiveSyncTab; }
+        bind "i" { ToggleActiveSyncTab; SwitchToMode "Normal"; }
         bind "Ctrl h" { Resize "Left"; }
         bind "Ctrl j" { Resize "Down"; }
         bind "Ctrl k" { Resize "Up"; }
@@ -44,7 +45,6 @@ keybinds {
         bind "7" { GoToTab 7; SwitchToMode "Normal"; }
         bind "8" { GoToTab 8; SwitchToMode "Normal"; }
         bind "9" { GoToTab 9; SwitchToMode "Normal"; }
-        bind "t" { SwitchToMode "Tab"; }
     }
     shared_except "locked" {
         unbind "Alt h"

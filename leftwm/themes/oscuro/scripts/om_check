@@ -1,23 +1,29 @@
 #!/bin/bash
 
-mode="$(optimus-manager --print-mode)"
+if command -v optimus-manager &>/dev/null; then
+    mode="$(optimus-manager --print-mode)"
 
-case $mode in
-"Current GPU mode : integrated")
-    echo "intel"
-    ;;
+    case $mode in
+    "Current GPU mode : integrated")
+        echo "intel"
+        ;;
 
-"Current GPU mode : hybrid")
-    echo "hybrid"
-    ;;
+    "Current GPU mode : hybrid")
+        echo "hybrid"
+        ;;
 
-"Current GPU mode : nvidia")
-    echo "nvidia"
-    ;;
-*"pending"*)
-    echo "pending"
-    ;;
-*)
-    echo "disabled"
-    ;;
-esac
+    "Current GPU mode : nvidia")
+        echo "nvidia"
+        ;;
+    *"pending"*)
+        echo "pending"
+        ;;
+    *)
+        echo "disabled"
+        ;;
+    esac
+elif command -v envycontrol &>/dev/null; then
+    envycontrol -q
+else
+    echo "not found"
+fi
