@@ -143,3 +143,4 @@ style_user = "bold #5192df"
 [nix_shell]
 disabled = false
 format = ' [$symbol$state( \($name\))]($style) '
+heuristic = true
