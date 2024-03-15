@@ -494,7 +494,7 @@ require("lazy").setup({
                         }
                     end,
                     markdown = require("formatter.defaults.prettier"),
-                    nix = require("formatter.filetypes.nix").alejandra,
+                    nix = require("formatter.filetypes.nix").nixfmt,
                     python = {
                         require("formatter.filetypes.python").black,
                         require("formatter.filetypes.python").isort,

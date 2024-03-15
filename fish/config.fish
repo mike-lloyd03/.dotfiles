@@ -38,6 +38,11 @@ bind --mode insert \co edit_command_buffer
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.cargo/bin
 
+# Nix
+if command -v nix > /dev/null
+    fish_add_path $HOME/.nix-profile/bin
+end
+
 # Prompt
 if status is-interactive
     if command -v starship > /dev/null
