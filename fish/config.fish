@@ -40,17 +40,22 @@ fish_add_path $HOME/.cargo/bin
 
 # Prompt
 if status is-interactive
-    function starship_transient_prompt_func
-        starship module line_break
-        starship module character
+    if command -v starship > /dev/null
+        function starship_transient_prompt_func
+            starship module line_break
+            starship module character
+        end
+        starship init fish | source
+        enable_transience
     end
-    starship init fish | source
-    enable_transience
 
-    atuin init fish --disable-up-arrow | source
+    if command -v zoxide > /dev/null
+        atuin init fish --disable-up-arrow | source
+    end
 
-    zoxide init fish --cmd cd | source
-
+    if command -v zoxide > /dev/null
+        zoxide init fish --cmd cd | source
+    end
 
     if command -v direnv &> /dev/null
         direnv hook fish | source
