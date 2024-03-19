@@ -45,7 +45,7 @@ require("nvim-tree").setup({
         signcolumn = "no",
     },
     renderer = {
-        group_empty = true,
+        group_empty = false,
         highlight_opened_files = "name",
         root_folder_label = true,
         icons = {
