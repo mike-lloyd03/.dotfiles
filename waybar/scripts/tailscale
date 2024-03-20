@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 status=$(tailscale status --json 2>/dev/null | jq '.Self.Online' 2>/dev/null)
 
