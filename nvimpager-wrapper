@@ -2,14 +2,15 @@
 
 args="${@:1}"
 
-# if command -v /usr/bin/nvimpager >/dev/null; then
-#     NVIMPAGER=/usr/bin/nvimpager
-# elif command -v /usr/local/bin/nvimpager > /dev/null; then
-#     NVIMPAGER=/usr/local/bin/nvimpager
-# else
-#     echo "'nvimpager' not found in path"
-#     exit 1
-# fi
+if command -v /usr/bin/nvimpager >/dev/null; then
+    NVIMPAGER=/usr/bin/nvimpager
+elif command -v /usr/local/bin/nvimpager > /dev/null; then
+    NVIMPAGER=/usr/local/bin/nvimpager
+elif command -v /etc/profiles/per-user/mike/bin/nvimpager > /dev/null; then
+    NVIMPAGER=/etc/profiles/per-user/mike/bin/nvimpager
+else
+    echo "'nvimpager' not found in path"
+    exit 1
+fi
 
-# $NVIMPAGER $args -p <&0
-command nvimpager $args -p <&0
+$NVIMPAGER $args -p <&0
