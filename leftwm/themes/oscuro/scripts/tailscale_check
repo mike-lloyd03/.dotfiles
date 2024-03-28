@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # if [ "$(tailscale status --json | jq -r '.Self.Online')" == "true" ]; then
 #     echo "up"

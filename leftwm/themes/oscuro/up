@@ -36,7 +36,7 @@ fi
 #  fi
 
 #set the theme.toml config
-leftwm-command "LoadTheme $SCRIPTPATH/theme.toml"
+leftwm-command "LoadTheme $SCRIPTPATH/theme.ron"
 
 #boot polybar based on the number of monitors found
 if command -v polybar; then

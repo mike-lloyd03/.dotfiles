@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 xrandr >/home/mike/xrandr_config
 
