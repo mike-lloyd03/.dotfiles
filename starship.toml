@@ -59,7 +59,7 @@ format = " [$symbol($version )]($style)"
 symbol = " "
 
 [directory]
-read_only = " "
+read_only = " "
 truncate_to_repo = false
 truncation_symbol = "…/"
 repo_root_style = "bold underline"
