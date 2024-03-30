@@ -129,3 +129,11 @@ alias cb="cargo build"
 alias cbr="cargo build --release"
 alias ca="cargo add"
 alias cf="cargo feature"
+
+# Nix
+abbr -a nsh --set-cursor 'nix shell nixpkgs#%'
+abbr -a nrs sudo nix rebuild --switch
+abbr -a ne sudo nvim /etc/nixos/configuration.nix
+abbr -a neh sudo nvim /etc/nixos/home.nix
+abbr -a nef sudo nvim /etc/nixos/flake.nix
+abbr -a ns --set-cursor nix search nixpkgs %
