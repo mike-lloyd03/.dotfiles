@@ -220,8 +220,8 @@ miniclue.setup({
         miniclue.gen_clues.z(),
 
         -- g
-        miniclue.set_mapping_desc("n", "gc", "Comment"),
-        miniclue.set_mapping_desc("n", "gcc", "Toggle comment"),
+        -- miniclue.set_mapping_desc("n", "gc", "Comment"),
+        -- miniclue.set_mapping_desc("n", "gcc", "Toggle comment"),
 
         -- cr
         miniclue.set_mapping_desc("n", "cr", "Coerse"),

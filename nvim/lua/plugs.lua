@@ -610,20 +610,22 @@ require("lazy").setup({
     },
     {
         "JoosepAlviste/nvim-ts-context-commentstring",
-        dependencies = {
-            "terrortylor/nvim-comment",
+        lazy = true,
+        opts = {
+            enable_autocmd = true,
         },
-        config = function()
-            require("nvim_comment").setup({
-                comment_empty = false,
-                hook = function()
-                    if vim.api.nvim_buf_get_option(0, "filetype") == "svelte" then
-                        ---@diagnostic disable-next-line: missing-parameter
-                        require("ts_context_commentstring.internal").update_commentstring()
-                    end
+    },
+    {
+        "echasnovski/mini.comment",
+        event = "VeryLazy",
+        opts = {
+            options = {
+                custom_commentstring = function()
+                    return require("ts_context_commentstring.internal").calculate_commentstring()
+                        or vim.bo.commentstring
                 end,
-            })
-        end,
+            },
+        },
     },
     {
         "iamcco/markdown-preview.nvim",
