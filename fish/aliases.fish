@@ -1,18 +1,15 @@
-alias vim=nvim
-alias svim="sudo nvim"
-alias sn="source ~/.config/nushell/config.nu"
+abbr -a vim nvim
+abbr svim sudo nvim
 alias dotfiles="cd ~/.dotfiles"
-alias nixfiles="cd ~/.nixfiles"
 alias dc="docker compose"
-alias jc="sudo journalctl -xe"
-alias om=optimus-manager
-alias sf="source ~/.config/fish/config.fish"
+abbr -a jc sudo journalctl -xe
+abbr -a sf source ~/.config/fish/config.fish
 command -v rg &>/dev/null && alias rgih="rg --no-ignore --hidden"
 command -v lsd &>/dev/null && alias ls="lsd --group-directories-first" && alias ll="lsd -l" && alias la="lsd -lA"
 command -v bat &>/dev/null && alias cat="bat --paging=never"
 command -v journalctl &>/dev/null && alias jc='sudo journalctl -xe'
 alias svenv="source .venv/bin/activate.fish"
-alias decode="base64 -d"
+abbr -a decode base64 -d
 
 function last_history_item
     echo $history[1]
@@ -131,9 +128,12 @@ alias ca="cargo add"
 alias cf="cargo feature"
 
 # Nix
-abbr -a nsh --set-cursor 'nix shell nixpkgs#%'
-abbr -a nrs sudo nix rebuild --switch
-abbr -a ne sudo nvim /etc/nixos/configuration.nix
-abbr -a neh sudo nvim /etc/nixos/home.nix
-abbr -a nef sudo nvim /etc/nixos/flake.nix
-abbr -a ns --set-cursor nix search nixpkgs %
+if [ "$(uname -n)" = nixos ]
+    abbr -a nsh --set-cursor 'nix shell nixpkgs#%'
+    abbr -a nrs sudo nixos-rebuild switch
+    abbr -a nrsu sudo nixos-rebuild switch --upgrade
+    abbr -a ns --set-cursor nix search nixpkgs %
+    abbr -a ne "pushd /etc/nixos && sudo nvim configuration.nix ; popd"
+    abbr -a neh "pushd /etc/nixos && sudo nvim home.nix ; popd"
+    abbr -a nef "pushd /etc/nixos && sudo nvim flake.nix ; popd"
+end
