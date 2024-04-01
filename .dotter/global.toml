@@ -1,3 +1,6 @@
+[anyrun.files]
+anyrun = { target = "~/.config/anyrun", type = "symbolic", recurse = false }
+
 [alacritty.files]
 "alacritty.toml" = "~/.config/alacritty.toml"
 

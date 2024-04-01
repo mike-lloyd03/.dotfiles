@@ -1,11 +1,11 @@
 packages = [
+  "anyrun",
   "alacritty",
   "fish",
   "git",
   "helix",
   "hypr",
   "ideavim",
-  "keyd",
   "leftwm",
   "lsd",
   "nushell",
