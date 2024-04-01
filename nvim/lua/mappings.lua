@@ -92,6 +92,7 @@ vmap("<leader>s", '"ry:%s/<C-r>r/', { desc = "Find and replace under cursor" })
 
 -- Clear hightlight after search
 nmap("<C-_>", "<CMD>nohlsearch<CR>")
+-- nmap("<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
 
 -- LSP/Diagnostics
 nmap("[g", "<CMD>lua vim.diagnostic.goto_prev()<CR>", { desc = "Previous diagnostic" })
@@ -147,12 +148,11 @@ nmap("<C-f>", "<CMD>Format<CR>", { desc = "Format buffer" })
 -- Lualine
 nmap("<C-w>,", ":LualineRenameTab ", { desc = "Rename tab" })
 
--- write quit all
-nmap("<C-x>", ":xa<CR>")
-
--- quick save
-nmap("<C-f>", "<ESC>:wa<CR>")
-imap("<C-f>", "<ESC>:wa<CR>")
+-- How do I exit?
+nmap("<space>xx", "<CMD>xa<CR>", { desc = "Write quit all" })
+nmap("<space>qq", "<CMD>qa<CR>", { desc = "Quit all" })
+nmap("<space>QQ", "<CMD>qa!<CR>", { desc = "Quit all without saving" })
+nmap("<space>ww", "<CMD>wa<CR>", { desc = "Write all" })
 
 -- vsnip
 vim.cmd([[
@@ -191,6 +191,21 @@ nmap("<Space>q", "<CMD><CR>", { desc = "Session" })
 nmap("<Space>qr", "<CMD>SessionRestore<CR>", { desc = "Restore session" })
 nmap("<Space>qd", "<CMD>SessionDelete<CR>", { desc = "Delete session" })
 nmap("<Space>qs", "<CMD>SessionSave<CR>", { desc = "Save session" })
+
+-- UI settings
+nmap("<Space>u", "", { desc = "UI Settings" })
+nmap("<Space>us", "", { desc = "Scrollbind" })
+nmap("<Space>use", "<CMD>set scrollbind<CR>", { desc = "Enable" })
+nmap("<Space>usd", "<CMD>set noscrollbind<CR>", { desc = "Disable" })
+nmap("<Space>uc", "", { desc = "Cursorbind" })
+nmap("<Space>uce", "<CMD>set cursorbind<CR>", { desc = "Enable" })
+nmap("<Space>ucd", "<CMD>set nocursorbind<CR>", { desc = "Disable" })
+nmap("<Space>un", "", { desc = "Line number" })
+nmap("<Space>une", "<CMD>set number<CR>", { desc = "Enable" })
+nmap("<Space>und", "<CMD>set nonumber<CR>", { desc = "Disable" })
+nmap("<Space>ur", "", { desc = "Relative line number" })
+nmap("<Space>ure", "<CMD>set relativenumber<CR>", { desc = "Enable" })
+nmap("<Space>urd", "<CMD>set norelativenumber<CR>", { desc = "Disable" })
 
 -- mini.clue
 local miniclue = require("mini.clue")

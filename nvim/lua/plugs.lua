@@ -505,7 +505,20 @@ require("lazy").setup({
                     svelte = require("formatter.defaults.prettier"),
                     typescript = require("formatter.defaults.prettier"),
                     toml = require("formatter.filetypes.toml").taplo,
-                    yaml = require("formatter.defaults.prettier"),
+                    yaml = function()
+                        local util = require("formatter.util")
+
+                        return {
+                            exe = "prettier",
+                            args = {
+                                "--stdin-filepath",
+                                util.escape_path(util.get_current_buffer_file_path()),
+                                "--no-bracket-spacing",
+                            },
+                            stdin = true,
+                            try_node_modules = true,
+                        }
+                    end,
                     zsh = require("formatter.filetypes.sh").shfmt,
                 },
             }

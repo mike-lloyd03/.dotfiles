@@ -51,7 +51,7 @@ abbr -a gundo "git reset --soft HEAD~1"
 abbr -a ga "git add"
 abbr -a gaa "git add --all"
 abbr -a gc "git commit -v"
-abbr -a gcm "git commit -v -m"
+abbr -a gcm --set-cursor 'git commit -v -m "%"'
 abbr -a gca "git commit -v --all"
 abbr -a gcam --set-cursor 'git commit -v --all -m "%"'
 abbr -a gpl "git pull"
