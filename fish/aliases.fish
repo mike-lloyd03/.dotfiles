@@ -37,9 +37,7 @@ if [ "$(uname -n)" = TD-C02FK3H8MD6T ]
 end
 
 if [ "$(uname -n)" = dev ]
-    alias kdevr='kubectl config use-context appsec-dev-rancher'
     alias kdev='kubectl config use-context appsec-dev'
-    alias kprodr='kubectl config use-context appsec-prod-rancher'
     alias kprod="kubectl config use-context appsec-prod"
     alias klogin="kubectl vsphere login --server=10.22.24.2  --insecure-skip-tls-verify --vsphere-username ml255064@td.teradata.com --tanzu-kubernetes-cluster-name appsec-prod --tanzu-kubernetes-cluster-namespace appsec-ns"
     alias klogindev="kubectl vsphere login --server=10.22.24.2  --insecure-skip-tls-verify --vsphere-username ml255064@td.teradata.com --tanzu-kubernetes-cluster-name appsec-dev --tanzu-kubernetes-cluster-namespace appsec-ns"
@@ -48,31 +46,31 @@ if [ "$(uname -n)" = dev ]
 end
 
 # git
-alias g=git
-alias gundo="git reset --soft HEAD~1"
-alias ga="git add"
-alias gaa="git add --all"
-alias gc="git commit -v"
-alias gcm="git commit -v -m"
-alias gca="git commit -v --all"
-alias gcam="git commit -v --all -m"
-alias gpl="git pull"
-alias gl="git log"
-alias gp="git push"
-alias gr="git remote"
-alias gra="git remote add"
-alias grs="git restore"
-alias grss="git restore --staged"
-alias gs="git status -s"
-alias gst="git status"
-alias gd="git diff --ignore-all-space"
-alias gds="git diff --staged"
-alias gsw="git switch"
-alias gco="git checkout"
-alias gcob="git checkout -b"
-alias gb="git branch"
-alias gsu="git submodule update --recursive --remote"
-alias gf="git fetch"
+abbr -a g git
+abbr -a gundo "git reset --soft HEAD~1"
+abbr -a ga "git add"
+abbr -a gaa "git add --all"
+abbr -a gc "git commit -v"
+abbr -a gcm "git commit -v -m"
+abbr -a gca "git commit -v --all"
+abbr -a gcam --set-cursor 'git commit -v --all -m "%"'
+abbr -a gpl "git pull"
+abbr -a gl "git log"
+abbr -a gp "git push"
+abbr -a gr "git remote"
+abbr -a gra "git remote add"
+abbr -a grs "git restore"
+abbr -a grss "git restore --staged"
+abbr -a gs "git status -s"
+abbr -a gst "git status"
+abbr -a gd "git diff --ignore-all-space"
+abbr -a gds "git diff --staged"
+abbr -a gsw "git switch"
+abbr -a gco "git checkout"
+abbr -a gcob "git checkout -b"
+abbr -a gb "git branch"
+abbr -a gsu "git submodule update --recursive --remote"
+abbr -a gf "git fetch"
 
 # systemctl
 alias sc="sudo systemctl"
@@ -93,39 +91,39 @@ alias scustat="systemctl --user status"
 alias scudr="systemctl --user daemon-reload"
 
 # kubectl
-alias k=kubectl
-alias kc="kubectl create"
-alias kcd="kubectl create deployment"
-alias kcj="kubectl create job"
+abbr -a k kubectl
+abbr -a kc "kubectl create"
+abbr -a kcd "kubectl create deployment"
+abbr -a kcj "kubectl create job"
 
-alias kg="kubectl get"
-alias kgp="kubectl get pods"
-alias kgn="kubectl get nodes"
-alias kgd="kubectl get deployments"
-alias kgj="kubectl get jobs"
-alias kgcj="kubectl get cronjobs"
+abbr -a kg "kubectl get"
+abbr -a kgp "kubectl get pods"
+abbr -a kgn "kubectl get nodes"
+abbr -a kgd "kubectl get deployments"
+abbr -a kgj "kubectl get jobs"
+abbr -a kgcj "kubectl get cronjobs"
 
-alias kd="kubectl describe"
-alias kdd="kubectl describe deployment"
-alias kdp="kubectl describe pod"
-alias kdj="kubectl describe job"
-alias kdcj="kubectl describe cronjob"
+abbr -a kd "kubectl describe"
+abbr -a kdd "kubectl describe deployment"
+abbr -a kdp "kubectl describe pod"
+abbr -a kdj "kubectl describe job"
+abbr -a kdcj "kubectl describe cronjob"
 
-alias kl="kubectl logs"
-alias klf="kubectl logs -f"
-alias ke="kubectl exec"
-alias keit="kubectl exec -it"
-alias kdel="kubectl delete"
+abbr -a kl "kubectl logs"
+abbr -a klf "kubectl logs -f"
+abbr -a ke "kubectl exec"
+abbr -a keit "kubectl exec -it"
+abbr -a kdel "kubectl delete"
 
 abbr -a kcjfrom --set-cursor kubectl create job --from=%
 
 # Cargo
-alias cr="cargo run"
-alias crr="cargo run --release"
-alias cb="cargo build"
-alias cbr="cargo build --release"
-alias ca="cargo add"
-alias cf="cargo feature"
+abbr -a cr "cargo run"
+abbr -a crr "cargo run --release"
+abbr -a cb "cargo build"
+abbr -a cbr "cargo build --release"
+abbr -a ca "cargo add"
+abbr -a cf "cargo feature"
 
 # Nix
 if [ "$(uname -n)" = nixos ]
