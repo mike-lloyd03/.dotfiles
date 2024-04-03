@@ -48,7 +48,16 @@ if status is-interactive
     if command -v starship > /dev/null
         function starship_transient_prompt_func
             starship module line_break
+            starship module custom.corner_top
+            starship module username
+            starship module hostname
+            starship module directory
+            starship module line_break
+            starship module custom.corner_bot
             starship module character
+        end
+        function starship_transient_rprompt_func
+            starship module time
         end
         starship init fish | source
         enable_transience

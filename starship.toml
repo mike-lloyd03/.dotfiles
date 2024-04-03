@@ -130,7 +130,8 @@ symbol = " "
 
 [time]
 disabled = false
-time_format = "%H%M"
+format = "[$time]($style) "
+time_format = "%H%M:%S"
 
 [terraform]
 format = " [$symbol$workspace]($style) "

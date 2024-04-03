@@ -51,9 +51,9 @@ abbr -a gundo "git reset --soft HEAD~1"
 abbr -a ga "git add"
 abbr -a gaa "git add --all"
 abbr -a gc "git commit -v"
-abbr -a gcm --set-cursor 'git commit -v -m "%"'
-abbr -a gca "git commit -v --all"
-abbr -a gcam --set-cursor 'git commit -v --all -m "%"'
+abbr -a gcm --set-cursor 'git commit -m "%"'
+abbr -a gca "git commit -va"
+abbr -a gcam --set-cursor 'git commit -am "%"'
 abbr -a gpl "git pull"
 abbr -a gl "git log"
 abbr -a gp "git push"
@@ -115,7 +115,7 @@ abbr -a ke "kubectl exec"
 abbr -a keit "kubectl exec -it"
 abbr -a kdel "kubectl delete"
 
-abbr -a kcjfrom --set-cursor kubectl create job --from=%
+abbr -a kcjfrom --set-cursor kubectl create job --from=cronjob/%
 
 # Cargo
 abbr -a cr "cargo run"
