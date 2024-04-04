@@ -14,7 +14,7 @@ function h
     else if man -w "$cmd" &>/dev/null
         man "$cmd"
     else if eval "$cmd --help" &>/dev/null
-        eval "$cmd --help" | $PAGER
+        eval "$cmd --help" 2>&1 | $PAGER
     else
         echo "no man page or --help option available for '$cmd'"
         return 1
