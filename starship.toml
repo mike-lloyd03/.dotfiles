@@ -45,11 +45,13 @@ error_symbol = '[❯](bold red)'
 symbol = "╭─ "
 style = "bold white"
 when = true
+shell = ["sh"] # faster
 
 [custom.corner_bot]
 symbol = "╰"
 style = "bold white"
 when = true
+shell = ["sh"] # faster
 
 [cmd_duration]
 disabled = true
