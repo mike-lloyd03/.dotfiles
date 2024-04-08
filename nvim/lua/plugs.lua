@@ -803,13 +803,4 @@ require("lazy").setup({
         ft = "typst",
         lazy = false,
     },
-    {
-  'tigion/nvim-asciidoc-preview',
-  cmd = { 'AsciiDocPreview' },
-  ft = { 'asciidoc' },
-  build = 'cd server && npm install',
-  opts = {
-    -- Add user configuration here
-  }
-}
 })

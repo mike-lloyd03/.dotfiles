@@ -126,7 +126,7 @@ abbr -a ca "cargo add"
 abbr -a cf "cargo feature"
 
 # Nix
-if [ "$(uname -n)" = kratos ]
+if command -v nix &> /dev/null
     abbr -a nsh --set-cursor 'nix shell nixpkgs#%'
     abbr -a nrs sudo nixos-rebuild switch
     abbr -a nrsu sudo nixos-rebuild switch --upgrade
