@@ -37,7 +37,7 @@ window#waybar {
 
 #workspaces button:hover:last-child,
 #workspaces button.active:last-child {
-  border-radius: 0 1.5rem 1.5rem 1;
+  border-radius: 0 1.5rem 1.5rem 1px;
 }
 
 #workspaces button.active:only-child {

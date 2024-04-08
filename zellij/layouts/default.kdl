@@ -23,7 +23,7 @@ layout {
 
             border_enabled  "false"
 
-            hide_frame_for_single_pane "true"
+            // hide_frame_for_single_pane "true"
 
             tab_normal              "#[fg=#4C4C59]#[fg=#1a1c23,bg=#4C4C59] {index}  {name} #[fg=#4C4C59]"
             tab_normal_fullscreen   "#[fg=#4C4C59]#[fg=#1a1c23,bg=#4C4C59] {index}  {name} Z #[fg=#4C4C59]"

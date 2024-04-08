@@ -5,8 +5,9 @@ local config = {}
 config.term = "wezterm"
 
 config.font = wezterm.font("JetBrainsMono Nerd Font Mono")
+config.font_size = 10
 config.hide_tab_bar_if_only_one_tab = true
-config.enable_wayland = true
+config.enable_wayland = false -- https://github.com/wez/wezterm/issues/5103
 config.enable_scroll_bar = false
 config.window_decorations = "RESIZE"
 config.window_padding = {
