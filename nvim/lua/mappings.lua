@@ -206,6 +206,15 @@ nmap("<Space>und", "<CMD>set nonumber<CR>", { desc = "Disable" })
 nmap("<Space>ur", "", { desc = "Relative line number" })
 nmap("<Space>ure", "<CMD>set relativenumber<CR>", { desc = "Enable" })
 nmap("<Space>urd", "<CMD>set norelativenumber<CR>", { desc = "Disable" })
+nmap("<Space>ut", "<CMD>lua ToggleTransparency()<CR>", { desc = "Toggle Transparency" })
+
+function ToggleTransparency()
+    local isTransparent = vim.g.onedark_config.transparent
+    require("onedark").setup({ transparent = not isTransparent })
+    require("onedark").setup({ lualine = { transparent = not isTransparent } })
+    require("onedark").load()
+    vim.api.nvim_set_hl(0, "FoldColumn", {}) -- Clear the FoldColumn HL group so it's bg is transparent
+end
 
 -- mini.clue
 local miniclue = require("mini.clue")
