@@ -63,7 +63,7 @@ if status is-interactive
         enable_transience
     end
 
-    if command -v zoxide > /dev/null
+    if command -v atuin > /dev/null
         atuin init fish --disable-up-arrow | source
     end
 
