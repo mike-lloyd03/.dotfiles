@@ -135,3 +135,8 @@ if command -v nix &> /dev/null
     abbr -a neh "pushd /etc/nixos && sudo nvim home.nix ; popd"
     abbr -a nef "pushd /etc/nixos && sudo nvim flake.nix ; popd"
 end
+
+if command -v system-manager &> /dev/null
+    abbr -a sme "pushd $HOME/.config/system-manager && nvim flake.nix ; popd"
+    abbr -a sms "sudo system-manager switch --flake ~/.config/system-manager"
+end
