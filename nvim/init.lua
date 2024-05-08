@@ -21,7 +21,7 @@ vim.opt.breakindent = true
 
 -- show line numbers
 vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 
 -- autoindent and tab options
 vim.opt.autoindent = true
