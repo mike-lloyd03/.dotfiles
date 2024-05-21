@@ -39,8 +39,8 @@ end
 if [ "$(uname -n)" = dev ]
     alias kdev='kubectl config use-context appsec-dev'
     alias kprod="kubectl config use-context appsec-prod"
-    alias klogin="kubectl vsphere login --server=10.22.24.2  --insecure-skip-tls-verify --vsphere-username ml255064@td.teradata.com --tanzu-kubernetes-cluster-name appsec-prod --tanzu-kubernetes-cluster-namespace appsec-ns"
-    alias klogindev="kubectl vsphere login --server=10.22.24.2  --insecure-skip-tls-verify --vsphere-username ml255064@td.teradata.com --tanzu-kubernetes-cluster-name appsec-dev --tanzu-kubernetes-cluster-namespace appsec-ns"
+    alias klogin="KUBECTL_VSPHERE_PASSWORD=(rudric get td-password) kubectl vsphere login --server=10.22.24.2  --insecure-skip-tls-verify --vsphere-username ml255064@td.teradata.com --tanzu-kubernetes-cluster-name appsec-prod --tanzu-kubernetes-cluster-namespace appsec-ns"
+    alias klogindev="KUBECTL_VSPHERE_PASSWORD=(rudric get td-password) kubectl vsphere login --server=10.22.24.2  --insecure-skip-tls-verify --vsphere-username ml255064@td.teradata.com --tanzu-kubernetes-cluster-name appsec-dev --tanzu-kubernetes-cluster-namespace appsec-ns"
     alias ac=armorcode
     alias gh="GITHUB_ENTERPRISE_TOKEN='' /usr/bin/gh"
 end
