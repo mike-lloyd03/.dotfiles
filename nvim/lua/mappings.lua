@@ -61,7 +61,11 @@ nmap("<space>ya", "<CMD>%y+<CR>")
 -- Telescope
 nmap("<space>b", "<CMD>lua require('telescope.builtin').buffers{}<CR>", { desc = "Buffers" })
 nmap("<space>f", "<CMD>Telescope find_files<CR>", { desc = "Open file picker" })
-nmap("<space>g", "<CMD>Telescope live_grep<CR>", { desc = "Live grep" })
+nmap(
+    "<space>g",
+    "<CMD>lua require('telescope.builtin').live_grep({additional_args = {'--hidden'}})<CR>",
+    { desc = "Live grep" }
+)
 nmap("<space>h", "<CMD>Telescope help_tags<CR>", { desc = "Search help tags" })
 nmap("<space>j", "<CMD>Telescope jumplist<CR>", { desc = "Jumplist" })
 nmap("<space>d", "<CMD>Telescope diagnostics<CR>", { desc = "Diagnostics" })

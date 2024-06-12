@@ -25,7 +25,7 @@ return {
                         scroll_speed = 1,
                     },
                     file_ignore_patterns = {
-                        "package-lock\\.json",
+                        "\\.git",
                     },
                 },
                 pickers = {
