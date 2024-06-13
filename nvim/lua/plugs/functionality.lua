@@ -37,6 +37,7 @@ return {
             return {
                 logging = false,
                 filetype = {
+                    arduino = require("formatter.filetypes.c").clangformat,
                     c = require("formatter.filetypes.c").clangformat,
                     cpp = require("formatter.filetypes.cpp").clangformat,
                     css = require("formatter.defaults.prettier"),
@@ -197,16 +198,8 @@ return {
         },
     },
     {
-        "echasnovski/mini.comment",
-        event = "VeryLazy",
-        opts = {
-            options = {
-                custom_commentstring = function()
-                    return require("ts_context_commentstring.internal").calculate_commentstring()
-                        or vim.bo.commentstring
-                end,
-            },
-        },
+        "numToStr/Comment.nvim",
+        config = true,
     },
     {
         "iamcco/markdown-preview.nvim",
@@ -252,24 +245,28 @@ return {
             require("ufo").setup()
         end,
     },
-    {
-        "echasnovski/mini.clue",
-        version = false,
-    },
-    {
-        "edluffy/specs.nvim",
-        opts = {
-            show_jumps = true,
-            popup = {
-                inc_ms = 20,
-                blend = 10,
-                winhl = "TermCursor",
-            },
-        },
-    },
+    -- {
+    --     "echasnovski/mini.clue",
+    --     version = false,
+    -- },
+    -- {
+    --     "edluffy/specs.nvim",
+    --     opts = {
+    --         show_jumps = true,
+    --         popup = {
+    --             inc_ms = 20,
+    --             blend = 10,
+    --             winhl = "TermCursor",
+    --         },
+    --     },
+    -- },
     {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
         opts = true,
+    },
+    {
+        "windwp/nvim-ts-autotag",
+        opts = {},
     },
 }

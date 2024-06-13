@@ -180,14 +180,6 @@ vim.keymap.set("n", "[t", function()
     require("todo-comments").jump_prev()
 end, { desc = "Previous todo comment" })
 
--- todo-comments
-vim.keymap.set("n", "]t", function()
-    require("todo-comments").jump_next()
-end, { desc = "Next todo comment" })
-
-vim.keymap.set("n", "[t", function()
-    require("todo-comments").jump_prev()
-end, { desc = "Previous todo comment" })
 nmap("<Space>xt", "<CMD>TodoTelescope<CR>", { desc = "Todo List" })
 
 -- auto-session
@@ -221,56 +213,56 @@ function ToggleTransparency()
 end
 
 -- mini.clue
-local miniclue = require("mini.clue")
-miniclue.setup({
-    triggers = {
-        { mode = "n", keys = "<C-w>" },
-        { mode = "n", keys = "<Leader>" },
-        { mode = "n", keys = "<Space>" },
-        { mode = "n", keys = "[" },
-        { mode = "n", keys = "]" },
-        { mode = "n", keys = "c" },
-        { mode = "n", keys = "cr" },
-        { mode = "n", keys = "g" },
-        { mode = "n", keys = "m" },
-        { mode = "n", keys = "z" },
-        { mode = "n", keys = '"' },
-
-        { mode = "v", keys = "g" },
-        { mode = "v", keys = "m" },
-    },
-    clues = {
-        miniclue.gen_clues.builtin_completion(),
-        -- miniclue.gen_clues.g(),
-        miniclue.gen_clues.marks(),
-        miniclue.gen_clues.registers(),
-        miniclue.gen_clues.windows(),
-        miniclue.gen_clues.z(),
-
-        -- g
-        -- miniclue.set_mapping_desc("n", "gc", "Comment"),
-        -- miniclue.set_mapping_desc("n", "gcc", "Toggle comment"),
-
-        -- cr
-        miniclue.set_mapping_desc("n", "cr", "Coerse"),
-        -- miniclue.set_mapping_desc("n", "crc", "Coerse to camelCase"),
-        -- miniclue.set_mapping_desc("n", "crm", "Coerce to MixedCase"),
-        -- miniclue.set_mapping_desc("n", "crs", "Coerse to snake_case"),
-        -- miniclue.set_mapping_desc("n", "crt", "Coerse to Title Case"),
-        -- miniclue.set_mapping_desc("n", "cru", "Coerse to UPPER_SNAKE_CASE"),
-        -- miniclue.set_mapping_desc("n", "cr-", "Coerse to dash-case"),
-        -- miniclue.set_mapping_desc("n", "cr.", "Coerse to dot.case"),
-        -- miniclue.set_mapping_desc("n", "cr ", "Coerse to space case"),
-
-        -- z
-        miniclue.set_mapping_desc("n", "zt", "Scroll cursor to top of screen"),
-        miniclue.set_mapping_desc("n", "zz", "Center cursor on screen"),
-        miniclue.set_mapping_desc("n", "zb", "Scroll cursor to bottom of screen"),
-    },
-    window = {
-        delay = 250,
-        config = {
-            width = "auto",
-        },
-    },
-})
+-- local miniclue = require("mini.clue")
+-- miniclue.setup({
+--     triggers = {
+--         { mode = "n", keys = "<C-w>" },
+--         { mode = "n", keys = "<Leader>" },
+--         { mode = "n", keys = "<Space>" },
+--         { mode = "n", keys = "[" },
+--         { mode = "n", keys = "]" },
+--         { mode = "n", keys = "c" },
+--         { mode = "n", keys = "cr" },
+--         { mode = "n", keys = "g" },
+--         { mode = "n", keys = "m" },
+--         { mode = "n", keys = "z" },
+--         { mode = "n", keys = '"' },
+--
+--         { mode = "v", keys = "g" },
+--         { mode = "v", keys = "m" },
+--     },
+--     clues = {
+--         miniclue.gen_clues.builtin_completion(),
+--         -- miniclue.gen_clues.g(),
+--         miniclue.gen_clues.marks(),
+--         miniclue.gen_clues.registers(),
+--         miniclue.gen_clues.windows(),
+--         miniclue.gen_clues.z(),
+--
+--         -- g
+--         -- miniclue.set_mapping_desc("n", "gc", "Comment"),
+--         -- miniclue.set_mapping_desc("n", "gcc", "Toggle comment"),
+--
+--         -- cr
+--         miniclue.set_mapping_desc("n", "cr", "Coerse"),
+--         -- miniclue.set_mapping_desc("n", "crc", "Coerse to camelCase"),
+--         -- miniclue.set_mapping_desc("n", "crm", "Coerce to MixedCase"),
+--         -- miniclue.set_mapping_desc("n", "crs", "Coerse to snake_case"),
+--         -- miniclue.set_mapping_desc("n", "crt", "Coerse to Title Case"),
+--         -- miniclue.set_mapping_desc("n", "cru", "Coerse to UPPER_SNAKE_CASE"),
+--         -- miniclue.set_mapping_desc("n", "cr-", "Coerse to dash-case"),
+--         -- miniclue.set_mapping_desc("n", "cr.", "Coerse to dot.case"),
+--         -- miniclue.set_mapping_desc("n", "cr ", "Coerse to space case"),
+--
+--         -- z
+--         miniclue.set_mapping_desc("n", "zt", "Scroll cursor to top of screen"),
+--         miniclue.set_mapping_desc("n", "zz", "Center cursor on screen"),
+--         miniclue.set_mapping_desc("n", "zb", "Scroll cursor to bottom of screen"),
+--     },
+--     window = {
+--         delay = 250,
+--         config = {
+--             width = "auto",
+--         },
+--     },
+-- })
