@@ -167,9 +167,9 @@ vim.cmd([[
 ]])
 
 -- specs
-nmap("<Space><Space>", '<CMD>lua require("specs").show_specs()<CR>', { desc = "Show cursor location" })
-nmap("n", 'n<CMD>lua require("specs").show_specs()<CR>')
-nmap("N", 'N<CMD>lua require("specs").show_specs()<CR>')
+-- nmap("<Space><Space>", '<CMD>lua require("specs").show_specs()<CR>', { desc = "Show cursor location" })
+-- nmap("n", 'n<CMD>lua require("specs").show_specs()<CR>')
+-- nmap("N", 'N<CMD>lua require("specs").show_specs()<CR>')
 
 -- todo-comments
 vim.keymap.set("n", "]t", function()
