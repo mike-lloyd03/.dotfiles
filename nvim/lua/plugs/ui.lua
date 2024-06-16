@@ -5,15 +5,46 @@ return {
             "kyazdani42/nvim-web-devicons",
         },
     },
-    -- "kyazdani42/nvim-tree.lua",
     {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
         dependencies = {
             "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+            "nvim-tree/nvim-web-devicons",
             "MunifTanjim/nui.nvim",
-            -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+            {
+                "s1n7ax/nvim-window-picker",
+                config = function()
+                    require("window-picker").setup({
+                        selection_chars = "ABCDEFG",
+                        filter_rules = {
+                            include_current_win = false,
+                            autoselect_one = true,
+                            bo = {
+                                filetype = { "neo-tree", "neo-tree-popup", "notify" },
+                                buftype = { "terminal", "quickfix" },
+                            },
+                        },
+                        highlights = {
+                            statusline = {
+                                unfocused = {
+                                    fg = "#1a212e",
+                                    bg = "#41a7fc",
+                                    bold = true,
+                                },
+                            },
+                        },
+                    })
+                end,
+            },
+        },
+        config = {
+            window = {
+                mappings = {
+                    ["<cr>"] = "open_with_window_picker",
+                    ["s"] = "vsplit_with_window_picker",
+                },
+            },
         },
         keys = {
             { "<C-n>", "<cmd>Neotree toggle<cr>", desc = "NeoTree" },

@@ -21,7 +21,7 @@ return {
             vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
             vim.g.auto_session_pre_save_cmds = {
                 close_all_floating_wins,
-                "tabdo NvimTreeClose",
+                "tabdo Neotree close",
             }
         end,
     },
@@ -159,22 +159,6 @@ return {
         -- end,
     },
     "tpope/vim-abolish",
-    {
-        "SmiteshP/nvim-navbuddy",
-        dependencies = {
-            "neovim/nvim-lspconfig",
-            "SmiteshP/nvim-navic",
-            "MunifTanjim/nui.nvim",
-        },
-        opts = {
-            window = {
-                border = "rounded",
-            },
-            lsp = {
-                auto_attach = true,
-            },
-        },
-    },
     {
         "karb94/neoscroll.nvim",
         opts = function()
