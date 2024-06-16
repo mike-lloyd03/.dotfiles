@@ -60,7 +60,12 @@ nmap("<space>ya", "<CMD>%y+<CR>")
 
 -- Telescope
 nmap("<space>b", "<CMD>lua require('telescope.builtin').buffers{}<CR>", { desc = "Buffers" })
-nmap("<space>f", "<CMD>Telescope find_files<CR>", { desc = "Open file picker" })
+-- nmap("<space>f", "<CMD>Telescope find_files<CR>", { desc = "Open file picker" })
+nmap(
+    "<space>f",
+    "<CMD>lua require('telescope.builtin').find_files({ find_command = { 'rg', '--files', '--color', 'never', '--no-config', '--hidden' , '--glob=!.git' } })<CR>",
+    { desc = "Open file picker" }
+)
 nmap(
     "<space>g",
     "<CMD>lua require('telescope.builtin').live_grep({additional_args = {'--hidden'}})<CR>",
@@ -166,7 +171,7 @@ vim.cmd([[
     smap <expr> <S-Tab> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>'
 ]])
 
--- specs
+-- -- specs
 -- nmap("<Space><Space>", '<CMD>lua require("specs").show_specs()<CR>', { desc = "Show cursor location" })
 -- nmap("n", 'n<CMD>lua require("specs").show_specs()<CR>')
 -- nmap("N", 'N<CMD>lua require("specs").show_specs()<CR>')
