@@ -132,8 +132,8 @@ end
 nmap("gi", "<CMD>lua FormatAndOrgImports(1000)<CR>", { desc = "Format imports (Go)" })
 
 -- NvimTree
-nmap("<C-n>", "<CMD>NvimTreeToggle<CR>", { desc = "Open file explorer" })
-nmap("<space>e", "<CMD>NvimTreeToggle<CR>", { desc = "Open file explorer" })
+-- nmap("<C-n>", "<CMD>NvimTreeToggle<CR>", { desc = "Open file explorer" })
+-- nmap("<space>e", "<CMD>NvimTreeToggle<CR>", { desc = "Open file explorer" })
 
 -- gitsigns
 nmap("]c", "&diff ? ']c' : '<CMD>Gitsigns next_hunk<CR>'", { expr = true, desc = "Next hunk" })
