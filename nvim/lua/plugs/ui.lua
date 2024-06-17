@@ -45,6 +45,15 @@ return {
                     ["s"] = "vsplit_with_window_picker",
                 },
             },
+            filesystem = {
+                filtered_items = {
+                    hide_dotfiles = false,
+                    hide_gitignored = false,
+                    never_show = {
+                        ".git",
+                    },
+                },
+            },
         },
         keys = {
             { "<C-n>", "<cmd>Neotree toggle<cr>", desc = "NeoTree" },
