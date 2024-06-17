@@ -200,12 +200,13 @@ return {
         init = false,
         opts = function()
             local dashboard = require("alpha.themes.dashboard")
-            vim.api.nvim_set_hl(0, "DashboardLogo1", { fg = "#41a7fc" })
-            vim.api.nvim_set_hl(0, "DashboardLogo2", { fg = "#8bcd5b", bg = "#41a7fc" })
-            vim.api.nvim_set_hl(0, "DashboardLogo3", { fg = "#8bcd5b" })
+            vim.api.nvim_set_hl(0, "DashboardLogo1", { fg = "#41a7fc" }) -- fg: Blue
+            vim.api.nvim_set_hl(0, "DashboardLogo2", { fg = "#8bcd5b", bg = "#41a7fc" }) -- fg: Green bg: Blue
+            vim.api.nvim_set_hl(0, "DashboardLogo3", { fg = "#8bcd5b" }) -- fg: Green
             vim.api.nvim_set_hl(0, "DashboardLogoText", { fg = "#93a4c3", bold = true })
 
             dashboard.section.header.val = {
+                --0123456789
                 [[     █  █     ]],
                 [[     ██ ██     ]],
                 [[     █████     ]],
@@ -215,15 +216,15 @@ return {
                 [[N  E  O  V  I  M]],
             }
             dashboard.section.header.opts.hl = {
-                { { "DashboardLogo1", 6, 8 }, { "DashboardLogo3", 9, 22 } },
+                { { "DashboardLogo1", 5, 6 }, { "DashboardLogo3", 6, 20 } },
                 {
-                    { "DashboardLogo1", 6, 8 },
-                    { "DashboardLogo2", 9, 11 },
-                    { "DashboardLogo3", 12, 24 },
+                    { "DashboardLogo1", 5, 6 },
+                    { "DashboardLogo2", 6, 10 },
+                    { "DashboardLogo3", 10, 24 },
                 },
-                { { "DashboardLogo1", 6, 11 }, { "DashboardLogo3", 12, 26 } },
-                { { "DashboardLogo1", 6, 11 }, { "DashboardLogo3", 12, 24 } },
-                { { "DashboardLogo1", 6, 11 }, { "DashboardLogo3", 12, 22 } },
+                { { "DashboardLogo1", 5, 10 }, { "DashboardLogo3", 10, 26 } },
+                { { "DashboardLogo1", 5, 10 }, { "DashboardLogo3", 10, 24 } },
+                { { "DashboardLogo1", 5, 10 }, { "DashboardLogo3", 10, 22 } },
                 {},
                 { { "DashboardLogoText", 0, 26 } },
             }
