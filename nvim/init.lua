@@ -39,12 +39,12 @@ vim.opt.smartcase = true
 
 vim.opt.termguicolors = true
 
--- ufo syntax folding
-vim.opt.foldcolumn = "1"
-vim.opt.foldlevel = 99
-vim.opt.foldlevelstart = 99
-vim.opt.foldenable = true
-vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+-- -- ufo syntax folding
+-- vim.opt.foldcolumn = "1"
+-- vim.opt.foldlevel = 99
+-- vim.opt.foldlevelstart = 99
+-- vim.opt.foldenable = true
+-- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
 -- Clipboard handling
 if vim.fn.hostname() == "dev" then

@@ -193,42 +193,42 @@ return {
             vim.fn["mkdp#util#install"]()
         end,
     },
-    {
-        "kevinhwang91/nvim-ufo",
-        dependencies = {
-            "kevinhwang91/promise-async",
-            -- Sets up fold column
-            {
-                "luukvbaal/statuscol.nvim",
-                config = function()
-                    local builtin = require("statuscol.builtin")
-                    require("statuscol").setup({
-                        relculright = true,
-                        segments = {
-                            { text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
-                            { text = { "%s" }, click = "v:lua.ScSa" },
-                            { text = { builtin.foldfunc }, click = "v:lua.ScFa" },
-                        },
-                    })
-                    vim.api.nvim_set_hl(0, "FoldColumn", {}) -- Clear the FoldColumn HL group so it's bg is transparent
-                end,
-            },
-        },
-        config = function()
-            local capabilities = vim.lsp.protocol.make_client_capabilities()
-            capabilities.textDocument.foldingRange = {
-                dynamicRegistration = false,
-                lineFoldingOnly = true,
-            }
-            local language_servers = require("lspconfig").util.available_servers()
-            for _, ls in ipairs(language_servers) do
-                require("lspconfig")[ls].setup({
-                    capabilities = capabilities,
-                })
-            end
-            require("ufo").setup()
-        end,
-    },
+    -- {
+    --     "kevinhwang91/nvim-ufo",
+    --     dependencies = {
+    --         "kevinhwang91/promise-async",
+    --         -- Sets up fold column
+    --         {
+    --             "luukvbaal/statuscol.nvim",
+    --             config = function()
+    --                 local builtin = require("statuscol.builtin")
+    --                 require("statuscol").setup({
+    --                     relculright = true,
+    --                     segments = {
+    --                         { text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
+    --                         { text = { "%s" }, click = "v:lua.ScSa" },
+    --                         { text = { builtin.foldfunc }, click = "v:lua.ScFa" },
+    --                     },
+    --                 })
+    --                 vim.api.nvim_set_hl(0, "FoldColumn", {}) -- Clear the FoldColumn HL group so it's bg is transparent
+    --             end,
+    --         },
+    --     },
+    --     config = function()
+    --         local capabilities = vim.lsp.protocol.make_client_capabilities()
+    --         capabilities.textDocument.foldingRange = {
+    --             dynamicRegistration = false,
+    --             lineFoldingOnly = true,
+    --         }
+    --         local language_servers = require("lspconfig").util.available_servers()
+    --         for _, ls in ipairs(language_servers) do
+    --             require("lspconfig")[ls].setup({
+    --                 capabilities = capabilities,
+    --             })
+    --         end
+    --         require("ufo").setup()
+    --     end,
+    -- },
     -- {
     --     "echasnovski/mini.clue",
     --     version = false,
