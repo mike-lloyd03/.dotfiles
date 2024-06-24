@@ -235,7 +235,6 @@ return {
         config = function()
             local miniclue = require("mini.clue")
             miniclue.setup({
-
                 triggers = {
                     { mode = "n", keys = "<C-w>" },
                     { mode = "n", keys = "<Leader>" },
