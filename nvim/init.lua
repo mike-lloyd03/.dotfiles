@@ -46,6 +46,8 @@ vim.opt.termguicolors = true
 -- vim.opt.foldenable = true
 -- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
+vim.o.fillchars = [[eob: ]]
+
 -- Clipboard handling
 if vim.fn.hostname() == "dev" then
     vim.g.clipboard = {
