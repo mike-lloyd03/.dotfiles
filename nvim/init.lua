@@ -2,7 +2,6 @@ require("plugs")
 require("lsp")
 require("mappings")
 require("statusline")
--- require("tree")
 
 -- Command mode zsh-like autocompletion
 vim.opt.signcolumn = "yes"
