@@ -39,6 +39,7 @@ return {
             },
         },
         config = {
+            popup_border_style = "rounded",
             window = {
                 mappings = {
                     ["<cr>"] = "open_with_window_picker",
@@ -53,6 +54,10 @@ return {
                     never_show = {
                         ".git",
                     },
+                },
+                use_libuv_file_watcher = true,
+                follow_current_file = {
+                    enabled = true,
                 },
             },
         },
