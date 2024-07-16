@@ -49,21 +49,6 @@ require("lspconfig").ccls.setup({})
 require("lspconfig").kotlin_language_server.setup({})
 require("lspconfig").nil_ls.setup({})
 require("lspconfig").typst_lsp.setup({})
-
--- local MY_FQBN = "arduino:avr:mega"
--- require("lspconfig").arduino_language_server.setup({
---     cmd = {
---         "arduino-language-server",
---         "-cli-config",
---         "~/.arduino15/arduino-cli.yaml",
---         "-fqbn",
---         MY_FQBN,
---         "-log",
---         "-logpath",
---         "/home/mike/als_log",
---     },
--- })
-
 require("lspconfig").arduino_language_server.setup({})
 
 ----------------------------
