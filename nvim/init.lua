@@ -1,4 +1,4 @@
-require("plugs")
+require("config.lazy")
 require("lsp")
 require("mappings")
 require("statusline")
