@@ -50,6 +50,7 @@ require("lspconfig").kotlin_language_server.setup({})
 require("lspconfig").nil_ls.setup({})
 require("lspconfig").typst_lsp.setup({})
 require("lspconfig").arduino_language_server.setup({})
+require("lspconfig").cssls.setup({})
 
 ----------------------------
 -- Lua Config

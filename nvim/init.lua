@@ -38,6 +38,8 @@ vim.opt.smartcase = true
 
 vim.opt.termguicolors = true
 
+vim.opt.spell = true
+
 -- -- ufo syntax folding
 -- vim.opt.foldcolumn = "1"
 -- vim.opt.foldlevel = 99
@@ -46,29 +48,6 @@ vim.opt.termguicolors = true
 -- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
 vim.o.fillchars = [[eob: ]]
-
--- Clipboard handling
-if vim.fn.hostname() == "dev" then
-    vim.g.clipboard = {
-        name = "ssh",
-        copy = {
-            ["+"] = { "ssh", "mac", "pbcopy" },
-            ["*"] = { "ssh", "mac", "pbcopy" },
-        },
-        paste = {
-            ["+"] = { "ssh", "mac", "pbpaste" },
-            ["*"] = { "ssh", "mac", "pbpaste" },
-        },
-    }
-end
-
--- Neovide settings
-if vim.fn.has("macunix") == 1 then
-    vim.opt.guifont = "MesloLGM Nerd Font Mono"
-else
-    vim.opt.guifont = "MesloLGS NF"
-end
-vim.g.neovide_cursor_animation_length = 0
 
 -- Disable mouse
 vim.opt.mouse = ""
