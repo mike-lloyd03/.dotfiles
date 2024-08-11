@@ -52,6 +52,11 @@ vim.o.fillchars = [[eob: ]]
 -- Disable mouse
 vim.opt.mouse = ""
 
+-- Hyprlang config
+vim.filetype.add({
+  pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+})
+
 -----------
 -- Auto Commands
 -----------

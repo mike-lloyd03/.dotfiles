@@ -49,7 +49,9 @@ require("lspconfig").ccls.setup({})
 require("lspconfig").kotlin_language_server.setup({})
 require("lspconfig").nil_ls.setup({})
 require("lspconfig").typst_lsp.setup({})
-require("lspconfig").arduino_language_server.setup({})
+require("lspconfig").arduino_language_server.setup({
+    cmd = { "/home/mike/repos/arduino-language-server/arduino-language-server" },
+})
 require("lspconfig").cssls.setup({})
 
 ----------------------------
