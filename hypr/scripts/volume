@@ -15,6 +15,7 @@ function volume_up() {
         toggle_mute
     else
         swayosd-client --max-volume $MAX_VOLUME --output-volume raise
+        # pactl set-sink-volume @DEFAULT_SINK@ +5%
     fi
 }
 
@@ -23,11 +24,13 @@ function volume_down() {
         toggle_mute
     else
         swayosd-client --max-volume $MAX_VOLUME --output-volume lower
+        # pactl set-sink-volume @DEFAULT_SINK@ -5%
     fi
 }
 
 function toggle_mute() {
     swayosd-client --max-volume $MAX_VOLUME --output-volume mute-toggle
+    # pactl set-sink-mute @DEFAULT_SINK@ toggle
 }
 
 case "$1" in

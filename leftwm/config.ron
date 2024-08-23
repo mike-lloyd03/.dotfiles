@@ -43,7 +43,7 @@
         (command: Execute, value: "rofi -modi drun,run -show drun", modifier: ["Control"], key: "space"),
         // (command: Execute, value: "WINIT_X11_SCALE_FACTOR=1 alacritty", modifier: ["modkey", "Shift"], key: "Return"),
         // (command: Execute, value: "alacritty", modifier: ["modkey", "Shift"], key: "Return"),
-        (command: Execute, value: "wezterm", modifier: ["modkey", "Shift"], key: "Return"),
+        (command: Execute, value: "kitty", modifier: ["modkey", "Shift"], key: "Return"),
         (command: CloseWindow, value: "", modifier: ["Control", "Shift"], key: "w"),
         (command: Execute, value: "autorandr -c", modifier: ["modkey", "Control"], key: "x"),
         (command: Execute, value: "autorandr -l docked", modifier: ["modkey", "Control"], key: "d"),

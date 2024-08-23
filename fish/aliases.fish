@@ -138,5 +138,5 @@ end
 
 if command -v system-manager &> /dev/null
     abbr -a sme "pushd $HOME/.config/system-manager && nvim flake.nix ; popd"
-    abbr -a sms "sudo system-manager switch --flake ~/.config/system-manager"
+    abbr -a sms "sudo /home/mike/.nix-profile/bin/system-manager switch --flake ~/.config/system-manager"
 end

@@ -1,5 +1,5 @@
 function zs
-    set session_name "scratch-$(hostname)"
+    set session_name "scratch-$(uname -n)"
     if zellij ls | grep $session_name &> /dev/null
         zellij attach $session_name
     else
