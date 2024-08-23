@@ -5,53 +5,45 @@ return {
         "hrsh7th/nvim-cmp",
         event = "InsertEnter",
         dependencies = {
-            "onsails/lspkind-nvim",
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",
-            "hrsh7th/cmp-vsnip",
+            "onsails/lspkind-nvim",
+            {
+                "garymjr/nvim-snippets",
+                opts = {
+                    friendly_snippets = true,
+                },
+                dependencies = {
+                    "rafamadriz/friendly-snippets",
+                    "golang/vscode-go",
+                    "rust-lang/vscode-rust",
+                },
+            },
         },
         config = function()
-            local feedkey = function(key, mode)
-                vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
-            end
-
             local cmp = require("cmp")
             local lspkind = require("lspkind")
             cmp.setup({
                 -- Enable LSP snippets
                 snippet = {
                     expand = function(args)
-                        vim.fn["vsnip#anonymous"](args.body)
+                        vim.snippet.expand(args.body)
                     end,
                 },
                 mapping = {
-                    ["<Down>"] = cmp.mapping.select_next_item(),
+                    ["<Tab>"] = cmp.mapping.select_next_item(),
+                    ["<S-Tab>"] = cmp.mapping.select_prev_item(),
                     ["<Up>"] = cmp.mapping.select_prev_item(),
+                    ["<Down>"] = cmp.mapping.select_next_item(),
                     ["<C-j>"] = cmp.mapping.scroll_docs(4),
                     ["<C-k>"] = cmp.mapping.scroll_docs(-4),
                     ["<C-Space>"] = cmp.mapping.complete(),
                     ["<C-e>"] = cmp.mapping.close(),
                     ["<CR>"] = cmp.mapping.confirm({
                         behavior = cmp.ConfirmBehavior.Insert,
-                        select = false,
+                        select = true,
                     }),
-                    ["<Tab>"] = cmp.mapping(function(fallback)
-                        if vim.fn["vsnip#jumpable"](1) == 1 then
-                            feedkey("<Plug>(vsnip-jump-next)", "")
-                        elseif cmp.visible() then
-                            cmp.select_next_item()
-                        else
-                            fallback()
-                        end
-                    end, { "i", "s" }),
-                    ["<S-Tab>"] = cmp.mapping(function()
-                        if vim.fn["vsnip#jumpable"](-1) == 1 then
-                            feedkey("<Plug>(vsnip-jump-prev)", "")
-                        elseif cmp.visible() then
-                            cmp.select_prev_item()
-                        end
-                    end, { "i", "s" }),
                 },
 
                 formatting = {
@@ -61,14 +53,42 @@ return {
                     }),
                 },
 
-                -- Installed sources
-                sources = {
+                sources = cmp.config.sources({
                     { name = "nvim_lsp" },
-                    { name = "vsnip" },
+                    { name = "snippets" },
                     { name = "path" },
+                }, {
                     { name = "buffer" },
-                },
+                }),
             })
         end,
+        keys = {
+            {
+                "<Tab>",
+                function()
+                    if vim.snippet.active({ direction = 1 }) then
+                        return "<cmd>lua vim.snippet.jump(1)<cr>"
+                    else
+                        return "<Tab>"
+                    end
+                end,
+                expr = true,
+                silent = true,
+                mode = { "i", "s" },
+            },
+            {
+                "<S-Tab>",
+                function()
+                    if vim.snippet.active({ direction = -1 }) then
+                        return "<cmd>lua vim.snippet.jump(-1)<cr>"
+                    else
+                        return "<S-Tab>"
+                    end
+                end,
+                expr = true,
+                silent = true,
+                mode = { "i", "s" },
+            },
+        },
     },
 }

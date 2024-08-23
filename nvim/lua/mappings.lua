@@ -162,14 +162,6 @@ nmap("<space>qq", "<CMD>qa<CR>", { desc = "Quit all" })
 nmap("<space>QQ", "<CMD>qa!<CR>", { desc = "Quit all without saving" })
 nmap("<space>ww", "<CMD>wa<CR>", { desc = "Write all" })
 
--- vsnip
-vim.cmd([[
-    imap <expr> <TAB> vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : '<TAB>'
-    smap <expr> <TAB> vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : '<TAB>'
-    imap <expr> <S-Tab> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>'
-    smap <expr> <S-Tab> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>'
-]])
-
 -- -- specs
 -- nmap("<Space><Space>", '<CMD>lua require("specs").show_specs()<CR>', { desc = "Show cursor location" })
 -- nmap("n", 'n<CMD>lua require("specs").show_specs()<CR>')
