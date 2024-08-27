@@ -1,36 +1,38 @@
 #!/usr/bin/env bash
-#
-MAX_VOLUME=150 # percent
 
-function is_muted() {
-    mute_status="$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}')"
-    if [ "$mute_status" = 'yes' ]; then
-        return 0
-    fi
-    return 1
-}
+max_volume=150
+volume=0
+mute=false
+
+info=$(pactl -f json list sinks)
+mute=$(jq -r '.[0].mute' <<< "$info")
+volume=$(jq -r '.[0].volume."front-left".value_percent' <<< "$info" | tr -d '%')
 
 function volume_up() {
-    if is_muted; then
+    if [ "$mute" = "true" ]; then
         toggle_mute
     else
-        swayosd-client --max-volume $MAX_VOLUME --output-volume raise
-        # pactl set-sink-volume @DEFAULT_SINK@ +5%
+        if [ "$volume" -ge $(( max_volume - 5 )) ]; then
+            pactl set-sink-volume @DEFAULT_SINK@ $max_volume%
+        else
+            # swayosd-client --max-volume $MAX_VOLUME --output-volume raise
+            pactl set-sink-volume @DEFAULT_SINK@ +5%
+        fi
     fi
 }
 
 function volume_down() {
-    if is_muted; then
+    if [ "$mute" = "true" ]; then
         toggle_mute
     else
-        swayosd-client --max-volume $MAX_VOLUME --output-volume lower
-        # pactl set-sink-volume @DEFAULT_SINK@ -5%
+        # swayosd-client --max-volume $MAX_VOLUME --output-volume lower
+        pactl set-sink-volume @DEFAULT_SINK@ -5%
     fi
 }
 
 function toggle_mute() {
-    swayosd-client --max-volume $MAX_VOLUME --output-volume mute-toggle
-    # pactl set-sink-mute @DEFAULT_SINK@ toggle
+    # swayosd-client --max-volume $MAX_VOLUME --output-volume mute-toggle
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
 }
 
 case "$1" in
