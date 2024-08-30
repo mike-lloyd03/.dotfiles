@@ -14,6 +14,7 @@ vim.opt.wildignore = "*.o,*~"
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
+
 -- Break lines at word boundaries when wrapping and wrap to previous indent
 vim.opt.linebreak = true
 vim.opt.breakindent = true

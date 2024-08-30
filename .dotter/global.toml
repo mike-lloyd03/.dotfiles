@@ -1,5 +1,5 @@
-[anyrun.files]
-anyrun = { target = "~/.config/anyrun", type = "symbolic", recurse = false }
+[ags.files]
+ags = { target = "~/.config/ags", type = "symbolic", recurse = false }
 
 [alacritty.files]
 "alacritty.toml" = "~/.config/alacritty.toml"
@@ -21,6 +21,9 @@ hypr = { target = "~/.config/hypr", type = "symbolic", recurse = false }
 
 [karabiner.files]
 karabiner = { target = "~/.config/karabiner", type = "symbolic", recurse = false }
+
+[kitty.files]
+kitty = { target = "~/.config/kitty", type = "symbolic", recurse = false }
 
 [keyd.files]
 keyd = { target = "/etc/keyd", type = "symbolic", recurse = false, owner = "root" }

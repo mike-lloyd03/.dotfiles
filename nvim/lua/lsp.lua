@@ -45,7 +45,9 @@ require("lspconfig").eslint.setup({})
 require("lspconfig").jsonls.setup({
     on_attach = navic_attach,
 })
-require("lspconfig").clangd.setup({})
+require("lspconfig").clangd.setup({
+    on_attach = navic_attach,
+})
 require("lspconfig").kotlin_language_server.setup({})
 require("lspconfig").nil_ls.setup({})
 require("lspconfig").typst_lsp.setup({})

@@ -2,7 +2,8 @@ return {
     "neovim/nvim-lspconfig",
     "nvimtools/none-ls.nvim",
     {
-        "hrsh7th/nvim-cmp",
+        "yioneko/nvim-cmp",
+        branch = "perf",
         event = "InsertEnter",
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
@@ -55,7 +56,7 @@ return {
 
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
-                    { name = "snippets" },
+                    -- { name = "snippets" },
                     { name = "path" },
                 }, {
                     { name = "buffer" },

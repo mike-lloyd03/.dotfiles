@@ -1,0 +1,232 @@
+@define-color bg rgba(31, 35, 41, 0.5);
+@define-color bg-2 rgba(31, 35, 41, 0.7);
+@define-color outline rgba(21, 25, 31, 0.7);
+@define-color bg-hover #64727d;
+@define-color fg #abb2bf;
+@define-color red #e8667a;
+@define-color blue  #61afef;
+@define-color purple #c678dd;
+@define-color green #98c379;
+@define-color orange #d19a66;
+@define-color yellow #e5c07b;
+@define-color cyan #56b6c2;
+@define-color grey #5c6370;
+@define-color light_grey #848b98;
+
+window {
+  background-color: transparent;
+  color: white;
+  font-family: "NotoSans Nerd Font";
+}
+
+window.bar {
+  font-size: 1rem;
+}
+
+.bar-group {
+  background-color: @bg;
+}
+
+.bar-right {
+  padding-right: 0.5rem;
+}
+
+.icon {
+  color: @blue;
+  margin-right: 0.25rem;
+}
+
+.power-icon {
+  color: @green;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.power-icon:hover {
+  color: @red;
+}
+
+button {
+  all: unset;
+  transition: background 0.5s;
+  transition: color 0.5s;
+}
+
+.workspaces button {
+  background-color: transparent;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.workspaces button:hover {
+  background: @bg-hover;
+}
+
+.workspaces button.focused {
+  color: @red;
+}
+
+.workspaces button.focused:hover {
+  color: white;
+  background-color: @red;
+}
+
+label {
+  font-weight: bold;
+}
+
+.client-title {
+  color: @fg;
+}
+
+.tray-item {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.tray-item:hover {
+  background-color: @bg-hover;
+}
+
+.notifications-popup-list {
+  min-width: 1rem;
+}
+
+.notification {
+  margin-right: 5px;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 1rem;
+  min-width: 25.8rem;
+  background-color: @bg;
+  color: white;
+}
+
+.notification-icon {
+  font-size: 5rem;
+  min-width: 5rem;
+  min-height: 5rem;
+  margin-right: 5px;
+  border-radius: 1rem;
+  background-size: cover;
+  background-position: center;
+  border-radius: 1rem;
+}
+
+.notification-title {
+  font-weight: bold;
+}
+
+.notification-body {
+  /* Styles for notification body */
+}
+
+.notification-time {
+  /* Styles for notification time */
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.notification button {
+  background-color: @bg-2;
+  padding: 0.5rem;
+  /* border: 1px solid @outline; */
+}
+
+.notification button:hover {
+  background-color: @bg-hover;
+}
+
+.notification-close {
+  min-width: 1.5rem;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.notification-action-button {
+  color: white;
+  border-right: 1px solid @outline;
+  margin: 5px 0;
+}
+
+.notification-action-button:first-child {
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.notification-action-button:last-child {
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border-right: none;
+}
+
+.launcher {
+  background-color: @bg;
+  border-radius: 1.25rem;
+  min-width: 500px;
+  padding: 0.5rem;
+}
+
+.calc-mode {
+  border: 1px solid @green;
+}
+
+.launcher-entry {
+  all: unset;
+  padding: 0.25rem;
+  border-radius: 1rem;
+  background-color: @bg-2;
+  padding: 0.5rem;
+  padding-left: 1rem;
+}
+
+.launcher-item {
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+}
+
+.launcher-item:focus {
+  background-color: @bg-hover;
+}
+
+.launcher-item .app-label {
+  margin-left: 0.5rem;
+}
+
+.selected {
+  background-color: @bg-hover;
+}
+
+.osd {
+  background-color: @bg;
+  border-radius: 2.5rem;
+  padding: 12px 20px;
+}
+
+levelbar {
+  all: unset;
+  min-height: 10px;
+}
+
+levelbar trough {
+  min-height: inherit;
+}
+
+levelbar trough block {
+  min-height: inherit;
+  border-radius: 1rem;
+}
+
+levelbar trough block.filled {
+  min-height: inherit;
+  background-color: @blue;
+}
+
+levelbar trough block.empty {
+  min-height: inherit;
+  /* background-color: @bg-2; */
+}
