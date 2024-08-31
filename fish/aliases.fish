@@ -10,6 +10,7 @@ command -v bat &>/dev/null && alias cat="bat --paging=never"
 command -v journalctl &>/dev/null && alias jc='sudo journalctl -xe'
 alias svenv="source .venv/bin/activate.fish"
 abbr -a decode base64 -d
+abbr -a hyprconf nvim ~/.config/hypr/hyprland.conf
 
 function last_history_item
     echo $history[1]
@@ -24,25 +25,6 @@ end
 if command -v nvimpager &> /dev/null
     alias less="nvimpager"
     alias lesss="/usr/bin/less"
-end
-
-if [ "$(uname -n)" = TD-C02FK3H8MD6T ]
-    alias kdev='kubectl config use-context appsec-dev'
-    alias kprod='kubectl config use-context appsec-prod'
-    alias pip="pip3"
-    alias python="python3"
-    alias release='~/go/src/github.td.teradata.com/Application-Security/shared/common/release.sh'
-    alias sed=gsed
-    alias grep=ggrep
-end
-
-if [ "$(uname -n)" = dev ]
-    alias kdev='kubectl config use-context appsec-dev'
-    alias kprod="kubectl config use-context appsec-prod"
-    alias klogin="KUBECTL_VSPHERE_PASSWORD=(rudric get td-password) kubectl vsphere login --server=10.22.24.2  --insecure-skip-tls-verify --vsphere-username ml255064@td.teradata.com --tanzu-kubernetes-cluster-name appsec-prod --tanzu-kubernetes-cluster-namespace appsec-ns"
-    alias klogindev="KUBECTL_VSPHERE_PASSWORD=(rudric get td-password) kubectl vsphere login --server=10.22.24.2  --insecure-skip-tls-verify --vsphere-username ml255064@td.teradata.com --tanzu-kubernetes-cluster-name appsec-dev --tanzu-kubernetes-cluster-namespace appsec-ns"
-    alias ac=armorcode
-    alias gh="GITHUB_ENTERPRISE_TOKEN='' /usr/bin/gh"
 end
 
 # git

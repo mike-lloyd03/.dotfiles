@@ -38,6 +38,7 @@ function Launcher() {
 
   const entry = Widget.Entry({
     classNames: ["launcher-entry"],
+    hexpand: true,
 
     on_accept: () => {
       const result = list.child.children[0];
@@ -50,14 +51,19 @@ function Launcher() {
     on_change: ({ text }) => {
       if (text) {
         if (text.startsWith("calc:")) {
+          entryIcon.icon = "mathmode-symbolic";
           calc.reveal_child = true;
+          list.reveal_child = false;
+
           entry.toggleClassName("calc-mode", true);
 
           const equation = text.replace("calc:", "");
           const result = Utils.exec(`kalker "${equation}"`);
-          calc.child.children[1].label = result;
+          calc.child.children[0].label = result;
         } else {
+          entryIcon.icon = "terminal-symbolic";
           list.reveal_child = true;
+          calc.reveal_child = false;
 
           appList.value = applications.filter((item) => {
             return item.name.toLowerCase().includes(text?.toLowerCase() ?? "");
@@ -79,6 +85,13 @@ function Launcher() {
     },
   });
 
+  const entryIcon = Widget.Icon({ size: 24 });
+
+  const entryRow = Widget.Box({
+    spacing: 8,
+    children: [entryIcon, entry],
+  });
+
   const list = Widget.Revealer({
     transition: "slide_down",
     child: Widget.Box({
@@ -90,8 +103,8 @@ function Launcher() {
   const calc = Widget.Revealer({
     child: Widget.Box({
       valign: Gtk.Align.CENTER,
+      margin: 12,
       children: [
-        Widget.Icon({ icon: "mathmode-symbolic", size: 42 }),
         Widget.Label({
           label: "",
         }),
@@ -103,7 +116,7 @@ function Launcher() {
     vertical: true,
     className: "launcher",
     vpack: "start",
-    children: [entry, calc, list],
+    children: [entryRow, calc, list],
 
     setup: (self) =>
       self.hook(App, (_, windowName, visible) => {
@@ -112,6 +125,7 @@ function Launcher() {
         }
 
         if (visible) {
+          entryIcon.icon = "terminal-symbolic";
           applications = query("");
           appList.value = [];
           entry.text = "";
