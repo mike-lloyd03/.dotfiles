@@ -83,12 +83,15 @@ function Cliphist() {
         }
 
         if (visible) {
-          Utils.execAsync("cliphist list").then((cliplist) => {
-            cliphist.setValue(cliplist.split("\n"));
-            list.children
-              .slice(0, MAX_ITEMS)
-              .forEach((item) => (item.reveal_child = true));
-          });
+          // Use tr to trim out non-UTF8 characters
+          Utils.execAsync("bash -c 'cliphist list | tr -d \"\\200-\\377\"'")
+            .then((cliplist) => {
+              cliphist.setValue(cliplist.split("\n"));
+              list.children
+                .slice(0, MAX_ITEMS)
+                .forEach((item) => (item.reveal_child = true));
+            })
+            .catch((err) => print("Error getting cliphist list:", err));
           entry.text = "";
           entry.grab_focus();
         }

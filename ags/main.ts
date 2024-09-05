@@ -3,6 +3,7 @@ import Bar from "lib/bar";
 import Launcher from "lib/launcher";
 import Osd from "lib/osd";
 import Cliphist from "lib/cliphist";
+import Power from "lib/power";
 // import Gtk from "gi://Gtk?version=3.0";
 // import Gdk from "gi://Gdk";
 
@@ -18,6 +19,7 @@ App.config({
     Launcher(),
     Osd(),
     Cliphist(),
+    Power(),
   ],
 });
 

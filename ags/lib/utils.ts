@@ -2,7 +2,7 @@ const audio = await Service.import("audio");
 
 export function Padding(
   windowName: string | null = null,
-  { css = "", vexpand = true } = {},
+  { css = "", vexpand = true, hexpand = true } = {},
 ) {
   return Widget.EventBox({
     hexpand: true,

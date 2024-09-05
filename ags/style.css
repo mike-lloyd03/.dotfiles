@@ -1,5 +1,6 @@
 @define-color bg rgba(31, 35, 41, 0.5);
 @define-color bg-2 rgba(31, 35, 41, 0.7);
+@define-color bg-clear rgba(0, 0, 0, 0.01);
 @define-color outline rgba(21, 25, 31, 0.7);
 @define-color bg-hover #64727d;
 @define-color fg #abb2bf;
@@ -40,11 +41,12 @@ window.bar {
   color: @green;
   padding-left: 0.25rem;
   padding-right: 0.25rem;
-  border-radius: 0.25rem;
+  border-radius: 5rem;
 }
 
 .power-icon:hover {
   color: @red;
+  background-color: @bg-hover;
 }
 
 button {
@@ -229,4 +231,18 @@ levelbar trough block.filled {
 levelbar trough block.empty {
   min-height: inherit;
   /* background-color: @bg-2; */
+}
+
+.power {
+  background-color: @bg;
+  border-radius: 2.5rem;
+  padding: 16px;
+}
+
+.power-button-icon {
+  color: white;
+}
+
+.power-button-icon:hover {
+  color: @blue;
 }

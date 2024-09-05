@@ -39,7 +39,9 @@ function OsdRevealer() {
   }
 
   return revealer
-    .hook(audio.speaker, () => show(audio.speaker.volume, 1.5, getVolumeIcon()))
+    .hook(audio.speaker.bind("volume").emitter, () =>
+      show(audio.speaker.volume, 1.5, getVolumeIcon()),
+    )
     .hook(brightness, () =>
       show(brightness.screen, 1, "brightness-high-symbolic"),
     );

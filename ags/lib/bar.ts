@@ -186,47 +186,13 @@ function NetworkIndicator() {
 }
 
 function PowerMenu() {
-  const menu = Widget.Menu({
-    children: [
-      Widget.MenuItem({
-        child: Widget.Label("Lock"),
-        onActivate: () => {
-          Utils.execAsync("hyprlock --immediate");
-        },
-      }),
-      Widget.MenuItem({
-        child: Widget.Label("Suspend"),
-        onActivate: () => {
-          Utils.execAsync("systemctl suspend");
-        },
-      }),
-      Widget.MenuItem({
-        child: Widget.Label("Hibernate"),
-        onActivate: () => {
-          Utils.execAsync("systemctl hibernate");
-        },
-      }),
-      Widget.MenuItem({
-        child: Widget.Label("Restart"),
-        onActivate: () => {
-          Utils.execAsync("reboot");
-        },
-      }),
-      Widget.MenuItem({
-        child: Widget.Label("Shutdown"),
-        onActivate: () => {
-          Utils.execAsync("shutdown -h now ");
-        },
-      }),
-    ],
-  });
-
   return Widget.Button({
     child: Widget.Icon({
-      icon: "draw-circle-symbolic",
+      icon: "system-shutdown-symbolic",
+      size: 16,
     }),
-    on_primary_click: (_, event) => {
-      menu.popup_at_pointer(event);
+    on_primary_click: () => {
+      App.toggleWindow("ags-power");
     },
     className: "power-icon",
   });
