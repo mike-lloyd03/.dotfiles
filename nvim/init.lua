@@ -14,7 +14,6 @@ vim.opt.wildignore = "*.o,*~"
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
-
 -- Break lines at word boundaries when wrapping and wrap to previous indent
 vim.opt.linebreak = true
 vim.opt.breakindent = true
@@ -55,7 +54,7 @@ vim.opt.mouse = ""
 
 -- Hyprlang config
 vim.filetype.add({
-  pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+    pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
 })
 
 -----------
@@ -69,9 +68,4 @@ vim.cmd([[
   autocmd FileType markdown,typst noremap <buffer> <silent> $ g$
   autocmd FileType markdown,typst setlocal spell spelllang=en_us
   autocmd FileType markdown call lexical#init()
-]])
-
--- Format on Save
-vim.cmd([[
-    autocmd BufWritePost * FormatWrite
 ]])

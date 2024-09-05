@@ -58,37 +58,6 @@ nmap("mm", "%", { desc = "Goto matching bracket" })
 vmap("mm", "%", { desc = "Goto matching bracket" })
 nmap("<space>ya", "<CMD>%y+<CR>")
 
--- Telescope
-nmap("<space>b", "<CMD>lua require('telescope.builtin').buffers{}<CR>", { desc = "Buffers" })
--- nmap("<space>f", "<CMD>Telescope find_files<CR>", { desc = "Open file picker" })
-nmap(
-    "<space>f",
-    "<CMD>lua require('telescope.builtin').find_files({ find_command = { 'rg', '--files', '--color', 'never', '--no-config', '--hidden' , '--glob=!.git' } })<CR>",
-    { desc = "Open file picker" }
-)
-nmap(
-    "<space>g",
-    "<CMD>lua require('telescope.builtin').live_grep({additional_args = {'--hidden'}})<CR>",
-    { desc = "Live grep" }
-)
-nmap("<space>h", "<CMD>Telescope help_tags<CR>", { desc = "Search help tags" })
-nmap("<space>j", "<CMD>Telescope jumplist<CR>", { desc = "Jumplist" })
-nmap("<space>d", "<CMD>Telescope diagnostics<CR>", { desc = "Diagnostics" })
-nmap("<space>'", "<CMD>Telescope resume<CR>", { desc = "Open last picker" })
-nmap('<space>"', "<CMD>Telescope registers<CR>", { desc = "Registers" })
-nmap("<space>s", "<CMD>lua require('telescope.builtin').lsp_document_symbols{}<CR>", { desc = "Document symbols" })
-nmap("<space>a", "<CMD>lua vim.lsp.buf.code_action()<CR>", { desc = "Code actions" })
-vmap("<space>a", "<CMD>lua vim.lsp.buf.code_action()<CR>", { desc = "Code actions" })
-nmap("gr", "<CMD>lua require('telescope.builtin').lsp_references{}<CR>", { desc = "Goto references" })
-nmap("<space>z", "<CMD>lua require('telescope.builtin').spell_suggest{}<CR>", { desc = "Show spelling suggestions" })
-nmap("gd", "<CMD>lua require('telescope.builtin').lsp_definitions{}<CR>", { desc = "Goto definition" })
-nmap(
-    "gD",
-    "<CMD>lua require('telescope.builtin').lsp_definitions{jump_type='vsplit'}<CR>",
-    { desc = "Goto definition in new vsplit" }
-)
-nmap("<space>m", "<CMD>lua require('telescope.builtin').treesitter{}<CR>", { desc = "Treesitter Symbols" })
-
 -- nvim.notify
 nmap("<space>n", "<CMD><CR>", { desc = "Notifications" })
 nmap("<space>nn", "<CMD>Telescope notify<CR>")
@@ -115,7 +84,6 @@ nmap(
 )
 nmap("<space>D", "<CMD>lua vim.lsp.buf.type_definition()<CR>", { desc = "Type definition" })
 nmap("<space>r", "<CMD>lua vim.lsp.buf.rename()<CR>", { desc = "Rename" })
-nmap("<space>l", "<CMD>TSToggle highlight<CR>", { desc = "Toggle Treesitter highlight" })
 
 -- Go Imports
 function FormatAndOrgImports(wait_ms)

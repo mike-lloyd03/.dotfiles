@@ -47,5 +47,94 @@ return {
             require("telescope").load_extension("notify")
             require("telescope").load_extension("fzf")
         end,
+        keys = {
+            {
+                "<space>g",
+                mode = { "n" },
+                function()
+                    require("telescope.builtin").buffers({})
+                end,
+                desc = "Buffers",
+            },
+            {
+                "<space>f",
+                mode = { "n" },
+                function()
+                    require("telescope.builtin").find_files({
+                        find_command = {
+                            "rg",
+                            "--files",
+                            "--color",
+                            "never",
+                            "--no-config",
+                            "--hidden",
+                            "--glob=!.git",
+                        },
+                    })
+                end,
+                desc = "File picker",
+            },
+            {
+                "<space>g",
+                mode = { "n" },
+                function()
+                    require("telescope.builtin").live_grep({ additional_args = { "--hidden" } })
+                end,
+                desc = "Live grep",
+            },
+            { "<space>h", mode = { "n" }, "<CMD>Telescope help_tags<CR>", desc = "Help tags" },
+            { "<space>j", mode = { "n" }, "<CMD>Telescope jumplist<CR>", desc = "Jumptlist" },
+            { "<space>d", mode = { "n" }, "<CMD>Telescope diagnostics<CR>", desc = "Diagnostics" },
+            { "<space>'", mode = { "n" }, "<CMD>Telescope resume<CR>", desc = "Open last picker" },
+            { '<space>"', mode = { "n" }, "<CMD>Telescope registers<CR>", desc = "Registers" },
+            {
+                "<space>s",
+                mode = { "n" },
+                function()
+                    require("telescope.builtin").lsp_document_symbols({})
+                end,
+                desc = "Document symbols",
+            },
+            {
+                "<space>a",
+                mode = { "n", "v" },
+                function()
+                    vim.lsp.buf.code_action()
+                end,
+                desc = "Code actions",
+            },
+            {
+                "gr",
+                mode = { "n" },
+                function()
+                    require("telescope.builtin").lsp_references({})
+                end,
+                desc = "Goto references",
+            },
+            {
+                "gd",
+                mode = { "n" },
+                function()
+                    require("telescope.builtin").lsp_definitions({})
+                end,
+                desc = "Goto definition",
+            },
+            {
+                "gD",
+                mode = { "n" },
+                function()
+                    require("telescope.builtin").lsp_definitions({ jump_type = "vsplit" })
+                end,
+                desc = "Goto definition in new vsplit",
+            },
+            {
+                "<space>z",
+                mode = { "n" },
+                function()
+                    require("telescope.builtin").spell_suggest({})
+                end,
+                desc = "Spelling suggestions",
+            },
+        },
     },
 }

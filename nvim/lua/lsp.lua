@@ -42,6 +42,9 @@ require("lspconfig").tsserver.setup({
     on_attach = navic_attach,
 })
 require("lspconfig").eslint.setup({})
+-- require("lspconfig").denols.setup({
+--     on_attach = navic_attach,
+-- })
 require("lspconfig").jsonls.setup({
     on_attach = navic_attach,
 })

@@ -31,70 +31,89 @@ return {
     "dhruvasagar/vim-zoom",
     "junegunn/goyo.vim",
     {
-        "mhartington/formatter.nvim",
-        lazy = false,
-        opts = function()
-            return {
-                logging = false,
-                filetype = {
-                    arduino = require("formatter.filetypes.c").clangformat,
-                    c = require("formatter.filetypes.c").clangformat,
-                    cpp = require("formatter.filetypes.cpp").clangformat,
-                    css = require("formatter.defaults.prettier"),
-                    dart = require("formatter.filetypes.dart").dartformat,
-                    go = function()
-                        return {
-                            exe = "GOFUMPT_SPLIT_LONG_LINES=on gofumpt",
-                            stdin = true,
-                        }
-                    end,
-                    html = require("formatter.defaults.prettier"),
-                    javascript = require("formatter.defaults.prettier"),
-                    json = require("formatter.defaults.prettier"),
-                    lua = function()
-                        return {
-                            exe = "stylua",
-                            args = {
-                                "--indent-type",
-                                "spaces",
-                                "-",
-                            },
-                            stdin = true,
-                        }
-                    end,
-                    markdown = require("formatter.defaults.prettier"),
-                    nix = require("formatter.filetypes.nix").nixfmt,
-                    python = {
-                        require("formatter.filetypes.python").black,
-                        require("formatter.filetypes.python").isort,
-                    },
-                    rust = require("formatter.filetypes.rust").rustfmt,
-                    sh = require("formatter.filetypes.sh").shfmt,
-                    sql = require("formatter.filetypes.sql"),
-                    svelte = require("formatter.defaults.prettier"),
-                    typescript = require("formatter.defaults.prettier"),
-                    toml = require("formatter.filetypes.toml").taplo,
-                    yaml = function()
-                        local util = require("formatter.util")
-
-                        return {
-                            exe = "prettier",
-                            args = {
-                                "--stdin-filepath",
-                                util.escape_path(util.get_current_buffer_file_path()),
-                                "--no-bracket-spacing",
-                            },
-                            stdin = true,
-                            try_node_modules = true,
-                        }
-                    end,
-                    zsh = require("formatter.filetypes.sh").shfmt,
+        "stevearc/conform.nvim",
+        opts = {
+            default_format_opts = {
+                timeout_ms = 3000,
+                lsp_format = "fallback",
+                async = false,
+                quiet = false,
+            },
+            format_on_save = {
+                lsp_format = "fallback",
+            },
+            formatters = {
+                stylua = {
+                    prepend_args = { "--indent-type", "spaces" },
                 },
-            }
+                gofumpt = {
+                    env = {
+                        GOFUMPT_SPLIT_LONG_LINES = "on",
+                    },
+                },
+            },
+            formatters_by_ft = {
+                arduino = { "clangformat" },
+                c = { "clangformat" },
+                cpp = { "clangformat" },
+                css = { "prettierd", "prettier", stop_after_first = true },
+                dart = { "dartformat" },
+                go = { "gofumpt" },
+                html = { "prettierd", "prettier", stop_after_first = true },
+                json = { "prettierd", "prettier", stop_after_first = true },
+                lua = { "stylua" },
+                markdown = { "prettierd", "prettier", stop_after_first = true },
+                nix = { "nixfmt" },
+                python = { "isort", "black" },
+                rust = { "rustfmt", lsp_format = "fallback" },
+                sh = { "shfmt" },
+                svelte = { "prettierd", "prettier", stop_after_first = true },
+                typescript = { "prettierd", "prettier", stop_after_first = true },
+                toml = { "taplo" },
+                yaml = { "prettierd", "prettier", stop_after_first = true },
+                --                 yaml = function()
+                --                     local util = require("formatter.util")
+                --
+                --                     return {
+                --                         exe = "prettierd", "prettier", stop_after_first = true,
+                --                         args = {
+                --                             "--stdin-filepath",
+                --                             util.escape_path(util.get_current_buffer_file_path()),
+                --                             "--no-bracket-spacing",
+                --                         },
+                --                         stdin = true,
+                --                         try_node_modules = true,
+                --                     }
+                --                 end,
+                zsh = { "shfmt" },
+            },
+        },
+        init = function()
+            vim.api.nvim_create_user_command("Format", function(args)
+                local range = nil
+                if args.count ~= -1 then
+                    local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
+                    range = {
+                        start = { args.line1, 0 },
+                        ["end"] = { args.line2, end_line:len() },
+                    }
+                end
+                require("conform").format({ async = true, lsp_format = "fallback", range = range })
+            end, { range = true })
         end,
+        -- keys = {
+        --     {
+        --         "<space>cF",
+        --         function()
+        --             require("conform").format({ timeout_ms = 3000 })
+        --         end,
+        --         mode = { "n", "v" },
+        --         desc = "Format Buffer",
+        --     },
+        -- },
     },
     {
-        "kylechui/nvim-surround",
+        "kylechuh/nvim-surround",
         opts = {
             keymaps = {
                 insert = "<C-g>s",

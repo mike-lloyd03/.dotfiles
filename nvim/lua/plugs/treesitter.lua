@@ -4,10 +4,27 @@ return {
         build = function()
             require("nvim-treesitter.install").update({ with_sync = true })
         end,
+        dependencies = {
+            "nvim-treesitter/playground",
+        },
         opts = {
+            ensure_installed = {
+                "rust",
+                "go",
+                "python",
+                "html",
+                "css",
+                "javascript",
+                "typescript",
+                "svelte",
+                "lua",
+                "markdown",
+                "cpp",
+                "c",
+            },
             highlight = {
                 enable = true,
-                additional_vim_regex_highlighting = false,
+                -- additional_vim_regex_highlighting = false,
             },
             playground = {
                 enable = true,
@@ -19,8 +36,10 @@ return {
                 enable = true,
             },
         },
-        dependencies = {
-            "nvim-treesitter/playground",
+        -- stylua: ignore
+        keys = {
+            { "<space>m", mode = { "n" }, "<CMD>lua require('telescope.builtin').treesitter{}<CR>", desc = "Treesitter Symbols", },
+            { "<space>l", mode = { "n" }, "<CMD>TSToggle highlight<CR>", desc = "Toggle Treesitter highlight", },
         },
     },
 }
