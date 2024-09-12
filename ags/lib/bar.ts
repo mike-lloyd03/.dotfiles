@@ -9,6 +9,7 @@ const audio = await Service.import("audio");
 const battery = await Service.import("battery");
 const systemtray = await Service.import("systemtray");
 const network = await Service.import("network");
+const powerProfiles = await Service.import("powerprofiles");
 
 const date = Variable("", {
   poll: [1000, 'date "+%a %Y-%m-%d %H%M:%S"'],
@@ -136,6 +137,30 @@ function BatteryLabel() {
   });
 }
 
+function PowerProfileMenu() {
+  const menu = Widget.Menu({
+    children: powerProfiles.profiles.map((p) =>
+      Widget.MenuItem({
+        child: Widget.Label(p["Profile"]),
+        onActivate: () => {
+          powerProfiles.active_profile = p["Profile"];
+        },
+      }),
+    ),
+  });
+
+  const label = Widget.Label({
+    label: powerProfiles.bind("active_profile"),
+  });
+
+  return Widget.Button({
+    child: label,
+    on_primary_click: (_, event) => {
+      menu.popup_at_pointer(event);
+    },
+  });
+}
+
 function SysTray() {
   const items = systemtray.bind("items").as((items) =>
     items.map((item) =>
@@ -223,6 +248,7 @@ function Right() {
       SysTray(),
       NotificationIndicator(),
       Volume(),
+      PowerProfileMenu(),
       BatteryLabel(),
       NetworkIndicator(),
       PowerMenu(),
