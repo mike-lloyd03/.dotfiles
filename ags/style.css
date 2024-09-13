@@ -246,3 +246,28 @@ levelbar trough block.empty {
 .power-button-icon:hover {
   color: @blue;
 }
+
+.popup {
+  background-color: @bg;
+  border-radius: 2.5rem;
+  padding: 16px;
+}
+
+.ags-battery-menu {
+  margin-right: 150px;
+  padding: 3rem;
+}
+
+.ags-battery-menu-profile {
+  padding: 0.5rem;
+}
+
+.ags-battery-menu-profile:hover {
+  color: @blue;
+}
+
+.active {
+  /* background-color: @bg-hover; */
+  border: 2px solid @blue;
+  border-radius: 1rem;
+}

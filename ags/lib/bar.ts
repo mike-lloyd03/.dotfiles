@@ -1,6 +1,7 @@
 import { RoundedAngleEnd } from "lib/roundedCorner";
 import { NotificationIndicator } from "lib/notifications/index.js";
 import { getVolumeIcon } from "./utils";
+import PopupMenu from "./popupMenu";
 
 const hyprland = await Service.import("hyprland");
 const notifications = await Service.import("notifications");
@@ -117,47 +118,58 @@ function secondsToHHMM(seconds: number): string {
   return `${hoursString}:${minutesString}`;
 }
 
-function BatteryLabel() {
-  return Widget.Box({
-    visible: battery.bind("available"),
-    children: [
-      Widget.Icon({
-        icon: battery.bind("icon_name"),
-        className: "icon",
-      }),
-      Widget.Label({
-        label: battery.bind("percent").as((p) => `${p}% `),
-      }),
-      Widget.Label({
-        label: battery
-          .bind("time_remaining")
-          .as((t) => `(${secondsToHHMM(t)})`),
-      }),
-    ],
-  });
-}
+function BatteryMenu() {
+  const name = "ags-battery-menu";
+  const activeProfile = powerProfiles.bind("active_profile");
 
-function PowerProfileMenu() {
-  const menu = Widget.Menu({
+  const profileIcons = {
+    "power-saver": "battery-profile-powersave-symbolic",
+    balanced: "power-profile-balanced-symbolic",
+    performance: "battery-profile-performance-symbolic",
+  };
+
+  const child = Widget.Box({
+    spacing: 8,
     children: powerProfiles.profiles.map((p) =>
-      Widget.MenuItem({
-        child: Widget.Label(p["Profile"]),
-        onActivate: () => {
+      Widget.Button({
+        child: Widget.Icon({
+          icon: profileIcons[p["Profile"]],
+          size: 24,
+        }),
+        className: activeProfile.as(
+          (a) =>
+            `${a == p["Profile"] ? "ags-battery-menu-profile active" : "ags-battery-menu-profile"}`,
+        ),
+        onPrimaryClick: () => {
           powerProfiles.active_profile = p["Profile"];
         },
       }),
     ),
   });
 
-  const label = Widget.Label({
-    label: powerProfiles.bind("active_profile"),
-  });
+  return PopupMenu(name, child);
+}
 
+function BatteryLabel() {
   return Widget.Button({
-    child: label,
-    on_primary_click: (_, event) => {
-      menu.popup_at_pointer(event);
-    },
+    on_primary_click: () => App.toggleWindow("ags-battery-menu"),
+    child: Widget.Box({
+      visible: battery.bind("available"),
+      children: [
+        Widget.Icon({
+          icon: battery.bind("icon_name"),
+          className: "icon",
+        }),
+        Widget.Label({
+          label: battery.bind("percent").as((p) => `${p}% `),
+        }),
+        Widget.Label({
+          label: battery
+            .bind("time_remaining")
+            .as((t) => `(${secondsToHHMM(t)})`),
+        }),
+      ],
+    }),
   });
 }
 
@@ -248,7 +260,6 @@ function Right() {
       SysTray(),
       NotificationIndicator(),
       Volume(),
-      PowerProfileMenu(),
       BatteryLabel(),
       NetworkIndicator(),
       PowerMenu(),
@@ -258,6 +269,8 @@ function Right() {
 }
 
 export default function (monitor = 0) {
+  App.addWindow(BatteryMenu());
+
   return Widget.Window({
     name: `ags-bar-${monitor}`, // name has to be unique
     className: "bar",

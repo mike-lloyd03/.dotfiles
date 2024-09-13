@@ -1,10 +1,10 @@
 #!/bin/bash
 
-pkill ags || true
+ags -q || true
 ags &
 
 function exit {
-    pkill ags
+    ags -q
 }
 
 trap exit EXIT
@@ -12,6 +12,6 @@ trap exit EXIT
 inotifywait -e close_write -m -r --exclude .git . |
 while read -r directory events filename; do
     echo "reload"
-    pkill ags
+    ags -q
     ags &
 done

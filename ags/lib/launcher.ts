@@ -1,7 +1,7 @@
 import Gtk from "gi://Gtk?version=3.0";
 import type { Application } from "types/service/applications";
 import { Padding } from "./utils";
-const { query } = await Service.import("applications");
+const appSvc = await Service.import("applications");
 
 const WINDOW_NAME = "ags-launcher";
 
@@ -33,8 +33,7 @@ function AppItem(app: Application) {
 }
 
 function Launcher() {
-  let applications = query("");
-  let appList = Variable(query(""));
+  let appList = Variable(appSvc.query(""));
 
   const entry = Widget.Entry({
     classNames: ["launcher-entry"],
@@ -59,15 +58,14 @@ function Launcher() {
 
           const equation = text.replace("calc:", "");
           const result = Utils.exec(`kalker "${equation}"`);
+
           calc.child.children[0].label = result;
         } else {
+          appList.value = appSvc.query(text);
           entryIcon.icon = "terminal-symbolic";
           list.reveal_child = true;
           calc.reveal_child = false;
 
-          appList.value = applications.filter((item) => {
-            return item.name.toLowerCase().includes(text?.toLowerCase() ?? "");
-          });
           list.child.children.forEach((item, i) => {
             if (i >= 5) {
               item.reveal_child = false;
@@ -126,7 +124,6 @@ function Launcher() {
 
         if (visible) {
           entryIcon.icon = "terminal-symbolic";
-          applications = query("");
           appList.value = [];
           entry.text = "";
           entry.grab_focus();

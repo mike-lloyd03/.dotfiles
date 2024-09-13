@@ -34,7 +34,7 @@ class Brightness extends Service {
   constructor() {
     super();
 
-    const screenPath = `/sys/class/backlight/intel_backlight/brightness`;
+    const screenPath = `/sys/class/backlight/amdgpu_bl2/brightness`;
 
     Utils.monitorFile(screenPath, async (f) => {
       const v = await Utils.readFileAsync(f);
