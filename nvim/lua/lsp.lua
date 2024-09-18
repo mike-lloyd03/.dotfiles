@@ -38,7 +38,7 @@ require("lspconfig").pyright.setup({
 require("lspconfig").svelte.setup({
     on_attach = navic_attach,
 })
-require("lspconfig").tsserver.setup({
+require("lspconfig").ts_ls.setup({
     on_attach = navic_attach,
 })
 require("lspconfig").eslint.setup({})

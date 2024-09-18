@@ -53,9 +53,9 @@ return {
                 },
             },
             formatters_by_ft = {
-                arduino = { "clangformat" },
-                c = { "clangformat" },
-                cpp = { "clangformat" },
+                arduino = { "clang-format" },
+                c = { "clang-format" },
+                cpp = { "clang-format" },
                 css = { "prettierd", "prettier", stop_after_first = true },
                 dart = { "dartformat" },
                 go = { "gofumpt" },
@@ -113,7 +113,8 @@ return {
         -- },
     },
     {
-        "kylechuh/nvim-surround",
+        "kylechui/nvim-surround",
+        event = "VeryLazy",
         opts = {
             keymaps = {
                 insert = "<C-g>s",
@@ -186,20 +187,43 @@ return {
     },
     "tpope/vim-abolish",
     {
-        "karb94/neoscroll.nvim",
-        opts = function()
-            local t = {}
-            t["<C-k>"] = { "scroll", { "-5", "false", "250" } }
-            t["<C-j>"] = { "scroll", { "5", "false", "250" } }
-            require("neoscroll.config").set_mappings(t)
-
-            return {
-                easing_function = "cubic",
-                mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "<C-y>", "<C-e>", "zt", "zz", "zb" },
-                cursor_scrolls_alone = false,
-            }
-        end,
+        "echasnovski/mini.animate",
+        event = "VeryLazy",
+        version = "*",
+        opts = {
+            scroll = {
+                enable = true,
+            },
+            resize = {
+                enable = false,
+            },
+            open = {
+                enable = false,
+            },
+            close = {
+                enable = false,
+            },
+        },
+        keys = {
+            { "<c-k>", mode = { "n", "x", "o" }, "10<c-y>", desc = "Scroll Up" },
+            { "<c-j>", mode = { "n", "x", "o" }, "10<c-e>", desc = "Scroll Down" },
+        },
     },
+    -- {
+    --     "karb94/neoscroll.nvim",
+    --     opts = function()
+    --         local t = {}
+    --         t["<C-k>"] = { "scroll", { "-5", "false", "250" } }
+    --         t["<C-j>"] = { "scroll", { "5", "false", "250" } }
+    --         require("neoscroll.config").set_mappings(t)
+    --
+    --         return {
+    --             easing_function = "cubic",
+    --             mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "<C-y>", "<C-e>", "zt", "zz", "zb" },
+    --             cursor_scrolls_alone = false,
+    --         }
+    --     end,
+    -- },
     {
         "JoosepAlviste/nvim-ts-context-commentstring",
         lazy = true,
@@ -219,112 +243,6 @@ return {
             vim.fn["mkdp#util#install"]()
         end,
     },
-    -- {
-    --     "kevinhwang91/nvim-ufo",
-    --     dependencies = {
-    --         "kevinhwang91/promise-async",
-    --         -- Sets up fold column
-    --         {
-    --             "luukvbaal/statuscol.nvim",
-    --             config = function()
-    --                 local builtin = require("statuscol.builtin")
-    --                 require("statuscol").setup({
-    --                     relculright = true,
-    --                     segments = {
-    --                         { text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
-    --                         { text = { "%s" }, click = "v:lua.ScSa" },
-    --                         { text = { builtin.foldfunc }, click = "v:lua.ScFa" },
-    --                     },
-    --                 })
-    --                 vim.api.nvim_set_hl(0, "FoldColumn", {}) -- Clear the FoldColumn HL group so it's bg is transparent
-    --             end,
-    --         },
-    --     },
-    --     config = function()
-    --         local capabilities = vim.lsp.protocol.make_client_capabilities()
-    --         capabilities.textDocument.foldingRange = {
-    --             dynamicRegistration = false,
-    --             lineFoldingOnly = true,
-    --         }
-    --         local language_servers = require("lspconfig").util.available_servers()
-    --         for _, ls in ipairs(language_servers) do
-    --             require("lspconfig")[ls].setup({
-    --                 capabilities = capabilities,
-    --             })
-    --         end
-    --         require("ufo").setup()
-    --     end,
-    -- },
-    -- {
-    --     "echasnovski/mini.clue",
-    --     version = false,
-    --     config = function()
-    --         local miniclue = require("mini.clue")
-    --         miniclue.setup({
-    --             triggers = {
-    --                 { mode = "n", keys = "<C-w>" },
-    --                 { mode = "n", keys = "<Leader>" },
-    --                 { mode = "n", keys = "<Space>" },
-    --                 { mode = "n", keys = "[" },
-    --                 { mode = "n", keys = "]" },
-    --                 { mode = "n", keys = "c" },
-    --                 -- { mode = "n", keys = "cr" },
-    --                 { mode = "n", keys = "g" },
-    --                 { mode = "n", keys = "m" },
-    --                 -- { mode = "n", keys = "z" },
-    --                 { mode = "n", keys = '"' },
-    --
-    --                 { mode = "v", keys = "g" },
-    --                 { mode = "v", keys = "m" },
-    --             },
-    --             clues = {
-    --                 miniclue.gen_clues.builtin_completion(),
-    --                 -- miniclue.gen_clues.g(),
-    --                 miniclue.gen_clues.marks(),
-    --                 miniclue.gen_clues.registers(),
-    --                 miniclue.gen_clues.windows(),
-    --                 miniclue.gen_clues.z(),
-    --
-    --                 -- g
-    --                 -- miniclue.set_mapping_desc("n", "gc", "Comment"),
-    --                 -- miniclue.set_mapping_desc("n", "gcc", "Toggle comment"),
-    --
-    --                 -- cr
-    --                 -- miniclue.set_mapping_desc("n", "cr", "Coerse"),
-    --                 -- miniclue.set_mapping_desc("n", "crc", "Coerse to camelCase"),
-    --                 -- miniclue.set_mapping_desc("n", "crm", "Coerce to MixedCase"),
-    --                 -- miniclue.set_mapping_desc("n", "crs", "Coerse to snake_case"),
-    --                 -- miniclue.set_mapping_desc("n", "crt", "Coerse to Title Case"),
-    --                 -- miniclue.set_mapping_desc("n", "cru", "Coerse to UPPER_SNAKE_CASE"),
-    --                 -- miniclue.set_mapping_desc("n", "cr-", "Coerse to dash-case"),
-    --                 -- miniclue.set_mapping_desc("n", "cr.", "Coerse to dot.case"),
-    --                 -- miniclue.set_mapping_desc("n", "cr ", "Coerse to space case"),
-    --
-    --                 -- z
-    --                 -- miniclue.set_mapping_desc("n", "zt", "Scroll cursor to top of screen"),
-    --                 -- miniclue.set_mapping_desc("n", "zz", "Center cursor on screen"),
-    --                 -- miniclue.set_mapping_desc("n", "zb", "Scroll cursor to bottom of screen"),
-    --             },
-    --             window = {
-    --                 delay = 250,
-    --                 config = {
-    --                     width = "auto",
-    --                 },
-    --             },
-    --         })
-    --     end,
-    -- },
-    -- {
-    --     "edluffy/specs.nvim",
-    --     opts = {
-    --         show_jumps = true,
-    --         popup = {
-    --             inc_ms = 20,
-    --             blend = 10,
-    --             winhl = "TermCursor",
-    --         },
-    --     },
-    -- },
     {
         "folke/which-key.nvim",
         event = "VeryLazy",

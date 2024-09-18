@@ -49,7 +49,7 @@ return {
         end,
         keys = {
             {
-                "<space>g",
+                "<space>b",
                 mode = { "n" },
                 function()
                     require("telescope.builtin").buffers({})
