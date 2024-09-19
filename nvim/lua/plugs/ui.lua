@@ -42,7 +42,8 @@ return {
             popup_border_style = "rounded",
             window = {
                 mappings = {
-                    ["<cr>"] = "open_with_window_picker",
+                    ["<CR>"] = "open_with_window_picker",
+                    ["o"] = "open",
                     ["s"] = "vsplit_with_window_picker",
                     ["h"] = "split_with_window_picker",
                 },
