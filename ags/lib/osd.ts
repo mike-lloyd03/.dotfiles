@@ -44,6 +44,11 @@ function OsdRevealer() {
       () => show(audio.speaker.volume, 1.5, getVolumeIcon()),
       "notify::volume",
     )
+    .hook(
+      audio.speaker,
+      () => show(audio.speaker.volume, 1.5, getVolumeIcon()),
+      "notify::is-muted",
+    )
     .hook(brightness, () =>
       show(brightness.screen, 1, "brightness-high-symbolic"),
     );
