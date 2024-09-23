@@ -194,6 +194,9 @@ return {
             scroll = {
                 enable = true,
             },
+            cursor = {
+                enable = false,
+            },
             resize = {
                 enable = false,
             },

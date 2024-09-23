@@ -35,3 +35,4 @@ require("onedark").load()
 
 -- Fix nvim slowing down when a search highlight is active
 vim.cmd("hi! link CurSearch Search")
+vim.cmd("highlight SpellBad guisp=#993939")
