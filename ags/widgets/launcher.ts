@@ -1,6 +1,6 @@
 import Gtk from "gi://Gtk?version=3.0";
 import type { Application } from "types/service/applications";
-import { Padding } from "./utils";
+import { Padding } from "lib/utils";
 const appSvc = await Service.import("applications");
 
 const WINDOW_NAME = "ags-launcher";

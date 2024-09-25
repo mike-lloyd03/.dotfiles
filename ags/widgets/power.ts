@@ -1,4 +1,4 @@
-import { Padding } from "./utils";
+import { Padding } from "lib/utils";
 
 const WINDOW_NAME = "ags-power";
 

@@ -1,7 +1,7 @@
 import brightness from "services/brightness";
 const audio = await Service.import("audio");
 
-import { getVolumeIcon, Padding } from "./utils";
+import { getVolumeIcon, Padding } from "lib/utils";
 
 const WINDOW_NAME = "ags-osd";
 

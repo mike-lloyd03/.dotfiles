@@ -1,11 +1,9 @@
-import { PopupNotifications } from "lib/notifications/index";
-import Bar from "lib/bar";
-import Launcher from "lib/launcher";
-import Osd from "lib/osd";
-import Cliphist from "lib/cliphist";
-import Power from "lib/power";
-// import Gtk from "gi://Gtk?version=3.0";
-// import Gdk from "gi://Gdk";
+import { PopupNotifications } from "widgets/notifications/index";
+import Bar from "widgets/bar/bar";
+import Launcher from "widgets/launcher";
+import Osd from "widgets/osd";
+import Cliphist from "widgets/cliphist";
+import Power from "widgets/power";
 
 const notifications = await Service.import("notifications");
 notifications.popupTimeout = 10000;
