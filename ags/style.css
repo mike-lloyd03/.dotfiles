@@ -256,6 +256,7 @@ levelbar trough block.empty {
 .ags-battery-menu {
   margin-right: 150px;
   padding: 3rem;
+  border-radius: 1rem;
 }
 
 .ags-battery-menu-profile {

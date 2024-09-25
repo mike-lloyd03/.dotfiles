@@ -10,7 +10,7 @@ const audio = await Service.import("audio");
 const battery = await Service.import("battery");
 const systemtray = await Service.import("systemtray");
 const network = await Service.import("network");
-const powerProfiles = await Service.import("powerprofiles");
+import tuned from "services/tuned";
 
 const date = Variable("", {
   poll: [1000, 'date "+%a %Y-%m-%d %H%M:%S"'],
@@ -120,31 +120,42 @@ function secondsToHHMM(seconds: number): string {
 
 function BatteryMenu() {
   const name = "ags-battery-menu";
-  const activeProfile = powerProfiles.bind("active_profile");
+  const activeProfile = tuned.bind("active_profile");
 
-  const profileIcons = {
-    "power-saver": "battery-profile-powersave-symbolic",
-    balanced: "power-profile-balanced-symbolic",
-    performance: "battery-profile-performance-symbolic",
-  };
+  const profiles = [
+    {
+      profile: "laptop-battery-powersave",
+      icon: "battery-profile-powersave-symbolic",
+    },
+    { profile: "balanced", icon: "power-profile-balanced-symbolic" },
+    { profile: "off", icon: "battery-profile-performance-symbolic" },
+  ];
 
-  const child = Widget.Box({
+  const label = Widget.Label("TuneD Profile");
+
+  const profileButtons = Widget.Box({
     spacing: 8,
-    children: powerProfiles.profiles.map((p) =>
+    children: profiles.map((p) =>
       Widget.Button({
         child: Widget.Icon({
-          icon: profileIcons[p["Profile"]],
+          icon: p.icon,
           size: 24,
         }),
         className: activeProfile.as(
           (a) =>
-            `${a == p["Profile"] ? "ags-battery-menu-profile active" : "ags-battery-menu-profile"}`,
+            `${a == p.profile ? "ags-battery-menu-profile active" : "ags-battery-menu-profile"}`,
         ),
         onPrimaryClick: () => {
-          powerProfiles.active_profile = p["Profile"];
+          tuned.active_profile = p.profile;
         },
+        tooltipText: p.profile,
       }),
     ),
+  });
+
+  const child = Widget.Box({
+    vertical: true,
+    children: [label, profileButtons],
   });
 
   return PopupMenu(name, child);
