@@ -9,7 +9,7 @@ export function TuneD() {
       profile: "laptop-battery-powersave",
       icon: "battery-profile-powersave-symbolic",
     },
-    { profile: "balanced", icon: "power-profile-balanced-symbolic" },
+    { profile: "balanced-battery", icon: "power-profile-balanced-symbolic" },
     { profile: "off", icon: "battery-profile-performance-symbolic" },
   ];
 
