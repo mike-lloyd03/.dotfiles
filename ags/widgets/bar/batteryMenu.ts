@@ -47,6 +47,14 @@ function Hardware() {
     label: hardware.bind("cpu_temp").as((f1) => `CPU: ${f1} °C`),
   });
 
+  const iGpuTempLabel = Widget.Label({
+    label: hardware.bind("igpu_temp").as((f1) => `iGPU: ${f1} °C`),
+  });
+
+  const dGpuTempLabel = Widget.Label({
+    label: hardware.bind("dgpu_temp").as((f1) => `dGPU: ${f1} °C`),
+  });
+
   const fan1Label = Widget.Label({
     label: hardware.bind("fan_1").as((f1) => `Fan 1: ${f1} rpm`),
   });
@@ -57,7 +65,13 @@ function Hardware() {
 
   return Widget.Box({
     vertical: true,
-    children: [cpuTempLabel, fan1Label, fan2Label],
+    children: [
+      cpuTempLabel,
+      iGpuTempLabel,
+      dGpuTempLabel,
+      fan1Label,
+      fan2Label,
+    ],
   });
 }
 
