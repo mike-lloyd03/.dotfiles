@@ -1,7 +1,8 @@
 import tuned from "services/tuned";
+import hardware from "services/hardware";
 import PopupMenu from "lib/popupMenu";
 
-export function TuneD() {
+function TuneD() {
   const activeProfile = tuned.bind("active_profile");
 
   const profiles = [
@@ -41,12 +42,31 @@ export function TuneD() {
   });
 }
 
+function Hardware() {
+  const cpuTempLabel = Widget.Label({
+    label: hardware.bind("cpu_temp").as((f1) => `CPU: ${f1} °C`),
+  });
+
+  const fan1Label = Widget.Label({
+    label: hardware.bind("fan_1").as((f1) => `Fan 1: ${f1} rpm`),
+  });
+
+  const fan2Label = Widget.Label({
+    label: hardware.bind("fan_2").as((f2) => `Fan 2: ${f2} rpm`),
+  });
+
+  return Widget.Box({
+    vertical: true,
+    children: [cpuTempLabel, fan1Label, fan2Label],
+  });
+}
+
 export function BatteryMenu() {
   const name = "ags-battery-menu";
 
   const child = Widget.Box({
     vertical: true,
-    children: [TuneD()],
+    children: [TuneD(), Hardware()],
   });
 
   return PopupMenu(name, child);
