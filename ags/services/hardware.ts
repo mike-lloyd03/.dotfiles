@@ -1,11 +1,9 @@
-const fan1File = "/sys/class/hwmon/hwmon10/fan1_input";
-const fan2File = "/sys/class/hwmon/hwmon10/fan2_input";
-const cpuFile = "/sys/class/hwmon/hwmon10/temp4_input";
-const iGpuFile = "/sys/class/hwmon/hwmon10/temp3_input";
-const dGpuFile = "/sys/class/hwmon/hwmon10/temp8_input";
+const cpuChip = "cros_ec-isa-0000";
+const iGpuChip = "amdgpu-pci-c400";
+const dGpuChip = "amdgpu-pci-0300";
 
 function normalizeTemp(temp: number): number {
-  return (temp + 150) / 1000;
+  return temp + 0.15;
 }
 
 class HardwareService extends Service {
@@ -13,8 +11,8 @@ class HardwareService extends Service {
     Service.register(
       this,
       {
-        "fan-1-changed": ["string"],
-        "fan-2-changed": ["string"],
+        "fan-1-changed": ["int"],
+        "fan-2-changed": ["int"],
         "cpu-temp-changed": ["int"],
         "igpu-temp-changed": ["int"],
         "dgpu-temp-changed": ["int"],
@@ -29,8 +27,8 @@ class HardwareService extends Service {
     );
   }
 
-  #fan_1 = "0";
-  #fan_2 = "0";
+  #fan_1 = 0;
+  #fan_2 = 0;
   #cpu_temp = 0;
   #igpu_temp = 0;
   #dgpu_temp = 0;
@@ -64,11 +62,16 @@ class HardwareService extends Service {
   }
 
   #onChange() {
-    this.#fan_1 = Utils.exec(`cat ${fan1File}`);
-    this.#fan_2 = Utils.exec(`cat ${fan2File}`);
-    this.#cpu_temp = normalizeTemp(Number(Utils.exec(`cat ${cpuFile}`)));
-    this.#igpu_temp = normalizeTemp(Number(Utils.exec(`cat ${iGpuFile}`)));
-    this.#dgpu_temp = normalizeTemp(Number(Utils.exec(`cat ${dGpuFile}`)));
+    const sensorJson = JSON.parse(Utils.exec("sensors -j"));
+
+    this.#cpu_temp = sensorJson[cpuChip]["cpu@4c"]["temp4_input"];
+    this.#cpu_temp = normalizeTemp(this.#cpu_temp);
+
+    this.#fan_1 = sensorJson[cpuChip]["fan1"]["fan1_input"];
+    this.#fan_2 = sensorJson[cpuChip]["fan2"]["fan2_input"];
+
+    this.#dgpu_temp = sensorJson[dGpuChip]["edge"]["temp1_input"];
+    this.#igpu_temp = sensorJson[iGpuChip]["edge"]["temp1_input"];
 
     this.changed("fan-1");
     this.changed("fan-2");

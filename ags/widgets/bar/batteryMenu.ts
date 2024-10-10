@@ -4,6 +4,7 @@ import PopupMenu from "lib/popupMenu";
 
 function TuneD() {
   const activeProfile = tuned.bind("active_profile");
+  const isActive = tuned.bind("service_is_active");
 
   const profiles = [
     {
@@ -36,9 +37,24 @@ function TuneD() {
     ),
   });
 
+  const startService = Widget.Button({
+    label: "Start Service",
+    onPrimaryClick: tuned.startService,
+    className: "ags-battery-menu-profile",
+  });
+
   return Widget.Box({
     vertical: true,
-    children: [label, profileButtons],
+    children: [
+      label,
+      Widget.Stack({
+        children: {
+          running: profileButtons,
+          notRunning: startService,
+        },
+        shown: isActive.as((r) => (r ? "running" : "notRunning")),
+      }),
+    ],
   });
 }
 

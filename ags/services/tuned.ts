@@ -6,16 +6,19 @@ class TunedService extends Service {
       {
         // 'name-of-signal': [type as a string from GObject.TYPE_<type>],
         "active-profile-changed": ["string"],
+        "service-is-active-changed": ["boolean"],
       },
       // properties
       {
         // 'kebab-cased-name': [type as a string from GObject.TYPE_<type>, 'r' | 'w' | 'rw']
         "active-profile": ["string", "rw"],
+        "service-is-active": ["boolean", "r"],
       },
     );
   }
 
   #activeProfile = "";
+  #serviceIsActive = false;
 
   // the getter has to be in snake_case
   get active_profile() {
@@ -31,15 +34,22 @@ class TunedService extends Service {
     }
   }
 
+  get service_is_active() {
+    return this.#serviceIsActive;
+  }
+
   constructor() {
     super();
 
-    Utils.monitorFile("/etc/tuned/active_profile", () => this.#onChange());
+    Utils.monitorFile("/etc/tuned/active_profile", () =>
+      this.#onProfileChange(),
+    );
 
-    this.#onChange();
+    this.#onProfileChange();
+    this.#getServiceStatus();
   }
 
-  #onChange() {
+  #onProfileChange() {
     let activeProfile = Utils.exec("cat /etc/tuned/active_profile");
     if (activeProfile == "") {
       activeProfile = "off";
@@ -52,10 +62,23 @@ class TunedService extends Service {
     this.emit("active-profile-changed", this.#activeProfile);
   }
 
-  // overwriting the connect method, let's you
-  // change the default event that widgets connect to
-  connect(event = "active-profile-changed", callback) {
-    return super.connect(event, callback);
+  #getServiceStatus() {
+    let status = Utils.exec("systemctl is-active tuned");
+    this.#serviceIsActive = status == "active" ? true : false;
+  }
+
+  startService() {
+    print("starting service");
+    Utils.exec("systemctl start tuned");
+
+    print("updating variable");
+    this.#getServiceStatus();
+
+    print("emitting changed");
+    this.changed("system-is-active");
+
+    print("emitting changed 2");
+    this.emit("system-is-active-changed", this.#serviceIsActive);
   }
 }
 
