@@ -1,7 +1,5 @@
 require("config.lazy")
-require("lsp")
 require("mappings")
-require("statusline")
 
 -- Command mode zsh-like autocompletion
 vim.opt.signcolumn = "yes"
@@ -58,6 +56,23 @@ vim.filetype.add({
 })
 
 -----------
+-- Diagnostics
+-----------
+vim.opt.completeopt = "menuone,noselect,noinsert"
+vim.opt.shortmess = vim.opt.shortmess + "c" -- Avoid showing extra messages when using completion
+
+vim.diagnostic.config({
+    virtual_text = false, -- Disable virtual text
+    severity_sort = true,
+})
+
+local signs = { Error = "● ", Warn = "● ", Info = "● ", Hint = "● " }
+for type, icon in pairs(signs) do
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
+-----------
 -- Auto Commands
 -----------
 -- Markdown bindings
@@ -69,3 +84,7 @@ vim.cmd([[
   autocmd FileType markdown,typst setlocal spell spelllang=en_us
   autocmd FileType markdown call lexical#init()
 ]])
+
+if vim.g.neovide then
+    vim.o.guifont = "JetBrainsMono NFM:h10"
+end

@@ -1,10 +1,13 @@
 return {
-    {
-        "nvim-lualine/lualine.nvim",
-        dependencies = {
-            "kyazdani42/nvim-web-devicons",
-        },
-    },
+    -- {
+    --     "nvim-lualine/lualine.nvim",
+    --     dependencies = {
+    --         "kyazdani42/nvim-web-devicons",
+    --     },
+    --     keys = {
+    --         { "<C-w>", ":LualineRenameTab ", desc = "Rename tab" },
+    --     },
+    -- },
     {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
@@ -38,7 +41,7 @@ return {
                 end,
             },
         },
-        config = {
+        opts = {
             popup_border_style = "rounded",
             window = {
                 mappings = {
@@ -71,12 +74,48 @@ return {
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
-        config = true,
+        opts = {
+            on_attach = function(buffer)
+                local gs = package.loaded.gitsigns
+
+                vim.keymap.set("n", "]c", function()
+                    if vim.wo.diff then
+                        vim.cmd.normal({ "]c", bang = true })
+                    else
+                        gs.nav_hunk("next")
+                    end
+                end, { desc = "Next hunk", buffer = buffer })
+
+                vim.keymap.set("n", "[c", function()
+                    if vim.wo.diff then
+                        vim.cmd.normal({ "[c", bang = true })
+                    else
+                        gs.nav_hunk("prev")
+                    end
+                end, { desc = "Previous hunk", buffer = buffer })
+            end,
+        },
+        -- keys = {
+        --     {
+        --         "]c",
+        --         mode = { "n" },
+        --         "<CMD>Gitsigns next_hunk<CR>",
+        --         desc = "Next hunk",
+        --         -- expr = true,
+        --     },
+        --     {
+        --         "[c",
+        --         mode = { "n" },
+        --         "<CMD>Gitsigns prev_hunk<CR>",
+        --         desc = "Previous hunk",
+        --         -- expr = true,
+        --     },
+        -- },
     },
     {
         "echasnovski/mini.move",
         version = false,
-        config = {
+        opts = {
             mappings = {
                 left = "<M-S-h>",
                 right = "<M-S-l>",

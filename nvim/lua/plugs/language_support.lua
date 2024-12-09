@@ -3,11 +3,10 @@ return {
         "chrisbra/csv.vim",
         ft = "csv",
     },
-    {
-        "mrcjkb/rustaceanvim",
-        version = "^4",
-        lazy = false,
-    },
+    -- {
+    --     "mrcjkb/rustaceanvim",
+    --     ft = { "rust" },
+    -- },
     {
         "ron-rs/ron.vim",
         ft = "ron",

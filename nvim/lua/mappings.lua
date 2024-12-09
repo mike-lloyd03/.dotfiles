@@ -1,21 +1,22 @@
-local function nmap(shortcut, command, opts)
+local function map(mode, shortcut, command, opts)
     opts = opts or { noremap = true }
-    vim.api.nvim_set_keymap("n", shortcut, command, opts)
+    vim.api.nvim_set_keymap(mode, shortcut, command, opts)
+end
+
+local function nmap(shortcut, command, opts)
+    map("n", shortcut, command, opts)
 end
 
 local function vmap(shortcut, command, opts)
-    opts = opts or { noremap = true }
-    vim.api.nvim_set_keymap("v", shortcut, command, opts)
+    map("v", shortcut, command, opts)
 end
 
 local function imap(shortcut, command, opts)
-    opts = opts or { noremap = true }
-    vim.api.nvim_set_keymap("i", shortcut, command, opts)
+    map("i", shortcut, command, opts)
 end
 
 local function omap(shortcut, command, opts)
-    opts = opts or { noremap = true }
-    vim.api.nvim_set_keymap("o", shortcut, command, opts)
+    map("o", shortcut, command, opts)
 end
 
 -- This always screws me up
@@ -58,18 +59,12 @@ nmap("mm", "%", { desc = "Goto matching bracket" })
 vmap("mm", "%", { desc = "Goto matching bracket" })
 nmap("<space>ya", "<CMD>%y+<CR>")
 
--- nvim.notify
-nmap("<space>n", "<CMD><CR>", { desc = "Notifications" })
-nmap("<space>nn", "<CMD>Telescope notify<CR>")
-nmap("<space>nd", "<CMD>lua require('notify').dismiss()<CR>")
-
 -- Find and replace under cursor
 nmap("<leader>s", ":%s/<C-r><C-w>/", { desc = "Find and replace under cursor" })
 vmap("<leader>s", '"ry:%s/<C-r>r/', { desc = "Find and replace under cursor" })
 
 -- Clear hightlight after search
-nmap("<C-_>", "<CMD>nohlsearch<CR>")
--- nmap("<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
+nmap("<space>/", "<CMD>nohlsearch<CR>", { desc = "Escape and Clear hlsearch" })
 
 -- LSP/Diagnostics
 nmap("[g", "<CMD>lua vim.diagnostic.goto_prev()<CR>", { desc = "Previous diagnostic" })
@@ -84,6 +79,20 @@ nmap(
 )
 nmap("<space>D", "<CMD>lua vim.lsp.buf.type_definition()<CR>", { desc = "Type definition" })
 nmap("<space>r", "<CMD>lua vim.lsp.buf.rename()<CR>", { desc = "Rename" })
+
+-- Motions
+omap("ir", "i[")
+omap("ar", "a[")
+omap("ia", "i<")
+omap("aa", "a<")
+omap("iq", 'i"')
+omap("aq", 'a"')
+vmap("ir", "i[")
+vmap("ar", "a[")
+vmap("ia", "i<")
+vmap("aa", "a<")
+vmap("iq", 'i"')
+vmap("aq", 'a"')
 
 -- Go Imports
 function FormatAndOrgImports(wait_ms)
@@ -103,54 +112,11 @@ end
 
 nmap("gi", "<CMD>lua FormatAndOrgImports(1000)<CR>", { desc = "Format imports (Go)" })
 
--- NvimTree
--- nmap("<C-n>", "<CMD>NvimTreeToggle<CR>", { desc = "Open file explorer" })
--- nmap("<space>e", "<CMD>NvimTreeToggle<CR>", { desc = "Open file explorer" })
-
--- gitsigns
-nmap("]c", "&diff ? ']c' : '<CMD>Gitsigns next_hunk<CR>'", { expr = true, desc = "Next hunk" })
-nmap("[c", "&diff ? '[c' : '<CMD>Gitsigns prev_hunk<CR>'", { expr = true, desc = "Previous hunk" })
-
--- Trouble
-nmap("<space>t", "<cmd><cr>", { desc = "Trouble" })
-nmap("<space>tw", "<cmd>TroubleToggle workspace_diagnostics<cr>", { desc = "Workspace" })
-nmap("<space>td", "<cmd>TroubleToggle document_diagnostics<cr>", { desc = "Document" })
-nmap("<space>tq", "<cmd>TroubleToggle quickfix<cr>", { desc = "Quickfix" })
-nmap("<space>tl", "<cmd>TroubleToggle loclist<cr>", { desc = "Loclist" })
-
--- Format
-nmap("<C-f>", "<CMD>Format<CR>", { desc = "Format buffer" })
-
--- Lualine
-nmap("<C-w>,", ":LualineRenameTab ", { desc = "Rename tab" })
-
 -- How do I exit?
 nmap("<space>xx", "<CMD>xa<CR>", { desc = "Write quit all" })
 nmap("<space>qq", "<CMD>qa<CR>", { desc = "Quit all" })
 nmap("<space>QQ", "<CMD>qa!<CR>", { desc = "Quit all without saving" })
 nmap("<space>ww", "<CMD>wa<CR>", { desc = "Write all" })
-
--- -- specs
--- nmap("<Space><Space>", '<CMD>lua require("specs").show_specs()<CR>', { desc = "Show cursor location" })
--- nmap("n", 'n<CMD>lua require("specs").show_specs()<CR>')
--- nmap("N", 'N<CMD>lua require("specs").show_specs()<CR>')
-
--- todo-comments
-vim.keymap.set("n", "]t", function()
-    require("todo-comments").jump_next()
-end, { desc = "Next todo comment" })
-
-vim.keymap.set("n", "[t", function()
-    require("todo-comments").jump_prev()
-end, { desc = "Previous todo comment" })
-
-nmap("<Space>xt", "<CMD>TodoTelescope<CR>", { desc = "Todo List" })
-
--- auto-session
-nmap("<Space>q", "<CMD><CR>", { desc = "Session" })
-nmap("<Space>qr", "<CMD>SessionRestore<CR>", { desc = "Restore session" })
-nmap("<Space>qd", "<CMD>SessionDelete<CR>", { desc = "Delete session" })
-nmap("<Space>qs", "<CMD>SessionSave<CR>", { desc = "Save session" })
 
 -- UI settings
 nmap("<Space>u", "", { desc = "UI Settings" })

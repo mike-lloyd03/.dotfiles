@@ -1,9 +1,89 @@
 return {
-    "neovim/nvim-lspconfig",
-    "nvimtools/none-ls.nvim",
     {
-        "yioneko/nvim-cmp",
-        branch = "perf",
+        "neovim/nvim-lspconfig",
+        opts = {
+            diagnostics = {
+                update_in_insert = true,
+            },
+            servers = {
+                bashls = {},
+                rust_analyzer = { enable = false },
+                bacon_ls = {
+                    enable = true,
+                    settings = {
+                        locationsFile = ".locatoins",
+                        baconSettings = {
+                            spawn = true,
+                            command = "bacon clippy -- --all-features",
+                        },
+                    },
+                },
+                gopls = {},
+                pyright = {},
+                svelte = {},
+                ts_ls = {},
+                eslint = {},
+                jsonls = {},
+                clangd = {},
+                nil_ls = {},
+                tinymist = {
+                    offset_encoding = "utf-8",
+                },
+                arduino_language_server = {
+                    cmd = { "/home/mike/repos/arduino-language-server/arduino-language-server" },
+                },
+                cssls = {},
+                tailwindcss = {},
+                lua_ls = {
+                    settings = {
+                        Lua = {
+                            runtime = {
+                                version = "LuaJIT",
+                            },
+                            diagnostics = {
+                                globals = { "vim" },
+                            },
+                            workspace = {
+                                library = vim.api.nvim_get_runtime_file("", true),
+                            },
+                            telemetry = {
+                                enable = false,
+                            },
+                        },
+                    },
+                },
+            },
+        },
+        config = function(_, opts)
+            local function navic_attach(client, bufnr)
+                if client.server_capabilities.documentSymbolProvider then
+                    require("nvim-navic").attach(client, bufnr)
+                end
+            end
+
+            for server, server_opts in pairs(opts.servers) do
+                server_opts.on_attach = navic_attach
+                require("lspconfig")[server].setup(server_opts)
+            end
+        end,
+    },
+    {
+        "nvimtools/none-ls.nvim",
+        opts = function()
+            local null_ls = require("null-ls")
+            return {
+                sources = {
+                    null_ls.builtins.diagnostics.revive.with({
+                        args = { "-formatter", "json", "-config", "/home/mike/.config/revive.toml", "./..." },
+                    }),
+                },
+            }
+        end,
+    },
+    {
+        "hrsh7th/nvim-cmp",
+        -- "yioneko/nvim-cmp",
+        -- branch = "perf",
         event = "InsertEnter",
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
@@ -56,7 +136,13 @@ return {
                 formatting = {
                     format = lspkind.cmp_format({
                         mode = "symbol_text",
-                        maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+                        maxwidth = 50,
+                        -- menu = {
+                        --     nvim_lsp = "[LSP]",
+                        --     luasnip = "[LuaSnip]",
+                        --     path = "[Path]",
+                        --     buffer = "[Buffer]",
+                        -- },
                     }),
                 },
 

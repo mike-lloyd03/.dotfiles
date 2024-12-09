@@ -1,12 +1,13 @@
 return {
     {
         "rmagatti/auto-session",
+        event = "VeryLazy",
         opts = {
             log_level = "error",
-            auto_session_suppress_dirs = { "~/", "/tmp/", "/" },
-            auto_session_enabled = true,
-            auto_save_enabled = true,
-            auto_restore_enabled = false,
+            suppressed_dirs = { "~/", "/tmp/", "/" },
+            enabled = true,
+            auto_save = true,
+            auto_restore = false,
         },
         init = function()
             local function close_all_floating_wins()
@@ -24,6 +25,12 @@ return {
                 "tabdo Neotree close",
             }
         end,
+        keys = {
+            { "<space>q", "<cmd><cr>", desc = "Session" },
+            { "<space>qr", "<cmd>SessionRestore<cr>", desc = "Restore" },
+            { "<space>qd", "<cmd>SessionDelete<cr>", desc = "Delete" },
+            { "<space>qs", "<cmd>SessionSave<cr>", desc = "Save" },
+        },
     },
 
     "tpope/vim-fugitive",
@@ -31,6 +38,7 @@ return {
     "dhruvasagar/vim-zoom",
     "junegunn/goyo.vim",
     {
+        -- Formatter
         "stevearc/conform.nvim",
         opts = {
             default_format_opts = {
@@ -70,6 +78,7 @@ return {
                 svelte = { "prettierd", "prettier", stop_after_first = true },
                 typescript = { "prettierd", "prettier", stop_after_first = true },
                 toml = { "taplo" },
+                typst = { "typstfmt" },
                 yaml = { "prettierd", "prettier", stop_after_first = true },
                 --                 yaml = function()
                 --                     local util = require("formatter.util")
@@ -101,16 +110,13 @@ return {
                 require("conform").format({ async = true, lsp_format = "fallback", range = range })
             end, { range = true })
         end,
-        -- keys = {
-        --     {
-        --         "<space>cF",
-        --         function()
-        --             require("conform").format({ timeout_ms = 3000 })
-        --         end,
-        --         mode = { "n", "v" },
-        --         desc = "Format Buffer",
-        --     },
-        -- },
+        keys = {
+            {
+                "<C-f>",
+                "<cmd>Format<cr>",
+                desc = "Format Buffer",
+            },
+        },
     },
     {
         "kylechui/nvim-surround",
@@ -153,6 +159,14 @@ return {
                 other = "●",
             },
         },
+        cmd = "Trouble",
+        keys = {
+            { "<space>t", "<cmd><cr>", desc = "Trouble" },
+            { "<space>tw", "<cmd>Trouble diagnostics toggle<cr>", desc = "Workspace" },
+            { "<space>td", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Document" },
+            { "<space>tq", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix" },
+            { "<space>tl", "<cmd>Trouble loclist<cr>", desc = "Loclist" },
+        },
     },
     {
         "folke/flash.nvim",
@@ -184,6 +198,9 @@ return {
         --         highlight = true,
         --     }
         -- end,
+        opts = {
+            highlight = true,
+        },
     },
     "tpope/vim-abolish",
     {
@@ -266,6 +283,27 @@ return {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
         opts = true,
+        keys = {
+            {
+                "]t",
+                function()
+                    require("todo-comments").jump_next()
+                end,
+                desc = "Next todo comment",
+            },
+            {
+                "[t",
+                function()
+                    require("todo-comments").jump_prev()
+                end,
+                desc = "Previous todo comment",
+            },
+            {
+                "<space>xt",
+                "<CMD>TodoTelescope<CR>",
+                desc = "Todo list",
+            },
+        },
     },
     {
         "windwp/nvim-ts-autotag",

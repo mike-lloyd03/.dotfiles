@@ -83,7 +83,7 @@ return {
                 desc = "Live grep",
             },
             { "<space>h", mode = { "n" }, "<CMD>Telescope help_tags<CR>", desc = "Help tags" },
-            { "<space>j", mode = { "n" }, "<CMD>Telescope jumplist<CR>", desc = "Jumptlist" },
+            { "<space>j", mode = { "n" }, "<CMD>Telescope jumplist<CR>", desc = "Jumplist" },
             { "<space>d", mode = { "n" }, "<CMD>Telescope diagnostics<CR>", desc = "Diagnostics" },
             { "<space>'", mode = { "n" }, "<CMD>Telescope resume<CR>", desc = "Open last picker" },
             { '<space>"', mode = { "n" }, "<CMD>Telescope registers<CR>", desc = "Registers" },
@@ -134,6 +134,20 @@ return {
                     require("telescope.builtin").spell_suggest({})
                 end,
                 desc = "Spelling suggestions",
+            },
+            {
+                "<space>nn",
+                mode = { "n" },
+                "<CMD>Telescope notify<CR>",
+                desc = "Notifications",
+            },
+            {
+                "<space>nd",
+                mode = { "n" },
+                function()
+                    require("notify").dismiss()
+                end,
+                desc = "Dismiss notifications",
             },
         },
     },
