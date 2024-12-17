@@ -18,14 +18,6 @@ end
 set -Ux EDITOR nvim
 set -U fish_greeting ""
 
-if [ "$(uname -n)" = "TD-C02FK3H8MD6T" ]
-    fish_add_path "/usr/local/opt/gnubin:/usr/local/bin"
-end
-
-if [ "$(uname -n)" = dev ]
-    set -x GOPRIVATE github.td.teradata.com
-end
-
 if [ "$(uname -n)" = kratos ]
     set -x ANDROID_HOME "$HOME/Android/Sdk"
 end
