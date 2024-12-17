@@ -13,6 +13,10 @@ keybinds {
         bind "Ctrl j" { HalfPageScrollDown; }
         bind "Ctrl k" { HalfPageScrollUp; }
     }
+    search {
+        bind "n" { Search "down"; }
+        bind "N" { Search "up"; }
+    }
     move {
         bind "Ctrl h" { SwitchToMode "Normal"; }
     }
