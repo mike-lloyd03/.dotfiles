@@ -56,7 +56,7 @@ class HardwareService extends Service {
   constructor() {
     super();
 
-    Utils.interval(1000, () => this.#onChange());
+    Utils.interval(5000, () => this.#onChange());
 
     this.#onChange();
   }
