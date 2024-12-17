@@ -1,41 +1,26 @@
 return {
     {
-        "rmagatti/auto-session",
-        event = "VeryLazy",
+        "olimorris/persisted.nvim",
+        lazy = false,
         opts = {
-            log_level = "error",
-            suppressed_dirs = { "~/", "/tmp/", "/" },
-            enabled = true,
-            auto_save = true,
-            auto_restore = false,
+            save_dir = vim.fn.expand(vim.fn.stdpath("data") .. "/persisted/"),
+            ignored_dirs = { { "~", exact = true }, "/tmp/", { "/", exact = true } },
         },
-        init = function()
-            local function close_all_floating_wins()
-                for _, win in ipairs(vim.api.nvim_list_wins()) do
-                    local config = vim.api.nvim_win_get_config(win)
-                    if config.relative ~= "" then
-                        vim.api.nvim_win_close(win, false)
+        config = function()
+            vim.api.nvim_create_autocmd("User", {
+                pattern = "PersistedSavePre",
+                callback = function()
+                    for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+                        if vim.bo[buf].filetype == "neo-tree" then
+                            vim.api.nvim_buf_delete(buf, { force = true })
+                        end
                     end
-                end
-            end
-
-            vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
-            vim.g.auto_session_pre_save_cmds = {
-                close_all_floating_wins,
-                "tabdo Neotree close",
-            }
+                end,
+            })
         end,
-        keys = {
-            { "<space>q", "<cmd><cr>", desc = "Session" },
-            { "<space>qr", "<cmd>SessionRestore<cr>", desc = "Restore" },
-            { "<space>qd", "<cmd>SessionDelete<cr>", desc = "Delete" },
-            { "<space>qs", "<cmd>SessionSave<cr>", desc = "Save" },
-        },
     },
-
     "tpope/vim-fugitive",
     "preservim/vim-lexical",
-    "dhruvasagar/vim-zoom",
     "junegunn/goyo.vim",
     {
         -- Formatter
@@ -203,47 +188,6 @@ return {
         },
     },
     "tpope/vim-abolish",
-    {
-        "echasnovski/mini.animate",
-        event = "VeryLazy",
-        version = "*",
-        opts = {
-            scroll = {
-                enable = true,
-            },
-            cursor = {
-                enable = false,
-            },
-            resize = {
-                enable = false,
-            },
-            open = {
-                enable = false,
-            },
-            close = {
-                enable = false,
-            },
-        },
-        keys = {
-            { "<c-k>", mode = { "n", "x", "o" }, "10<c-y>", desc = "Scroll Up" },
-            { "<c-j>", mode = { "n", "x", "o" }, "10<c-e>", desc = "Scroll Down" },
-        },
-    },
-    -- {
-    --     "karb94/neoscroll.nvim",
-    --     opts = function()
-    --         local t = {}
-    --         t["<C-k>"] = { "scroll", { "-5", "false", "250" } }
-    --         t["<C-j>"] = { "scroll", { "5", "false", "250" } }
-    --         require("neoscroll.config").set_mappings(t)
-    --
-    --         return {
-    --             easing_function = "cubic",
-    --             mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "<C-y>", "<C-e>", "zt", "zz", "zb" },
-    --             cursor_scrolls_alone = false,
-    --         }
-    --     end,
-    -- },
     {
         "JoosepAlviste/nvim-ts-context-commentstring",
         lazy = true,

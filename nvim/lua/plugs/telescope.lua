@@ -5,6 +5,7 @@ return {
         dependencies = {
             "nvim-lua/plenary.nvim",
             "nvim-telescope/telescope-fzf-native.nvim",
+            "nvim-telescope/telescope-ui-select.nvim",
         },
         config = function()
             require("telescope").setup({
@@ -44,7 +45,7 @@ return {
                 },
             })
 
-            require("telescope").load_extension("notify")
+            -- require("telescope").load_extension("notify")
             require("telescope").load_extension("fzf")
         end,
         keys = {
@@ -69,6 +70,8 @@ return {
                             "--no-config",
                             "--hidden",
                             "--glob=!.git",
+                            "--glob=!.svelte-kit",
+                            "--glob=!node_modules",
                         },
                     })
                 end,
@@ -78,7 +81,14 @@ return {
                 "<space>g",
                 mode = { "n" },
                 function()
-                    require("telescope.builtin").live_grep({ additional_args = { "--hidden" } })
+                    require("telescope.builtin").live_grep({
+                        additional_args = {
+                            "--hidden",
+                            "--glob=!.git",
+                            "--glob=!.svelte-kit",
+                            "--glob=!node_modules",
+                        },
+                    })
                 end,
                 desc = "Live grep",
             },
@@ -135,20 +145,20 @@ return {
                 end,
                 desc = "Spelling suggestions",
             },
-            {
-                "<space>nn",
-                mode = { "n" },
-                "<CMD>Telescope notify<CR>",
-                desc = "Notifications",
-            },
-            {
-                "<space>nd",
-                mode = { "n" },
-                function()
-                    require("notify").dismiss()
-                end,
-                desc = "Dismiss notifications",
-            },
+            -- {
+            --     "<space>nn",
+            --     mode = { "n" },
+            --     "<CMD>Telescope notify<CR>",
+            --     desc = "Notifications",
+            -- },
+            -- {
+            --     "<space>nd",
+            --     mode = { "n" },
+            --     function()
+            --         require("notify").dismiss()
+            --     end,
+            --     desc = "Dismiss notifications",
+            -- },
         },
     },
 }

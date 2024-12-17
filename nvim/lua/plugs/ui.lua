@@ -57,6 +57,7 @@ return {
                     hide_gitignored = false,
                     never_show = {
                         ".git",
+                        ".svelte-kit",
                     },
                 },
                 use_libuv_file_watcher = true,
@@ -128,65 +129,71 @@ return {
             },
         },
     },
-    "stevearc/dressing.nvim",
     {
-        "rcarriga/nvim-notify",
-        opts = function()
-            vim.notify = require("notify")
-            return {
-                max_width = 80,
-                top_down = true,
-                background_colour = "#000000",
-                on_open = function(win)
-                    vim.api.nvim_win_set_config(win, { zindex = 100 })
-                end,
-            }
-        end,
-    },
-    {
-        "lukas-reineke/indent-blankline.nvim",
-        main = "ibl",
+        "stevearc/dressing.nvim",
         opts = {
-            scope = {
+            input = {
                 enabled = false,
-            },
-            indent = {
-                char = "│",
-                -- highlight = "VertSplit",
-            },
-            exclude = {
-                filetypes = {
-                    "alpha",
-                    "lazy",
-                    "trouble",
-                    "Trouble",
-                },
             },
         },
     },
+    -- {
+    --     "rcarriga/nvim-notify",
+    --     opts = function()
+    --         vim.notify = require("notify")
+    --         return {
+    --             max_width = 80,
+    --             top_down = true,
+    --             background_colour = "#000000",
+    --             on_open = function(win)
+    --                 vim.api.nvim_win_set_config(win, { zindex = 100 })
+    --             end,
+    --         }
+    --     end,
+    -- },
     {
-        "echasnovski/mini.indentscope",
-        version = false,
-        opts = function()
-            vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", { link = "MoreMsg" })
-            return {
-                symbol = "│",
-                options = { try_as_border = true },
-            }
-        end,
-        init = function()
-            vim.api.nvim_create_autocmd("FileType", {
-                pattern = {
-                    "alpha",
-                    "lazy",
-                    "trouble",
-                    "Trouble",
+        "folke/snacks.nvim",
+        priority = 1000,
+        lazy = false,
+        opts = {
+            indent = {
+                animate = {
+                    duration = {
+                        step = 40,
+                    },
                 },
-                callback = function()
-                    vim.b.miniindentscope_disable = true
-                end,
-            })
-        end,
+            },
+            dashboard = {
+                preset = {
+                    header = [[
+      █  █     
+      ██ ██     
+      █████     
+      ██ ███     
+      █  █     
+
+N  E  O  V  I  M
+                    ]],
+                },
+            },
+            notifier = {},
+            scroll = {},
+            input = {},
+            toggle = {},
+            zen = {},
+            styles = {
+                input = {
+                    wo = {
+                        winhighlight = "NormalFloat:SnacksInputNormal,FloatBorder:TelescopeBorder,FloatTitle:TelescopeTitle",
+                    },
+                },
+            },
+        },
+        keys = {
+            { "<space>nn", "<CMD>lua Snacks.notifier.show_history()<CR>", desc = "Show notifications" },
+            { "<space>nd", "<CMD>lua Snacks.notifier.hide()<CR>", desc = "Hide notification" },
+            { "<c-w>z", "<CMD>lua Snacks.zen.zoom()<CR>", desc = "Toggle zoom" },
+        },
     },
     {
         "folke/noice.nvim",
@@ -236,96 +243,99 @@ return {
                     command_palette = true,
                     inc_rename = true,
                 },
-            }
-        end,
-    },
-    {
-        "goolord/alpha-nvim",
-        event = "VimEnter",
-        enabled = true,
-        init = false,
-        opts = function()
-            local dashboard = require("alpha.themes.dashboard")
-            vim.api.nvim_set_hl(0, "DashboardLogo1", { fg = "#41a7fc" }) -- fg: Blue
-            vim.api.nvim_set_hl(0, "DashboardLogo2", { fg = "#8bcd5b", bg = "#41a7fc" }) -- fg: Green bg: Blue
-            vim.api.nvim_set_hl(0, "DashboardLogo3", { fg = "#8bcd5b" }) -- fg: Green
-            vim.api.nvim_set_hl(0, "DashboardLogoText", { fg = "#93a4c3", bold = true })
-
-            dashboard.section.header.val = {
-                --0123456789
-                [[     █  █     ]],
-                [[     ██ ██     ]],
-                [[     █████     ]],
-                [[     ██ ███     ]],
-                [[     █  █     ]],
-                [[]],
-                [[N  E  O  V  I  M]],
-            }
-            dashboard.section.header.opts.hl = {
-                { { "DashboardLogo1", 5, 6 }, { "DashboardLogo3", 6, 20 } },
-                {
-                    { "DashboardLogo1", 5, 6 },
-                    { "DashboardLogo2", 6, 10 },
-                    { "DashboardLogo3", 10, 24 },
+                notify = {
+                    enabled = false,
                 },
-                { { "DashboardLogo1", 5, 10 }, { "DashboardLogo3", 10, 26 } },
-                { { "DashboardLogo1", 5, 10 }, { "DashboardLogo3", 10, 24 } },
-                { { "DashboardLogo1", 5, 10 }, { "DashboardLogo3", 10, 22 } },
-                {},
-                { { "DashboardLogoText", 0, 26 } },
             }
-            dashboard.section.buttons.val = {
-                dashboard.button("n", " " .. " New file", "<cmd> ene <BAR> startinsert <cr>"),
-                dashboard.button(
-                    "c",
-                    " " .. " Open config",
-                    "<cmd> cd ~/.config/nvim | e ~/.config/nvim/init.lua <cr>"
-                ),
-                dashboard.button("s", " " .. " Restore session", "<cmd> SessionRestore <cr>"),
-                dashboard.button("q", " " .. " Quit", "<cmd> qa <cr>"),
-            }
-            for _, button in ipairs(dashboard.section.buttons.val) do
-                button.opts.hl = "AlphaButtons"
-                button.opts.hl_shortcut = "AlphaShortcut"
-            end
-            dashboard.section.buttons.opts.hl = "AlphaButtons"
-            dashboard.section.footer.opts.hl = "AlphaFooter"
-            dashboard.opts.layout[1].val = 4
-            return dashboard
-        end,
-        config = function(_, dashboard)
-            -- close Lazy and re-open when the dashboard is ready
-            if vim.o.filetype == "lazy" then
-                vim.cmd.close()
-                vim.api.nvim_create_autocmd("User", {
-                    once = true,
-                    pattern = "AlphaReady",
-                    callback = function()
-                        require("lazy").show()
-                    end,
-                })
-            end
-
-            require("alpha").setup(dashboard.opts)
-
-            vim.api.nvim_create_autocmd("User", {
-                once = true,
-                pattern = "LazyVimStarted",
-                callback = function()
-                    local stats = require("lazy").stats()
-                    local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-                    dashboard.section.footer.val = "⚡ Neovim loaded "
-                        .. stats.loaded
-                        .. "/"
-                        .. stats.count
-                        .. " plugins in "
-                        .. ms
-                        .. "ms"
-                    pcall(vim.cmd.AlphaRedraw)
-                end,
-            })
         end,
     },
+    -- {
+    --     "goolord/alpha-nvim",
+    --     event = "VimEnter",
+    --     enabled = true,
+    --     init = false,
+    --     opts = function()
+    --         local dashboard = require("alpha.themes.dashboard")
+    --         vim.api.nvim_set_hl(0, "DashboardLogo1", { fg = "#41a7fc" }) -- fg: Blue
+    --         vim.api.nvim_set_hl(0, "DashboardLogo2", { fg = "#8bcd5b", bg = "#41a7fc" }) -- fg: Green bg: Blue
+    --         vim.api.nvim_set_hl(0, "DashboardLogo3", { fg = "#8bcd5b" }) -- fg: Green
+    --         vim.api.nvim_set_hl(0, "DashboardLogoText", { fg = "#93a4c3", bold = true })
+    --
+    --         dashboard.section.header.val = {
+    --             --0123456789
+    --             [[     █  █     ]],
+    --             [[     ██ ██     ]],
+    --             [[     █████     ]],
+    --             [[     ██ ███     ]],
+    --             [[     █  █     ]],
+    --             [[]],
+    --             [[N  E  O  V  I  M]],
+    --         }
+    --         dashboard.section.header.opts.hl = {
+    --             { { "DashboardLogo1", 5, 6 }, { "DashboardLogo3", 6, 20 } },
+    --             {
+    --                 { "DashboardLogo1", 5, 6 },
+    --                 { "DashboardLogo2", 6, 10 },
+    --                 { "DashboardLogo3", 10, 24 },
+    --             },
+    --             { { "DashboardLogo1", 5, 10 }, { "DashboardLogo3", 10, 26 } },
+    --             { { "DashboardLogo1", 5, 10 }, { "DashboardLogo3", 10, 24 } },
+    --             { { "DashboardLogo1", 5, 10 }, { "DashboardLogo3", 10, 22 } },
+    --             {},
+    --             { { "DashboardLogoText", 0, 26 } },
+    --         }
+    --         dashboard.section.buttons.val = {
+    --             dashboard.button("n", " " .. " New file", "<cmd> ene <BAR> startinsert <cr>"),
+    --             dashboard.button(
+    --                 "c",
+    --                 " " .. " Open config",
+    --                 "<cmd> cd ~/.config/nvim | e ~/.config/nvim/init.lua <cr>"
+    --             ),
+    --             dashboard.button("s", " " .. " Restore session", "<cmd> SessionRestore <cr>"),
+    --             dashboard.button("q", " " .. " Quit", "<cmd> qa <cr>"),
+    --         }
+    --         for _, button in ipairs(dashboard.section.buttons.val) do
+    --             button.opts.hl = "AlphaButtons"
+    --             button.opts.hl_shortcut = "AlphaShortcut"
+    --         end
+    --         dashboard.section.buttons.opts.hl = "AlphaButtons"
+    --         dashboard.section.footer.opts.hl = "AlphaFooter"
+    --         dashboard.opts.layout[1].val = 4
+    --         return dashboard
+    --     end,
+    --     config = function(_, dashboard)
+    --         -- close Lazy and re-open when the dashboard is ready
+    --         if vim.o.filetype == "lazy" then
+    --             vim.cmd.close()
+    --             vim.api.nvim_create_autocmd("User", {
+    --                 once = true,
+    --                 pattern = "AlphaReady",
+    --                 callback = function()
+    --                     require("lazy").show()
+    --                 end,
+    --             })
+    --         end
+    --
+    --         require("alpha").setup(dashboard.opts)
+    --
+    --         vim.api.nvim_create_autocmd("User", {
+    --             once = true,
+    --             pattern = "LazyVimStarted",
+    --             callback = function()
+    --                 local stats = require("lazy").stats()
+    --                 local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+    --                 dashboard.section.footer.val = "⚡ Neovim loaded "
+    --                     .. stats.loaded
+    --                     .. "/"
+    --                     .. stats.count
+    --                     .. " plugins in "
+    --                     .. ms
+    --                     .. "ms"
+    --                 pcall(vim.cmd.AlphaRedraw)
+    --             end,
+    --         })
+    --     end,
+    -- },
     {
         "NvChad/nvim-colorizer.lua",
         opts = {

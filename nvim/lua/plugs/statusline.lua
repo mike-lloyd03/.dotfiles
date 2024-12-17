@@ -23,7 +23,7 @@ return {
                     -- section_separators = { left = "", right = "" },
                     component_separators = { left = "", right = "" },
                     section_separators = { left = "", right = "" },
-                    disabled_filetypes = { "neo-tree", "Avante", "AvanteInput" },
+                    disabled_filetypes = { "neo-tree" },
                     always_divide_middle = true,
                     -- globalstatus = true,
                     refresh = {

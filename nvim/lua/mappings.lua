@@ -19,6 +19,10 @@ local function omap(shortcut, command, opts)
     map("o", shortcut, command, opts)
 end
 
+local function xmap(shortcut, command, opts)
+    map("x", shortcut, command, opts)
+end
+
 -- This always screws me up
 nmap("q:", "")
 
@@ -27,6 +31,14 @@ vmap(".", ">gv", { desc = "Indent line" })
 vmap(",", "<gv", { desc = "Outdent line" })
 nmap(".", ">>", { desc = "Indent line" })
 nmap(",", "<<", { desc = "Outdent line" })
+
+-- Scrolling
+nmap("<c-k>", "10<c-y>")
+nmap("<c-j>", "10<c-e>")
+omap("<c-k>", "10<c-y>")
+omap("<c-j>", "10<c-e>")
+xmap("<c-k>", "10<c-y>")
+xmap("<c-j>", "10<c-e>")
 
 -- Helix inspiration
 nmap("gh", "0", { desc = "Goto line start" })
