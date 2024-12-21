@@ -244,7 +244,7 @@ return {
             },
             {
                 "<space>xt",
-                "<CMD>TodoTelescope<CR>",
+                "<CMD>TodoFzfLua<CR>",
                 desc = "Todo list",
             },
         },
