@@ -88,23 +88,13 @@ return {
             keymap = {
                 preset = "enter",
                 ["<Tab>"] = {
-                    function(cmp)
-                        if cmp.snippet_active() then
-                            return cmp.snippet_forward()
-                        else
-                            return cmp.select_next()
-                        end
-                    end,
+                    "select_next",
+                    "snippet_forward",
                     "fallback",
                 },
                 ["<S-Tab>"] = {
-                    function(cmp)
-                        if cmp.snippet_active() then
-                            return cmp.snippet_backward()
-                        else
-                            return cmp.select_prev()
-                        end
-                    end,
+                    "select_prev",
+                    "snippet_backward",
                     "fallback",
                 },
                 ["<C-k>"] = { "scroll_documentation_up", "fallback" },
