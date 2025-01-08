@@ -72,6 +72,9 @@ for type, icon in pairs(signs) do
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
+-- Set floating window border highlight to match FzfLua
+vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
+
 -----------
 -- Auto Commands
 -----------

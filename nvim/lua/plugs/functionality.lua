@@ -279,10 +279,17 @@ return {
     {
         "NeogitOrg/neogit",
         dependencies = {
-            "nvim-lua/plenary.nvim", -- required
-            "sindrets/diffview.nvim", -- optional - Diff integration
-            "ibhagwan/fzf-lua", -- optional
+            "nvim-lua/plenary.nvim",
+            "sindrets/diffview.nvim",
+            "ibhagwan/fzf-lua",
         },
         config = true,
+        keys = {
+            {
+                "<space>i",
+                "<CMD>Neogit kind=floating<CR>",
+                desc = "Neogit",
+            },
+        },
     },
 }
