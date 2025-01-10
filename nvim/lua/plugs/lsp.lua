@@ -3,6 +3,7 @@ return {
         "neovim/nvim-lspconfig",
         opts = {
             diagnostics = {
+                virtual_text = false,
                 update_in_insert = true,
             },
             servers = {
@@ -116,5 +117,16 @@ return {
             },
         },
         opts_extend = { "sources.default" },
+    },
+    {
+        "rachartier/tiny-inline-diagnostic.nvim",
+        event = "LspAttach",
+        priority = 1000,
+        opts = {
+            options = {
+                show_source = true,
+                multiple_diag_under_cursor = true,
+            },
+        },
     },
 }

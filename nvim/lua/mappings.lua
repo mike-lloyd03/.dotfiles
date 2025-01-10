@@ -79,8 +79,8 @@ vmap("<leader>s", '"ry:%s/<C-r>r/', { desc = "Find and replace under cursor" })
 nmap("<space>/", "<CMD>nohlsearch<CR>", { desc = "Escape and Clear hlsearch" })
 
 -- LSP/Diagnostics
-nmap("[g", "<CMD>lua vim.diagnostic.goto_prev()<CR>", { desc = "Previous diagnostic" })
-nmap("]g", "<CMD>lua vim.diagnostic.goto_next()<CR>", { desc = "Next diagnostic" })
+nmap("[g", "<CMD>lua vim.diagnostic.goto_prev({float = false})<CR>", { desc = "Previous diagnostic" })
+nmap("]g", "<CMD>lua vim.diagnostic.goto_next({float = false})<CR>", { desc = "Next diagnostic" })
 nmap("<space>k", "<CMD>lua vim.lsp.buf.hover()<CR>", { desc = "Show docs for item under cursor" })
 nmap("<space>wa", "<CMD>lua vim.lsp.buf.add_workspace_folder()<CR>", { desc = "Add workspace folder" })
 nmap("<space>wr", "<CMD>lua vim.lsp.buf.remove_workspace_folder()<CR>", { desc = "Remove workspace folders" })
