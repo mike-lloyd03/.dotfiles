@@ -181,6 +181,15 @@ N  E  O  V  I  M
             input = {},
             toggle = {},
             zen = {},
+            picker = {
+                win = {
+                    input = {
+                        keys = {
+                            ["<Esc>"] = { "close", mode = { "n", "i" } },
+                        },
+                    },
+                },
+            },
             styles = {
                 input = {
                     wo = {
@@ -194,6 +203,99 @@ N  E  O  V  I  M
             { "<space>nd", "<CMD>lua Snacks.notifier.hide()<CR>", desc = "Hide notification" },
             { "<c-w>z", "<CMD>lua Snacks.zen.zoom()<CR>", desc = "Toggle zoom" },
             { "<space>uz", "<CMD>lua Snacks.zen()<CR>", desc = "Toggle zen mode" },
+            {
+                "<space>f",
+                function()
+                    Snacks.picker.files()
+                end,
+                desc = "File picker",
+            },
+            {
+                "<space>g",
+                function()
+                    Snacks.picker.grep()
+                end,
+                desc = "Live grep",
+            },
+            {
+                "<space>s",
+                function()
+                    Snacks.picker.lsp_symbols()
+                end,
+                desc = "Document symbols",
+            },
+            {
+                "<space>d",
+                function()
+                    Snacks.picker.diagnostics()
+                end,
+                desc = "Diagnostics",
+            },
+            {
+                "<space>b",
+                function()
+                    Snacks.picker.buffers()
+                end,
+                desc = "Buffers",
+            },
+            {
+                "<space>a",
+                mode = { "n", "x", "o" },
+                function()
+                    vim.lsp.buf.code_action()
+                end,
+                desc = "Code actions",
+            },
+            {
+                '<space>"',
+                function()
+                    Snacks.picker.registers()
+                end,
+                desc = "Registers",
+            },
+            {
+                "<space>h",
+                function()
+                    Snacks.picker.help()
+                end,
+                desc = "Help",
+            },
+            -- Spelling suggestions does not exist
+            -- {
+            --     "<space>z",
+            --     function()
+            --         Snacks.picker.spell()
+            --     end,
+            --     desc = "Spelling suggestions",
+            -- },
+            {
+                "<space>'",
+                function()
+                    Snacks.picker.resume()
+                end,
+                desc = "Last picker",
+            },
+            {
+                "gr",
+                function()
+                    Snacks.picker.lsp_references()
+                end,
+                desc = "References",
+            },
+            {
+                "gd",
+                function()
+                    Snacks.picker.lsp_definitions()
+                end,
+                desc = "Definitions",
+            },
+            {
+                "gD",
+                function()
+                    Snacks.picker.lsp_definitions()
+                end,
+                desc = "Definitions",
+            },
         },
     },
     {

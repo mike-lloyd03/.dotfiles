@@ -243,8 +243,10 @@ return {
                 desc = "Previous todo comment",
             },
             {
-                "<space>xt",
-                "<CMD>TodoFzfLua<CR>",
+                "<leader>xt",
+                function()
+                    Snacks.picker.todo_comments()
+                end,
                 desc = "Todo list",
             },
         },
