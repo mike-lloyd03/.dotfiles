@@ -193,6 +193,7 @@ N  E  O  V  I  M
             { "<space>nn", "<CMD>lua Snacks.notifier.show_history()<CR>", desc = "Show notifications" },
             { "<space>nd", "<CMD>lua Snacks.notifier.hide()<CR>", desc = "Hide notification" },
             { "<c-w>z", "<CMD>lua Snacks.zen.zoom()<CR>", desc = "Toggle zoom" },
+            { "<space>uz", "<CMD>lua Snacks.zen()<CR>", desc = "Toggle zen mode" },
         },
     },
     {

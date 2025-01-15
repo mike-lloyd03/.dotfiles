@@ -21,7 +21,6 @@ return {
     },
     "tpope/vim-fugitive",
     "preservim/vim-lexical",
-    "junegunn/goyo.vim",
     {
         -- Formatter
         "stevearc/conform.nvim",
