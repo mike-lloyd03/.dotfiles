@@ -16,6 +16,7 @@ else
 end
 
 set -Ux EDITOR nvim
+set -Ux SYSTEMD_EDITOR nvim
 set -U fish_greeting ""
 
 if [ "$(uname -n)" = kratos ]

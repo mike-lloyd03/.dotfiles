@@ -5,7 +5,7 @@ return {
         priority = 1000,
         opts = {
             style = "deep",
-            transparent = true,
+            transparent = false,
             toggle_style_key = "<leader>ts",
             lualine = {
                 transparent = true,

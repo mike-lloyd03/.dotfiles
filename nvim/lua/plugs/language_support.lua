@@ -16,10 +16,6 @@ return {
         ft = "svelte",
     },
     {
-        "LhKipp/nvim-nu",
-        ft = "nu",
-    },
-    {
         "akinsho/flutter-tools.nvim",
         ft = "dart",
         dependencies = {
@@ -41,12 +37,6 @@ return {
         "NoahTheDuke/vim-just",
         ft = "just",
     },
-    { "ellisonleao/glow.nvim", opts = {
-        width = 120,
-        border = "rounded",
-    }, cmd = "Glow" },
-    "Glench/Vim-Jinja2-Syntax",
-    "folke/neodev.nvim",
     {
         "kaarmu/typst.vim",
         ft = "typst",

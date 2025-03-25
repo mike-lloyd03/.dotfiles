@@ -2,7 +2,7 @@ return {
     {
         "nvim-lualine/lualine.nvim",
         dependencies = {
-            "kyazdani42/nvim-web-devicons",
+            "nvim-tree/nvim-web-devicons",
         },
         event = "VeryLazy",
         opts = function()
@@ -19,13 +19,18 @@ return {
                 options = {
                     icons_enabled = true,
                     theme = "onedark",
-                    -- component_separators = { left = "", right = "" },
-                    -- section_separators = { left = "", right = "" },
                     component_separators = { left = "", right = "" },
                     section_separators = { left = "", right = "" },
-                    disabled_filetypes = { "neo-tree" },
+                    disabled_filetypes = {
+                        statusline = {
+                            "neo-tree",
+                            "snacks_picker_list",
+                            "snacks_layout_box",
+                            "snacks_dashboard",
+                        },
+                    },
                     always_divide_middle = true,
-                    -- globalstatus = true,
+                    always_show_tabline = false,
                     refresh = {
                         statusline = 100,
                         winbar = 100,

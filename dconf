@@ -1,0 +1,1007 @@
+[ca/desrt/dconf-editor]
+saved-pathbar-path='/org/gnome/desktop/wm/keybindings/move-to-workspace-6'
+saved-view='/org/gnome/desktop/wm/keybindings/'
+show-warning=false
+window-height=1337
+window-is-maximized=false
+window-width=2400
+
+[com/github/FontManager/FontManager]
+browse-pane-position=54.940711462450601
+is-maximized=false
+mode='browse'
+window-size=(1012, 1220)
+
+[com/github/FontManager/FontViewer]
+is-maximized=false
+window-size=(1012, 1220)
+
+[com/github/amezin/ddterm]
+audible-bell=false
+command='custom-command'
+custom-command='zellij a -c dropdown'
+ddterm-toggle-hotkey=['<Shift><Alt>t']
+hide-window-on-esc=false
+new-tab-button=false
+notebook-border=false
+preserve-working-directory=false
+show-scrollbar=false
+tab-close-buttons=false
+tab-expand=false
+tab-policy='automatic'
+tab-show-shortcuts=false
+tab-switcher-popup=false
+window-maximize=false
+window-size=0.60176282051282048
+
+[com/github/finefindus/eyedropper]
+is-maximized=false
+window-height=1220
+window-width=1012
+
+[com/github/phase1geo/annotator]
+blur-radius=20
+font='C059 18'
+item-color='#e01b24'
+window-h=1220
+window-w=1012
+
+[com/github/rafostar/Clapper]
+fullscreened=false
+maximized=false
+mute=false
+progression-mode=1
+speed=1.0
+subtitles-enabled=true
+volume=1.0
+
+[com/github/repsac-by/quake-mode]
+quake-mode-always-on-top=true
+quake-mode-height=65
+quake-mode-hide-from-overview=true
+quake-mode-tray=true
+
+[com/github/repsac-by/quake-mode/accelerators]
+quake-mode-accelerator-1=['<Alt>t']
+
+[com/github/repsac-by/quake-mode/apps]
+app-1='kitty.desktop'
+
+[com/github/wwmm/easyeffects]
+last-loaded-output-preset='amesb_fw16_EE_profile'
+use-dark-theme=true
+window-fullscreen=false
+window-height=0
+window-maximized=true
+window-width=0
+
+[com/github/wwmm/easyeffects/spectrum]
+color=(1.0, 1.0, 1.0, 1.0)
+color-axis-labels=(1.0, 1.0, 1.0, 1.0)
+
+[com/github/wwmm/easyeffects/streaminputs]
+input-device='alsa_input.pci-0000_c4_00.6.analog-stereo'
+
+[com/github/wwmm/easyeffects/streamoutputs]
+blocklist=@as []
+output-device='alsa_output.pci-0000_c4_00.6.analog-stereo'
+plugins=['filter#1', 'bass_enhancer#0', 'multiband_compressor#0', 'stereo_tools#0', 'limiter#0']
+
+[com/github/wwmm/easyeffects/streamoutputs/bassenhancer/0]
+amount=7.9999999999999858
+floor=10.0
+floor-active=true
+harmonics=10.0
+scope=200.0
+
+[com/github/wwmm/easyeffects/streamoutputs/filter/1]
+frequency=100.0
+gain=36.0
+type='High-pass'
+
+[com/github/wwmm/easyeffects/streamoutputs/limiter/0]
+attack=2.0
+lookahead=4.0
+oversampling='Half x4(2L)'
+release=8.0
+sidechain-input-device='alsa_input.pci-0000_c4_00.6.analog-stereo'
+
+[com/github/wwmm/easyeffects/streamoutputs/multibandcompressor/0]
+attack-threshold0=-16.0
+attack-threshold1=-24.0
+attack-threshold3=-24.0
+attack-time0=150.0
+attack-time1=150.0
+attack-time2=100.0
+attack-time3=80.0
+input-gain=-3.0
+knee0=-12.0
+knee1=-9.0
+knee2=-9.0
+knee3=-9.0
+makeup0=4.9999999999999973
+makeup1=-1.9428902930940239e-16
+makeup2=1.4999999999999987
+makeup3=4.9999999999999964
+ratio0=5.0
+ratio1=3.0
+ratio2=3.0
+ratio3=4.0
+release-time0=300.0
+release-time1=200.0
+release-time2=150.0
+release-time3=120.0
+sidechain-input-device='alsa_input.pci-0000_c4_00.6.analog-stereo'
+split-frequency1=250.0
+split-frequency2=1250.0
+split-frequency3=5000.0
+
+[com/github/wwmm/easyeffects/streamoutputs/stereotools/0]
+stereo-base=0.14999999999999991
+
+[net/nokyan/Resources]
+is-maximized=false
+last-viewed-page='applications'
+window-height=1238
+window-width=2032
+
+[org/blueman/general]
+window-properties=[1820, 1493, 0, 0]
+
+[org/blueman/network]
+nap-enable=false
+
+[org/blueman/plugins/autoconnect]
+services=[('E8:EE:CC:D5:80:5E', '00000000-0000-0000-0000-000000000000'), ('BC:87:FA:19:D9:4B', '00000000-0000-0000-0000-000000000000')]
+
+[org/blueman/plugins/recentconns]
+recent-connections=[{'adapter': '58:CD:C9:3A:88:42', 'address': 'E8:EE:CC:D5:80:5E', 'alias': 'soundcore Liberty 4 NC', 'icon': 'audio-headset', 'name': 'Audio and input profiles', 'uuid': '00000000-0000-0000-0000-000000000000', 'time': '1742921095.596117', 'device': '/org/bluez/hci0/dev_E8_EE_CC_D5_80_5E'}, {'adapter': '58:CD:C9:3A:88:42', 'address': 'BC:87:FA:19:D9:4B', 'alias': 'Bose QC Headphones', 'icon': 'audio-headphones', 'name': 'Audio and input profiles', 'uuid': '00000000-0000-0000-0000-000000000000', 'time': '1742921095.6265798', 'device': '/org/bluez/hci0/dev_BC_87_FA_19_D9_4B'}, {'adapter': '58:CD:C9:3A:88:42', 'address': 'BC:87:FA:19:D9:4B', 'alias': 'Bose QC Headphones', 'icon': 'audio-headphones', 'name': 'Serial Port', 'uuid': '00001101-0000-1000-8000-00805f9b34fb', 'time': '1732299372.674009'}]
+
+[org/gnome/Extensions]
+window-height=1238
+window-maximized=false
+window-width=1012
+
+[org/gnome/calendar]
+active-view='month'
+window-maximized=false
+window-size=(1012, 1238)
+
+[org/gnome/control-center]
+last-panel='display'
+window-state=(1012, 1238, false)
+
+[org/gnome/desktop/a11y]
+always-show-text-caret=false
+
+[org/gnome/desktop/a11y/applications]
+screen-keyboard-enabled=false
+screen-reader-enabled=false
+
+[org/gnome/desktop/a11y/mouse]
+dwell-click-enabled=false
+dwell-threshold=10
+dwell-time=1.2
+secondary-click-enabled=false
+secondary-click-time=1.2
+
+[org/gnome/desktop/app-folders]
+folder-children=['Utilities', 'YaST', 'Pardus']
+
+[org/gnome/desktop/app-folders/folders/Pardus]
+categories=['X-Pardus-Apps']
+name='X-Pardus-Apps.directory'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/Utilities]
+apps=['gnome-abrt.desktop', 'gnome-system-log.desktop', 'nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.Connections.desktop', 'org.gnome.DejaDup.desktop', 'org.gnome.Dictionary.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.fonts.desktop', 'org.gnome.Loupe.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.Usage.desktop', 'vinagre.desktop']
+categories=['X-GNOME-Utilities']
+name='X-GNOME-Utilities.directory'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/YaST]
+categories=['X-SuSE-YaST']
+name='suse-yast.directory'
+translate=true
+
+[org/gnome/desktop/background]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri='file:///home/mike/.local/share/backgrounds/2025-02-02-23-36-23-2560x1600.png'
+picture-uri-dark='file:///home/mike/.local/share/backgrounds/2025-02-02-23-36-23-2560x1600.png'
+primary-color='#000000000000'
+secondary-color='#000000000000'
+
+[org/gnome/desktop/input-sources]
+current=uint32 0
+show-all-sources=false
+sources=[('xkb', 'us')]
+xkb-options=['lv3:rwin_switch', 'compose:ralt']
+
+[org/gnome/desktop/interface]
+accent-color='blue'
+can-change-accels=false
+clock-format='24h'
+clock-show-date=false
+clock-show-seconds=false
+color-scheme='prefer-dark'
+cursor-blink=true
+cursor-blink-time=1200
+cursor-blink-timeout=10
+cursor-size=24
+cursor-theme='Adwaita'
+enable-animations=true
+font-antialiasing='rgba'
+font-hinting='medium'
+font-name='Adwaita Sans 9'
+font-rgba-order='rgb'
+gtk-color-palette='black:white:gray50:red:purple:blue:light blue:green:yellow:orange:lavender:brown:goldenrod4:dodger blue:pink:light green:gray10:gray30:gray75:gray90'
+gtk-color-scheme=''
+gtk-enable-primary-paste=true
+gtk-im-module=''
+gtk-im-preedit-style='callback'
+gtk-im-status-style='callback'
+gtk-key-theme='Default'
+gtk-theme='Orchis-Dark'
+gtk-timeout-initial=200
+gtk-timeout-repeat=20
+icon-theme='OneDarkDeep-icons'
+menubar-accel='F10'
+menubar-detachable=false
+menus-have-tearoff=false
+scaling-factor=uint32 0
+show-battery-percentage=true
+text-scaling-factor=1.0
+toolbar-detachable=false
+toolbar-icons-size='large'
+toolbar-style='both-horiz'
+toolkit-accessibility=false
+
+[org/gnome/desktop/notifications]
+application-children=['gnome-power-panel', 'bambustudio', 'org-mozilla-thunderbird', 'firefox', 'slack', 'brave-browser', 'kitty', 'org-gnome-shell-extensions', 'zoom', 'signal-desktop', 'steam', 'grist-desktop', 'org-gnome-settings', 'nwg-look', 'org-gnome-shell-extensions-gsconnect', 'com-nextcloud-desktopclient-nextcloud', 'com-devolutions-remotedesktopmanager', 'bluebubbles', 'zen-alpha', 'org-gnome-nautilus', 'com-system76-cosmicfiles', 'gnome-printers-panel', 'org-gnome-evince', 'gimp', 'zen-beta', 'clickup', 'zen', 'orcaslicer', 'chrome-kjbdgfilnfhdoflbpgamdcdgpehopbep-default', 'chromium', 'chrome-fmgjjmmmlfnkbppncabfkddbjimcfncm-default', 'org-gnome-evolution-alarm-notify', 'org-gnome-evolution', 'chrome-aghbiahbpaijignceidepookljebhfak-default', 'com-github-phase1geo-annotator', 'org-gnome-characters', 'org-gnome-software']
+show-banners=true
+show-in-lock-screen=false
+
+[org/gnome/desktop/notifications/application/bambustudio]
+application-id='BambuStudio.desktop'
+
+[org/gnome/desktop/notifications/application/bluebubbles]
+application-id='bluebubbles.desktop'
+
+[org/gnome/desktop/notifications/application/brave-browser]
+application-id='brave-browser.desktop'
+
+[org/gnome/desktop/notifications/application/chrome-aghbiahbpaijignceidepookljebhfak-default]
+application-id='chrome-aghbiahbpaijignceidepookljebhfak-Default.desktop'
+
+[org/gnome/desktop/notifications/application/chrome-fmgjjmmmlfnkbppncabfkddbjimcfncm-default]
+application-id='chrome-fmgjjmmmlfnkbppncabfkddbjimcfncm-Default.desktop'
+
+[org/gnome/desktop/notifications/application/chrome-kjbdgfilnfhdoflbpgamdcdgpehopbep-default]
+application-id='chrome-kjbdgfilnfhdoflbpgamdcdgpehopbep-Default.desktop'
+
+[org/gnome/desktop/notifications/application/chromium]
+application-id='chromium.desktop'
+
+[org/gnome/desktop/notifications/application/clickup]
+application-id='ClickUp.desktop'
+force-expanded=true
+
+[org/gnome/desktop/notifications/application/com-devolutions-remotedesktopmanager]
+application-id='com.devolutions.remotedesktopmanager.desktop'
+
+[org/gnome/desktop/notifications/application/com-github-phase1geo-annotator]
+application-id='com.github.phase1geo.annotator.desktop'
+
+[org/gnome/desktop/notifications/application/com-nextcloud-desktopclient-nextcloud]
+application-id='com.nextcloud.desktopclient.nextcloud.desktop'
+
+[org/gnome/desktop/notifications/application/com-system76-cosmicfiles]
+application-id='com.system76.CosmicFiles.desktop'
+
+[org/gnome/desktop/notifications/application/firefox]
+application-id='firefox.desktop'
+
+[org/gnome/desktop/notifications/application/gimp]
+application-id='gimp.desktop'
+
+[org/gnome/desktop/notifications/application/gnome-power-panel]
+application-id='gnome-power-panel.desktop'
+
+[org/gnome/desktop/notifications/application/gnome-printers-panel]
+application-id='gnome-printers-panel.desktop'
+
+[org/gnome/desktop/notifications/application/grist-desktop]
+application-id='grist-desktop.desktop'
+
+[org/gnome/desktop/notifications/application/kitty]
+application-id='kitty.desktop'
+
+[org/gnome/desktop/notifications/application/nwg-look]
+application-id='nwg-look.desktop'
+
+[org/gnome/desktop/notifications/application/orcaslicer]
+application-id='OrcaSlicer.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-characters]
+application-id='org.gnome.Characters.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-evince]
+application-id='org.gnome.Evince.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-evolution-alarm-notify]
+application-id='org.gnome.Evolution-alarm-notify.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-evolution]
+application-id='org.gnome.Evolution.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-nautilus]
+application-id='org.gnome.Nautilus.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-settings]
+application-id='org.gnome.Settings.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-shell-extensions-gsconnect]
+application-id='org.gnome.Shell.Extensions.GSConnect.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-shell-extensions]
+application-id='org.gnome.Shell.Extensions.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-software]
+application-id='org.gnome.Software.desktop'
+
+[org/gnome/desktop/notifications/application/org-mozilla-thunderbird]
+application-id='org.mozilla.Thunderbird.desktop'
+
+[org/gnome/desktop/notifications/application/signal-desktop]
+application-id='signal-desktop.desktop'
+
+[org/gnome/desktop/notifications/application/slack]
+application-id='slack.desktop'
+
+[org/gnome/desktop/notifications/application/steam]
+application-id='steam.desktop'
+enable=false
+
+[org/gnome/desktop/notifications/application/zen-alpha]
+application-id='zen-alpha.desktop'
+
+[org/gnome/desktop/notifications/application/zen-beta]
+application-id='zen-beta.desktop'
+
+[org/gnome/desktop/notifications/application/zen]
+application-id='zen.desktop'
+
+[org/gnome/desktop/notifications/application/zoom]
+application-id='Zoom.desktop'
+
+[org/gnome/desktop/peripherals/keyboard]
+delay=uint32 250
+repeat-interval=uint32 30
+
+[org/gnome/desktop/peripherals/mouse]
+accel-profile='default'
+double-click=400
+drag-threshold=8
+left-handed=false
+middle-click-emulation=false
+natural-scroll=false
+speed=0.0
+
+[org/gnome/desktop/peripherals/touchpad]
+natural-scroll=false
+speed=0.49612403100775193
+two-finger-scrolling-enabled=true
+
+[org/gnome/desktop/privacy]
+disable-camera=false
+disable-microphone=false
+disable-sound-output=false
+old-files-age=uint32 30
+recent-files-max-age=7
+remember-recent-files=true
+remove-old-temp-files=false
+remove-old-trash-files=false
+
+[org/gnome/desktop/screensaver]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri='file:///home/mike/.local/share/backgrounds/2025-02-02-23-36-23-2560x1600.png'
+primary-color='#000000000000'
+secondary-color='#000000000000'
+
+[org/gnome/desktop/search-providers]
+sort-order=['org.gnome.Settings.desktop', 'org.gnome.Contacts.desktop', 'org.gnome.Nautilus.desktop']
+
+[org/gnome/desktop/session]
+idle-delay=uint32 600
+
+[org/gnome/desktop/sound]
+allow-volume-above-100-percent=true
+event-sounds=false
+input-feedback-sounds=false
+theme-name='freedesktop'
+
+[org/gnome/desktop/wm/keybindings]
+close=['<Shift><Control>w']
+maximize=@as []
+minimize=['<Super>comma']
+move-to-monitor-down=@as []
+move-to-monitor-left=@as []
+move-to-monitor-right=@as []
+move-to-monitor-up=@as []
+move-to-workspace-1=['<Shift><Alt>1']
+move-to-workspace-10=@as []
+move-to-workspace-2=['<Shift><Alt>2']
+move-to-workspace-3=['<Shift><Alt>3']
+move-to-workspace-4=['<Shift><Alt>4']
+move-to-workspace-5=['<Shift><Alt>5']
+move-to-workspace-6=['<Shift><Alt>6']
+move-to-workspace-down=@as []
+move-to-workspace-up=@as []
+switch-to-workspace-1=['<Alt>1']
+switch-to-workspace-2=['<Alt>2']
+switch-to-workspace-3=['<Alt>3']
+switch-to-workspace-4=['<Alt>4']
+switch-to-workspace-5=['<Alt>5']
+switch-to-workspace-6=['<Alt>6']
+switch-to-workspace-down=['<Primary><Super>Down', '<Primary><Super>j']
+switch-to-workspace-left=['<Alt>h']
+switch-to-workspace-right=['<Alt>l']
+switch-to-workspace-up=['<Primary><Super>Up', '<Primary><Super>k']
+toggle-maximized=['<Super>m']
+unmaximize=@as []
+
+[org/gnome/desktop/wm/preferences]
+action-double-click-titlebar='toggle-maximize'
+action-middle-click-titlebar='lower'
+action-right-click-titlebar='menu'
+audible-bell=false
+auto-raise=false
+auto-raise-delay=500
+button-layout='close,minimize,maximize:menu'
+disable-workarounds=false
+focus-mode='click'
+focus-new-windows='smart'
+mouse-button-modifier='<Alt>'
+num-workspaces=6
+raise-on-click=true
+resize-with-right-button=true
+theme='Adwaita'
+titlebar-font='Sans Bold 10'
+titlebar-uses-system-font=false
+visual-bell=false
+visual-bell-type='fullscreen-flash'
+workspace-names=@as []
+
+[org/gnome/evince]
+document-directory=@ms 'file:///home/mike/repos/resume'
+
+[org/gnome/evince/default]
+continuous=true
+dual-page=false
+dual-page-odd-left=true
+enable-spellchecking=true
+fullscreen=false
+inverted-colors=false
+show-sidebar=true
+sidebar-page='thumbnails'
+sidebar-size=192
+sizing-mode='free'
+window-ratio=(2.869045219377814, 1.6604903078677309)
+zoom=0.47898085501474374
+
+[org/gnome/evolution-data-server]
+migrated=true
+
+[org/gnome/evolution-data-server/calendar]
+notify-last-snooze-minutes=5
+notify-window-height=513
+notify-window-paned-position=179
+notify-window-width=1420
+notify-window-x=56
+notify-window-y=50
+reminders-past=['893f0bacff3348bb05b2d956b27b2d3e8e31cee5\nfd159f34080390f0dc95212d27780773fa5a2384\t20250326T170000\n1742860800\n1743033600\n1743037200\nBEGIN:VEVENT\r\nCREATED:20250313T024653Z\r\nDTEND;TZID=America/Los_Angeles:20250326T180000\r\nDTSTAMP:20250320T024523Z\r\nDTSTART;TZID=America/Los_Angeles:20250326T170000\r\nLAST-MODIFIED:20250320T024522Z\r\nSEQUENCE:1\r\nSUMMARY:Women’s ministry hang out\r\nTRANSP:OPAQUE\r\nUID:52C3D420-EF5C-4AC2-A46E-F6C54EC21B06\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for URL property. \r\n Removing entire property:\r\nX-APPLE-CREATOR-IDENTITY:com.apple.mobilecal\r\nX-APPLE-CREATOR-TEAM-IDENTITY:0000000000\r\nX-EVOLUTION-CALDAV-ETAG:3ae50a2be52dab0d42db5d06b6462fe1\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-P2D\r\nUID:A007148B-8BFD-4BEA-8624-2F5DAF8F728D\r\nX-WR-ALARMUID:A007148B-8BFD-4BEA-8624-2F5DAF8F728D\r\nX-EVOLUTION-ALARM-UID:fd159f34080390f0dc95212d27780773fa5a2384\r\nEND:VALARM\r\nEND:VEVENT\r\n', '893f0bacff3348bb05b2d956b27b2d3e8e31cee5\n2e4dfda46ba44ed7f8a372b03110d80928d5307c\t20250325T030000Z\n1742785200\n1742871600\n1742875200\nBEGIN:VEVENT\r\nCREATED:20240725T031823Z\r\nDTEND;TZID=America/Los_Angeles:20250324T210000\r\nDTSTAMP:20240725T031826Z\r\nDTSTART;TZID=America/Los_Angeles:20250324T200000\r\nLAST-MODIFIED:20240725T031823Z\r\nRRULE:FREQ=MONTHLY\r\nSEQUENCE:0\r\nSUMMARY:Frontline day for Chief\r\nTRANSP:OPAQUE\r\nUID:D3DC20EB-7A87-4B09-A813-40F619215725\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for URL property. \r\n Removing entire property:\r\nX-APPLE-CREATOR-IDENTITY:com.apple.mobilecal\r\nX-APPLE-CREATOR-TEAM-IDENTITY:0000000000\r\nX-EVOLUTION-CALDAV-ETAG:b19ff82f4b828345ab165b272ea29742\r\nRECURRENCE-ID:20250325T030000Z\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-P1D\r\nUID:EA1B3991-6253-41A9-ADBF-93CA12EF791F\r\nX-WR-ALARMUID:EA1B3991-6253-41A9-ADBF-93CA12EF791F\r\nX-EVOLUTION-ALARM-UID:2e4dfda46ba44ed7f8a372b03110d80928d5307c\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'd7c0b19de272e48d63180ac9d3ddcc26c0270dc6\n4289d00671c705502ff1b53dcc24a6c779635085\t20250325T004000Z\n1742861400\n1742863200\n1742866800\nBEGIN:VEVENT\r\nCREATED:20250118T004852Z\r\nDTEND;TZID=America/Los_Angeles:20250324T184000\r\nDTSTAMP:20250303T191836Z\r\nDTSTART;TZID=America/Los_Angeles:20250324T174000\r\nLAST-MODIFIED:20250303T191835Z\r\nLOCATION:LA Fitness\\n3437 Arlington Ave\\, Riverside\\, CA  92506\\, United \r\n States\r\nRELATED-TO;RELTYPE=X-CALENDARSERVER-RECURRENCE-SET:\r\n 48E7B9E2-EDAE-4FA7-BCE9-F2A2ECA60F04\r\nRRULE:FREQ=WEEKLY\r\nSEQUENCE:1\r\nSUMMARY:Swim class be there 10 min early\r\nTRANSP:OPAQUE\r\nUID:D6A2E1FA-D566-4482-8E6F-3D46BD22A94C\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for URL property. \r\n Removing entire property:\r\nX-APPLE-CREATOR-IDENTITY:com.apple.mobilecal\r\nX-APPLE-CREATOR-TEAM-IDENTITY:0000000000\r\nX-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="3437 Arlington Ave, \r\n Riverside, CA  92506, United States";\r\n X-APPLE-MAPKIT-HANDLE=CAESwAIIrk0QuuH9nPTM8IUzGhIJfFQNDGr5QEARhNTt7KtYXcAi\r\n hQEKDVVuaXRlZCBTdGF0ZXMSAlVTGgpDYWxpZm9ybmlhIgJDQSoQUml2ZXJzaWRlIENvdW50eT\r\n IJUml2ZXJzaWRlOgU5MjUwNkIIVmljdG9yaWFSDUFybGluZ3RvbiBBdmVaBDM0MzdiEjM0Mzcg\r\n QXJsaW5ndG9uIEF2ZYoBCFZpY3RvcmlhKgpMQSBGaXRuZXNzMhIzNDM3IEFybGluZ3RvbiBBdm\r\n UyFFJpdmVyc2lkZSwgQ0EgIDkyNTA2Mg1Vbml0ZWQgU3RhdGVzOC9QAVpMCicIuuH9nPTM8IUz\r\n EhIJfFQNDGr5QEARhNTt7KtYXcAYrk2QAwGYAwGiHyAIuuH9nPTM8IUzGhQKCkxBIEZpdG5lc3\r\n MQACoCZW5AAA==;X-APPLE-RADIUS=141.1747899241035;X-APPLE-REFERENCEFRAME=1;\r\n X-TITLE=LA Fitness:geo:33.948549,-117.385493\r\nX-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED\r\nX-EVOLUTION-CALDAV-ETAG:a8852c0d3bb23cb8c9652c5dae5907a3\r\nRECURRENCE-ID:20250325T004000Z\r\nBEGIN:VALARM\r\nACKNOWLEDGED:20250128T021510Z\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-PT30M\r\nUID:824AC672-95BF-403A-87F8-CB1F5D5ECF3F\r\nX-WR-ALARMUID:824AC672-95BF-403A-87F8-CB1F5D5ECF3F\r\nX-EVOLUTION-ALARM-UID:4289d00671c705502ff1b53dcc24a6c779635085\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACKNOWLEDGED:20250204T000636Z\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-PT2H\r\nUID:A9D78187-21BE-4835-BEE8-0C2ADCB55F3F\r\nX-WR-ALARMUID:A9D78187-21BE-4835-BEE8-0C2ADCB55F3F\r\nX-EVOLUTION-ALARM-UID:1d19df9b1b7b705ae8350abc9d7e7acdc99a3ad0\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:NONE\r\nTRIGGER;VALUE=DATE-TIME:19760401T005545Z\r\nX-EVOLUTION-ALARM-UID:880900382d1a131947ad4a927c51a80bed25df5d\r\nEND:VALARM\r\nEND:VEVENT\r\n', '984515e54b62a0861a9139ebbda4b80742d9b39f\n02d9ae043005d00366f6d940ce0e6c4ea31ca85b\t20250326T170000\n1742860800\n1743033600\n1743037200\nBEGIN:VEVENT\r\nCREATED:20250313T024653Z\r\nDTEND;TZID=America/Los_Angeles:20250326T180000\r\nDTSTAMP:20250320T024523Z\r\nDTSTART;TZID=America/Los_Angeles:20250326T170000\r\nLAST-MODIFIED:20250320T024522Z\r\nSEQUENCE:1\r\nSUMMARY:Women’s ministry hang out\r\nTRANSP:OPAQUE\r\nUID:52C3D420-EF5C-4AC2-A46E-F6C54EC21B06\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for URL property. \r\n Removing entire property:\r\nX-APPLE-CREATOR-IDENTITY:com.apple.mobilecal\r\nX-APPLE-CREATOR-TEAM-IDENTITY:0000000000\r\nX-EVOLUTION-CALDAV-ETAG:6cc64e85bd59047f274ed3cdda7d30ce\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-P2D\r\nUID:A007148B-8BFD-4BEA-8624-2F5DAF8F728D\r\nX-WR-ALARMUID:A007148B-8BFD-4BEA-8624-2F5DAF8F728D\r\nX-EVOLUTION-ALARM-UID:02d9ae043005d00366f6d940ce0e6c4ea31ca85b\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'd7c0b19de272e48d63180ac9d3ddcc26c0270dc6\n1d19df9b1b7b705ae8350abc9d7e7acdc99a3ad0\t20250325T004000Z\n1742856000\n1742863200\n1742866800\nBEGIN:VEVENT\r\nCREATED:20250118T004852Z\r\nDTEND;TZID=America/Los_Angeles:20250324T184000\r\nDTSTAMP:20250303T191836Z\r\nDTSTART;TZID=America/Los_Angeles:20250324T174000\r\nLAST-MODIFIED:20250303T191835Z\r\nLOCATION:LA Fitness\\n3437 Arlington Ave\\, Riverside\\, CA  92506\\, United \r\n States\r\nRELATED-TO;RELTYPE=X-CALENDARSERVER-RECURRENCE-SET:\r\n 48E7B9E2-EDAE-4FA7-BCE9-F2A2ECA60F04\r\nRRULE:FREQ=WEEKLY\r\nSEQUENCE:1\r\nSUMMARY:Swim class be there 10 min early\r\nTRANSP:OPAQUE\r\nUID:D6A2E1FA-D566-4482-8E6F-3D46BD22A94C\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for URL property. \r\n Removing entire property:\r\nX-APPLE-CREATOR-IDENTITY:com.apple.mobilecal\r\nX-APPLE-CREATOR-TEAM-IDENTITY:0000000000\r\nX-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="3437 Arlington Ave, \r\n Riverside, CA  92506, United States";\r\n X-APPLE-MAPKIT-HANDLE=CAESwAIIrk0QuuH9nPTM8IUzGhIJfFQNDGr5QEARhNTt7KtYXcAi\r\n hQEKDVVuaXRlZCBTdGF0ZXMSAlVTGgpDYWxpZm9ybmlhIgJDQSoQUml2ZXJzaWRlIENvdW50eT\r\n IJUml2ZXJzaWRlOgU5MjUwNkIIVmljdG9yaWFSDUFybGluZ3RvbiBBdmVaBDM0MzdiEjM0Mzcg\r\n QXJsaW5ndG9uIEF2ZYoBCFZpY3RvcmlhKgpMQSBGaXRuZXNzMhIzNDM3IEFybGluZ3RvbiBBdm\r\n UyFFJpdmVyc2lkZSwgQ0EgIDkyNTA2Mg1Vbml0ZWQgU3RhdGVzOC9QAVpMCicIuuH9nPTM8IUz\r\n EhIJfFQNDGr5QEARhNTt7KtYXcAYrk2QAwGYAwGiHyAIuuH9nPTM8IUzGhQKCkxBIEZpdG5lc3\r\n MQACoCZW5AAA==;X-APPLE-RADIUS=141.1747899241035;X-APPLE-REFERENCEFRAME=1;\r\n X-TITLE=LA Fitness:geo:33.948549,-117.385493\r\nX-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED\r\nX-EVOLUTION-CALDAV-ETAG:a8852c0d3bb23cb8c9652c5dae5907a3\r\nRECURRENCE-ID:20250325T004000Z\r\nBEGIN:VALARM\r\nACKNOWLEDGED:20250128T021510Z\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-PT30M\r\nUID:824AC672-95BF-403A-87F8-CB1F5D5ECF3F\r\nX-WR-ALARMUID:824AC672-95BF-403A-87F8-CB1F5D5ECF3F\r\nX-EVOLUTION-ALARM-UID:4289d00671c705502ff1b53dcc24a6c779635085\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACKNOWLEDGED:20250204T000636Z\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-PT2H\r\nUID:A9D78187-21BE-4835-BEE8-0C2ADCB55F3F\r\nX-WR-ALARMUID:A9D78187-21BE-4835-BEE8-0C2ADCB55F3F\r\nX-EVOLUTION-ALARM-UID:1d19df9b1b7b705ae8350abc9d7e7acdc99a3ad0\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:NONE\r\nTRIGGER;VALUE=DATE-TIME:19760401T005545Z\r\nX-EVOLUTION-ALARM-UID:880900382d1a131947ad4a927c51a80bed25df5d\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'b2326d2349439a2fbf2402103e23e819a542a6e6\n5e88bddeb495e639b321c2e49397c63ad20b451e\t20250324T223000Z\n1742853600\n1742855400\n1742860800\nBEGIN:VEVENT\r\nCREATED:20250218T221656Z\r\nDTEND;TZID=America/Los_Angeles:20250324T170000\r\nDTSTAMP:20250219T065531Z\r\nDTSTART;TZID=America/Los_Angeles:20250324T153000\r\nLAST-MODIFIED:20250219T065527Z\r\nLOCATION:6916 Lincoln Ave\\, Riverside 92506\\nUnited States\r\nRELATED-TO;RELTYPE=X-CALENDARSERVER-RECURRENCE-SET:\r\n 0198302C-3C2A-4B42-AA1F-A1BDBDFC46D5\r\nRRULE:FREQ=WEEKLY\r\nSEQUENCE:1\r\nSUMMARY:Piano : Ben\\, Scarlett\\, Isaiah\r\nTRANSP:OPAQUE\r\nUID:43CF52E4-FCBE-46D0-A434-E17CE5581EBF\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for URL property. \r\n Removing entire property:\r\nX-APPLE-CREATOR-IDENTITY:com.apple.mobilecal\r\nX-APPLE-CREATOR-TEAM-IDENTITY:0000000000\r\nX-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="6916 Lincoln Ave, \r\n Riverside 92506\\nUnited States";X-APPLE-ABUID=Marilyn Burdett’s Home;\r\n X-APPLE-MAPKIT-HANDLE=CAESpAII2TIaEgl1eAjjp/dAQBGWJqWg21hdwCKSAQoNVW5pdGVk\r\n IFN0YXRlcxICVVMaCkNhbGlmb3JuaWEiAkNBKhBSaXZlcnNpZGUgQ291bnR5MglSaXZlcnNpZG\r\n U6BTkyNTA2QgtDYXNhIEJsYW5jYVILTGluY29sbiBBdmVaBDY5MTZiEDY5MTYgTGluY29sbiBB\r\n dmWKAQtDYXNhIEJsYW5jYYoBCFZpY3RvcmlhKhA2OTE2IExpbmNvbG4gQXZlMhA2OTE2IExpbm\r\n NvbG4gQXZlMhRSaXZlcnNpZGUsIENBICA5MjUwNjINVW5pdGVkIFN0YXRlczg5QARQAVonCiUS\r\n Egl1eAjjp/dAQBGWJqWg21hdwBjZMiCnnbOn2LTcsN4BkAMB;\r\n X-APPLE-RADIUS=70.58730178826357;X-APPLE-REFERENCEFRAME=1;X-TITLE="6916 \r\n Lincoln Ave, Riverside 92506\\nUnited States":geo:33.934811,-117.388405\r\nX-EVOLUTION-CALDAV-ETAG:844e712acdc8f57d0306dbb0d4f26767\r\nRECURRENCE-ID:20250324T223000Z\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-PT30M\r\nUID:75EF4162-7087-49E7-8EC0-D9923EB665EE\r\nX-WR-ALARMUID:75EF4162-7087-49E7-8EC0-D9923EB665EE\r\nX-EVOLUTION-ALARM-UID:5e88bddeb495e639b321c2e49397c63ad20b451e\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-P1D\r\nUID:6F7697A5-D8C8-4100-8074-96AF01EA7C79\r\nX-WR-ALARMUID:6F7697A5-D8C8-4100-8074-96AF01EA7C79\r\nX-EVOLUTION-ALARM-UID:9e1490dc5a8e54935903a5cc7d529c37fc13e874\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:NONE\r\nTRIGGER;VALUE=DATE-TIME:19760401T005545Z\r\nX-EVOLUTION-ALARM-UID:66caf551090f457b34f95cfa79b6e6fc7a1b9f4b\r\nEND:VALARM\r\nEND:VEVENT\r\n', '2247044d8e4592ac78468f32244aed84f9534257\n726664b7d0499dab88bf946d1b4ccb59d8004dde\t20250324T160000Z\n1742831400\n1742832000\n1742835600\nBEGIN:VEVENT\r\nDTSTART;TZID=America/New_York:20250324T120000\r\nDTEND;TZID=America/New_York:20250324T130000\r\nRRULE:FREQ=WEEKLY;BYDAY=MO\r\nDTSTAMP:20250321T214025Z\r\nORGANIZER;CN=scott@novien.com:mailto:scott@novien.com\r\nUID:dsd4k9ks6gu21d2vl3upuh7tqs_R20250324T160000@google.com\r\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;\r\n CN=Daniel Lim;X-NUM-GUESTS=0:mailto:daniel@novien.com\r\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;\r\n CN=mike@novien.com;X-NUM-GUESTS=0:mailto:mike@novien.com\r\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;\r\n CN=scott@novien.com;X-NUM-GUESTS=0:mailto:scott@novien.com\r\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;\r\n CN=gerry@novien.com;X-NUM-GUESTS=0:mailto:gerry@novien.com\r\nCLASS:PUBLIC\r\nCREATED:20250106T211024Z\r\nDESCRIPTION:https://meet.google.com/rrp-cveh-kkg\r\nLAST-MODIFIED:20250321T214025Z\r\nLOCATION:Secret Lair\r\nSEQUENCE:1\r\nSTATUS:CONFIRMED\r\nSUMMARY:Plan to take over the world\r\nTRANSP:OPAQUE\r\nX-EVOLUTION-CALDAV-ETAG:63878276425\r\nRECURRENCE-ID:20250324T160000Z\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT10M\r\nX-EVOLUTION-ALARM-UID:726664b7d0499dab88bf946d1b4ccb59d8004dde\r\nEND:VALARM\r\nEND:VEVENT\r\n', '2247044d8e4592ac78468f32244aed84f9534257\n7075d7e9074a9a226d2fc06ef083490308c0b403\t20250324T070000\n1742824200\n1742824800\n1742828400\nBEGIN:VEVENT\r\nDTSTART;TZID=America/Los_Angeles:20250324T070000\r\nDTEND;TZID=America/Los_Angeles:20250324T080000\r\nDTSTAMP:20250324T113017Z\r\nORGANIZER;CN=sam.markel@guardianbikes.com:mailto:\r\n sam.markel@guardianbikes.com\r\nUID:4ualie34ms6ip3qjgld1ap4a9o@google.com\r\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=OPT-PARTICIPANT;PARTSTAT=ACCEPTED;\r\n CN=christopher.morel@guardianbikes.com;X-NUM-GUESTS=0:mailto:\r\n christopher.morel@guardianbikes.com\r\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;\r\n CN=mike@novien.com;X-NUM-GUESTS=0:mailto:mike@novien.com\r\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;\r\n CN=sam.markel@guardianbikes.com;X-NUM-GUESTS=0:mailto:\r\n sam.markel@guardianbikes.com\r\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;\r\n CN=scott@novien.com;X-NUM-GUESTS=0:mailto:scott@novien.com\r\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;\r\n CN=brian@guardianbikes.com;X-NUM-GUESTS=0:mailto:brian@guardianbikes.com\r\nX-GOOGLE-CONFERENCE:https://meet.google.com/jss-rqqo-pnb\r\nCREATED:20250323T193929Z\r\nDESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:\r\n ~:~:~:~:~:~:~:~:~::~:~::-\\nJoin with Google Meet: https:\r\n //meet.google.com/jss-rqqo-pnb\\nOr dial: (US) +1 414-882-6535 PIN: \r\n 382208306#\\nMore phone numbers: https:\r\n //tel.meet/jss-rqqo-pnb?pin=3433168936688&hs=7\\n\\nLearn more about Meet \r\n at: https://support.google.com/a/users/answer/9282720\\n\\nPlease do not \r\n edit this section.\\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:\r\n ~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-\r\nLAST-MODIFIED:20250324T113017Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Novien Intro - Guardian\r\nTRANSP:OPAQUE\r\nX-EVOLUTION-CALDAV-ETAG:63878499017\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT10M\r\nX-EVOLUTION-ALARM-UID:7075d7e9074a9a226d2fc06ef083490308c0b403\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'b2326d2349439a2fbf2402103e23e819a542a6e6\n9e1490dc5a8e54935903a5cc7d529c37fc13e874\t20250324T223000Z\n1742769000\n1742855400\n1742860800\nBEGIN:VEVENT\r\nCREATED:20250218T221656Z\r\nDTEND;TZID=America/Los_Angeles:20250324T170000\r\nDTSTAMP:20250219T065531Z\r\nDTSTART;TZID=America/Los_Angeles:20250324T153000\r\nLAST-MODIFIED:20250219T065527Z\r\nLOCATION:6916 Lincoln Ave\\, Riverside 92506\\nUnited States\r\nRELATED-TO;RELTYPE=X-CALENDARSERVER-RECURRENCE-SET:\r\n 0198302C-3C2A-4B42-AA1F-A1BDBDFC46D5\r\nRRULE:FREQ=WEEKLY\r\nSEQUENCE:1\r\nSUMMARY:Piano : Ben\\, Scarlett\\, Isaiah\r\nTRANSP:OPAQUE\r\nUID:43CF52E4-FCBE-46D0-A434-E17CE5581EBF\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for URL property. \r\n Removing entire property:\r\nX-APPLE-CREATOR-IDENTITY:com.apple.mobilecal\r\nX-APPLE-CREATOR-TEAM-IDENTITY:0000000000\r\nX-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="6916 Lincoln Ave, \r\n Riverside 92506\\nUnited States";X-APPLE-ABUID=Marilyn Burdett’s Home;\r\n X-APPLE-MAPKIT-HANDLE=CAESpAII2TIaEgl1eAjjp/dAQBGWJqWg21hdwCKSAQoNVW5pdGVk\r\n IFN0YXRlcxICVVMaCkNhbGlmb3JuaWEiAkNBKhBSaXZlcnNpZGUgQ291bnR5MglSaXZlcnNpZG\r\n U6BTkyNTA2QgtDYXNhIEJsYW5jYVILTGluY29sbiBBdmVaBDY5MTZiEDY5MTYgTGluY29sbiBB\r\n dmWKAQtDYXNhIEJsYW5jYYoBCFZpY3RvcmlhKhA2OTE2IExpbmNvbG4gQXZlMhA2OTE2IExpbm\r\n NvbG4gQXZlMhRSaXZlcnNpZGUsIENBICA5MjUwNjINVW5pdGVkIFN0YXRlczg5QARQAVonCiUS\r\n Egl1eAjjp/dAQBGWJqWg21hdwBjZMiCnnbOn2LTcsN4BkAMB;\r\n X-APPLE-RADIUS=70.58730178826357;X-APPLE-REFERENCEFRAME=1;X-TITLE="6916 \r\n Lincoln Ave, Riverside 92506\\nUnited States":geo:33.934811,-117.388405\r\nX-EVOLUTION-CALDAV-ETAG:844e712acdc8f57d0306dbb0d4f26767\r\nRECURRENCE-ID:20250324T223000Z\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-PT30M\r\nUID:75EF4162-7087-49E7-8EC0-D9923EB665EE\r\nX-WR-ALARMUID:75EF4162-7087-49E7-8EC0-D9923EB665EE\r\nX-EVOLUTION-ALARM-UID:5e88bddeb495e639b321c2e49397c63ad20b451e\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-P1D\r\nUID:6F7697A5-D8C8-4100-8074-96AF01EA7C79\r\nX-WR-ALARMUID:6F7697A5-D8C8-4100-8074-96AF01EA7C79\r\nX-EVOLUTION-ALARM-UID:9e1490dc5a8e54935903a5cc7d529c37fc13e874\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:NONE\r\nTRIGGER;VALUE=DATE-TIME:19760401T005545Z\r\nX-EVOLUTION-ALARM-UID:66caf551090f457b34f95cfa79b6e6fc7a1b9f4b\r\nEND:VALARM\r\nEND:VEVENT\r\n', '984515e54b62a0861a9139ebbda4b80742d9b39f\ne7fd161848775835cb850f2b9728ed8c90e71a1d\t20250325T030000Z\n1742785200\n1742871600\n1742875200\nBEGIN:VEVENT\r\nCREATED:20240725T031823Z\r\nDTEND;TZID=America/Los_Angeles:20250324T210000\r\nDTSTAMP:20240725T031826Z\r\nDTSTART;TZID=America/Los_Angeles:20250324T200000\r\nLAST-MODIFIED:20240725T031823Z\r\nRRULE:FREQ=MONTHLY\r\nSEQUENCE:0\r\nSUMMARY:Frontline day for Chief\r\nTRANSP:OPAQUE\r\nUID:D3DC20EB-7A87-4B09-A813-40F619215725\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for URL property. \r\n Removing entire property:\r\nX-APPLE-CREATOR-IDENTITY:com.apple.mobilecal\r\nX-APPLE-CREATOR-TEAM-IDENTITY:0000000000\r\nX-EVOLUTION-CALDAV-ETAG:fd8539ce3a42188095f4f428d89803aa\r\nRECURRENCE-ID:20250325T030000Z\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-P1D\r\nUID:EA1B3991-6253-41A9-ADBF-93CA12EF791F\r\nX-WR-ALARMUID:EA1B3991-6253-41A9-ADBF-93CA12EF791F\r\nX-EVOLUTION-ALARM-UID:e7fd161848775835cb850f2b9728ed8c90e71a1d\r\nEND:VALARM\r\nEND:VEVENT\r\n', '984515e54b62a0861a9139ebbda4b80742d9b39f\n7909bed0d912bd974214d682a2b384a8c919986e\t20250324T120000\n1742756400\n1742842800\n1743019200\nBEGIN:VEVENT\r\nCREATED:20250227T203630Z\r\nDTEND;TZID=America/Los_Angeles:20250326T130000\r\nDTSTAMP:20250227T203632Z\r\nDTSTART;TZID=America/Los_Angeles:20250324T120000\r\nLAST-MODIFIED:20250227T203630Z\r\nLOCATION:Online\r\nSEQUENCE:0\r\nSUMMARY:Ben testing -9 am\r\nTRANSP:OPAQUE\r\nUID:7083D684-F140-479B-B6FE-6B1A4C3B65EE\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for URL property. \r\n Removing entire property:\r\nX-APPLE-CREATOR-IDENTITY:com.apple.mobilecal\r\nX-APPLE-CREATOR-TEAM-IDENTITY:0000000000\r\nX-EVOLUTION-CALDAV-ETAG:cde98b8b66827cb39f7c7b9e4b3f197b\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-P1W\r\nUID:FA32C371-3BC3-4776-85DD-A60E0E0593AB\r\nX-WR-ALARMUID:FA32C371-3BC3-4776-85DD-A60E0E0593AB\r\nX-EVOLUTION-ALARM-UID:8c2f99810c60555ed6ca6f54aea452ee09c5c5a9\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-P1D\r\nUID:659A2CFA-3BBD-4893-8EC7-4078978C3874\r\nX-WR-ALARMUID:659A2CFA-3BBD-4893-8EC7-4078978C3874\r\nX-EVOLUTION-ALARM-UID:7909bed0d912bd974214d682a2b384a8c919986e\r\nEND:VALARM\r\nEND:VEVENT\r\n', '984515e54b62a0861a9139ebbda4b80742d9b39f\naedfdf00aeb96531772da646723b83021db18bd3\t20250321T183000\n1742520600\n1742607000\n1742610600\nBEGIN:VEVENT\r\nCREATED:20250314T211537Z\r\nDTEND;TZID=America/Los_Angeles:20250321T193000\r\nDTSTAMP:20250314T211538Z\r\nDTSTART;TZID=America/Los_Angeles:20250321T183000\r\nLAST-MODIFIED:20250314T211537Z\r\nSEQUENCE:0\r\nSUMMARY:Kids praise choir the grove\r\nTRANSP:OPAQUE\r\nUID:DC0420F5-FFC0-4153-ADF1-FF5D0F546A93\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for URL property. \r\n Removing entire property:\r\nX-APPLE-CREATOR-IDENTITY:com.apple.mobilecal\r\nX-APPLE-CREATOR-TEAM-IDENTITY:0000000000\r\nX-EVOLUTION-CALDAV-ETAG:54fdfe44b59fea932017b24945ce613e\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-P1W\r\nUID:4FF59E07-8D54-4324-9F97-26E710EAF9AB\r\nX-WR-ALARMUID:4FF59E07-8D54-4324-9F97-26E710EAF9AB\r\nX-EVOLUTION-ALARM-UID:62a4d5e3c04b447ec4ee505c46a37ffc7e1d2e25\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-P1D\r\nUID:7606AEBB-4C33-41E6-B9B2-4739E393A5AF\r\nX-WR-ALARMUID:7606AEBB-4C33-41E6-B9B2-4739E393A5AF\r\nX-EVOLUTION-ALARM-UID:aedfdf00aeb96531772da646723b83021db18bd3\r\nEND:VALARM\r\nEND:VEVENT\r\n', "2247044d8e4592ac78468f32244aed84f9534257\n8e6a64a68e128e7b6458ab6a138cd5bccdafd739\t20250320T141500\n1742493900\n1742494500\n1742496300\nBEGIN:VEVENT\r\nDTSTART;TZID=America/New_York:20250320T141500\r\nDTEND;TZID=America/New_York:20250320T144500\r\nDTSTAMP:20250306T165913Z\r\nORGANIZER;CN=\"Nanney, Amy\":mailto:ananney@epri.com\r\nUID:\r\n 040000008200E00074C5B7101A82E0080000000060F257E08B8EDB01000000000000000010\r\n 00000004E008F07259284B9765666714B6723F\r\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=OPT-PARTICIPANT;PARTSTAT=NEEDS-ACTION;\r\n CN=Scott Rendel;X-NUM-GUESTS=0:mailto:scott@novien.com\r\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;\r\n CN=\"Nanney, Amy\";X-NUM-GUESTS=0:mailto:ananney@epri.com\r\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;\r\n CN=mike@novien.com;X-NUM-GUESTS=0:mailto:mike@novien.com\r\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;\r\n CN=\"Phillips, Andrew\";X-NUM-GUESTS=0:mailto:aphillip@epri.com\r\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;\r\n CN=\"Whittington, Richard\";X-NUM-GUESTS=0:mailto:rwhittington@epri.com\r\nCREATED:20250306T165643Z\r\nDESCRIPTION:\\n\\n\\n-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-\\n[https:\r\n //images.ctfassets.net/1yu7dzmtoudq/RMhGRk3x26yZFG4f4mLX1/5797c02538f5878f\r\n 959578e31da72fd3/webex-bn.jpg]\\n\\nJoin WebEx meeting<https:\r\n //epri.webex.com/epri/j.php?MTID=mc85273e25070aa716f29bd32d6c084f3>\\nMeeti\r\n ng number:\\n2427 938 7050\\nMeeting password: VNdDTrpc343\\n\\nJoin from a \r\n video system or application\\nDial 24279387050@epri.webex.com<sip:\r\n 24279387050@epri.webex.com>\\nYou can also dial 173.243.2.68 and enter \r\n your meeting number.\\n\\nTap to join from a mobile device (attendees \r\n only)\\n+1-855-797-9485\\,\\,24279387050##<tel:\r\n %2B1-855-797-9485\\,\\,*01*24279387050%23%23*01*> US Toll \r\n free\\n+1-415-655-0002\\,\\,24279387050##<tel:\r\n %2B1-415-655-0002\\,\\,*01*24279387050%23%23*01*> US Toll\\n\\nJoin by \r\n phone\\n+1-855-797-9485 US Toll free\\n+1-415-655-0002 US Toll\\nGlobal \r\n call-in numbers<https:\r\n //epri.webex.com/epri/globalcallin.php?MTID=m22f1d6e41af2533716064e9585dd1\r\n 327>  |  Toll-free calling restrictions<https:\r\n //cisco.com/go/tollfree-restrictions>\\n\\n\\nCan't join the meeting? \r\n Contact support.<%25ServiceNameURL%25>\\n\\nRecording Notice: WebEx can be \r\n used to record meetings. By participating in this meeting\\, you agree \r\n that your communications may be monitored or recorded at any time during \r\n the meeting\\nYou are receiving this email due to your expressed interest \r\n in receiving news from EPRI. If you do not wish to receive electronic \r\n news from EPRI in the future\\, please notify Amy Nanney at \r\n ANanney@epri.com<mailto:ANanney@epri.com>. If you wish to update your \r\n contact information or manage your TIP program selections\\, visit \r\n www.epri.com<http://www.epri.com> (http://www.epri.com) . If you do not \r\n have a username and password\\, or are not sure\\, you may also request an \r\n account.\\nEPRI 3420 Hillview Avenue\\, Palo Alto\\, California \r\n 94304\\n800-313-3774 or 650-855-2121\\n\\n[https:\r\n //epri.webex.com/ec3300/downloadServlet/emailImage?USID=5b9c62ec8dc8807348\r\n 4c3ab691502d58&siteurl=epri&rdmID=0.6627236044505225]\\n*** This email \r\n message is for the sole use of the intended recipient(s) and may contain \r\n information that is confidential\\, privileged or exempt from disclosure \r\n under applicable law. Unless otherwise expressed in this message by the \r\n sender or except as may be allowed by separate written agreement between \r\n EPRI and recipient or recipient’s employer\\, any review\\, use\\, \r\n distribution or disclosure by others of this message is prohibited and \r\n this message is not intended to be an electronic signature\\, instrument \r\n or anything that may form a legally binding agreement with EPRI. If you \r\n are not the intended recipient\\, please contact the sender by reply email \r\n and permanently delete all copies of this message. Please be advised that \r\n the message and its contents may be disclosed\\, accessed and reviewed by \r\n the sender's email system administrator and/or provider. ***\\n\r\nLAST-MODIFIED:20250306T165913Z\r\nLOCATION:https:\r\n //epri.webex.com/epri/j.php?MTID=mc85273e25070aa716f29bd32d6c084f3\r\nSEQUENCE:1\r\nSTATUS:CONFIRMED\r\nSUMMARY:Arrester Mount Design Mod Discussion for Manitoba\r\nTRANSP:OPAQUE\r\nX-MICROSOFT-CDO-ALLDAYEVENT:FALSE\r\nX-MICROSOFT-CDO-APPT-SEQUENCE:1\r\nX-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE\r\nX-MICROSOFT-CDO-IMPORTANCE:1\r\nX-MICROSOFT-CDO-INSTTYPE:0\r\nX-MICROSOFT-CDO-INTENDEDSTATUS:BUSY\r\nX-MICROSOFT-CDO-OWNERAPPTID:1697003497\r\nX-MICROSOFT-DISALLOW-COUNTER:FALSE\r\nX-MICROSOFT-DONOTFORWARDMEETING:FALSE\r\nX-MICROSOFT-ISRESPONSEREQUESTED:TRUE\r\nX-MICROSOFT-LOCATIONS:[ { \"DisplayName\" : \"https:\r\n //epri.webex.com/epri/j.php?MTID=mc85273e25070aa716f29bd32d6c084f3\", \r\n \"LocationAnnotation\" : \"\", \"LocationSource\" : 0, \"Unresolved\" : false, \r\n \"LocationUri\" : \"\" } ]\r\nX-MICROSOFT-REQUESTEDATTENDANCEMODE:DEFAULT\r\nX-EVOLUTION-CALDAV-ETAG:63876963553\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT10M\r\nX-EVOLUTION-ALARM-UID:8e6a64a68e128e7b6458ab6a138cd5bccdafd739\r\nEND:VALARM\r\nEND:VEVENT\r\n", '984515e54b62a0861a9139ebbda4b80742d9b39f\nc6368b0c703c3656d70de087b5da1a85284301b8\t20250320\n1742461200\n1742428800\n1742515200\nBEGIN:VEVENT\r\nCREATED:20250206T194541Z\r\nDTEND;VALUE=DATE:20250321\r\nDTSTAMP:20250206T194542Z\r\nDTSTART;VALUE=DATE:20250320\r\nLAST-MODIFIED:20250206T194541Z\r\nRRULE:FREQ=WEEKLY\r\nSEQUENCE:0\r\nSUMMARY:Fast\r\nTRANSP:OPAQUE\r\nUID:26A3963E-2ECC-4ED8-B27E-B01EA201424E\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for URL property. \r\n Removing entire property:\r\nX-APPLE-CREATOR-IDENTITY:com.apple.mobilecal\r\nX-APPLE-CREATOR-TEAM-IDENTITY:0000000000\r\nX-EVOLUTION-CALDAV-ETAG:7ea2b56f81c3c4cd1dcd52148cfd4653\r\nRECURRENCE-ID;VALUE=DATE:20250320\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:PT9H\r\nUID:6759982A-0210-4CAD-AC27-374116C1D9FA\r\nX-WR-ALARMUID:6759982A-0210-4CAD-AC27-374116C1D9FA\r\nX-EVOLUTION-ALARM-UID:c6368b0c703c3656d70de087b5da1a85284301b8\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-PT15H\r\nUID:DED3B934-1CD8-49CE-BC5A-2005068CF0A0\r\nX-WR-ALARMUID:DED3B934-1CD8-49CE-BC5A-2005068CF0A0\r\nX-EVOLUTION-ALARM-UID:cf9726fc42c1d611ad8dbada64ad0d7c2a10558f\r\nEND:VALARM\r\nEND:VEVENT\r\n', '984515e54b62a0861a9139ebbda4b80742d9b39f\nce6efbf4aff4ae8618eca1a614d9b09adad5d1b5\t20250320T100000\n1742403600\n1742490000\n1742493600\nBEGIN:VEVENT\r\nCREATED:20250227T201816Z\r\nDTEND;TZID=America/Los_Angeles:20250320T110000\r\nDTSTAMP:20250227T201859Z\r\nDTSTART;TZID=America/Los_Angeles:20250320T100000\r\nLAST-MODIFIED:20250227T201852Z\r\nLOCATION:20010-B Orange Terrace Parkway\\, Riverside CA\r\nSEQUENCE:0\r\nSUMMARY:Ben Testing\r\nTRANSP:OPAQUE\r\nUID:E88BD40F-029F-4086-B928-8E416A4E5E38\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for URL property. \r\n Removing entire property:\r\nX-APPLE-CREATOR-IDENTITY:com.apple.mobilecal\r\nX-APPLE-CREATOR-TEAM-IDENTITY:0000000000\r\nX-APPLE-STRUCTURED-LOCATION;VALUE=URI;\r\n X-APPLE-MAPKIT-HANDLE=CAES2wII2TIaEgnXPP1WofJAQBETpXM0/VNdwCK4AQoNVW5pdGVk\r\n IFN0YXRlcxICVVMaCkNhbGlmb3JuaWEiAkNBKhBSaXZlcnNpZGUgQ291bnR5MglSaXZlcnNpZG\r\n U6BTkyNTA4QgtPcmFuZ2VjcmVzdFITT3JhbmdlIFRlcnJhY2UgUGt3eVoFMjAwMTBiGTIwMDEw\r\n IE9yYW5nZSBUZXJyYWNlIFBrd3lyHU9yYW5nZSBUZXJyYWNlIENvbW11bml0eSBQYXJrigELT3\r\n JhbmdlY3Jlc3QqGTIwMDEwIE9yYW5nZSBUZXJyYWNlIFBrd3kyGTIwMDEwIE9yYW5nZSBUZXJy\r\n YWNlIFBrd3kyFFJpdmVyc2lkZSwgQ0EgIDkyNTA4Mg1Vbml0ZWQgU3RhdGVzODlAAFABWiYKJB\r\n ISCdc8/Vah8kBAEROlczT9U13AGNkyIKri+ejMtaKtBJADAQ==;\r\n X-APPLE-RADIUS=256.2649451718589;X-APPLE-REFERENCEFRAME=1;\r\n X-TITLE="20010-B Orange Terrace Parkway, Riverside CA":geo:\r\n 33.895549,-117.312329\r\nX-EVOLUTION-CALDAV-ETAG:3b9117a2f18e1d9b369b2b8afe06f7cc\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-P1D\r\nUID:BBA6E70E-434B-4A46-9310-0B799DB45D7D\r\nX-WR-ALARMUID:BBA6E70E-434B-4A46-9310-0B799DB45D7D\r\nX-EVOLUTION-ALARM-UID:ce6efbf4aff4ae8618eca1a614d9b09adad5d1b5\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-P1W\r\nUID:4E8C66CE-66B4-473B-853F-7232D19A30CC\r\nX-WR-ALARMUID:4E8C66CE-66B4-473B-853F-7232D19A30CC\r\nX-EVOLUTION-ALARM-UID:7ef55d68d226c0e842980a93b05f7a47a4aca2ed\r\nEND:VALARM\r\nEND:VEVENT\r\n', '984515e54b62a0861a9139ebbda4b80742d9b39f\na0a342466aa99d87dc6276d603db9bb2c8dfe6c8\t20250320T130000Z\n1742389200\n1742475600\n1742479200\nBEGIN:VEVENT\r\nCREATED:20240802T134711Z\r\nDTEND;TZID=America/Los_Angeles:20250320T070000\r\nDTSTAMP:20240802T134711Z\r\nDTSTART;TZID=America/Los_Angeles:20250320T060000\r\nLAST-MODIFIED:20240802T134711Z\r\nRRULE:FREQ=MONTHLY\r\nSEQUENCE:0\r\nSUMMARY:Monthly report for Raja\r\nTRANSP:OPAQUE\r\nUID:4A002082-EC02-4466-8251-0E4B994DFE00\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for URL property. \r\n Removing entire property:\r\nX-APPLE-CREATOR-IDENTITY:com.apple.mobilecal\r\nX-APPLE-CREATOR-TEAM-IDENTITY:0000000000\r\nX-EVOLUTION-CALDAV-ETAG:df81bd2fcf20b180944e3c73a6f8d803\r\nRECURRENCE-ID:20250320T130000Z\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-P1D\r\nUID:4F1FA59A-B906-4126-BFF5-2EAB6E5D4607\r\nX-WR-ALARMUID:4F1FA59A-B906-4126-BFF5-2EAB6E5D4607\r\nX-EVOLUTION-ALARM-UID:a0a342466aa99d87dc6276d603db9bb2c8dfe6c8\r\nEND:VALARM\r\nEND:VEVENT\r\n', '984515e54b62a0861a9139ebbda4b80742d9b39f\ncf9726fc42c1d611ad8dbada64ad0d7c2a10558f\t20250320\n1742374800\n1742428800\n1742515200\nBEGIN:VEVENT\r\nCREATED:20250206T194541Z\r\nDTEND;VALUE=DATE:20250321\r\nDTSTAMP:20250206T194542Z\r\nDTSTART;VALUE=DATE:20250320\r\nLAST-MODIFIED:20250206T194541Z\r\nRRULE:FREQ=WEEKLY\r\nSEQUENCE:0\r\nSUMMARY:Fast\r\nTRANSP:OPAQUE\r\nUID:26A3963E-2ECC-4ED8-B27E-B01EA201424E\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for URL property. \r\n Removing entire property:\r\nX-APPLE-CREATOR-IDENTITY:com.apple.mobilecal\r\nX-APPLE-CREATOR-TEAM-IDENTITY:0000000000\r\nX-EVOLUTION-CALDAV-ETAG:7ea2b56f81c3c4cd1dcd52148cfd4653\r\nRECURRENCE-ID;VALUE=DATE:20250320\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:PT9H\r\nUID:6759982A-0210-4CAD-AC27-374116C1D9FA\r\nX-WR-ALARMUID:6759982A-0210-4CAD-AC27-374116C1D9FA\r\nX-EVOLUTION-ALARM-UID:c6368b0c703c3656d70de087b5da1a85284301b8\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-PT15H\r\nUID:DED3B934-1CD8-49CE-BC5A-2005068CF0A0\r\nX-WR-ALARMUID:DED3B934-1CD8-49CE-BC5A-2005068CF0A0\r\nX-EVOLUTION-ALARM-UID:cf9726fc42c1d611ad8dbada64ad0d7c2a10558f\r\nEND:VALARM\r\nEND:VEVENT\r\n', '984515e54b62a0861a9139ebbda4b80742d9b39f\n1c14eb9eb8fb702676ad7382a53d0ccd3f55f5d4\t20250319\n1742374800\n1742342400\n1742428800\nBEGIN:VEVENT\r\nCREATED:20250312T060217Z\r\nDTEND;VALUE=DATE:20250320\r\nDTSTAMP:20250312T060218Z\r\nDTSTART;VALUE=DATE:20250319\r\nLAST-MODIFIED:20250312T060217Z\r\nSEQUENCE:0\r\nSUMMARY:Check kombucha\r\nTRANSP:OPAQUE\r\nUID:832EDE49-934D-4F91-8CD8-65F7AB6650E6\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for URL property. \r\n Removing entire property:\r\nX-APPLE-CREATOR-IDENTITY:com.apple.mobilecal\r\nX-APPLE-CREATOR-TEAM-IDENTITY:0000000000\r\nX-EVOLUTION-CALDAV-ETAG:478991195539ce1831b6951e0e7eb446\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:PT9H\r\nUID:E6503DD2-29CC-4ADC-BD83-F2762F2E0B20\r\nX-WR-ALARMUID:E6503DD2-29CC-4ADC-BD83-F2762F2E0B20\r\nX-EVOLUTION-ALARM-UID:1c14eb9eb8fb702676ad7382a53d0ccd3f55f5d4\r\nEND:VALARM\r\nEND:VEVENT\r\n', '984515e54b62a0861a9139ebbda4b80742d9b39f\n133987168034ccb8b770499016a2fdd467cf721e\t20250319T090000\n1742313600\n1742400000\n1742403600\nBEGIN:VEVENT\r\nCREATED:20250319T043347Z\r\nDTEND;TZID=America/Los_Angeles:20250319T100000\r\nDTSTAMP:20250319T043355Z\r\nDTSTART;TZID=America/Los_Angeles:20250319T090000\r\nLAST-MODIFIED:20250319T043349Z\r\nLOCATION:124 Rancho Del Oro Dr\\, Oceanside\\, CA\\, USA\r\nSEQUENCE:0\r\nSUMMARY:Puppy class\r\nTRANSP:OPAQUE\r\nUID:C11D3107-633A-4D0B-9DAE-3AF18DEE657E\r\nX-APPLE-CREATOR-IDENTITY:com.apple.mobilecal\r\nX-APPLE-CREATOR-TEAM-IDENTITY:0000000000\r\nX-APPLE-STRUCTURED-LOCATION;VALUE=URI;\r\n X-APPLE-MAPKIT-HANDLE=CAESrgII2TIaEgmlzLwLSp1AQBFeXbruUlRdwCKTAQoNVW5pdGVk\r\n IFN0YXRlcxICVVMaCkNhbGlmb3JuaWEiAkNBKhBTYW4gRGllZ28gQ291bnR5MglPY2VhbnNpZG\r\n U6BTkyMDU3QgxTYW4gTHVpcyBSZXlSEVJhbmNobyBkZWwgT3JvIERyWgMxMjRiFTEyNCBSYW5j\r\n aG8gZGVsIE9ybyBEcooBDFNhbiBMdWlzIFJleSoVMTI0IFJhbmNobyBkZWwgT3JvIERyMhUxMj\r\n QgUmFuY2hvIGRlbCBPcm8gRHIyFE9jZWFuc2lkZSwgQ0EgIDkyMDU3Mg1Vbml0ZWQgU3RhdGVz\r\n ODlAAFABWiYKJBISCaXMvAtKnUBAEV5duu5SVF3AGNkyIOm+0vHI1a2wIpADAQ==;\r\n X-APPLE-RADIUS=70.58729933191;X-APPLE-REFERENCEFRAME=1;X-TITLE="124 \r\n Rancho Del Oro Dr, Oceanside, CA, USA":geo:33.228822,-117.317562\r\nX-EVOLUTION-CALDAV-ETAG:4c197a69b1a56d08b56ea179dc302a75\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-P1D\r\nUID:9480311B-79EA-4D1A-9144-6C6B60A77C71\r\nX-WR-ALARMUID:9480311B-79EA-4D1A-9144-6C6B60A77C71\r\nX-EVOLUTION-ALARM-UID:133987168034ccb8b770499016a2fdd467cf721e\r\nEND:VALARM\r\nEND:VEVENT\r\n', "d7c0b19de272e48d63180ac9d3ddcc26c0270dc6\n4682115ba19b97c3383aad97e7c48b05befbc4de\t20250318T170000\n1742341800\n1742342400\n1742349600\nBEGIN:VEVENT\r\nDTSTAMP:20250309T173244Z\r\nUID:5dc25e9d-3be0-4472-9094-4c1a5fef3373\r\nSUMMARY:Buczkowski's over for dinner\r\nDTSTART;TZID=America/Los_Angeles:20250318T170000\r\nDTEND;TZID=America/Los_Angeles:20250318T190000\r\nSTATUS:CONFIRMED\r\nX-EVOLUTION-CALDAV-ETAG:a72608c81b1f324f970450fa0fa2c1b8\r\nBEGIN:VALARM\r\nTRIGGER:-PT10M\r\nACTION:DISPLAY\r\nDESCRIPTION:Buczkowski's over for dinner\r\nX-EVOLUTION-ALARM-UID:4682115ba19b97c3383aad97e7c48b05befbc4de\r\nEND:VALARM\r\nEND:VEVENT\r\n", 'd7c0b19de272e48d63180ac9d3ddcc26c0270dc6\n4289d00671c705502ff1b53dcc24a6c779635085\t20250318T004000Z\n1742256600\n1742258400\n1742262000\nBEGIN:VEVENT\r\nCREATED:20250118T004852Z\r\nDTEND;TZID=America/Los_Angeles:20250317T184000\r\nDTSTAMP:20250303T191836Z\r\nDTSTART;TZID=America/Los_Angeles:20250317T174000\r\nLAST-MODIFIED:20250303T191835Z\r\nLOCATION:LA Fitness\\n3437 Arlington Ave\\, Riverside\\, CA  92506\\, United \r\n States\r\nRELATED-TO;RELTYPE=X-CALENDARSERVER-RECURRENCE-SET:\r\n 48E7B9E2-EDAE-4FA7-BCE9-F2A2ECA60F04\r\nRRULE:FREQ=WEEKLY\r\nSEQUENCE:1\r\nSUMMARY:Swim class be there 10 min early\r\nTRANSP:OPAQUE\r\nUID:D6A2E1FA-D566-4482-8E6F-3D46BD22A94C\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for URL property. \r\n Removing entire property:\r\nX-APPLE-CREATOR-IDENTITY:com.apple.mobilecal\r\nX-APPLE-CREATOR-TEAM-IDENTITY:0000000000\r\nX-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="3437 Arlington Ave, \r\n Riverside, CA  92506, United States";\r\n X-APPLE-MAPKIT-HANDLE=CAESwAIIrk0QuuH9nPTM8IUzGhIJfFQNDGr5QEARhNTt7KtYXcAi\r\n hQEKDVVuaXRlZCBTdGF0ZXMSAlVTGgpDYWxpZm9ybmlhIgJDQSoQUml2ZXJzaWRlIENvdW50eT\r\n IJUml2ZXJzaWRlOgU5MjUwNkIIVmljdG9yaWFSDUFybGluZ3RvbiBBdmVaBDM0MzdiEjM0Mzcg\r\n QXJsaW5ndG9uIEF2ZYoBCFZpY3RvcmlhKgpMQSBGaXRuZXNzMhIzNDM3IEFybGluZ3RvbiBBdm\r\n UyFFJpdmVyc2lkZSwgQ0EgIDkyNTA2Mg1Vbml0ZWQgU3RhdGVzOC9QAVpMCicIuuH9nPTM8IUz\r\n EhIJfFQNDGr5QEARhNTt7KtYXcAYrk2QAwGYAwGiHyAIuuH9nPTM8IUzGhQKCkxBIEZpdG5lc3\r\n MQACoCZW5AAA==;X-APPLE-RADIUS=141.1747899241035;X-APPLE-REFERENCEFRAME=1;\r\n X-TITLE=LA Fitness:geo:33.948549,-117.385493\r\nX-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED\r\nX-EVOLUTION-CALDAV-ETAG:a8852c0d3bb23cb8c9652c5dae5907a3\r\nRECURRENCE-ID:20250318T004000Z\r\nBEGIN:VALARM\r\nACKNOWLEDGED:20250128T021510Z\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-PT30M\r\nUID:824AC672-95BF-403A-87F8-CB1F5D5ECF3F\r\nX-WR-ALARMUID:824AC672-95BF-403A-87F8-CB1F5D5ECF3F\r\nX-EVOLUTION-ALARM-UID:4289d00671c705502ff1b53dcc24a6c779635085\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACKNOWLEDGED:20250204T000636Z\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-PT2H\r\nUID:A9D78187-21BE-4835-BEE8-0C2ADCB55F3F\r\nX-WR-ALARMUID:A9D78187-21BE-4835-BEE8-0C2ADCB55F3F\r\nX-EVOLUTION-ALARM-UID:1d19df9b1b7b705ae8350abc9d7e7acdc99a3ad0\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:NONE\r\nTRIGGER;VALUE=DATE-TIME:19760401T005545Z\r\nX-EVOLUTION-ALARM-UID:880900382d1a131947ad4a927c51a80bed25df5d\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'd7c0b19de272e48d63180ac9d3ddcc26c0270dc6\n1d19df9b1b7b705ae8350abc9d7e7acdc99a3ad0\t20250318T004000Z\n1742251200\n1742258400\n1742262000\nBEGIN:VEVENT\r\nCREATED:20250118T004852Z\r\nDTEND;TZID=America/Los_Angeles:20250317T184000\r\nDTSTAMP:20250303T191836Z\r\nDTSTART;TZID=America/Los_Angeles:20250317T174000\r\nLAST-MODIFIED:20250303T191835Z\r\nLOCATION:LA Fitness\\n3437 Arlington Ave\\, Riverside\\, CA  92506\\, United \r\n States\r\nRELATED-TO;RELTYPE=X-CALENDARSERVER-RECURRENCE-SET:\r\n 48E7B9E2-EDAE-4FA7-BCE9-F2A2ECA60F04\r\nRRULE:FREQ=WEEKLY\r\nSEQUENCE:1\r\nSUMMARY:Swim class be there 10 min early\r\nTRANSP:OPAQUE\r\nUID:D6A2E1FA-D566-4482-8E6F-3D46BD22A94C\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for URL property. \r\n Removing entire property:\r\nX-APPLE-CREATOR-IDENTITY:com.apple.mobilecal\r\nX-APPLE-CREATOR-TEAM-IDENTITY:0000000000\r\nX-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="3437 Arlington Ave, \r\n Riverside, CA  92506, United States";\r\n X-APPLE-MAPKIT-HANDLE=CAESwAIIrk0QuuH9nPTM8IUzGhIJfFQNDGr5QEARhNTt7KtYXcAi\r\n hQEKDVVuaXRlZCBTdGF0ZXMSAlVTGgpDYWxpZm9ybmlhIgJDQSoQUml2ZXJzaWRlIENvdW50eT\r\n IJUml2ZXJzaWRlOgU5MjUwNkIIVmljdG9yaWFSDUFybGluZ3RvbiBBdmVaBDM0MzdiEjM0Mzcg\r\n QXJsaW5ndG9uIEF2ZYoBCFZpY3RvcmlhKgpMQSBGaXRuZXNzMhIzNDM3IEFybGluZ3RvbiBBdm\r\n UyFFJpdmVyc2lkZSwgQ0EgIDkyNTA2Mg1Vbml0ZWQgU3RhdGVzOC9QAVpMCicIuuH9nPTM8IUz\r\n EhIJfFQNDGr5QEARhNTt7KtYXcAYrk2QAwGYAwGiHyAIuuH9nPTM8IUzGhQKCkxBIEZpdG5lc3\r\n MQACoCZW5AAA==;X-APPLE-RADIUS=141.1747899241035;X-APPLE-REFERENCEFRAME=1;\r\n X-TITLE=LA Fitness:geo:33.948549,-117.385493\r\nX-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED\r\nX-EVOLUTION-CALDAV-ETAG:a8852c0d3bb23cb8c9652c5dae5907a3\r\nRECURRENCE-ID:20250318T004000Z\r\nBEGIN:VALARM\r\nACKNOWLEDGED:20250128T021510Z\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-PT30M\r\nUID:824AC672-95BF-403A-87F8-CB1F5D5ECF3F\r\nX-WR-ALARMUID:824AC672-95BF-403A-87F8-CB1F5D5ECF3F\r\nX-EVOLUTION-ALARM-UID:4289d00671c705502ff1b53dcc24a6c779635085\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACKNOWLEDGED:20250204T000636Z\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-PT2H\r\nUID:A9D78187-21BE-4835-BEE8-0C2ADCB55F3F\r\nX-WR-ALARMUID:A9D78187-21BE-4835-BEE8-0C2ADCB55F3F\r\nX-EVOLUTION-ALARM-UID:1d19df9b1b7b705ae8350abc9d7e7acdc99a3ad0\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:NONE\r\nTRIGGER;VALUE=DATE-TIME:19760401T005545Z\r\nX-EVOLUTION-ALARM-UID:880900382d1a131947ad4a927c51a80bed25df5d\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'b2326d2349439a2fbf2402103e23e819a542a6e6\n5e88bddeb495e639b321c2e49397c63ad20b451e\t20250317T223000Z\n1742248800\n1742250600\n1742256000\nBEGIN:VEVENT\r\nCREATED:20250218T221656Z\r\nDTEND;TZID=America/Los_Angeles:20250317T170000\r\nDTSTAMP:20250219T065531Z\r\nDTSTART;TZID=America/Los_Angeles:20250317T153000\r\nLAST-MODIFIED:20250219T065527Z\r\nLOCATION:6916 Lincoln Ave\\, Riverside 92506\\nUnited States\r\nRELATED-TO;RELTYPE=X-CALENDARSERVER-RECURRENCE-SET:\r\n 0198302C-3C2A-4B42-AA1F-A1BDBDFC46D5\r\nRRULE:FREQ=WEEKLY\r\nSEQUENCE:1\r\nSUMMARY:Piano : Ben\\, Scarlett\\, Isaiah\r\nTRANSP:OPAQUE\r\nUID:43CF52E4-FCBE-46D0-A434-E17CE5581EBF\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for URL property. \r\n Removing entire property:\r\nX-APPLE-CREATOR-IDENTITY:com.apple.mobilecal\r\nX-APPLE-CREATOR-TEAM-IDENTITY:0000000000\r\nX-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="6916 Lincoln Ave, \r\n Riverside 92506\\nUnited States";X-APPLE-ABUID=Marilyn Burdett’s Home;\r\n X-APPLE-MAPKIT-HANDLE=CAESpAII2TIaEgl1eAjjp/dAQBGWJqWg21hdwCKSAQoNVW5pdGVk\r\n IFN0YXRlcxICVVMaCkNhbGlmb3JuaWEiAkNBKhBSaXZlcnNpZGUgQ291bnR5MglSaXZlcnNpZG\r\n U6BTkyNTA2QgtDYXNhIEJsYW5jYVILTGluY29sbiBBdmVaBDY5MTZiEDY5MTYgTGluY29sbiBB\r\n dmWKAQtDYXNhIEJsYW5jYYoBCFZpY3RvcmlhKhA2OTE2IExpbmNvbG4gQXZlMhA2OTE2IExpbm\r\n NvbG4gQXZlMhRSaXZlcnNpZGUsIENBICA5MjUwNjINVW5pdGVkIFN0YXRlczg5QARQAVonCiUS\r\n Egl1eAjjp/dAQBGWJqWg21hdwBjZMiCnnbOn2LTcsN4BkAMB;\r\n X-APPLE-RADIUS=70.58730178826357;X-APPLE-REFERENCEFRAME=1;X-TITLE="6916 \r\n Lincoln Ave, Riverside 92506\\nUnited States":geo:33.934811,-117.388405\r\nX-EVOLUTION-CALDAV-ETAG:844e712acdc8f57d0306dbb0d4f26767\r\nRECURRENCE-ID:20250317T223000Z\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-PT30M\r\nUID:75EF4162-7087-49E7-8EC0-D9923EB665EE\r\nX-WR-ALARMUID:75EF4162-7087-49E7-8EC0-D9923EB665EE\r\nX-EVOLUTION-ALARM-UID:5e88bddeb495e639b321c2e49397c63ad20b451e\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-P1D\r\nUID:6F7697A5-D8C8-4100-8074-96AF01EA7C79\r\nX-WR-ALARMUID:6F7697A5-D8C8-4100-8074-96AF01EA7C79\r\nX-EVOLUTION-ALARM-UID:9e1490dc5a8e54935903a5cc7d529c37fc13e874\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:NONE\r\nTRIGGER;VALUE=DATE-TIME:19760401T005545Z\r\nX-EVOLUTION-ALARM-UID:66caf551090f457b34f95cfa79b6e6fc7a1b9f4b\r\nEND:VALARM\r\nEND:VEVENT\r\n', '984515e54b62a0861a9139ebbda4b80742d9b39f\n8c2f99810c60555ed6ca6f54aea452ee09c5c5a9\t20250324T120000\n1742238000\n1742842800\n1743019200\nBEGIN:VEVENT\r\nCREATED:20250227T203630Z\r\nDTEND;TZID=America/Los_Angeles:20250326T130000\r\nDTSTAMP:20250227T203632Z\r\nDTSTART;TZID=America/Los_Angeles:20250324T120000\r\nLAST-MODIFIED:20250227T203630Z\r\nLOCATION:Online\r\nSEQUENCE:0\r\nSUMMARY:Ben testing -9 am\r\nTRANSP:OPAQUE\r\nUID:7083D684-F140-479B-B6FE-6B1A4C3B65EE\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for URL property. \r\n Removing entire property:\r\nX-APPLE-CREATOR-IDENTITY:com.apple.mobilecal\r\nX-APPLE-CREATOR-TEAM-IDENTITY:0000000000\r\nX-EVOLUTION-CALDAV-ETAG:cde98b8b66827cb39f7c7b9e4b3f197b\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-P1W\r\nUID:FA32C371-3BC3-4776-85DD-A60E0E0593AB\r\nX-WR-ALARMUID:FA32C371-3BC3-4776-85DD-A60E0E0593AB\r\nX-EVOLUTION-ALARM-UID:8c2f99810c60555ed6ca6f54aea452ee09c5c5a9\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-P1D\r\nUID:659A2CFA-3BBD-4893-8EC7-4078978C3874\r\nX-WR-ALARMUID:659A2CFA-3BBD-4893-8EC7-4078978C3874\r\nX-EVOLUTION-ALARM-UID:7909bed0d912bd974214d682a2b384a8c919986e\r\nEND:VALARM\r\nEND:VEVENT\r\n', '2247044d8e4592ac78468f32244aed84f9534257\nc8f851c8642853168a04c18b9fac3ebdbe38ad3d\t20250317T160000Z\n1742226600\n1742227200\n1742230800\nBEGIN:VEVENT\r\nDTSTART;TZID=America/New_York:20250317T120000\r\nDTEND;TZID=America/New_York:20250317T130000\r\nRRULE:FREQ=WEEKLY;BYDAY=MO\r\nDTSTAMP:20250227T215110Z\r\nORGANIZER;CN=scott@novien.com:mailto:scott@novien.com\r\nUID:dsd4k9ks6gu21d2vl3upuh7tqs@google.com\r\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;\r\n CN=Daniel Lim;X-NUM-GUESTS=0:mailto:daniel@novien.com\r\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;\r\n CN=mike@novien.com;X-NUM-GUESTS=0:mailto:mike@novien.com\r\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;\r\n CN=scott@novien.com;X-NUM-GUESTS=0:mailto:scott@novien.com\r\nCLASS:PUBLIC\r\nCREATED:20250106T211024Z\r\nDESCRIPTION:https://meet.google.com/rrp-cveh-kkg\r\nLAST-MODIFIED:20250227T215110Z\r\nLOCATION:Secret Lair\r\nSEQUENCE:1\r\nSTATUS:CONFIRMED\r\nSUMMARY:Plan to take over the world\r\nTRANSP:OPAQUE\r\nX-EVOLUTION-CALDAV-ETAG:63876378435\r\nRECURRENCE-ID:20250317T160000Z\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT10M\r\nX-EVOLUTION-ALARM-UID:c8f851c8642853168a04c18b9fac3ebdbe38ad3d\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'b2326d2349439a2fbf2402103e23e819a542a6e6\n9e1490dc5a8e54935903a5cc7d529c37fc13e874\t20250317T223000Z\n1742164200\n1742250600\n1742256000\nBEGIN:VEVENT\r\nCREATED:20250218T221656Z\r\nDTEND;TZID=America/Los_Angeles:20250317T170000\r\nDTSTAMP:20250219T065531Z\r\nDTSTART;TZID=America/Los_Angeles:20250317T153000\r\nLAST-MODIFIED:20250219T065527Z\r\nLOCATION:6916 Lincoln Ave\\, Riverside 92506\\nUnited States\r\nRELATED-TO;RELTYPE=X-CALENDARSERVER-RECURRENCE-SET:\r\n 0198302C-3C2A-4B42-AA1F-A1BDBDFC46D5\r\nRRULE:FREQ=WEEKLY\r\nSEQUENCE:1\r\nSUMMARY:Piano : Ben\\, Scarlett\\, Isaiah\r\nTRANSP:OPAQUE\r\nUID:43CF52E4-FCBE-46D0-A434-E17CE5581EBF\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for URL property. \r\n Removing entire property:\r\nX-APPLE-CREATOR-IDENTITY:com.apple.mobilecal\r\nX-APPLE-CREATOR-TEAM-IDENTITY:0000000000\r\nX-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="6916 Lincoln Ave, \r\n Riverside 92506\\nUnited States";X-APPLE-ABUID=Marilyn Burdett’s Home;\r\n X-APPLE-MAPKIT-HANDLE=CAESpAII2TIaEgl1eAjjp/dAQBGWJqWg21hdwCKSAQoNVW5pdGVk\r\n IFN0YXRlcxICVVMaCkNhbGlmb3JuaWEiAkNBKhBSaXZlcnNpZGUgQ291bnR5MglSaXZlcnNpZG\r\n U6BTkyNTA2QgtDYXNhIEJsYW5jYVILTGluY29sbiBBdmVaBDY5MTZiEDY5MTYgTGluY29sbiBB\r\n dmWKAQtDYXNhIEJsYW5jYYoBCFZpY3RvcmlhKhA2OTE2IExpbmNvbG4gQXZlMhA2OTE2IExpbm\r\n NvbG4gQXZlMhRSaXZlcnNpZGUsIENBICA5MjUwNjINVW5pdGVkIFN0YXRlczg5QARQAVonCiUS\r\n Egl1eAjjp/dAQBGWJqWg21hdwBjZMiCnnbOn2LTcsN4BkAMB;\r\n X-APPLE-RADIUS=70.58730178826357;X-APPLE-REFERENCEFRAME=1;X-TITLE="6916 \r\n Lincoln Ave, Riverside 92506\\nUnited States":geo:33.934811,-117.388405\r\nX-EVOLUTION-CALDAV-ETAG:844e712acdc8f57d0306dbb0d4f26767\r\nRECURRENCE-ID:20250317T223000Z\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-PT30M\r\nUID:75EF4162-7087-49E7-8EC0-D9923EB665EE\r\nX-WR-ALARMUID:75EF4162-7087-49E7-8EC0-D9923EB665EE\r\nX-EVOLUTION-ALARM-UID:5e88bddeb495e639b321c2e49397c63ad20b451e\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-P1D\r\nUID:6F7697A5-D8C8-4100-8074-96AF01EA7C79\r\nX-WR-ALARMUID:6F7697A5-D8C8-4100-8074-96AF01EA7C79\r\nX-EVOLUTION-ALARM-UID:9e1490dc5a8e54935903a5cc7d529c37fc13e874\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:NONE\r\nTRIGGER;VALUE=DATE-TIME:19760401T005545Z\r\nX-EVOLUTION-ALARM-UID:66caf551090f457b34f95cfa79b6e6fc7a1b9f4b\r\nEND:VALARM\r\nEND:VEVENT\r\n', '984515e54b62a0861a9139ebbda4b80742d9b39f\n62a4d5e3c04b447ec4ee505c46a37ffc7e1d2e25\t20250321T183000\n1742002200\n1742607000\n1742610600\nBEGIN:VEVENT\r\nCREATED:20250314T211537Z\r\nDTEND;TZID=America/Los_Angeles:20250321T193000\r\nDTSTAMP:20250314T211538Z\r\nDTSTART;TZID=America/Los_Angeles:20250321T183000\r\nLAST-MODIFIED:20250314T211537Z\r\nSEQUENCE:0\r\nSUMMARY:Kids praise choir the grove\r\nTRANSP:OPAQUE\r\nUID:DC0420F5-FFC0-4153-ADF1-FF5D0F546A93\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for URL property. \r\n Removing entire property:\r\nX-APPLE-CREATOR-IDENTITY:com.apple.mobilecal\r\nX-APPLE-CREATOR-TEAM-IDENTITY:0000000000\r\nX-EVOLUTION-CALDAV-ETAG:54fdfe44b59fea932017b24945ce613e\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-P1W\r\nUID:4FF59E07-8D54-4324-9F97-26E710EAF9AB\r\nX-WR-ALARMUID:4FF59E07-8D54-4324-9F97-26E710EAF9AB\r\nX-EVOLUTION-ALARM-UID:62a4d5e3c04b447ec4ee505c46a37ffc7e1d2e25\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-P1D\r\nUID:7606AEBB-4C33-41E6-B9B2-4739E393A5AF\r\nX-WR-ALARMUID:7606AEBB-4C33-41E6-B9B2-4739E393A5AF\r\nX-EVOLUTION-ALARM-UID:aedfdf00aeb96531772da646723b83021db18bd3\r\nEND:VALARM\r\nEND:VEVENT\r\n', '984515e54b62a0861a9139ebbda4b80742d9b39f\n7ef55d68d226c0e842980a93b05f7a47a4aca2ed\t20250320T100000\n1741885200\n1742490000\n1742493600\nBEGIN:VEVENT\r\nCREATED:20250227T201816Z\r\nDTEND;TZID=America/Los_Angeles:20250320T110000\r\nDTSTAMP:20250227T201859Z\r\nDTSTART;TZID=America/Los_Angeles:20250320T100000\r\nLAST-MODIFIED:20250227T201852Z\r\nLOCATION:20010-B Orange Terrace Parkway\\, Riverside CA\r\nSEQUENCE:0\r\nSUMMARY:Ben Testing\r\nTRANSP:OPAQUE\r\nUID:E88BD40F-029F-4086-B928-8E416A4E5E38\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for URL property. \r\n Removing entire property:\r\nX-APPLE-CREATOR-IDENTITY:com.apple.mobilecal\r\nX-APPLE-CREATOR-TEAM-IDENTITY:0000000000\r\nX-APPLE-STRUCTURED-LOCATION;VALUE=URI;\r\n X-APPLE-MAPKIT-HANDLE=CAES2wII2TIaEgnXPP1WofJAQBETpXM0/VNdwCK4AQoNVW5pdGVk\r\n IFN0YXRlcxICVVMaCkNhbGlmb3JuaWEiAkNBKhBSaXZlcnNpZGUgQ291bnR5MglSaXZlcnNpZG\r\n U6BTkyNTA4QgtPcmFuZ2VjcmVzdFITT3JhbmdlIFRlcnJhY2UgUGt3eVoFMjAwMTBiGTIwMDEw\r\n IE9yYW5nZSBUZXJyYWNlIFBrd3lyHU9yYW5nZSBUZXJyYWNlIENvbW11bml0eSBQYXJrigELT3\r\n JhbmdlY3Jlc3QqGTIwMDEwIE9yYW5nZSBUZXJyYWNlIFBrd3kyGTIwMDEwIE9yYW5nZSBUZXJy\r\n YWNlIFBrd3kyFFJpdmVyc2lkZSwgQ0EgIDkyNTA4Mg1Vbml0ZWQgU3RhdGVzODlAAFABWiYKJB\r\n ISCdc8/Vah8kBAEROlczT9U13AGNkyIKri+ejMtaKtBJADAQ==;\r\n X-APPLE-RADIUS=256.2649451718589;X-APPLE-REFERENCEFRAME=1;\r\n X-TITLE="20010-B Orange Terrace Parkway, Riverside CA":geo:\r\n 33.895549,-117.312329\r\nX-EVOLUTION-CALDAV-ETAG:3b9117a2f18e1d9b369b2b8afe06f7cc\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-P1D\r\nUID:BBA6E70E-434B-4A46-9310-0B799DB45D7D\r\nX-WR-ALARMUID:BBA6E70E-434B-4A46-9310-0B799DB45D7D\r\nX-EVOLUTION-ALARM-UID:ce6efbf4aff4ae8618eca1a614d9b09adad5d1b5\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nTRIGGER:-P1W\r\nUID:4E8C66CE-66B4-473B-853F-7232D19A30CC\r\nX-WR-ALARMUID:4E8C66CE-66B4-473B-853F-7232D19A30CC\r\nX-EVOLUTION-ALARM-UID:7ef55d68d226c0e842980a93b05f7a47a4aca2ed\r\nEND:VALARM\r\nEND:VEVENT\r\n']
+reminders-snoozed=@as []
+
+[org/gnome/evolution]
+default-calendar='2247044d8e4592ac78468f32244aed84f9534257'
+version='3.54.3'
+
+[org/gnome/evolution/calendar]
+week-start-day-name='monday'
+work-day-friday=true
+work-day-monday=true
+work-day-saturday=false
+work-day-sunday=false
+work-day-thursday=true
+work-day-tuesday=true
+work-day-wednesday=true
+
+[org/gnome/evolution/mail]
+browser-close-on-reply-policy='ask'
+forward-style-name='attached'
+image-loading-policy='never'
+paned-size=1272727
+reply-style-name='quoted'
+to-do-bar-width=1150000
+
+[org/gnome/evolution/shell]
+default-component-id='mail'
+
+[org/gnome/evolution/shell/window]
+height=638
+maximized=false
+width=850
+x=56
+y=50
+
+[org/gnome/gnome-system-monitor]
+current-tab='processes'
+show-dependencies=false
+show-whose-processes='all'
+window-height=1380
+window-width=1708
+
+[org/gnome/gnome-system-monitor/proctree]
+col-26-visible=false
+col-26-width=0
+
+[org/gnome/mutter]
+dynamic-workspaces=false
+edge-tiling=false
+experimental-features=['scale-monitor-framebuffer']
+workspaces-only-on-primary=false
+
+[org/gnome/mutter/keybindings]
+toggle-tiled-left=@as []
+toggle-tiled-right=@as []
+
+[org/gnome/mutter/wayland/keybindings]
+restore-shortcuts=@as []
+
+[org/gnome/nautilus/list-view]
+default-column-order=['name', 'size', 'type', 'owner', 'group', 'permissions', 'date_modified', 'date_accessed', 'date_created', 'recency', 'detailed_type']
+default-visible-columns=['name', 'size', 'date_modified']
+default-zoom-level='small'
+
+[org/gnome/nautilus/preferences]
+default-folder-viewer='list-view'
+migrated-gtk-settings=true
+search-filter-time-type='last_modified'
+show-create-link=true
+show-delete-permanently=true
+
+[org/gnome/nautilus/window-state]
+initial-size=(2400, 1398)
+initial-size-file-chooser=(1012, 606)
+maximized=false
+
+[org/gnome/nm-applet/eap/5554dcb4-6dc4-4e65-bfe6-a9914a4744d3]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
+
+[org/gnome/portal/filechooser/ClickUp]
+last-folder-path='/home/mike/Downloads'
+
+[org/gnome/portal/filechooser/brave-browser]
+last-folder-path='/home/mike/Downloads'
+
+[org/gnome/portal/filechooser/chrome-aghbiahbpaijignceidepookljebhfak-Default]
+last-folder-path='/home/mike/Downloads'
+
+[org/gnome/portal/filechooser/chrome-fmgjjmmmlfnkbppncabfkddbjimcfncm-Default]
+last-folder-path='/home/mike/Novien/repos/cad/cro-vacuum-pump/Deliverables/CRO Injection Molded Parts'
+
+[org/gnome/portal/filechooser/chromium]
+last-folder-path='/home/mike/Documents/Novien/Logos'
+
+[org/gnome/portal/filechooser/org.chromium.Chromium]
+last-folder-path='/home/mike/Nextcloud/Novien/CAD/epri-sheet-metal-rainguard/deliverable'
+
+[org/gnome/portal/filechooser/org.gnome.Settings]
+last-folder-path='/usr/share/wallpapers/Elarun/contents/images'
+
+[org/gnome/portal/filechooser/signal-desktop]
+last-folder-path='/home/mike/Downloads'
+
+[org/gnome/portal/filechooser/simple-scan]
+last-folder-path='/home/mike/Downloads'
+
+[org/gnome/settings-daemon/plugins/color]
+night-light-enabled=true
+night-light-schedule-automatic=false
+night-light-temperature=uint32 4112
+
+[org/gnome/settings-daemon/plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/']
+email=['<Super>e']
+home=['<Super>f']
+rotate-video-lock-static=@as []
+screensaver=['<Super>Escape']
+search=['<Control>space']
+terminal=['<Super>t']
+www=['<Super>b']
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Shift><Super>x'
+command='gnome-session-quit'
+name='Logout'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
+binding='<Shift><Super>Return'
+command='kitty'
+name='Launcher Terminal'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
+binding='<Alt>t'
+command="tdrop -w 90% -h 60% -x 5% -a kitty --title dropdown --class dropdown -o 'linux_display_server x11' -o 'background_opacity 0.8' -o 'background_blur 20' zellij a -c dropdown"
+name='Dropdown'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
+binding='<Shift><Alt>AudioRaiseVolume'
+command='bt-profile a2dp'
+name='Set Bluetooth Profile - a2dp'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4]
+binding='<Shift><Alt>AudioLowerVolume'
+command='bt-profile hfp'
+name='Set Bluetooth Profile - hfp'
+
+[org/gnome/settings-daemon/plugins/power]
+ambient-enabled=false
+idle-brightness=100
+idle-dim=true
+sleep-inactive-ac-timeout=1800
+sleep-inactive-ac-type='suspend'
+
+[org/gnome/settings-daemon/plugins/xsettings]
+disabled-gtk-modules=@as []
+enabled-gtk-modules=@as []
+overrides=@a{sv} {}
+
+[org/gnome/shell]
+disable-user-extensions=false
+disabled-extensions=['forge@jmmaranan.com', 'quake-mode@repsac-by.github.com', 'status-icons@gnome-shell-extensions.gcampax.github.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com', 'Vitals@CoreCoding.com', 'power-profile-switcher@eliapasquali.github.io', 'ddterm@amezin.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com']
+enabled-extensions=['material-shell@papyelgringo', 'hibernate-status@dromi', 'tailscale-status@maxgallup.github.com', 'gsconnect@andyholmes.github.io', 'appindicatorsupport@rgcjonas.gmail.com', 'blur-my-shell@aunetx', 'pop-shell@system76.com', 'pano@elhan.io', 'system-monitor@gnome-shell-extensions.gcampax.github.com', 'unite@hardpixel.eu', 'user-theme@gnome-shell-extensions.gcampax.github.com']
+last-selected-power-profile='power-saver'
+welcome-dialog-last-shown-version='47.0'
+
+[org/gnome/shell/extensions/blur-my-shell]
+pipelines={'pipeline_default': {'name': <'Default'>, 'effects': <[<{'type': <'native_static_gaussian_blur'>, 'id': <'effect_000000000000'>, 'params': <{'radius': <30>, 'brightness': <0.59999999999999998>}>}>]>}, 'pipeline_45630473349184': {'name': <'Panel'>, 'effects': <[<{'type': <'native_static_gaussian_blur'>, 'id': <'effect_57501388739574'>, 'params': <@a{sv} {}>}>, <{'type': <'corner'>, 'id': <'effect_79507951667928'>, 'params': <{'radius': <18>}>}>]>}}
+settings-version=2
+
+[org/gnome/shell/extensions/blur-my-shell/appfolder]
+brightness=0.54000000000000004
+sigma=31
+
+[org/gnome/shell/extensions/blur-my-shell/applications]
+blur=true
+dynamic-opacity=false
+sigma=9
+whitelist=['com.github.amezin.ddterm', 'dropdown']
+
+[org/gnome/shell/extensions/blur-my-shell/coverflow-alt-tab]
+pipeline='pipeline_default'
+
+[org/gnome/shell/extensions/blur-my-shell/dash-to-dock]
+blur=false
+brightness=0.59999999999999998
+pipeline='pipeline_default'
+sigma=30
+static-blur=true
+style-dash-to-dock=0
+
+[org/gnome/shell/extensions/blur-my-shell/dash-to-panel]
+blur-original-panel=true
+
+[org/gnome/shell/extensions/blur-my-shell/hidetopbar]
+compatibility=false
+
+[org/gnome/shell/extensions/blur-my-shell/lockscreen]
+pipeline='pipeline_default'
+
+[org/gnome/shell/extensions/blur-my-shell/overview]
+pipeline='pipeline_default'
+style-components=2
+
+[org/gnome/shell/extensions/blur-my-shell/panel]
+blur=true
+brightness=0.59999999999999998
+force-light-text=false
+override-background=true
+override-background-dynamically=false
+pipeline='pipeline_45630473349184'
+sigma=30
+static-blur=true
+style-panel=0
+unblur-in-overview=false
+
+[org/gnome/shell/extensions/blur-my-shell/screenshot]
+pipeline='pipeline_default'
+
+[org/gnome/shell/extensions/blur-my-shell/window-list]
+brightness=0.59999999999999998
+sigma=30
+
+[org/gnome/shell/extensions/forge]
+css-last-update=uint32 37
+dnd-center-layout='swap'
+stacked-tiling-mode-enabled=false
+tabbed-tiling-mode-enabled=false
+window-gap-size=uint32 5
+window-gap-size-increment=uint32 1
+
+[org/gnome/shell/extensions/forge/keybindings]
+con-split-horizontal=['<Super>z']
+con-split-layout-toggle=['<Super>g']
+con-split-vertical=['<Super>v']
+con-stacked-layout-toggle=['<Shift><Super>s']
+con-tabbed-layout-toggle=['<Shift><Super>t']
+con-tabbed-showtab-decoration-toggle=['<Control><Alt>y']
+focus-border-toggle=['<Super>x']
+mod-mask-mouse-tile='None'
+prefs-tiling-toggle=['<Super>w']
+window-focus-down=['<Super>j']
+window-focus-left=['<Super>h']
+window-focus-right=['<Super>l']
+window-focus-up=['<Super>k']
+window-gap-size-decrease=['<Control><Super>minus']
+window-gap-size-increase=['<Control><Super>plus']
+window-move-down=['<Shift><Super>j']
+window-move-left=['<Shift><Super>h']
+window-move-right=['<Shift><Super>l']
+window-move-up=['<Shift><Super>k']
+window-resize-bottom-decrease=['<Shift><Control><Super>i']
+window-resize-bottom-increase=['<Control><Super>u']
+window-resize-left-decrease=['<Shift><Control><Super>o']
+window-resize-left-increase=['<Control><Super>y']
+window-resize-right-decrease=['<Shift><Control><Super>y']
+window-resize-right-increase=['<Control><Super>o']
+window-resize-top-decrease=['<Shift><Control><Super>u']
+window-resize-top-increase=['<Control><Super>i']
+window-snap-center=['<Control><Alt>c']
+window-snap-one-third-left=['<Control><Alt>d']
+window-snap-one-third-right=['<Control><Alt>g']
+window-snap-two-third-left=['<Control><Alt>e']
+window-snap-two-third-right=['<Control><Alt>t']
+window-swap-down=['<Control><Super>j']
+window-swap-last-active=['<Super>Return']
+window-swap-left=['<Control><Super>h']
+window-swap-right=['<Control><Super>l']
+window-swap-up=['<Control><Super>k']
+window-toggle-always-float=['<Shift><Super>c']
+window-toggle-float=['<Super>f']
+workspace-active-tile-toggle=['<Shift><Super>w']
+
+[org/gnome/shell/extensions/gsconnect]
+devices=['0a1b54c3_2ffb_409c_b19a_2fc508aa9277', 'F7785A2A2B784D92B6873189D7107C2C']
+enabled=true
+id='ba7115fc-9ee5-46fb-996e-e6cdce401c40'
+name='kratos'
+
+[org/gnome/shell/extensions/gsconnect/device/0a1b54c3_2ffb_409c_b19a_2fc508aa9277]
+certificate-pem='-----BEGIN CERTIFICATE-----\nMIIBkzCCATmgAwIBAgIBATAKBggqhkjOPQQDBDBTMS0wKwYDVQQDDCQwYTFiNTRj\nM18yZmZiXzQwOWNfYjE5YV8yZmM1MDhhYTkyNzcxFDASBgNVBAsMC0tERSBDb25u\nZWN0MQwwCgYDVQQKDANLREUwHhcNMjMxMTAzMDcwMDAwWhcNMzQxMTAzMDcwMDAw\nWjBTMS0wKwYDVQQDDCQwYTFiNTRjM18yZmZiXzQwOWNfYjE5YV8yZmM1MDhhYTky\nNzcxFDASBgNVBAsMC0tERSBDb25uZWN0MQwwCgYDVQQKDANLREUwWTATBgcqhkjO\nPQIBBggqhkjOPQMBBwNCAARW7k8uiulVhqyXgXQ48v/fRTR5YAE8isYe8QPcpPsP\nkZAsuGoojyaSOwDP+7dG9hQcjAo4HlxdZbInkT9v87UfMAoGCCqGSM49BAMEA0gA\nMEUCIQDdt7VBHjayi1MIlUk6H/eFNEZb/8SXqCN76RRljX0ErQIgXO4VlTSJTrRG\nxC6uXL8S9udO2YzV9hYCSeI5T/9Bv7k=\n-----END CERTIFICATE-----\n'
+incoming-capabilities=['kdeconnect.battery', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.contacts.request_all_uids_timestamps', 'kdeconnect.contacts.request_vcards_by_uid', 'kdeconnect.findmyphone.request', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.action', 'kdeconnect.notification.reply', 'kdeconnect.notification.request', 'kdeconnect.ping', 'kdeconnect.runcommand', 'kdeconnect.sftp.request', 'kdeconnect.share.request', 'kdeconnect.share.request.update', 'kdeconnect.sms.request', 'kdeconnect.sms.request_attachment', 'kdeconnect.sms.request_conversation', 'kdeconnect.sms.request_conversations', 'kdeconnect.systemvolume', 'kdeconnect.telephony.request', 'kdeconnect.telephony.request_mute']
+last-connection='lan://192.168.103.123:1716'
+name='Pixel 8'
+outgoing-capabilities=['kdeconnect.battery', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.connectivity_report', 'kdeconnect.contacts.response_uids_timestamps', 'kdeconnect.contacts.response_vcards', 'kdeconnect.findmyphone.request', 'kdeconnect.mousepad.echo', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.request', 'kdeconnect.ping', 'kdeconnect.presenter', 'kdeconnect.runcommand.request', 'kdeconnect.sftp', 'kdeconnect.share.request', 'kdeconnect.sms.attachment_file', 'kdeconnect.sms.messages', 'kdeconnect.systemvolume.request', 'kdeconnect.telephony']
+paired=true
+supported-plugins=['battery', 'clipboard', 'connectivity_report', 'contacts', 'findmyphone', 'mousepad', 'mpris', 'notification', 'ping', 'presenter', 'runcommand', 'sftp', 'share', 'sms', 'systemvolume', 'telephony']
+type='phone'
+
+[org/gnome/shell/extensions/gsconnect/device/0a1b54c3_2ffb_409c_b19a_2fc508aa9277/plugin/battery]
+custom-battery-notification-value=uint32 80
+
+[org/gnome/shell/extensions/gsconnect/device/0a1b54c3_2ffb_409c_b19a_2fc508aa9277/plugin/clipboard]
+receive-content=true
+send-content=true
+
+[org/gnome/shell/extensions/gsconnect/device/0a1b54c3_2ffb_409c_b19a_2fc508aa9277/plugin/notification]
+applications='{"Files":{"iconName":"org.gnome.Nautilus","enabled":true},"Power":{"iconName":"org.gnome.Settings-power-symbolic","enabled":true},"Easy Effects":{"iconName":"com.github.wwmm.easyeffects","enabled":true},"Color":{"iconName":"org.gnome.Settings-color-symbolic","enabled":true},"Signal":{"iconName":"signal-desktop","enabled":true},"Printers":{"iconName":"org.gnome.Settings-printers-symbolic","enabled":true},"Date & Time":{"iconName":"org.gnome.Settings-time-symbolic","enabled":true},"Zenity":{"iconName":"application-x-executable","enabled":true},"NetworkManager Applet":{"iconName":"nm-device-wireless","enabled":true},"Font Manager":{"iconName":"com.github.FontManager.FontManager","enabled":true},"Thunderbird":{"iconName":"","enabled":true},"Slack":{"iconName":"","enabled":true},"blueman":{"iconName":"input-mouse","enabled":true},"Nextcloud":{"iconName":"Nextcloud","enabled":true},"Firefox":{"iconName":"","enabled":true},"BlueBubbles":{"iconName":"","enabled":true},"Zen Browser":{"iconName":"","enabled":true},"ClickUp":{"iconName":"","enabled":true},"Disk Space":{"iconName":"drive-harddisk-symbolic","enabled":true},"Annotator":{"iconName":"com.github.phase1geo.annotator","enabled":true},"Zen":{"iconName":"","enabled":true},"notify-send":{"iconName":"dialog-warning","enabled":true},"Chromium":{"iconName":"file:///tmp/.org.chromium.Chromium.TT6mX0","enabled":true},"Events and Tasks Reminders":{"iconName":"appointment-soon","enabled":true},"Evolution":{"iconName":"evolution","enabled":true},"Disks":{"iconName":"org.gnome.DiskUtility","enabled":true},"Ghostty":{"iconName":"com.mitchellh.ghostty","enabled":true},"Software":{"iconName":"org.gnome.Software","enabled":true},"Console":{"iconName":"org.gnome.Console","enabled":true},"Clocks":{"iconName":"org.gnome.clocks","enabled":true},"Disk Usage Analyzer":{"iconName":"org.gnome.baobab","enabled":true},"Characters":{"iconName":"org.gnome.Characters","enabled":true},"Online Accounts":{"iconName":"dialog-warning","enabled":true}}'
+
+[org/gnome/shell/extensions/gsconnect/device/0a1b54c3_2ffb_409c_b19a_2fc508aa9277/plugin/share]
+receive-directory='/home/mike/Downloads'
+
+[org/gnome/shell/extensions/gsconnect/device/F7785A2A2B784D92B6873189D7107C2C]
+certificate-pem='-----BEGIN CERTIFICATE-----\nMIIBizCCATGgAwIBAgIBCjAKBggqhkjOPQQDBDBPMRQwEgYDVQQLDAtLZGUgY29u\nbmVjdDEMMAoGA1UECgwDS0RFMSkwJwYDVQQDDCBGNzc4NUEyQTJCNzg0RDkyQjY4\nNzMxODlENzEwN0MyQzAeFw0yMzEyMTgxODUzMDBaFw0zNDEyMTUxODUzMDBaME8x\nFDASBgNVBAsMC0tkZSBjb25uZWN0MQwwCgYDVQQKDANLREUxKTAnBgNVBAMMIEY3\nNzg1QTJBMkI3ODREOTJCNjg3MzE4OUQ3MTA3QzJDMFkwEwYHKoZIzj0CAQYIKoZI\nzj0DAQcDQgAETJhmcRPrCBaoB9R4meos52fo3KAJln8lDlDwy+iff7QsPvB+4u3S\nkgzDnt6sfLC0yqSSJ++7VXSihtjEXPLguDAKBggqhkjOPQQDBANIADBFAiEAgO77\neGOFISJdhwG1wL6Ab+ye1W0Um9dftF6W4H/cS0QCIFO/uXtzh5I5QXPpfNBe+TFh\nmfUtvNFBeiAFMSj87JLo\n-----END CERTIFICATE-----\n'
+incoming-capabilities=['kdeconnect.battery', 'kdeconnect.battery.request', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.findmyphone.request', 'kdeconnect.ping', 'kdeconnect.runcommand', 'kdeconnect.share.request', 'kdeconnect.share.request.update']
+last-connection='lan://192.168.103.202:1716'
+name='Mike’s iPad'
+outgoing-capabilities=['kdeconnect.battery', 'kdeconnect.battery.request', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.findmyphone.request', 'kdeconnect.mousepad.request', 'kdeconnect.ping', 'kdeconnect.presenter', 'kdeconnect.runcommand.request', 'kdeconnect.share.request', 'kdeconnect.share.request.update']
+paired=true
+supported-plugins=['battery', 'clipboard', 'findmyphone', 'mousepad', 'ping', 'presenter', 'runcommand', 'share']
+type='tablet'
+
+[org/gnome/shell/extensions/gsconnect/device/F7785A2A2B784D92B6873189D7107C2C/plugin/battery]
+custom-battery-notification-value=uint32 80
+
+[org/gnome/shell/extensions/gsconnect/device/F7785A2A2B784D92B6873189D7107C2C/plugin/clipboard]
+receive-content=true
+send-content=true
+
+[org/gnome/shell/extensions/gsconnect/device/F7785A2A2B784D92B6873189D7107C2C/plugin/notification]
+applications='{"Files":{"iconName":"org.gnome.Nautilus","enabled":true},"Power":{"iconName":"org.gnome.Settings-power-symbolic","enabled":true},"Easy Effects":{"iconName":"com.github.wwmm.easyeffects","enabled":true},"Color":{"iconName":"org.gnome.Settings-color-symbolic","enabled":true},"Signal":{"iconName":"signal-desktop","enabled":true},"Printers":{"iconName":"org.gnome.Settings-printers-symbolic","enabled":true},"Annotator":{"iconName":"com.github.phase1geo.annotator","enabled":true},"Date & Time":{"iconName":"org.gnome.Settings-time-symbolic","enabled":true},"Zenity":{"iconName":"application-x-executable","enabled":true},"NetworkManager Applet":{"iconName":"nm-device-wireless","enabled":true},"Font Manager":{"iconName":"com.github.FontManager.FontManager","enabled":true},"Disks":{"iconName":"org.gnome.DiskUtility","enabled":true},"Ghostty":{"iconName":"com.mitchellh.ghostty","enabled":true},"Events and Tasks Reminders":{"iconName":"org.gnome.Evolution-alarm-notify","enabled":true},"Software":{"iconName":"org.gnome.Software","enabled":true},"Console":{"iconName":"org.gnome.Console","enabled":true},"Clocks":{"iconName":"org.gnome.clocks","enabled":true},"Disk Usage Analyzer":{"iconName":"org.gnome.baobab","enabled":true}}'
+
+[org/gnome/shell/extensions/gsconnect/device/F7785A2A2B784D92B6873189D7107C2C/plugin/share]
+receive-directory='/home/mike/Downloads'
+
+[org/gnome/shell/extensions/gsconnect/preferences]
+window-maximized=false
+window-size=(1708, 1332)
+
+[org/gnome/shell/extensions/hibernate-status-button]
+show-custom-reboot=false
+show-hybrid-sleep=false
+show-suspend-then-hibernate=false
+
+[org/gnome/shell/extensions/pano]
+global-shortcut=['<Control><Alt>v']
+history-length=500
+item-size=200
+keep-search-entry=false
+link-previews=false
+play-audio-on-copy=false
+send-notification-on-copy=false
+show-indicator=false
+wiggle-indicator=false
+
+[org/gnome/shell/extensions/pop-shell]
+active-hint=false
+active-hint-border-radius=uint32 0
+fullscreen-launcher=true
+gap-inner=uint32 2
+gap-outer=uint32 2
+hint-color-rgba='rgb(108,165,251)'
+max-window-width=uint32 2400
+smart-gaps=false
+stacking-with-mouse=false
+tile-by-default=true
+toggle-floating=['<Super>f']
+
+[org/gnome/shell/extensions/power-profile-switcher]
+bat='power-saver'
+
+[org/gnome/shell/extensions/system-monitor]
+show-swap=false
+show-upload=true
+
+[org/gnome/shell/extensions/unite]
+app-menu-max-width=90
+enable-titlebar-actions=true
+extend-left-box=false
+greyscale-tray-icons=false
+hide-activities-button='never'
+hide-app-menu-icon=false
+icon-scale-workaround=false
+reduce-panel-spacing=true
+show-appmenu-button=true
+show-desktop-name=true
+show-legacy-tray=true
+use-activities-text=false
+window-buttons-placement='left'
+window-buttons-theme='whitesur'
+
+[org/gnome/shell/extensions/user-theme]
+name=''
+
+[org/gnome/shell/extensions/vitals]
+alphabetize=true
+hide-icons=false
+hide-zeros=true
+icon-style=1
+show-network=false
+show-system=true
+show-temperature=true
+show-voltage=false
+
+[org/gnome/shell/keybindings]
+open-application-menu=@as []
+screenshot=['<Shift><Control>3']
+show-screenshot-ui=['<Shift><Control>4']
+toggle-message-tray=['<Super>v']
+toggle-overview=@as []
+
+[org/gnome/shell/world-clocks]
+locations=@av []
+
+[org/gnome/simple-scan]
+jpeg-quality=71
+save-directory='file:///home/mike/Downloads/'
+save-format='application/pdf'
+
+[org/gnome/software]
+check-timestamp=int64 1742707807
+download-updates=false
+download-updates-notify=false
+first-run=false
+flatpak-purge-timestamp=int64 1742883433
+
+[org/gnome/tweaks]
+show-extensions-notice=false
+
+[org/gtk/gtk4/settings/color-chooser]
+selected-color=(true, 0.87843137979507446, 0.10588235408067703, 0.14117647707462311, 1.0)
+
+[org/gtk/gtk4/settings/file-chooser]
+date-format='regular'
+location-mode='path-bar'
+show-hidden=false
+sidebar-width=140
+sort-column='name'
+sort-directories-first=true
+sort-order='ascending'
+type-format='category'
+view-type='list'
+window-size=(1012, 1220)
+
+[org/gtk/settings/color-chooser]
+custom-colors=[(1.0, 0.0, 0.0, 1.0), (0.17647058823529413, 0.5607843137254902, 0.086274509803921567, 1.0), (0.29411764705882354, 0.15294117647058825, 0.027450980392156862, 1.0), (0.75294119119644165, 0.10980392247438431, 0.15686275064945221, 1.0), (0.83137254901960789, 0.098039215686274508, 0.46274509803921571, 1.0), (0.71000000000000008, 0.14199999999999999, 0.14199999999999999, 1.0), (0.17648143176733783, 0.56000000000000005, 0.087733333333333371, 1.0), (0.66666666666666663, 0.87058823529411766, 0.93725490196078431, 1.0)]
+selected-color=(true, 0.8784313725490196, 0.10588235294117647, 0.14117647058823529, 1.0)
+
+[org/gtk/settings/debug]
+enable-inspector-keybinding=false
+
+[org/gtk/settings/file-chooser]
+clock-format='24h'
+date-format='regular'
+location-mode='path-bar'
+show-hidden=false
+show-size-column=true
+show-type-column=true
+sidebar-width=155
+sort-column='name'
+sort-directories-first=true
+sort-order='ascending'
+type-format='category'
+window-position=(2030, 88)
+window-size=(1096, 1188)
+
+[org/nemo/preferences]
+default-folder-viewer='list-view'
+
+[org/nemo/window-state]
+geometry='1012x1196+56+50'
+maximized=false
+sidebar-bookmark-breakpoint=5
+start-with-sidebar=true
+
+[org/notes]
+mode=1
+notebook-panel-size=150
+notes-database='/home/mike/.local/share/notes-up/NotesUp.db'
+panel-size=200
+pos-x=56
+pos-y=50
+recent-files=['/home/mike/.local/share/notes-up/NotesUp.db']
+style-scheme='high-contrast'
+window-height=1184
+window-width=2032
+
+[org/virt-manager/virt-manager]
+manager-window-height=1184
+manager-window-width=2032
+
+[org/virt-manager/virt-manager/connections]
+autoconnect=['qemu:///system']
+uris=['qemu:///system']
+
+[org/virt-manager/virt-manager/paths]
+image-default='/home/mike/Downloads'
+media-default='/home/mike/Downloads'
+
+[org/virt-manager/virt-manager/urls]
+isos=['/home/mike/Downloads/archlinux-x86_64(1).iso']
+
+[org/virt-manager/virt-manager/vmlist-fields]
+disk-usage=false
+network-traffic=false
+
+[org/virt-manager/virt-manager/vms/5fa1d5e1ae1f4d498febedbe629e675d]
+autoconnect=1
+scaling=1
+
+[org/virt-manager/virt-manager/vms/eeeca1383ca74adeb446c761873d16fb]
+autoconnect=1
+scaling=1
+vm-window-size=(1024, 820)

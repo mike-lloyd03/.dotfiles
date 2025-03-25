@@ -19,8 +19,6 @@ return {
             })
         end,
     },
-    "tpope/vim-fugitive",
-    "preservim/vim-lexical",
     {
         -- Formatter
         "stevearc/conform.nvim",
@@ -49,36 +47,22 @@ return {
                 arduino = { "clang-format" },
                 c = { "clang-format" },
                 cpp = { "clang-format" },
-                css = { "prettierd", "prettier", stop_after_first = true },
+                css = { "biome" },
                 dart = { "dartformat" },
                 go = { "gofumpt" },
                 html = { "prettierd", "prettier", stop_after_first = true },
-                json = { "prettierd", "prettier", stop_after_first = true },
+                json = { "biome" },
                 lua = { "stylua" },
                 markdown = { "prettierd", "prettier", stop_after_first = true },
                 nix = { "nixfmt" },
                 python = { "isort", "black" },
-                rust = { "rustfmt", lsp_format = "fallback" },
+                rust = { "rust_analyzer", lsp_format = "prefer" },
                 sh = { "shfmt" },
                 svelte = { "prettierd", "prettier", stop_after_first = true },
-                typescript = { "prettierd", "prettier", stop_after_first = true },
+                typescript = { "biome" },
                 toml = { "taplo" },
                 typst = { "typstfmt" },
                 yaml = { "prettierd", "prettier", stop_after_first = true },
-                --                 yaml = function()
-                --                     local util = require("formatter.util")
-                --
-                --                     return {
-                --                         exe = "prettierd", "prettier", stop_after_first = true,
-                --                         args = {
-                --                             "--stdin-filepath",
-                --                             util.escape_path(util.get_current_buffer_file_path()),
-                --                             "--no-bracket-spacing",
-                --                         },
-                --                         stdin = true,
-                --                         try_node_modules = true,
-                --                     }
-                --                 end,
                 zsh = { "shfmt" },
             },
         },
@@ -122,18 +106,25 @@ return {
         },
     },
     {
-        "windwp/nvim-autopairs",
-        event = "InsertEnter",
-        config = true,
-    },
-    {
-        "windwp/nvim-ts-autotag",
-        config = true,
+        "echasnovski/mini.pairs",
+        event = "VeryLazy",
+        opts = {
+            modes = { insert = true, command = true, terminal = false },
+            -- skip autopair when next character is one of these
+            skip_next = [=[[%w%%%'%[%"%.%`%$]]=],
+            -- skip autopair when the cursor is inside these treesitter nodes
+            skip_ts = { "string" },
+            -- skip autopair when next character is closing pair
+            -- and there are more closing pairs than opening pairs
+            skip_unbalanced = true,
+            -- better deal with markdown code blocks
+            markdown = true,
+        },
     },
     {
         "folke/trouble.nvim",
         dependencies = {
-            "kyazdani42/nvim-web-devicons",
+            "nvim-tree/nvim-web-devicons",
         },
         opts = {
             signs = {
@@ -187,7 +178,6 @@ return {
             highlight = true,
         },
     },
-    "tpope/vim-abolish",
     {
         "JoosepAlviste/nvim-ts-context-commentstring",
         lazy = true,
@@ -196,16 +186,16 @@ return {
         },
     },
     {
-        "numToStr/Comment.nvim",
-        config = true,
-    },
-    {
-        "iamcco/markdown-preview.nvim",
-        cmd = { "MarkdownPreviewToggle" },
-        ft = { "markdown" },
-        build = function()
-            vim.fn["mkdp#util#install"]()
-        end,
+        "echasnovski/mini.comment",
+        event = "VeryLazy",
+        opts = {
+            options = {
+                custom_commentstring = function()
+                    return require("ts_context_commentstring.internal").calculate_commentstring()
+                        or vim.bo.commentstring
+                end,
+            },
+        },
     },
     {
         "folke/which-key.nvim",
@@ -292,5 +282,38 @@ return {
                 desc = "Neogit",
             },
         },
+    },
+    {
+        "stevearc/profile.nvim",
+        config = function()
+            local should_profile = os.getenv("NVIM_PROFILE")
+            if should_profile then
+                require("profile").instrument_autocmds()
+                if should_profile:lower():match("^start") then
+                    require("profile").start("*")
+                else
+                    require("profile").instrument("*")
+                end
+            end
+
+            local function toggle_profile()
+                local prof = require("profile")
+                if prof.is_recording() then
+                    prof.stop()
+                    vim.ui.input(
+                        { prompt = "Save profile to:", completion = "file", default = "profile.json" },
+                        function(filename)
+                            if filename then
+                                prof.export(filename)
+                                vim.notify(string.format("Wrote %s", filename))
+                            end
+                        end
+                    )
+                else
+                    prof.start("*")
+                end
+            end
+            vim.keymap.set("", "<f1>", toggle_profile)
+        end,
     },
 }

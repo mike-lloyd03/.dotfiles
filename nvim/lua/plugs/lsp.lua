@@ -8,14 +8,15 @@ return {
             },
             servers = {
                 bashls = {},
-                rust_analyzer = { enable = false },
-                bacon_ls = {
-                    enable = true,
+                biome = {
+                    cmd = { "biome", "lsp-proxy", "--config-path=~/.config/biome.json" },
+                },
+                rust_analyzer = {
                     settings = {
-                        locationsFile = ".locatoins",
-                        baconSettings = {
-                            spawn = true,
-                            command = "bacon clippy -- --all-features",
+                        ["rust-analyzer"] = {
+                            check = {
+                                command = "clippy",
+                            },
                         },
                     },
                 },

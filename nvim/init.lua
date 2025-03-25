@@ -26,6 +26,7 @@ vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
+vim.opt.showtabline = 1
 
 -- put a line under the cursor
 vim.opt.cursorline = true
@@ -85,7 +86,7 @@ vim.cmd([[
   autocmd FileType markdown,typst noremap <buffer> <silent> 0 g0
   autocmd FileType markdown,typst noremap <buffer> <silent> $ g$
   autocmd FileType markdown,typst setlocal spell spelllang=en_us
-  autocmd FileType markdown call lexical#init()
+  " autocmd FileType markdown call lexical#init()
 ]])
 
 if vim.g.neovide then

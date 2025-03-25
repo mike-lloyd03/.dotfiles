@@ -1,13 +1,4 @@
 return {
-    -- {
-    --     "nvim-lualine/lualine.nvim",
-    --     dependencies = {
-    --         "kyazdani42/nvim-web-devicons",
-    --     },
-    --     keys = {
-    --         { "<C-w>", ":LualineRenameTab ", desc = "Rename tab" },
-    --     },
-    -- },
     {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
@@ -19,6 +10,7 @@ return {
                 "s1n7ax/nvim-window-picker",
                 config = function()
                     require("window-picker").setup({
+                        hint = "floating-letter",
                         selection_chars = "ABCDEFG",
                         filter_rules = {
                             include_current_win = false,
@@ -63,6 +55,24 @@ return {
                 use_libuv_file_watcher = true,
                 follow_current_file = {
                     enabled = true,
+                },
+            },
+            event_handlers = {
+                {
+                    event = "neo_tree_window_after_open",
+                    handler = function(args)
+                        if args.position == "left" or args.position == "right" then
+                            vim.cmd("wincmd =")
+                        end
+                    end,
+                },
+                {
+                    event = "neo_tree_window_after_close",
+                    handler = function(args)
+                        if args.position == "left" or args.position == "right" then
+                            vim.cmd("wincmd =")
+                        end
+                    end,
                 },
             },
         },
@@ -189,6 +199,7 @@ N  E  O  V  I  M
                         },
                     },
                 },
+                sources = {},
             },
             styles = {
                 input = {
@@ -238,14 +249,7 @@ N  E  O  V  I  M
                 end,
                 desc = "Buffers",
             },
-            {
-                "<space>a",
-                mode = { "n", "x", "o" },
-                function()
-                    vim.lsp.buf.code_action()
-                end,
-                desc = "Code actions",
-            },
+            { "<space>a", vim.lsp.buf.code_action, desc = "Code actions", mode = { "n", "v" } },
             {
                 '<space>"',
                 function()
@@ -260,14 +264,6 @@ N  E  O  V  I  M
                 end,
                 desc = "Help",
             },
-            -- Spelling suggestions does not exist
-            -- {
-            --     "<space>z",
-            --     function()
-            --         Snacks.picker.spell()
-            --     end,
-            --     desc = "Spelling suggestions",
-            -- },
             {
                 "<space>'",
                 function()
@@ -352,93 +348,6 @@ N  E  O  V  I  M
             }
         end,
     },
-    -- {
-    --     "goolord/alpha-nvim",
-    --     event = "VimEnter",
-    --     enabled = true,
-    --     init = false,
-    --     opts = function()
-    --         local dashboard = require("alpha.themes.dashboard")
-    --         vim.api.nvim_set_hl(0, "DashboardLogo1", { fg = "#41a7fc" }) -- fg: Blue
-    --         vim.api.nvim_set_hl(0, "DashboardLogo2", { fg = "#8bcd5b", bg = "#41a7fc" }) -- fg: Green bg: Blue
-    --         vim.api.nvim_set_hl(0, "DashboardLogo3", { fg = "#8bcd5b" }) -- fg: Green
-    --         vim.api.nvim_set_hl(0, "DashboardLogoText", { fg = "#93a4c3", bold = true })
-    --
-    --         dashboard.section.header.val = {
-    --             --0123456789
-    --             [[     █  █     ]],
-    --             [[     ██ ██     ]],
-    --             [[     █████     ]],
-    --             [[     ██ ███     ]],
-    --             [[     █  █     ]],
-    --             [[]],
-    --             [[N  E  O  V  I  M]],
-    --         }
-    --         dashboard.section.header.opts.hl = {
-    --             { { "DashboardLogo1", 5, 6 }, { "DashboardLogo3", 6, 20 } },
-    --             {
-    --                 { "DashboardLogo1", 5, 6 },
-    --                 { "DashboardLogo2", 6, 10 },
-    --                 { "DashboardLogo3", 10, 24 },
-    --             },
-    --             { { "DashboardLogo1", 5, 10 }, { "DashboardLogo3", 10, 26 } },
-    --             { { "DashboardLogo1", 5, 10 }, { "DashboardLogo3", 10, 24 } },
-    --             { { "DashboardLogo1", 5, 10 }, { "DashboardLogo3", 10, 22 } },
-    --             {},
-    --             { { "DashboardLogoText", 0, 26 } },
-    --         }
-    --         dashboard.section.buttons.val = {
-    --             dashboard.button("n", " " .. " New file", "<cmd> ene <BAR> startinsert <cr>"),
-    --             dashboard.button(
-    --                 "c",
-    --                 " " .. " Open config",
-    --                 "<cmd> cd ~/.config/nvim | e ~/.config/nvim/init.lua <cr>"
-    --             ),
-    --             dashboard.button("s", " " .. " Restore session", "<cmd> SessionRestore <cr>"),
-    --             dashboard.button("q", " " .. " Quit", "<cmd> qa <cr>"),
-    --         }
-    --         for _, button in ipairs(dashboard.section.buttons.val) do
-    --             button.opts.hl = "AlphaButtons"
-    --             button.opts.hl_shortcut = "AlphaShortcut"
-    --         end
-    --         dashboard.section.buttons.opts.hl = "AlphaButtons"
-    --         dashboard.section.footer.opts.hl = "AlphaFooter"
-    --         dashboard.opts.layout[1].val = 4
-    --         return dashboard
-    --     end,
-    --     config = function(_, dashboard)
-    --         -- close Lazy and re-open when the dashboard is ready
-    --         if vim.o.filetype == "lazy" then
-    --             vim.cmd.close()
-    --             vim.api.nvim_create_autocmd("User", {
-    --                 once = true,
-    --                 pattern = "AlphaReady",
-    --                 callback = function()
-    --                     require("lazy").show()
-    --                 end,
-    --             })
-    --         end
-    --
-    --         require("alpha").setup(dashboard.opts)
-    --
-    --         vim.api.nvim_create_autocmd("User", {
-    --             once = true,
-    --             pattern = "LazyVimStarted",
-    --             callback = function()
-    --                 local stats = require("lazy").stats()
-    --                 local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-    --                 dashboard.section.footer.val = "⚡ Neovim loaded "
-    --                     .. stats.loaded
-    --                     .. "/"
-    --                     .. stats.count
-    --                     .. " plugins in "
-    --                     .. ms
-    --                     .. "ms"
-    --                 pcall(vim.cmd.AlphaRedraw)
-    --             end,
-    --         })
-    --     end,
-    -- },
     {
         "NvChad/nvim-colorizer.lua",
         opts = {
@@ -446,6 +355,17 @@ N  E  O  V  I  M
                 names = false,
                 tailwind = true,
             },
+        },
+    },
+    {
+        "jackplus-xyz/player-one.nvim",
+        opts = {
+            is_enabled = false,
+        },
+        keys = {
+            { "<Space>ua", "", desc = "Audio" },
+            { "<Space>uae", "<cmd>PlayerOneEnable<cr>", desc = "Enable" },
+            { "<Space>uad", "<cmd>PlayerOneDisable<cr>", desc = "Disable" },
         },
     },
 }

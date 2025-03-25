@@ -5,6 +5,7 @@ meta = layer(alt)
 
 capslock = overload(nav, esc)
 leftshift+rightshift = capslock
+rightshift = rightshift
 
 [nav]
 h = left
