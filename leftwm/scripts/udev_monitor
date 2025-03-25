@@ -1,8 +1,0 @@
-#!/bin/bash
-
-set -e
-
-udev_rules_dir="$(pkg-config --variable=udevdir udev)/rules.d"
-udev_rule="$udev_rules_dir/40-monitor-hotplug.rules"
-
-echo 'ACTION=="change", SUBSYSTEM=="drm", RUN+="/usr/bin/autorandr --batch --change --default default"' | sudo tee "$udev_rule"

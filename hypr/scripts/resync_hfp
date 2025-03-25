@@ -1,6 +1,0 @@
-#!/bin/bash
-
-BLUEZCARD=$(pactl list cards short | awk '/bluez/{print $2}')
-pactl set-card-profile "$BLUEZCARD" handsfree_head_unit
-pactl set-card-profile "$BLUEZCARD" a2dp_sink
-pactl set-card-profile "$BLUEZCARD" handsfree_head_unit

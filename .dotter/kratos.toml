@@ -1,18 +1,14 @@
 packages = [
-  "ags",
   "fish",
   "git",
   "helix",
-  "hypr",
   "ideavim",
   "kitty",
   "keyd",
   "lsd",
-  "nushell",
   "nvim",
   "nvimpager",
   "starship",
   "tealdeer",
-  "wezterm",
   "zellij",
 ]
