@@ -22,11 +22,6 @@ if [ (uname) = "Linux" ]
     alias xpaste="xclip -out -selection clipboard"
 end
 
-if command -v nvimpager &> /dev/null
-    alias less="nvimpager"
-    alias lesss="/usr/bin/less"
-end
-
 # git
 abbr -a g git
 abbr -a gundo "git reset --soft HEAD~1"

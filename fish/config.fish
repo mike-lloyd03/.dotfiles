@@ -8,13 +8,7 @@ set fish_cursor_insert line
 set fish_cursor_replace_one underscore
 set fish_cursor_visual block
 
-# Environment
-if command -v nvimpager > /dev/null
-    set -Ux PAGER nvimpager
-else
-    set -Ux PAGER less
-end
-
+set -Ux PAGER less
 set -Ux EDITOR nvim
 set -Ux SYSTEMD_EDITOR nvim
 set -U fish_greeting ""
