@@ -7,6 +7,9 @@ return {
         event = "VeryLazy",
         opts = function()
             vim.cmd("set showtabline=1")
+            vim.opt.winbar = " "
+            vim.api.nvim_set_hl(0, "WinBar", { bg = "" })
+            vim.api.nvim_set_hl(0, "WinBarNC", { bg = "" })
 
             local function session_status()
                 if require("auto-session-library").current_session_name() then
@@ -23,6 +26,12 @@ return {
                     section_separators = { left = "", right = "" },
                     disabled_filetypes = {
                         statusline = {
+                            "neo-tree",
+                            "snacks_picker_list",
+                            "snacks_layout_box",
+                            "snacks_dashboard",
+                        },
+                        winbar = {
                             "neo-tree",
                             "snacks_picker_list",
                             "snacks_layout_box",
@@ -94,18 +103,9 @@ return {
                     lualine_c = {
                         {
                             "navic",
-                            color_correction = "static",
+                            color_correction = nil,
                             navic_opts = { highlight = true },
-                            padding = {
-                                right = 0,
-                            },
-                            draw_empty = true,
                             separator = "",
-                        },
-                        {
-                            function()
-                                return " "
-                            end,
                         },
                     },
                     lualine_x = {
@@ -123,9 +123,10 @@ return {
                 inactive_winbar = {
                     lualine_c = {
                         {
-                            function()
-                                return " "
-                            end,
+                            "navic",
+                            color_correction = nil,
+                            navic_opts = { highlight = false },
+                            separator = "",
                         },
                     },
                 },

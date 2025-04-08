@@ -108,9 +108,12 @@ return {
                 nerd_font_variant = "mono",
             },
 
+            cmdline = {
+                sources = {},
+            },
+
             sources = {
                 default = { "lsp", "path", "snippets", "buffer" },
-                cmdline = {},
             },
 
             completion = {
