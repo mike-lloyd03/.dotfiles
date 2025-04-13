@@ -30,6 +30,7 @@ vim.opt.showtabline = 1
 
 -- put a line under the cursor
 vim.opt.cursorline = true
+vim.o.guicursor = "n-v-c-sm:block,i-ci:ver20,r-cr-o:hor10,a:blinkwait700-blinkoff375-blinkon375-Cursor/lCursor"
 
 -- Smart case when searching
 vim.opt.ignorecase = true
