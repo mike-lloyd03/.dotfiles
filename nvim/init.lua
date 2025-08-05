@@ -66,9 +66,6 @@ vim.opt.shortmess = vim.opt.shortmess + "c" -- Avoid showing extra messages when
 vim.diagnostic.config({
     virtual_text = false, -- Disable virtual text
     severity_sort = true,
-})
-
-vim.diagnostic.config({
     signs = {
         text = {
             [vim.diagnostic.severity.ERROR] = "● ",

@@ -1,22 +1,11 @@
 return {
     {
-        "olimorris/persisted.nvim",
-        lazy = false,
-        opts = {
-            save_dir = vim.fn.expand(vim.fn.stdpath("data") .. "/persisted/"),
-            ignored_dirs = { { "~", exact = true }, "/tmp/", { "/", exact = true } },
-        },
-        config = function()
-            vim.api.nvim_create_autocmd("User", {
-                pattern = "PersistedSavePre",
-                callback = function()
-                    for _, buf in ipairs(vim.api.nvim_list_bufs()) do
-                        if vim.bo[buf].filetype == "neo-tree" then
-                            vim.api.nvim_buf_delete(buf, { force = true })
-                        end
-                    end
-                end,
-            })
+        "folke/persistence.nvim",
+        event = "BufReadPre",
+        opts = {},
+        init = function()
+            vim.opt.sessionoptions =
+                { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
         end,
     },
     {
@@ -55,13 +44,14 @@ return {
                 lua = { "stylua" },
                 markdown = { "prettierd", "prettier", stop_after_first = true },
                 nix = { "nixfmt" },
-                python = { "isort", "black" },
+                python = { "ruff" },
                 rust = { "rust_analyzer", lsp_format = "prefer" },
                 sh = { "shfmt" },
                 svelte = { "prettierd", "prettier", stop_after_first = true },
                 typescript = { "biome" },
                 toml = { "taplo" },
                 typst = { "typstfmt" },
+                vue = { "prettierd", "prettier", stop_after_first = true },
                 yaml = { "prettierd", "prettier", stop_after_first = true },
                 zsh = { "shfmt" },
             },

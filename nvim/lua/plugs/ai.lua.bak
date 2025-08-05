@@ -1,0 +1,58 @@
+return {
+    {
+        "yetone/avante.nvim",
+        event = "VeryLazy",
+        version = false,
+        opts = {
+            provider = "gemini",
+            selector = {
+                provider = "snacks",
+                provider_opts = {},
+            },
+        },
+        build = "make",
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter",
+            "stevearc/dressing.nvim",
+            "nvim-lua/plenary.nvim",
+            "MunifTanjim/nui.nvim",
+            "nvim-tree/nvim-web-devicons",
+            {
+                "MeanderingProgrammer/render-markdown.nvim",
+                opts = {
+                    file_types = { "markdown", "Avante" },
+                },
+                ft = { "markdown", "Avante" },
+            },
+            "Kaiser-Yang/blink-cmp-avante",
+        },
+    },
+    -- {
+    --     "olimorris/codecompanion.nvim",
+    --     dependencies = {
+    --         "nvim-lua/plenary.nvim",
+    --         "nvim-treesitter/nvim-treesitter",
+    --     },
+    --     opts = {
+    --         strategies = {
+    --             chat = {
+    --                 adapter = "gemini",
+    --             },
+    --             inline = {
+    --                 adapter = "gemini",
+    --             },
+    --         },
+    --     },
+    --     keys = {
+    --         { "<Leader>a", mode = { "n" }, "<cmd><cr>", desc = "CodeCompanion" },
+    --         { "<Leader>at", mode = { "n" }, "<cmd>CodeCompanionChat Toggle<cr>", desc = "Toggle CodeCompanion Chat" },
+    --         {
+    --             "<Leader>aa",
+    --             mode = { "x" },
+    --             "<cmd>CodeCompanionChat Add<cr>",
+    --             desc = "Add selection to CodeCompantion Chat",
+    --         },
+    --         { "<Leader>ac", mode = { "n" }, "<cmd>CodeCompanionActions<cr>", desc = "CodeCompanion Actions" },
+    --     },
+    -- },
+}

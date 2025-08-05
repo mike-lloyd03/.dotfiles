@@ -13,14 +13,6 @@ return {
             highlights = {
                 MatchParen = { fg = "$red", bg = "$none", fmt = "underline" },
 
-                TelescopeBorder = { fg = "$light_grey" },
-                TelescopePromptBorder = { fg = "$light_grey" },
-                TelescopeResultsBorder = { fg = "$light_grey" },
-                TelescopePreviewBorder = { fg = "$light_grey" },
-                TelescopeMatching = { fg = "$orange", fmt = "bold" },
-                TelescopePromptPrefix = { fg = "$red" },
-                TelescopeTitle = { fg = "$blue", fmt = "bold" },
-
                 CurSearch = { bg = "$fg" },
                 IncSearch = { bg = "$fg" },
                 Search = { bg = "$blue" },
@@ -29,6 +21,15 @@ return {
                 ["@operator.@punctuation.bracket.rust"] = { fg = "$purple" },
 
                 FoldColumn = { bg = "$bg0" },
+
+                SnacksDashboardHeader = { fg = "$blue" },
+                SnacksDashboardDesc = { fg = "$fg" },
+                SnacksDashboardIcon = { fg = "$blue" },
+                SnacksDashboardKey = { fg = "$red", fmt = "bold" },
+
+                SnacksPickerBorder = { fg = "$light_grey" },
+                SnacksPickerTitle = { fg = "$blue" },
+                SnacksPickerMatch = { fg = "$red" },
             },
             diagnostics = {
                 darker = true,

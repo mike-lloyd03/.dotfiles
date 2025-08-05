@@ -1,86 +1,5 @@
 return {
     {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v3.x",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons",
-            "MunifTanjim/nui.nvim",
-            {
-                "s1n7ax/nvim-window-picker",
-                config = function()
-                    require("window-picker").setup({
-                        hint = "floating-letter",
-                        selection_chars = "ABCDEFG",
-                        filter_rules = {
-                            include_current_win = false,
-                            autoselect_one = true,
-                            bo = {
-                                filetype = { "neo-tree", "neo-tree-popup", "notify" },
-                                buftype = { "terminal", "quickfix" },
-                            },
-                        },
-                        highlights = {
-                            statusline = {
-                                unfocused = {
-                                    fg = "#1a212e",
-                                    bg = "#41a7fc",
-                                    bold = true,
-                                },
-                            },
-                        },
-                    })
-                end,
-            },
-        },
-        opts = {
-            popup_border_style = "rounded",
-            window = {
-                mappings = {
-                    ["<CR>"] = "open_with_window_picker",
-                    ["o"] = "open",
-                    ["s"] = "vsplit_with_window_picker",
-                    ["h"] = "split_with_window_picker",
-                },
-            },
-            filesystem = {
-                filtered_items = {
-                    hide_dotfiles = false,
-                    hide_gitignored = false,
-                    never_show = {
-                        ".git",
-                        ".svelte-kit",
-                    },
-                },
-                use_libuv_file_watcher = true,
-                follow_current_file = {
-                    enabled = true,
-                },
-            },
-            event_handlers = {
-                {
-                    event = "neo_tree_window_after_open",
-                    handler = function(args)
-                        if args.position == "left" or args.position == "right" then
-                            vim.cmd("wincmd =")
-                        end
-                    end,
-                },
-                {
-                    event = "neo_tree_window_after_close",
-                    handler = function(args)
-                        if args.position == "left" or args.position == "right" then
-                            vim.cmd("wincmd =")
-                        end
-                    end,
-                },
-            },
-        },
-        keys = {
-            { "<C-n>", "<cmd>Neotree toggle<cr>", desc = "NeoTree" },
-        },
-    },
-    {
         "lewis6991/gitsigns.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
@@ -106,22 +25,6 @@ return {
                 end, { desc = "Previous hunk", buffer = buffer })
             end,
         },
-        -- keys = {
-        --     {
-        --         "]c",
-        --         mode = { "n" },
-        --         "<CMD>Gitsigns next_hunk<CR>",
-        --         desc = "Next hunk",
-        --         -- expr = true,
-        --     },
-        --     {
-        --         "[c",
-        --         mode = { "n" },
-        --         "<CMD>Gitsigns prev_hunk<CR>",
-        --         desc = "Previous hunk",
-        --         -- expr = true,
-        --     },
-        -- },
     },
     {
         "echasnovski/mini.move",
@@ -139,28 +42,6 @@ return {
             },
         },
     },
-    {
-        "stevearc/dressing.nvim",
-        opts = {
-            input = {
-                enabled = false,
-            },
-        },
-    },
-    -- {
-    --     "rcarriga/nvim-notify",
-    --     opts = function()
-    --         vim.notify = require("notify")
-    --         return {
-    --             max_width = 80,
-    --             top_down = true,
-    --             background_colour = "#000000",
-    --             on_open = function(win)
-    --                 vim.api.nvim_win_set_config(win, { zindex = 100 })
-    --             end,
-    --         }
-    --     end,
-    -- },
     {
         "folke/snacks.nvim",
         priority = 1000,
@@ -189,6 +70,7 @@ N  E  O  V  I  M
             notifier = {},
             scroll = {},
             input = {},
+            image = {},
             toggle = {},
             zen = {},
             picker = {
@@ -198,16 +80,58 @@ N  E  O  V  I  M
                             ["<Esc>"] = { "close", mode = { "n", "i" } },
                         },
                     },
-                },
-                sources = {},
-            },
-            styles = {
-                input = {
-                    wo = {
-                        winhighlight = "NormalFloat:SnacksInputNormal,FloatBorder:TelescopeBorder,FloatTitle:TelescopeTitle",
+                    list = {
+                        keys = {
+                            ["s"] = { { "pick_win", "edit_vsplit" } },
+                            ["<CR>"] = { { "pick_win", "confirm" } },
+                            ["<C-n>"] = "cancel",
+                            ["<ESC>"] = "",
+                            ["<C-j>"] = "list_scroll_down",
+                            ["<C-k>"] = "list_scroll_up",
+                        },
                     },
                 },
+                sources = {},
+                actions = {
+                    pick_win = function(picker, item, action)
+                        if item.dir then
+                            return
+                        end
+
+                        if not picker.layout.split then
+                            picker.layout:hide()
+                        end
+                        local win = Snacks.picker.util.pick_win({
+                            main = picker.main,
+                            float = false,
+                            filter = function(_, buf)
+                                local ft = vim.bo[buf].ft
+                                return ft == "snacks_dashboard" or not ft:find("^snacks")
+                            end,
+                        })
+                        if not win then
+                            if not picker.layout.split then
+                                picker.layout:unhide()
+                            end
+                            return true
+                        end
+                        picker.main = win
+                        if not picker.layout.split then
+                            vim.defer_fn(function()
+                                if not picker.closed then
+                                    picker.layout:unhide()
+                                end
+                            end, 100)
+                        end
+                    end,
+                    list_scroll_up = function(picker)
+                        vim.api.nvim_win_call(picker.list.win.win, function()
+                            vim.cmd("normal! 10" .. Snacks.util.keycode("<c-e>"))
+                        end)
+                    end,
+                },
             },
+            explorer = {},
         },
         keys = {
             { "<space>nn", "<CMD>lua Snacks.notifier.show_history()<CR>", desc = "Show notifications" },
@@ -292,6 +216,13 @@ N  E  O  V  I  M
                 end,
                 desc = "Definitions",
             },
+            {
+                "<C-n>",
+                function()
+                    Snacks.explorer()
+                end,
+                desc = "Explorer",
+            },
         },
     },
     {
@@ -341,6 +272,7 @@ N  E  O  V  I  M
                     bottom_search = true,
                     command_palette = true,
                     inc_rename = true,
+                    lsp_doc_border = true,
                 },
                 notify = {
                     enabled = false,
@@ -355,17 +287,6 @@ N  E  O  V  I  M
                 names = false,
                 tailwind = true,
             },
-        },
-    },
-    {
-        "jackplus-xyz/player-one.nvim",
-        opts = {
-            is_enabled = false,
-        },
-        keys = {
-            { "<Space>ua", "", desc = "Audio" },
-            { "<Space>uae", "<cmd>PlayerOneEnable<cr>", desc = "Enable" },
-            { "<Space>uad", "<cmd>PlayerOneDisable<cr>", desc = "Disable" },
         },
     },
 }

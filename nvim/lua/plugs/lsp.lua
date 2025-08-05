@@ -22,6 +22,7 @@ return {
                 },
                 gopls = {},
                 pyright = {},
+                ruff = {},
                 svelte = {},
                 ts_ls = {},
                 eslint = {},
@@ -32,7 +33,7 @@ return {
                     offset_encoding = "utf-8",
                 },
                 arduino_language_server = {
-                    cmd = { "/home/mike/repos/arduino-language-server/arduino-language-server" },
+                    -- cmd = { "/home/mike/repos/arduino-language-server/arduino-language-server" },
                 },
                 cssls = {},
                 tailwindcss = {},
@@ -54,6 +55,7 @@ return {
                         },
                     },
                 },
+                volar = {},
             },
         },
         config = function(_, opts)
@@ -84,21 +86,25 @@ return {
     },
     {
         "saghen/blink.cmp",
-        dependencies = "rafamadriz/friendly-snippets",
+        dependencies = {
+            "rafamadriz/friendly-snippets",
+            "Kaiser-Yang/blink-cmp-avante",
+        },
         version = "*",
         opts = {
             keymap = {
-                preset = "enter",
-                ["<Tab>"] = {
-                    "select_next",
-                    "snippet_forward",
-                    "fallback",
-                },
-                ["<S-Tab>"] = {
-                    "select_prev",
-                    "snippet_backward",
-                    "fallback",
-                },
+                preset = "default",
+                -- ["<Tab>"] = {
+                --     "select_next",
+                --     "snippet_forward",
+                --     "fallback",
+                -- },
+                -- ["<S-Tab>"] = {
+                --     "select_prev",
+                --     "snippet_backward",
+                --     "fallback",
+                -- },
+                ["<C-CR>"] = { "select_and_accept" },
                 ["<C-k>"] = { "scroll_documentation_up", "fallback" },
                 ["<C-j>"] = { "scroll_documentation_down", "fallback" },
             },
@@ -108,12 +114,15 @@ return {
                 nerd_font_variant = "mono",
             },
 
-            cmdline = {
-                sources = {},
-            },
-
             sources = {
-                default = { "lsp", "path", "snippets", "buffer" },
+                default = { "avante", "lsp", "path", "snippets", "buffer" },
+                providers = {
+                    avante = {
+                        module = "blink-cmp-avante",
+                        name = "Avante",
+                        opts = {},
+                    },
+                },
             },
 
             completion = {
@@ -124,7 +133,7 @@ return {
     },
     {
         "rachartier/tiny-inline-diagnostic.nvim",
-        event = "LspAttach",
+        event = "VeryLazy",
         priority = 1000,
         opts = {
             options = {

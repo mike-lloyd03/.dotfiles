@@ -1,0 +1,13 @@
+{
+	"Props": {
+		"prefix": ["props"],
+		"body": [
+			"interface Props {",
+			"\t$1",
+			"}",
+			"",
+			"let { $2 }: Props = \\$props();"
+		],
+		"description": "Insert typed Sveltekit properties"
+	}
+}
