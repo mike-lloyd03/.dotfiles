@@ -56,6 +56,54 @@ return {
                     },
                 },
                 volar = {},
+                -- https://github.com/neovim/nvim-lspconfig/issues/3945#issuecomment-3057102104
+                -- vue_ls = {
+                --     on_init = function(client)
+                --         client.handlers["tsserver/request"] = function(_, result, context)
+                --             local clients = vim.lsp.get_clients({ bufnr = context.bufnr, name = "vtsls" })
+                --             if #clients == 0 then
+                --                 vim.notify(
+                --                     "Could not found `vtsls` lsp client, vue_lsp would not work without it.",
+                --                     vim.log.levels.ERROR
+                --                 )
+                --                 return
+                --             end
+                --             local ts_client = clients[1]
+                --             local param = unpack(result)
+                --             local id, command, payload = unpack(param)
+                --             ts_client:exec_cmd({
+                --                 title = "vue_request_forward",
+                --                 command = "typescript.tsserverRequest",
+                --                 arguments = {
+                --                     command,
+                --                     payload,
+                --                 },
+                --             }, { bufnr = context.bufnr }, function(_, r)
+                --                 local response_data = { { id, r.body } }
+                --                 ---@diagnostic disable-next-line: param-type-mismatch
+                --                 client:notify("tsserver/response", response_data)
+                --             end)
+                --         end
+                --     end,
+                -- },
+                vtsls = {
+                    filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+                    settings = {
+                        vtsls = {
+                            tsserver = {
+                                globalPlugins = {
+                                    {
+                                        name = "@vue/typescript-plugin",
+                                        languages = { "vue" },
+                                        configNamespace = "typescript",
+                                        location = vim.fn.stdpath("data")
+                                            .. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
             },
         },
         config = function(_, opts)
@@ -88,22 +136,11 @@ return {
         "saghen/blink.cmp",
         dependencies = {
             "rafamadriz/friendly-snippets",
-            "Kaiser-Yang/blink-cmp-avante",
         },
         version = "*",
         opts = {
             keymap = {
                 preset = "default",
-                -- ["<Tab>"] = {
-                --     "select_next",
-                --     "snippet_forward",
-                --     "fallback",
-                -- },
-                -- ["<S-Tab>"] = {
-                --     "select_prev",
-                --     "snippet_backward",
-                --     "fallback",
-                -- },
                 ["<C-CR>"] = { "select_and_accept" },
                 ["<C-k>"] = { "scroll_documentation_up", "fallback" },
                 ["<C-j>"] = { "scroll_documentation_down", "fallback" },
@@ -115,14 +152,7 @@ return {
             },
 
             sources = {
-                default = { "avante", "lsp", "path", "snippets", "buffer" },
-                providers = {
-                    avante = {
-                        module = "blink-cmp-avante",
-                        name = "Avante",
-                        opts = {},
-                    },
-                },
+                default = { "lsp", "path", "snippets", "buffer" },
             },
 
             completion = {

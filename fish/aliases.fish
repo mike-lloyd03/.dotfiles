@@ -67,32 +67,7 @@ alias scuen="systemctl --user enable --now"
 alias scustat="systemctl --user status"
 alias scudr="systemctl --user daemon-reload"
 
-# kubectl
-abbr -a k kubectl
-abbr -a kc "kubectl create"
-abbr -a kcd "kubectl create deployment"
-abbr -a kcj "kubectl create job"
-
-abbr -a kg "kubectl get"
-abbr -a kgp "kubectl get pods"
-abbr -a kgn "kubectl get nodes"
-abbr -a kgd "kubectl get deployments"
-abbr -a kgj "kubectl get jobs"
-abbr -a kgcj "kubectl get cronjobs"
-
-abbr -a kd "kubectl describe"
-abbr -a kdd "kubectl describe deployment"
-abbr -a kdp "kubectl describe pod"
-abbr -a kdj "kubectl describe job"
-abbr -a kdcj "kubectl describe cronjob"
-
-abbr -a kl "kubectl logs"
-abbr -a klf "kubectl logs -f"
-abbr -a ke "kubectl exec"
-abbr -a keit "kubectl exec -it"
-abbr -a kdel "kubectl delete"
-
-abbr -a kcjfrom --set-cursor kubectl create job --from=cronjob/%
+# abbr -a config --position anywhere "~/.config"
 
 # Cargo
 abbr -a cr "cargo run"
@@ -111,9 +86,4 @@ if command -v nix &> /dev/null
     abbr -a ne "pushd /etc/nixos && sudo nvim configuration.nix ; popd"
     abbr -a neh "pushd /etc/nixos && sudo nvim home.nix ; popd"
     abbr -a nef "pushd /etc/nixos && sudo nvim flake.nix ; popd"
-end
-
-if command -v system-manager &> /dev/null
-    abbr -a sme "pushd $HOME/.config/system-manager && nvim flake.nix ; popd"
-    abbr -a sms "sudo /home/mike/.nix-profile/bin/system-manager switch --flake ~/.config/system-manager"
 end

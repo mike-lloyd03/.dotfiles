@@ -73,6 +73,7 @@ N  E  O  V  I  M
             image = {},
             toggle = {},
             zen = {},
+            lazygit = {},
             picker = {
                 win = {
                     input = {
@@ -124,14 +125,13 @@ N  E  O  V  I  M
                             end, 100)
                         end
                     end,
-                    list_scroll_up = function(picker)
-                        vim.api.nvim_win_call(picker.list.win.win, function()
-                            vim.cmd("normal! 10" .. Snacks.util.keycode("<c-e>"))
-                        end)
-                    end,
+                },
+                layout = {
+                    cycle = false,
                 },
             },
             explorer = {},
+            words = {},
         },
         keys = {
             { "<space>nn", "<CMD>lua Snacks.notifier.show_history()<CR>", desc = "Show notifications" },
@@ -222,6 +222,13 @@ N  E  O  V  I  M
                     Snacks.explorer()
                 end,
                 desc = "Explorer",
+            },
+            {
+                "<space>i",
+                function()
+                    Snacks.lazygit()
+                end,
+                desc = "Neogit",
             },
         },
     },
