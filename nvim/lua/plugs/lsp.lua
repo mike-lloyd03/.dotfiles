@@ -20,6 +20,7 @@ return {
                         },
                     },
                 },
+                hyprls = {},
                 gopls = {},
                 pyright = {},
                 ruff = {},
