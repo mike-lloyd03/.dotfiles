@@ -1,18 +1,11 @@
-import datetime
-import json
-import subprocess
-from collections import defaultdict
 
 from kitty.boss import get_boss
-from kitty.fast_data_types import Screen, add_timer
+from kitty.fast_data_types import Screen
 from kitty.tab_bar import (
     DrawData,
     ExtraData,
-    Formatter,
     TabBarData,
     as_rgb,
-    draw_attributed_string,
-    draw_tab_with_powerline,
 )
 from kitty.rgb import to_color
 
@@ -68,13 +61,12 @@ def draw_tab(
     screen.draw(f" {tab.title}")
     screen.cursor.bold = False
     if tab.layout_name == "stack":
-        screen.draw(f" z")
+        screen.draw(" z")
     screen.draw(" ")
 
     screen.cursor.bg = default_bg
     screen.cursor.fg = tab_bg
     screen.draw("")
-    # print(dir(extra_data))
 
     if is_last:
         _draw_right_status(draw_data, screen, tab)
@@ -88,6 +80,8 @@ def _draw_right_status(draw_data: DrawData, screen: Screen, tab: TabBarData) -> 
 
     mode = get_boss().mappings.current_keyboard_mode_name
     if mode != "":
+        if mode == "__sequence__":
+            mode = "pending"
         cells = [
             (ORANGE, draw_data.default_bg, ""),
             (TEXT, ORANGE, f" {mode} "),

@@ -18,10 +18,17 @@ return {
                 return "no session"
             end
 
+            local onedark_custom = require("lualine.themes.onedark")
+            onedark_custom.normal.b = {
+                fg = "#000000",
+                bg = "#7D8CA7",
+                gui = "bold",
+            }
+
             return {
                 options = {
                     icons_enabled = true,
-                    theme = "onedark",
+                    theme = onedark_custom,
                     component_separators = { left = "", right = "" },
                     section_separators = { left = "", right = "" },
                     disabled_filetypes = {
@@ -30,18 +37,12 @@ return {
                             "snacks_picker_list",
                             "snacks_layout_box",
                             "snacks_dashboard",
-                            "Avante",
-                            "AvanteSelectedFiles",
-                            "AvanteInput",
                         },
                         winbar = {
                             "neo-tree",
                             "snacks_picker_list",
                             "snacks_layout_box",
                             "snacks_dashboard",
-                            "Avante",
-                            "AvanteSelectedFiles",
-                            "AvanteInput",
                         },
                     },
                     always_divide_middle = true,
@@ -58,6 +59,7 @@ return {
                             "filename",
                             file_status = true,
                             path = 1,
+                            -- color = "Cursor",
                         },
                     },
                     lualine_c = {

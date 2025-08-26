@@ -86,24 +86,24 @@ return {
                 --         end
                 --     end,
                 -- },
-                vtsls = {
-                    filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-                    settings = {
-                        vtsls = {
-                            tsserver = {
-                                globalPlugins = {
-                                    {
-                                        name = "@vue/typescript-plugin",
-                                        languages = { "vue" },
-                                        configNamespace = "typescript",
-                                        location = vim.fn.stdpath("data")
-                                            .. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
+                -- vtsls = {
+                --     filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+                --     settings = {
+                --         vtsls = {
+                --             tsserver = {
+                --                 globalPlugins = {
+                --                     {
+                --                         name = "@vue/typescript-plugin",
+                --                         languages = { "vue" },
+                --                         configNamespace = "typescript",
+                --                         location = vim.fn.stdpath("data")
+                --                             .. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
+                --                     },
+                --                 },
+                --             },
+                --         },
+                --     },
+                -- },
             },
         },
         config = function(_, opts)

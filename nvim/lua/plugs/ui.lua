@@ -141,7 +141,15 @@ N  E  O  V  I  M
             {
                 "<space>f",
                 function()
-                    Snacks.picker.files()
+                    Snacks.picker.files({
+                        win = {
+                            input = {
+                                keys = {
+                                    ["<S-CR>"] = { "edit_vsplit", mode = { "n", "i" } },
+                                },
+                            },
+                        },
+                    })
                 end,
                 desc = "File picker",
             },
@@ -169,7 +177,17 @@ N  E  O  V  I  M
             {
                 "<space>b",
                 function()
-                    Snacks.picker.buffers()
+                    Snacks.picker.buffers({
+                        unloaded = false,
+                        current = false,
+                        win = {
+                            input = {
+                                keys = {
+                                    ["<S-CR>"] = { "edit_vsplit", mode = { "n", "i" } },
+                                },
+                            },
+                        },
+                    })
                 end,
                 desc = "Buffers",
             },
@@ -185,6 +203,13 @@ N  E  O  V  I  M
                 "<space>h",
                 function()
                     Snacks.picker.help()
+                end,
+                desc = "Help",
+            },
+            {
+                "<space>j",
+                function()
+                    Snacks.picker.jumps()
                 end,
                 desc = "Help",
             },

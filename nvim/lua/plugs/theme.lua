@@ -8,7 +8,7 @@ return {
             transparent = false,
             toggle_style_key = "<leader>ts",
             lualine = {
-                transparent = true,
+                transparent = false,
             },
             highlights = {
                 MatchParen = { fg = "$red", bg = "$none", fmt = "underline" },
