@@ -51,7 +51,7 @@ return {
                 lua = { "stylua" },
                 markdown = { "prettierd", "prettier", stop_after_first = true },
                 nix = { "nixfmt" },
-                python = { "ruff" },
+                python = { "ruff_format", "ruff_organize_imports" },
                 rust = { "rust_analyzer", lsp_format = "prefer" },
                 sh = { "shfmt" },
                 svelte = { "prettierd", "prettier", stop_after_first = true },
@@ -241,6 +241,7 @@ return {
     {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
+        event = "VeryLazy",
         opts = true,
         keys = {
             {
@@ -258,7 +259,7 @@ return {
                 desc = "Previous todo comment",
             },
             {
-                "<leader>xt",
+                "<space>td",
                 function()
                     Snacks.picker.todo_comments()
                 end,

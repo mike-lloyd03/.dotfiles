@@ -70,7 +70,11 @@ N  E  O  V  I  M
             notifier = {},
             scroll = {},
             input = {},
-            image = {},
+            image = {
+                doc = {
+                    inline = false,
+                },
+            },
             toggle = {},
             zen = {},
             lazygit = {},
@@ -217,6 +221,13 @@ N  E  O  V  I  M
                 "<space>'",
                 function()
                     Snacks.picker.resume()
+                end,
+                desc = "Last picker",
+            },
+            {
+                "<space>z",
+                function()
+                    Snacks.picker.spelling()
                 end,
                 desc = "Last picker",
             },

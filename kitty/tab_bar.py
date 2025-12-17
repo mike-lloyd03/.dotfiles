@@ -74,14 +74,21 @@ def draw_tab(
 
 
 def _draw_right_status(draw_data: DrawData, screen: Screen, tab: TabBarData) -> int:
+    boss = get_boss()
+
     layout_name = tab.layout_name
     if layout_name == "fat":
         layout_name = "wide"
 
-    mode = get_boss().mappings.current_keyboard_mode_name
+    session_name = boss.active_session
+    if not session_name:
+        session_name = "none"
+
+    mode = boss.mappings.current_keyboard_mode_name
     if mode != "":
         if mode == "__sequence__":
             mode = "pending"
+
         cells = [
             (ORANGE, draw_data.default_bg, ""),
             (TEXT, ORANGE, f" {mode} "),
@@ -93,6 +100,10 @@ def _draw_right_status(draw_data: DrawData, screen: Screen, tab: TabBarData) -> 
             (WHITE, draw_data.default_bg, ""),
             (draw_data.active_fg, WHITE, f" {layout_name} "),
         ]
+        
+    if session_name:
+        cells.append((draw_data.active_bg, WHITE, ""))
+        cells.append((draw_data.active_fg, draw_data.active_bg, f" {session_name} "))
 
     right_status_length = 0
     for _, _, cell in cells:

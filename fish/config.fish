@@ -8,7 +8,7 @@ set fish_cursor_insert line blink
 set fish_cursor_replace_one underscore blink
 set fish_cursor_visual block blink
 
-set -Ux PAGER less
+set -Ux PAGER 'less -R'
 set -Ux EDITOR nvim
 set -Ux SYSTEMD_EDITOR nvim
 set -U fish_greeting ""

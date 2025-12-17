@@ -28,7 +28,7 @@ return {
                 ts_ls = {},
                 eslint = {},
                 jsonls = {},
-                clangd = {},
+                clangd = require("esp32").lsp_config(),
                 nil_ls = {},
                 tinymist = {
                     offset_encoding = "utf-8",
@@ -56,7 +56,7 @@ return {
                         },
                     },
                 },
-                volar = {},
+                -- volar = {},
                 -- https://github.com/neovim/nvim-lspconfig/issues/3945#issuecomment-3057102104
                 -- vue_ls = {
                 --     on_init = function(client)
@@ -116,7 +116,8 @@ return {
 
             for server, server_opts in pairs(opts.servers) do
                 server_opts.on_attach = navic_attach
-                require("lspconfig")[server].setup(server_opts)
+                vim.lsp.config(server, server_opts)
+                vim.lsp.enable(server)
             end
         end,
     },
@@ -172,5 +173,8 @@ return {
                 multiple_diag_under_cursor = true,
             },
         },
+    },
+    {
+        "Aietes/esp32.nvim",
     },
 }
