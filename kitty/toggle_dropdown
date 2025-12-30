@@ -1,6 +1,6 @@
 #!/bin/bash
 
-Y_OFFSET="0"
+Y_OFFSET="1"
 
 if [ -n "$HYPRLAND_INSTANCE_SIGNATURE" ]; then
     Y_OFFSET="45"
