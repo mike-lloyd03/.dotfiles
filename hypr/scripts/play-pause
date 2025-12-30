@@ -1,0 +1,12 @@
+#!/bin/fish
+
+set STATUS (playerctl status)
+
+switch $STATUS
+    case "Playing"
+        playerctl pause
+    case "Paused"
+        playerctl play
+    case "*"
+        exit 1
+end

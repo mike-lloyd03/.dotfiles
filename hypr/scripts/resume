@@ -1,0 +1,6 @@
+#!/bin/bash
+
+procs kitten panel --json | jq '.[].PID' | xargs kill -9
+
+hyprpanel q
+hyprctl dispatch exec hyprpanel

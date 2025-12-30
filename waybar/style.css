@@ -1,0 +1,152 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "NotoSans Nerd Font";
+  font-size: 1rem;
+  min-height: 0;
+}
+
+window#waybar {
+  background: transparent;
+  color: white;
+  padding: 1rem;
+  text-shadow: 0px 0px 2px black;
+}
+
+#workspaces {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 1.5rem;
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+#workspaces button {
+  padding: 0.5rem;
+  background: transparent;
+  color: white;
+}
+
+#workspaces button.active {
+  color: white;
+  background: #e86671;
+}
+
+#workspaces button:hover:first-child,
+#workspaces button.active:first-child {
+  border-radius: 1.5rem 0 0 1.5rem;
+}
+
+#workspaces button:hover:last-child,
+#workspaces button.active:last-child {
+  border-radius: 0 1.5rem 1.5rem 1px;
+}
+
+#workspaces button.active:only-child {
+  border-radius: 1.5rem;
+}
+
+#workspaces button:hover {
+  background: #64727d;
+  transition: border-radius 0s;
+  transition: background 0.5s;
+}
+
+#mode {
+  background: #64727d;
+  border-top: 5px solid white;
+}
+
+#submap {
+  background: #64727d;
+  border-top: 5px solid white;
+}
+
+#window {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  background: rgba(50, 50, 50, 0.3);
+  border-radius: 1.5rem;
+  padding: 0 1rem;
+}
+
+.modules-center,
+.modules-right {
+  padding: 0.1rem 0.5rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 1.5rem;
+  margin-top: 0.5rem;
+}
+.modules-right {
+  margin-right: 0.5rem;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#tray,
+#submap,
+#mode {
+  padding: 0 3px;
+  margin: 0 2px;
+}
+
+#clock {
+  font-weight: bold;
+}
+
+#battery {
+}
+
+#battery icon {
+  color: red;
+}
+
+#battery.charging {
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: black;
+  }
+}
+
+#battery.warning:not(.charging) {
+  color: white;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#cpu {
+}
+
+#memory {
+}
+
+#network {
+}
+
+#network.disconnected {
+  background: #f53c3c;
+}
+
+#pulseaudio {
+}
+
+#pulseaudio.muted {
+}
+
+#tray {
+}
+
+tooltip {
+  background: rgba(50, 50, 50, 0.5);
+  border: 1px solid rgba(100, 114, 125, 0.5);
+  border-radius: 1.5rem;
+}

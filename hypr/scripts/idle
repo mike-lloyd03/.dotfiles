@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+scriptDir=$HOME/.config/hypr/scripts
+
+swayidle -w \
+    timeout 300 "$scriptDir/dim_screen -d" \
+    resume "$scriptDir/dim_screen -r" \
+    timeout 600 "swaylock" \
+    before-sleep "swaylock"
