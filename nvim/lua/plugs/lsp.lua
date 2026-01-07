@@ -28,7 +28,7 @@ return {
                 ts_ls = {},
                 eslint = {},
                 jsonls = {},
-                clangd = require("esp32").lsp_config(),
+                clangd = {},
                 nil_ls = {},
                 tinymist = {
                     offset_encoding = "utf-8",
@@ -173,8 +173,5 @@ return {
                 multiple_diag_under_cursor = true,
             },
         },
-    },
-    {
-        "Aietes/esp32.nvim",
     },
 }
