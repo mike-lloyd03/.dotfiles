@@ -6,11 +6,25 @@ if [ -n "$HYPRLAND_INSTANCE_SIGNATURE" ]; then
     Y_OFFSET="45"
 fi
 
-tdrop -w 90% -h 60% -x 5% -y $Y_OFFSET -a kitty \
-    --title dropdown \
-    --class dropdown \
-    -o linux_display_server=x11 \
-    -o background_opacity=0.8 \
-    -o background_blur=20 \
-    -o enabled_layouts="splits,stack" \
-    --session ./sessions/dropdown
+if [ "$XDG_DESKTOP_SESSION" = "cosmic" ]; then
+    tdrop -w 90% -h 60% \
+        --class dropdown \
+        --name dropdown \
+        kitty \
+        --title dropdown \
+        --class dropdown \
+        -o background_opacity=0.8 \
+        -o background_blur=20 \
+        -o enabled_layouts="splits,stack" \
+        --session ./sessions/dropdown
+else
+    tdrop -w 90% -h 60% -x 5% -y $Y_OFFSET -a \
+        kitty \
+        --title dropdown \
+        --class dropdown \
+        -o linux_display_server=x11 \
+        -o background_opacity=0.8 \
+        -o background_blur=20 \
+        -o enabled_layouts="splits,stack" \
+        --session ./sessions/dropdown
+fi
