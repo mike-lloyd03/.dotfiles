@@ -346,4 +346,78 @@ return {
         "gregorias/coerce.nvim",
         config = true,
     },
+    {
+        "obsidian-nvim/obsidian.nvim",
+        version = "*",
+        opts = {
+            legacy_commands = false,
+            workspaces = {
+                {
+                    name = "work",
+                    path = "~/Documents/Obsidian/work",
+                },
+                {
+                    name = "main",
+                    path = "~/Documents/Obsidian/main",
+                },
+            },
+            -- Completely beyond me why this isn't the default
+            note_id_func = function(title)
+                return title
+            end,
+        },
+        init = function()
+            vim.api.nvim_create_autocmd("User", {
+                pattern = "ObsidianNoteEnter",
+                callback = function(ev)
+                    local current_file = vim.api.nvim_buf_get_name(0)
+
+                    local obsidian_base = vim.fn.expand("~/Documents/Obsidian/")
+
+                    local vault_name = current_file:match(vim.pesc(obsidian_base) .. "([%w_]+)/")
+
+                    local vault_root = obsidian_base .. vault_name
+
+                    if vim.fn.getcwd() ~= vault_root then
+                        pcall(vim.cmd.cd, vault_root)
+                    end
+                end,
+            })
+        end,
+        keys = {
+            {
+                "<space>o",
+                desc = "Obsidian",
+            },
+            {
+                "<space>on",
+                "<CMD>Obsidian new<CR>",
+                desc = "New note",
+            },
+            {
+                "<space>or",
+                ":Obsidian rename ",
+                desc = "Rename note",
+            },
+            {
+                "<space>os",
+                "<CMD>Obsidian quick_switch<CR>",
+                desc = "Quick Switch",
+            },
+            {
+                "<space>ow",
+                desc = "Workspace",
+            },
+            {
+                "<space>owm",
+                "<CMD>Obsidian workspace main<CR>",
+                desc = "Main",
+            },
+            {
+                "<space>oww",
+                "<CMD>Obsidian workspace work<CR>",
+                desc = "Work",
+            },
+        },
+    },
 }
