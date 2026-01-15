@@ -8,6 +8,7 @@ return {
             },
             servers = {
                 bashls = {},
+                -- bacon_ls = {},
                 biome = {
                     cmd = { "biome", "lsp-proxy", "--config-path=~/.config/biome.json" },
                 },
@@ -17,6 +18,9 @@ return {
                             check = {
                                 command = "clippy",
                             },
+                            -- Required with bacon
+                            -- checkOnSave = { enable = false },
+                            -- diagnostic = { enable = false },
                         },
                     },
                 },
@@ -56,6 +60,7 @@ return {
                         },
                     },
                 },
+                typos_lsp = {},
                 -- volar = {},
                 -- https://github.com/neovim/nvim-lspconfig/issues/3945#issuecomment-3057102104
                 -- vue_ls = {

@@ -56,7 +56,7 @@ return {
                 sh = { "shfmt" },
                 svelte = { "prettierd", "prettier", stop_after_first = true },
                 typescript = { "biome" },
-                toml = { "taplo" },
+                toml = { "tombi" },
                 typst = { "typstfmt" },
                 vue = { "prettierd", "prettier", stop_after_first = true },
                 yaml = { "prettierd", "prettier", stop_after_first = true },
