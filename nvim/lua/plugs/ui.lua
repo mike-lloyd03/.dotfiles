@@ -27,7 +27,7 @@ return {
         },
     },
     {
-        "echasnovski/mini.move",
+        "nvim-mini/mini.move",
         version = false,
         opts = {
             mappings = {
@@ -106,6 +106,7 @@ N  E  O  V  I  M
                         if not picker.layout.split then
                             picker.layout:hide()
                         end
+
                         local win = Snacks.picker.util.pick_win({
                             main = picker.main,
                             float = false,
@@ -114,13 +115,16 @@ N  E  O  V  I  M
                                 return ft == "snacks_dashboard" or not ft:find("^snacks")
                             end,
                         })
+
                         if not win then
                             if not picker.layout.split then
                                 picker.layout:unhide()
                             end
                             return true
                         end
+
                         picker.main = win
+
                         if not picker.layout.split then
                             vim.defer_fn(function()
                                 if not picker.closed then

@@ -52,7 +52,8 @@ return {
                 markdown = { "prettierd", "prettier", stop_after_first = true },
                 nix = { "nixfmt" },
                 python = { "ruff_format", "ruff_organize_imports" },
-                rust = { "rust_analyzer", lsp_format = "prefer" },
+                -- rust = { "rust_analyzer", lsp_format = "prefer" },
+                rust = { "rustfmt" },
                 sh = { "shfmt" },
                 svelte = { "prettierd", "prettier", stop_after_first = true },
                 typescript = { "biome" },
@@ -131,7 +132,7 @@ return {
         },
     },
     {
-        "echasnovski/mini.pairs",
+        "nvim-mini/mini.pairs",
         event = "VeryLazy",
         opts = {
             modes = { insert = true, command = true, terminal = false },
@@ -207,11 +208,11 @@ return {
         "JoosepAlviste/nvim-ts-context-commentstring",
         lazy = true,
         opts = {
-            enable_autocmd = true,
+            enable_autocmd = false,
         },
     },
     {
-        "echasnovski/mini.comment",
+        "nvim-mini/mini.comment",
         event = "VeryLazy",
         opts = {
             options = {
@@ -344,7 +345,13 @@ return {
     },
     {
         "gregorias/coerce.nvim",
-        config = true,
+        opts = {
+            default_mode_keymap_prefixes = {
+                normal_mode = "<SPACE>c",
+                motion_mode = "<SPACE>c",
+                visual_mode = "<SPACE>c",
+            },
+        },
     },
     {
         "obsidian-nvim/obsidian.nvim",
@@ -361,6 +368,10 @@ return {
                     path = "~/Documents/Obsidian/main",
                 },
             },
+            ui = { enable = false },
+            footer = { enabled = false },
+            -- frontmatter = { enabled = false },
+
             -- Completely beyond me why this isn't the default
             note_id_func = function(title)
                 return title
@@ -369,7 +380,7 @@ return {
         init = function()
             vim.api.nvim_create_autocmd("User", {
                 pattern = "ObsidianNoteEnter",
-                callback = function(ev)
+                callback = function(_)
                     local current_file = vim.api.nvim_buf_get_name(0)
 
                     local obsidian_base = vim.fn.expand("~/Documents/Obsidian/")

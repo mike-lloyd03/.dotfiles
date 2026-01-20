@@ -40,12 +40,7 @@ vim.opt.termguicolors = true
 
 vim.opt.spell = true
 
--- -- ufo syntax folding
--- vim.opt.foldcolumn = "1"
--- vim.opt.foldlevel = 99
--- vim.opt.foldlevelstart = 99
--- vim.opt.foldenable = true
--- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+vim.api.nvim_set_hl(0, "SpellBad", { underdouble = true, sp = "#8B0000" })
 
 vim.o.fillchars = [[eob: ]]
 

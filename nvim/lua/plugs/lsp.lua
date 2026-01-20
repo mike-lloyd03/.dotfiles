@@ -12,18 +12,21 @@ return {
                 biome = {
                     cmd = { "biome", "lsp-proxy", "--config-path=~/.config/biome.json" },
                 },
-                rust_analyzer = {
-                    settings = {
-                        ["rust-analyzer"] = {
-                            check = {
-                                command = "clippy",
-                            },
-                            -- Required with bacon
-                            -- checkOnSave = { enable = false },
-                            -- diagnostic = { enable = false },
-                        },
-                    },
-                },
+                -- rust_analyzer = {
+                --     settings = {
+                --         ["rust-analyzer"] = {
+                --             inlayHints = {
+                --                  enable = false,
+                --             },
+                --             check = {
+                --                 command = "clippy",
+                --             },
+                --             -- Required with bacon
+                --             -- checkOnSave = { enable = false },
+                --             -- diagnostic = { enable = false },
+                --         },
+                --     },
+                -- },
                 hyprls = {},
                 gopls = {},
                 pyright = {},
