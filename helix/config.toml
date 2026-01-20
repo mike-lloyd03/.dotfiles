@@ -1,4 +1,4 @@
-theme = "onedark"
+theme = "onedarker"
 
 [editor]
 scrolloff = 1
@@ -16,8 +16,8 @@ display-messages = true
 [keys.normal]
 "C-j" = "scroll_down"
 "C-k" = "scroll_up"
-"[" = { g = "goto_prev_diag"}
-"]" = { g = "goto_next_diag"}
+"[" = { g = "goto_prev_diag" }
+"]" = { g = "goto_next_diag" }
 "G" = "goto_file_end"
 "0" = "goto_line_start"
 "$" = "goto_line_end"
