@@ -5,7 +5,7 @@ return {
     },
     {
         "mrcjkb/rustaceanvim",
-        version = "^6",
+        version = "^9",
         lazy = false,
     },
     {
@@ -40,7 +40,55 @@ return {
     },
     {
         "MeanderingProgrammer/render-markdown.nvim",
-        dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
-        opts = {},
+        dependencies = {
+            -- "nvim-treesitter/nvim-treesitter",
+            "nvim-tree/nvim-web-devicons",
+        },
+        opts = {
+            completions = { lsp = { enabled = true } },
+        },
+    },
+    {
+        "mfussenegger/nvim-dap",
+        dependencies = {
+            "rcarriga/nvim-dap-ui",
+        },
+        opts = {
+            dap = {
+                adapters = {
+                    codelldb = {
+                        type = "executable",
+                        command = "codelldb",
+                    },
+                },
+            },
+        },
+        config = function()
+            local dap = require("dap")
+            dap.adapters.codelldb = {
+                type = "executable",
+                command = "codelldb",
+            }
+            dap.configurations.rust = {
+                {
+                    name = "Launch file",
+                    type = "codelldb",
+                    request = "launch",
+                    program = function()
+                        return vim.fn.getcwd() .. "/target/debug/spec"
+                    end,
+                    cwd = "${workspaceFolder}",
+                    stopOnEntry = false,
+                },
+            }
+        end,
+    },
+    {
+        "jay-babu/mason-nvim-dap.nvim",
+        dependencies = { "mason.nvim", "mfussenegger/nvim-dap" },
+        cmd = { "DapInstall", "DapUninstall" },
+        opts = {
+            automatic_installation = true,
+        },
     },
 }

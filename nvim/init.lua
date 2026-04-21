@@ -1,6 +1,8 @@
 require("config.lazy")
 require("mappings")
 
+vim.cmd.colorscheme("onedark")
+
 -- Command mode zsh-like autocompletion
 vim.opt.signcolumn = "yes"
 vim.opt.wildmenu = true
@@ -35,8 +37,6 @@ vim.o.guicursor = "n-v-sm:block,i-ci-c:ver20,r-cr-o:hor10,a:blinkwait700-blinkof
 -- Smart case when searching
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-
-vim.opt.termguicolors = true
 
 vim.opt.spell = true
 
@@ -90,14 +90,19 @@ vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
 -- Auto Commands
 -----------
 -- Markdown bindings
-vim.cmd([[
-  autocmd FileType markdown,typst noremap <buffer> <silent> k gk
-  autocmd FileType markdown,typst noremap <buffer> <silent> j gj
-  autocmd FileType markdown,typst noremap <buffer> <silent> 0 g0
-  autocmd FileType markdown,typst noremap <buffer> <silent> $ g$
-  autocmd FileType markdown,typst setlocal spell spelllang=en_us
-  " autocmd FileType markdown call lexical#init()
-]])
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "markdown", "typst" },
+    callback = function()
+        vim.keymap.set("n", "k", "gk", { buffer = true, silent = true })
+        vim.keymap.set("n", "j", "gj", { buffer = true, silent = true })
+        vim.keymap.set("n", "0", "g0", { buffer = true, silent = true })
+        vim.keymap.set("n", "$", "g$", { buffer = true, silent = true })
+        vim.opt_local.spell = true
+        vim.opt_local.spelllang = "en_us"
+        -- vim.opt_local.tabstop = 2
+        -- vim.opt_local.shiftwidth = 2
+    end,
+})
 
 if vim.g.neovide then
     vim.o.guifont = "JetBrainsMono NFM:h10"

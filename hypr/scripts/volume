@@ -3,10 +3,11 @@
 max_volume=150
 volume=0
 mute=false
+step=10
 
 info=$(pactl -f json list sinks)
-mute=$(jq -r '.[0].mute' <<<"$info")
-volume=$(jq -r '.[0].volume."front-left".value_percent' <<<"$info" | tr -d '%')
+mute=$(pactl -f json get-sink-mute @DEFAULT_SINK@ | jq -r '.mute')
+volume=$(pactl -f json get-sink-volume @DEFAULT_SINK@ | jq -r '.volume."front-left".value_percent' | tr -d '%')
 
 function volume_up() {
     if [ "$mute" = "true" ]; then
@@ -16,7 +17,7 @@ function volume_up() {
         if [ "$volume" -ge $((max_volume - 5)) ]; then
             pactl set-sink-volume @DEFAULT_SINK@ $max_volume%
         else
-            pactl set-sink-volume @DEFAULT_SINK@ +5%
+            pactl set-sink-volume @DEFAULT_SINK@ +$step%
         fi
     fi
 }
@@ -26,7 +27,7 @@ function volume_down() {
         toggle_mute
     else
         # swayosd-client --max-volume $max_volume --output-volume lower
-        pactl set-sink-volume @DEFAULT_SINK@ -5%
+        pactl set-sink-volume @DEFAULT_SINK@ -$step%
     fi
 }
 

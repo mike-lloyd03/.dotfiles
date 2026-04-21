@@ -3,6 +3,9 @@ return {
         "navarasu/onedark.nvim",
         lazy = false,
         priority = 1000,
+        init = function()
+            vim.opt.termguicolors = true
+        end,
         opts = {
             style = "deep",
             transparent = false,
@@ -11,17 +14,17 @@ return {
                 transparent = false,
             },
             highlights = {
-                MatchParen = { fg = "$red", bg = "$none", fmt = "underline" },
-
-                CurSearch = { bg = "$fg" },
-                IncSearch = { bg = "$fg" },
-                Search = { bg = "$blue" },
-
-                ["@operator.rust"] = { fg = "$red" },
-                ["@operator.@punctuation.bracket.rust"] = { fg = "$purple" },
-
-                FoldColumn = { bg = "$bg0" },
-
+                -- MatchParen = { fg = "$red", bg = "$none", fmt = "underline" },
+                --
+                -- CurSearch = { bg = "$fg" },
+                -- IncSearch = { bg = "$fg" },
+                -- Search = { bg = "$blue" },
+                --
+                -- ["@operator.rust"] = { fg = "$red" },
+                -- ["@operator.@punctuation.bracket.rust"] = { fg = "$purple" },
+                --
+                -- FoldColumn = { bg = "$bg0" },
+                --
                 SnacksDashboardHeader = { fg = "$blue" },
                 SnacksDashboardDesc = { fg = "$fg" },
                 SnacksDashboardIcon = { fg = "$blue" },
@@ -36,9 +39,29 @@ return {
                 undercurl = true,
             },
         },
-        config = function(_, opts)
-            require("onedark").setup(opts)
-            vim.cmd([[colorscheme onedark]])
-        end,
+    },
+    -- {
+    --     "olimorris/onedarkpro.nvim",
+    --     priority = 1000,
+    --     init = function()
+    --         vim.opt.termguicolors = true
+    --     end,
+    --     opts = {
+    --         highlights = {
+    --             Cursor = { bg = "${blue}", fg = "${white}" },
+    --             CursorLineNr = { fg = "${blue}" },
+    --         },
+    --     },
+    -- },
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+    },
+    {
+        "rebelot/kanagawa.nvim",
+        lazy = false,
+        priority = 1000,
     },
 }

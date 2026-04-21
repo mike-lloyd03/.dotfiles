@@ -24,6 +24,7 @@ bind --mode insert \co edit_command_buffer
 # Path
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.cargo/bin
+fish_add_path $HOME/.local/share/gem/ruby/3.4.0/bin
 
 # Nix
 if command -v nix > /dev/null
@@ -62,3 +63,8 @@ if status is-interactive
         direnv hook fish | source
     end
 end
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /home/mike/.lmstudio/bin
+# End of LM Studio CLI section
+

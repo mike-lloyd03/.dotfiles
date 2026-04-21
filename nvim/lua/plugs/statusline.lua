@@ -28,7 +28,7 @@ return {
             return {
                 options = {
                     icons_enabled = true,
-                    theme = onedark_custom,
+                    theme = "onedark",
                     component_separators = { left = "", right = "" },
                     section_separators = { left = "", right = "" },
                     disabled_filetypes = {
@@ -37,12 +37,24 @@ return {
                             "snacks_picker_list",
                             "snacks_layout_box",
                             "snacks_dashboard",
+                            "Avante",
+                            "AvanteInput",
+                            "AvanteSelectedCode",
+                            "AvanteSelectedFiles",
+                            "opencode",
+                            "opencode_output",
                         },
                         winbar = {
                             "neo-tree",
                             "snacks_picker_list",
                             "snacks_layout_box",
                             "snacks_dashboard",
+                            "Avante",
+                            "AvanteInput",
+                            "AvanteSelectedCode",
+                            "AvanteSelectedFiles",
+                            "opencode",
+                            "opencode_output",
                         },
                     },
                     always_divide_middle = true,

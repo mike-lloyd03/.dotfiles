@@ -28,10 +28,30 @@ return {
                 --     },
                 -- },
                 hyprls = {},
+                -- ccls = {
+                --     init_options = {
+                --         diagnostics = {
+                --             onChange = 100,
+                --         },
+                --     },
+                -- },
                 gopls = {},
                 pyright = {},
                 ruff = {},
-                svelte = {},
+                svelte = {
+                    -- settings = {
+                    --     svelte = {
+                    --         plugin = {
+                    --             svelte = {
+                    --                 compilerWarnings = {
+                    --                     ["state-referenced-locally"] = "ignore",
+                    --                     ["a11y-no-static-element-interactions"] = "ignore",
+                    --                 },
+                    --             },
+                    --         },
+                    --     },
+                    -- },
+                },
                 ts_ls = {},
                 eslint = {},
                 jsonls = {},
@@ -64,6 +84,8 @@ return {
                     },
                 },
                 typos_lsp = {},
+                qmlls = {},
+                ruby_lsp = {},
                 -- volar = {},
                 -- https://github.com/neovim/nvim-lspconfig/issues/3945#issuecomment-3057102104
                 -- vue_ls = {
@@ -143,11 +165,21 @@ return {
         end,
     },
     {
+        "mfussenegger/nvim-lint",
+        optional = true,
+        opts = {
+            linters_by_ft = {
+                markdown = { "markdownlint-cli2" },
+            },
+        },
+    },
+    {
         "saghen/blink.cmp",
         dependencies = {
             "rafamadriz/friendly-snippets",
+            "Kaiser-Yang/blink-cmp-avante",
         },
-        version = "*",
+        version = "1.*",
         opts = {
             keymap = {
                 preset = "default",
@@ -162,11 +194,23 @@ return {
             },
 
             sources = {
-                default = { "lsp", "path", "snippets", "buffer" },
+                -- default = { "lsp", "path", "snippets", "buffer" },
+                default = { "avante", "lsp", "path", "snippets", "buffer" },
+
+                providers = {
+                    avante = {
+                        module = "blink-cmp-avante",
+                        name = "Avante",
+                        opts = {},
+                    },
+                },
             },
 
             completion = {
                 documentation = { auto_show = true, auto_show_delay_ms = 500 },
+                menu = {
+                    draw = { columns = { { "kind_icon", "label", "label_description", gap = 1 }, { "source_id" } } },
+                },
             },
         },
         opts_extend = { "sources.default" },

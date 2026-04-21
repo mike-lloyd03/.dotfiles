@@ -72,11 +72,17 @@ N  E  O  V  I  M
             input = {},
             image = {
                 doc = {
-                    inline = false,
+                    -- inline = true,
+                    float = false,
                 },
             },
             toggle = {},
-            zen = {},
+            zen = {
+                toggles = {
+                    dim = false,
+                    tabline = true,
+                },
+            },
             lazygit = {},
             picker = {
                 win = {
@@ -112,7 +118,7 @@ N  E  O  V  I  M
                             float = false,
                             filter = function(_, buf)
                                 local ft = vim.bo[buf].ft
-                                return ft == "snacks_dashboard" or not ft:find("^snacks")
+                                return ft == "snacks_dashboard" or (not ft:find("^snacks") and not ft:find("^opencode"))
                             end,
                         })
 
@@ -138,9 +144,24 @@ N  E  O  V  I  M
                     cycle = false,
                 },
             },
-            explorer = {},
+            explorer = {
+                trash = false,
+            },
             words = {},
         },
+        init = function()
+            vim.api.nvim_create_autocmd("FileType", {
+                pattern = "*",
+                group = vim.api.nvim_create_augroup("set_doc_inline", {}),
+                callback = function(e)
+                    if vim.list_contains({ "markdown" }, e.match) then
+                        Snacks.image.config.doc.inline = true
+                    else
+                        Snacks.image.config.doc.inline = false
+                    end
+                end,
+            })
+        end,
         keys = {
             { "<space>nn", "<CMD>lua Snacks.notifier.show_history()<CR>", desc = "Show notifications" },
             { "<space>nd", "<CMD>lua Snacks.notifier.hide()<CR>", desc = "Hide notification" },

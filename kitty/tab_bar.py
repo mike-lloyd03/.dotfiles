@@ -1,17 +1,31 @@
-
 from kitty.boss import get_boss
 from kitty.fast_data_types import Screen
+from kitty.rgb import to_color
 from kitty.tab_bar import (
     DrawData,
     ExtraData,
     TabBarData,
     as_rgb,
 )
-from kitty.rgb import to_color
 
 WHITE = to_color("#fff")
 ORANGE = to_color("#e2b86b")
 TEXT = to_color("#1a1c23")
+
+
+def draw_tab_n(
+    draw_data: DrawData,
+    screen: Screen,
+    tab: TabBarData,
+    before: int,
+    max_title_length: int,
+    index: int,
+    is_last: bool,
+    extra_data: ExtraData,
+) -> int:
+    screen.draw(f"{before} {is_last}")
+    # if is_last:
+    #     screen.draw("_" * screen.columns)
 
 
 def draw_tab(
@@ -25,6 +39,7 @@ def draw_tab(
     extra_data: ExtraData,
 ) -> int:
     default_bg = as_rgb(int(draw_data.default_bg))
+    tab_title = tab.title if len(tab.title) < 16 else tab.title[:16].rstrip() + "…"
 
     if tab.is_active:
         index_bg = as_rgb(int(draw_data.active_bg))
@@ -58,8 +73,9 @@ def draw_tab(
     screen.cursor.bg = tab_bg
     screen.cursor.fg = tab_fg
     screen.cursor.bold = tab.is_active
-    screen.draw(f" {tab.title}")
+    screen.draw(f" {tab_title}")
     screen.cursor.bold = False
+
     if tab.layout_name == "stack":
         screen.draw(" z")
     screen.draw(" ")
@@ -69,7 +85,7 @@ def draw_tab(
     screen.draw("")
 
     if is_last:
-        _draw_right_status(draw_data, screen, tab)
+        return _draw_right_status(draw_data, screen, tab)
     return screen.cursor.x
 
 
@@ -100,7 +116,7 @@ def _draw_right_status(draw_data: DrawData, screen: Screen, tab: TabBarData) -> 
             (WHITE, draw_data.default_bg, ""),
             (draw_data.active_fg, WHITE, f" {layout_name} "),
         ]
-        
+
     if session_name:
         cells.append((draw_data.active_bg, WHITE, ""))
         cells.append((draw_data.active_fg, draw_data.active_bg, f" {session_name} "))
@@ -122,5 +138,5 @@ def _draw_right_status(draw_data: DrawData, screen: Screen, tab: TabBarData) -> 
     screen.cursor.fg = 0
     screen.cursor.bg = 0
 
-    screen.cursor.x = max(screen.cursor.x, screen.columns - right_status_length)
+    # screen.cursor.x = max(screen.cursor.x, screen.columns - right_status_length)
     return screen.cursor.x

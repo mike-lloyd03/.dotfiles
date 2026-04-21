@@ -1,45 +1,74 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        build = function()
-            require("nvim-treesitter.install").update({ with_sync = true })
+        branch = "main",
+        build = ":TSUpdate",
+        lazy = false,
+        -- dependencies = {
+        --     "nvim-treesitter/playground",
+        -- },
+        config = function()
+            vim.api.nvim_create_autocmd("FileType", {
+                pattern = {
+                    "rust",
+                    "go",
+                    "python",
+                    "html",
+                    "css",
+                    "javascript",
+                    "typescript",
+                    "svelte",
+                    "lua",
+                    "markdown",
+                    "cpp",
+                    "c",
+                    "arduino",
+                    "opencode_output",
+                },
+                callback = function()
+                    vim.treesitter.start()
+                end,
+            })
+            return {
+                ensure_installed = {
+                    "rust",
+                    "go",
+                    "python",
+                    "html",
+                    "css",
+                    "javascript",
+                    "typescript",
+                    "svelte",
+                    "lua",
+                    "markdown",
+                    "cpp",
+                    "c",
+                },
+                highlight = {
+                    enable = true,
+                    additional_vim_regex_highlighting = false,
+                },
+                -- playground = {
+                --     enable = true,
+                -- },
+                autotag = {
+                    enable = true,
+                },
+                context_commentstring = {
+                    enable = true,
+                },
+            }
         end,
-        dependencies = {
-            "nvim-treesitter/playground",
-        },
-        opts = {
-            ensure_installed = {
-                "rust",
-                "go",
-                "python",
-                "html",
-                "css",
-                "javascript",
-                "typescript",
-                "svelte",
-                "lua",
-                "markdown",
-                "cpp",
-                "c",
-            },
-            highlight = {
-                enable = true,
-                -- additional_vim_regex_highlighting = false,
-            },
-            playground = {
-                enable = true,
-            },
-            autotag = {
-                enable = true,
-            },
-            context_commentstring = {
-                enable = true,
-            },
-        },
         -- stylua: ignore
         keys = {
             { "<space>m", mode = { "n" }, "<CMD>lua require('telescope.builtin').treesitter{}<CR>", desc = "Treesitter Symbols", },
             { "<space>l", mode = { "n" }, "<CMD>TSToggle highlight<CR>", desc = "Toggle Treesitter highlight", },
         },
     },
+    -- {
+    --     "arborist-ts/arborist.nvim",
+    --     opts = {
+    --         update_cadence = "weekly",
+    --     },
+    -- },
 }

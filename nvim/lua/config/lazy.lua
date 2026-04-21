@@ -19,6 +19,6 @@ require("lazy").setup({
     spec = {
         { import = "plugs" },
     },
-    install = { colorscheme = { "onedark" } },
+    -- install = { colorscheme = { "onedark" } },
     checker = { enabled = true, notify = false },
 })
