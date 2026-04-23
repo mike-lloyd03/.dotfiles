@@ -102,8 +102,8 @@ return {
         config = true,
         keys = {
             { "<space>v", nil, desc = "AI/Claude Code" },
-            { "<space>vg", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
-            { "<space>vi", "<cmd>ClaudeCodeFocus<cr>", desc = "Focus Claude" },
+            { "<space>vg", "<cmd>ClaudeCode --continue<cr>", desc = "Toggle Claude" },
+            { "<space>vi", "<cmd>ClaudeCodeFocus --continue<cr>", desc = "Focus Claude" },
             { "<space>vr", "<cmd>ClaudeCode --resume<cr>", desc = "Resume Claude" },
             { "<space>vC", "<cmd>ClaudeCode --continue<cr>", desc = "Continue Claude" },
             { "<space>vm", "<cmd>ClaudeCodeSelectModel<cr>", desc = "Select Claude model" },

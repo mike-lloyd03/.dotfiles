@@ -23,6 +23,13 @@ local function xmap(shortcut, command, opts)
     map("x", shortcut, command, opts)
 end
 
+-- Navigate out of terminal panes
+vim.keymap.set("t", "<C-w>h", "<C-\\><C-N><C-w>h")
+vim.keymap.set("t", "<C-w>j", "<C-\\><C-N><C-w>j")
+vim.keymap.set("t", "<C-w>k", "<C-\\><C-N><C-w>k")
+vim.keymap.set("t", "<C-w>l", "<C-\\><C-N><C-w>l")
+vim.keymap.set("t", "<C-w>z", "<C-\\><C-N>lua Snacks.zen.zoom()")
+
 -- This always screws me up
 nmap("q:", "")
 
