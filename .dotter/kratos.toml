@@ -1,14 +1,11 @@
 packages = [
   "fish",
   "git",
-  "helix",
-  "ideavim",
   "kitty",
-  "keyd",
   "lsd",
   "nvim",
-  "nvimpager",
+  "quickshell",
   "starship",
-  "tealdeer",
-  "zellij",
+  "swaync",
+  "tealdeer"
 ]
