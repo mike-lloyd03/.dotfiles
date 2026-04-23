@@ -1,0 +1,14 @@
+enabled_backends = ["arch", "cargo", "flatpak"]
+hostname_groups_enabled = true
+
+[arch]
+package_manager = "paru"
+
+[flatpak]
+systemwide = true
+
+[cargo]
+binstall = true
+
+[hostname_groups]
+kratos = ["default", "hyprland", "gnome", "cachyos"]

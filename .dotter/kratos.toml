@@ -3,9 +3,10 @@ packages = [
   "git",
   "kitty",
   "lsd",
+  "metapac",
   "nvim",
   "quickshell",
   "starship",
   "swaync",
-  "tealdeer"
+  "tealdeer",
 ]

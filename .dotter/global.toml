@@ -34,6 +34,9 @@ leftwm = { target = "~/.config/leftwm", type = "symbolic", recurse = false }
 [lsd.files]
 lsd = { target = "~/.config/lsd", type = "symbolic", recurse = false }
 
+[metapac.files]
+metapac = { target = "~/.config/metapac", type = "symbolic", recurse = false }
+
 [nushell.files]
 nushell = "~/.config/nushell"
 
