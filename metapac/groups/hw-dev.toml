@@ -1,0 +1,9 @@
+arch = { packages = [
+  "android-studio",
+  "android-tools",
+  "arduino-avr-core",
+  "arduino-cli",
+  "arduino-ide-bin",
+  "arduino-language-server",
+  "avrdude",
+] }

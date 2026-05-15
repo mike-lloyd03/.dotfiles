@@ -1,4 +1,4 @@
-arch = [
+arch = { packages = [
   "gnome-backgrounds",
   "gnome-calculator",
   "gnome-calendar",
@@ -10,7 +10,6 @@ arch = [
   "gnome-control-center",
   "gnome-disk-utility",
   "gnome-font-viewer",
-  "gnome-keyring",
   "gnome-logs",
   "gnome-maps",
   "gnome-menus",
@@ -31,4 +30,4 @@ arch = [
   "gnome-user-docs",
   "gnome-user-share",
   "gnome-weather",
-]
+] }

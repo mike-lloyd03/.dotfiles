@@ -1,4 +1,4 @@
-arch = [
+arch = { packages = [
   "aurorae",
   "bluedevil",
   "breeze",
@@ -69,4 +69,4 @@ arch = [
   "wacomtablet",
   "xdg-desktop-portal-kde",
   "kaccounts-providers",
-]
+] }

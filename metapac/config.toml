@@ -5,10 +5,10 @@ hostname_groups_enabled = true
 package_manager = "paru"
 
 [flatpak]
-systemwide = true
 
 [cargo]
 binstall = true
 
 [hostname_groups]
-kratos = ["default", "hyprland", "gnome", "cachyos"]
+kratos = ["default", "hyprland", "gnome", "cachyos-kernel", "linux-kernel"]
+chad = ["default", "hyprland", "cachyos"]

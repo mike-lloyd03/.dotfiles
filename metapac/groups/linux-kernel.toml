@@ -1,0 +1,6 @@
+arch = { packages = [
+  "linux",
+  "linux-firmware",
+  "linux-headers",
+  "linux-lts",
+] }

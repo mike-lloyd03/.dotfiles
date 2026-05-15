@@ -5,12 +5,26 @@ alias dc="docker compose"
 abbr -a jc sudo journalctl -xe
 abbr -a sf source ~/.config/fish/config.fish
 command -v rg &>/dev/null && alias rgih="rg --no-ignore --hidden"
-command -v lsd &>/dev/null && alias ls="lsd --group-directories-first" && alias ll="lsd -l" && alias la="lsd -lA"
+# command -v lsd &>/dev/null && alias ls="lsd --group-directories-first" && alias ll="lsd -l" && alias la="lsd -lA"
 command -v bat &>/dev/null && alias cat="bat --paging=never"
 command -v journalctl &>/dev/null && alias jc='sudo journalctl -xe'
 alias svenv="source .venv/bin/activate.fish"
 abbr -a decode base64 -d
 abbr -a hyprconf nvim ~/.config/hypr/hyprland.conf
+
+if  command -v lsd &>/dev/null 
+    alias ls="lsd --group-directories-first"
+    alias ll="lsd -l"
+    alias la="lsd -lA"
+    abbr sls "sudo lsd --group-directories-first"
+    abbr sll "sudo lsd -l"
+    abbr sla "sudo lsd -lA"
+else
+    alias ll="ls -l"
+    alias la="ls -lA"
+    abbr sll "sudo ls -l"
+    abbr sla "sudo ls -lA"
+end
 
 function last_history_item
     echo $history[1]

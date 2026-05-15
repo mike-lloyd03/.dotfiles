@@ -169,13 +169,13 @@ return {
             },
         },
         cmd = "Trouble",
-        keys = {
-            { "<space>t", "<cmd><cr>", desc = "Trouble" },
-            { "<space>tw", "<cmd>Trouble diagnostics toggle<cr>", desc = "Workspace" },
-            { "<space>td", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Document" },
-            { "<space>tq", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix" },
-            { "<space>tl", "<cmd>Trouble loclist<cr>", desc = "Loclist" },
-        },
+        -- keys = {
+        --     { "<space>t", "<cmd><cr>", desc = "Trouble" },
+        --     { "<space>tw", "<cmd>Trouble diagnostics toggle<cr>", desc = "Workspace" },
+        --     { "<space>td", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Document" },
+        --     { "<space>tq", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix" },
+        --     { "<space>tl", "<cmd>Trouble loclist<cr>", desc = "Loclist" },
+        -- },
     },
     {
         "folke/flash.nvim",

@@ -1,4 +1,4 @@
-arch = [
+arch = { packages = [
   "cosmic-app-library",
   "cosmic-applets",
   "cosmic-bg",
@@ -23,7 +23,7 @@ arch = [
   "cosmic-wallpapers",
   "cosmic-workspaces",
   "xdg-desktop-portal-cosmic",
-]
-flatpak = [
+] }
+flatpak = { packages = [
   "dev.edfloreshz.CosmicTweaks",
-]
+] }

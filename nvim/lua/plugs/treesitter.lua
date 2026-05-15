@@ -62,7 +62,7 @@ return {
         -- stylua: ignore
         keys = {
             { "<space>m", mode = { "n" }, "<CMD>lua require('telescope.builtin').treesitter{}<CR>", desc = "Treesitter Symbols", },
-            { "<space>l", mode = { "n" }, "<CMD>TSToggle highlight<CR>", desc = "Toggle Treesitter highlight", },
+            { "<space>l", mode = { "n" }, "<CMD>lua vim.treesitter.start()<CR>", desc = "Enable Treesitter highlight", },
         },
     },
     -- {

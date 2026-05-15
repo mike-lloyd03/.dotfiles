@@ -177,7 +177,6 @@ return {
         "saghen/blink.cmp",
         dependencies = {
             "rafamadriz/friendly-snippets",
-            "Kaiser-Yang/blink-cmp-avante",
         },
         version = "1.*",
         opts = {
@@ -189,21 +188,11 @@ return {
             },
 
             appearance = {
-                use_nvim_cmp_as_default = true,
                 nerd_font_variant = "mono",
             },
 
             sources = {
-                -- default = { "lsp", "path", "snippets", "buffer" },
-                default = { "avante", "lsp", "path", "snippets", "buffer" },
-
-                providers = {
-                    avante = {
-                        module = "blink-cmp-avante",
-                        name = "Avante",
-                        opts = {},
-                    },
-                },
+                default = { "lsp", "path", "snippets", "buffer" },
             },
 
             completion = {

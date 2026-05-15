@@ -1,4 +1,4 @@
-arch = [
+arch = { packages = [
   "aquamarine",
   "cliphist",
   "cmake",
@@ -12,9 +12,10 @@ arch = [
   "hyprpicker",
   "hyprshot",
   "kanshi",
+  "nautilus",
+  "sushi",  # Gnome nautilus previewer
   "swaync",
   "swayosd",
-  "swww",
   "udiskie",
   "waybar",
   "xdg-desktop-portal-hyprland",
@@ -22,4 +23,4 @@ arch = [
   "wayland-protocols",
   "quickshell-git",
   "sddm",
-]
+] }
