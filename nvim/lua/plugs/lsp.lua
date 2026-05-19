@@ -75,7 +75,10 @@ return {
                                 globals = { "vim" },
                             },
                             workspace = {
-                                library = vim.api.nvim_get_runtime_file("", true),
+                                library = vim.list_extend(
+                                    vim.api.nvim_get_runtime_file("", true),
+                                    { "/usr/share/hypr/stubs/" }
+                                ),
                             },
                             telemetry = {
                                 enable = false,
