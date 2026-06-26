@@ -25,10 +25,10 @@ keybinds {
         bind "f" { ToggleFloatingPanes; SwitchToMode "Normal"; }
     }
     tmux {
-        unbind "Ctrl b"
+        unbind "Ctrl a"
         unbind "\""
         unbind "%"
-        bind "Ctrl a" { Write 2; SwitchToMode "Normal"; }
+        bind "Ctrl b" { Write 2; SwitchToMode "Normal"; }
         bind "b" { NewPane "Down"; SwitchToMode "Normal"; }
         bind "r" { NewPane "Right"; SwitchToMode "Normal"; }
         bind "a" { ToggleTab; SwitchToMode "Normal"; }
@@ -68,8 +68,8 @@ keybinds {
         bind "Ctrl h" { SwitchToMode "Move"; }
     }
     shared_except "tmux" "locked" {
-        unbind "Ctrl b"
-        bind "Ctrl a" { SwitchToMode "Tmux"; }
+        unbind "Ctrl a"
+        bind "Ctrl b" { SwitchToMode "Tmux"; }
     }
     shared_except "session" "locked" {
         unbind "Ctrl o"
