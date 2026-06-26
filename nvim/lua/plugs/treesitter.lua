@@ -17,6 +17,7 @@ return {
                     "css",
                     "javascript",
                     "typescript",
+                    "typescriptreact",
                     "svelte",
                     "lua",
                     "markdown",
@@ -24,6 +25,7 @@ return {
                     "c",
                     "arduino",
                     "opencode_output",
+                    "dart",
                 },
                 callback = function()
                     vim.treesitter.start()
@@ -43,6 +45,7 @@ return {
                     "markdown",
                     "cpp",
                     "c",
+                    "dart",
                 },
                 highlight = {
                     enable = true,

@@ -82,6 +82,11 @@ N  E  O  V  I  M
                     dim = false,
                     tabline = true,
                 },
+                win = {
+                    backdrop = {
+                        transparent = false,
+                    },
+                },
             },
             lazygit = {},
             picker = {

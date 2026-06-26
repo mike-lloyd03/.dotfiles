@@ -27,6 +27,7 @@ return {
                 --         },
                 --     },
                 -- },
+                dartls = {},
                 hyprls = {},
                 -- ccls = {
                 --     init_options = {
@@ -179,7 +180,7 @@ return {
     {
         "saghen/blink.cmp",
         dependencies = {
-            "rafamadriz/friendly-snippets",
+            "rafamadriz/friendly-snippets", -- Uses nvim's native snippet engine
         },
         version = "1.*",
         opts = {
@@ -196,6 +197,16 @@ return {
 
             sources = {
                 default = { "lsp", "path", "snippets", "buffer" },
+
+                providers = {
+                    snippets = {
+                        opts = {
+                            extended_filetypes = {
+                                dart = { "flutter" },
+                            },
+                        },
+                    },
+                },
             },
 
             completion = {

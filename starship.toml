@@ -3,6 +3,7 @@ format = """
 ${custom.corner_top}\
 $username\
 $hostname\
+$shell\
 $shlvl\
 $directory\
 $direnv\
@@ -31,27 +32,25 @@ $status\
 $character\
 """
 
-right_format = """$kubernetes"""
-
 [character]
-vimcmd_symbol = '[❯](bold green)'
-vimcmd_visual_symbol = '[❯](bold purple)'
-vimcmd_replace_one_symbol = '[❯](bold red)'
-vimcmd_replace_symbol = '[❯](bold red)'
-success_symbol = '[❯](bold blue)'
-error_symbol = '[❯](bold red)'
+vimcmd_symbol = "[❯](bold green)"
+vimcmd_visual_symbol = "[❯](bold purple)"
+vimcmd_replace_one_symbol = "[❯](bold red)"
+vimcmd_replace_symbol = "[❯](bold red)"
+success_symbol = "[❯](bold blue)"
+error_symbol = "[❯](bold red)"
 
 [custom.corner_top]
 symbol = "╭─ "
 style = "bold white"
 when = true
-shell = ["sh"] # faster
+shell = ["sh"]  # faster
 
 [custom.corner_bot]
 symbol = "╰"
 style = "bold white"
 when = true
-shell = ["sh"] # faster
+shell = ["sh"]  # faster
 
 [cmd_duration]
 disabled = true
@@ -68,13 +67,13 @@ repo_root_style = "bold underline"
 
 [direnv]
 disabled = false
-format = '[$symbol$allowed/$loaded]($style) '
-symbol = ' '
-allowed_msg = '󰗠'
-denied_msg = ''
-loaded_msg = '󰗠'
-unloaded_msg = ''
-style = 'bold red'
+format = "[$symbol$allowed/$loaded]($style) "
+symbol = " "
+allowed_msg = "󰗠"
+denied_msg = ""
+loaded_msg = "󰗠"
+unloaded_msg = ""
+style = "bold red"
 
 [git_branch]
 symbol = " "
@@ -129,6 +128,16 @@ python_binary = ["python3", "python2"]
 [rust]
 format = " [$symbol($version )]($style) "
 symbol = " "
+
+[shell]
+disabled = false
+fish_indicator = ""
+nu_indicator = "nu "
+format = "[$indicator]($style)"
+
+[shlvl]
+disabled = false
+format = "[$shlvl]($style) "
 
 [time]
 disabled = false

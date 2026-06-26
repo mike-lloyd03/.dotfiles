@@ -1,5 +1,11 @@
-local mainMod = "SUPER"
+local mainMod = "META"
 local scriptDir = "$HOME/.config/hypr/scripts"
+
+local function resize(x, y)
+    return { x = x, y = y, relative = true }
+end
+
+local repeating = { repeating = true }
 
 hl.bind("CONTROL + SHIFT + return", hl.dsp.exec_cmd("kitty --session sessions/main"))
 hl.bind(mainMod .. " + SHIFT + r", hl.dsp.exec_cmd("hyprctl reload"))
@@ -45,18 +51,17 @@ hl.bind("ALT + SHIFT + 8", hl.dsp.window.move({ workspace = 8, follow = false })
 hl.bind("ALT + SHIFT + 9", hl.dsp.window.move({ workspace = 9, follow = false }))
 hl.bind("ALT + SHIFT + 0", hl.dsp.window.move({ workspace = 10, follow = false }))
 
-hl.bind(mainMod .. " + E", hl.dsp.submap("resize"))
+hl.bind(mainMod .. " + e", hl.dsp.submap("resize"))
 hl.define_submap("resize", function()
-    hl.bind("l", hl.dsp.window.resize({ x = 10, y = 0, relative = true }), { repeating = true })
-    hl.bind("h", hl.dsp.window.resize({ x = -10, y = 0, relative = true }), { repeating = true })
-    hl.bind("k", hl.dsp.window.resize({ x = 0, y = 10, relative = true }), { repeating = true })
-    hl.bind("j", hl.dsp.window.resize({ x = 0, y = -10, relative = true }), { repeating = true })
-    hl.bind("SHIFT + l", hl.dsp.window.resize({ x = 20, y = 0, relative = true }), { repeating = true })
-    hl.bind("SHIFT + h", hl.dsp.window.resize({ x = -20, y = 0, relative = true }), { repeating = true })
-    hl.bind("SHIFT + k", hl.dsp.window.resize({ x = 0, y = 20, relative = true }), { repeating = true })
-    hl.bind("SHIFT + j", hl.dsp.window.resize({ x = 0, y = -20, relative = true }), { repeating = true })
+    hl.bind("l", hl.dsp.window.resize(resize(10, 0)), repeating)
+    hl.bind("h", hl.dsp.window.resize(resize(-10, 0)), repeating)
+    hl.bind("k", hl.dsp.window.resize(resize(0, 10)), repeating)
+    hl.bind("j", hl.dsp.window.resize(resize(0, -10)), repeating)
+    hl.bind("SHIFT + l", hl.dsp.window.resize(resize(20, 0)), repeating)
+    hl.bind("SHIFT + h", hl.dsp.window.resize(resize(-20, 0)), repeating)
+    hl.bind("SHIFT + k", hl.dsp.window.resize(resize(0, 20)), repeating)
+    hl.bind("SHIFT + j", hl.dsp.window.resize(resize(0, -20)), repeating)
     hl.bind("escape", hl.dsp.submap("reset"))
-    hl.bind(mainMod .. " + E", hl.dsp.submap("reset"))
 end)
 
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
@@ -73,12 +78,13 @@ hl.bind("CONTROL + SHIFT + 5", hl.dsp.exec_cmd("hyprshot -z -o ~/Pictures/Screen
 -- Media Keys
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd(scriptDir .. "/play-pause"))
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"))
--- hl.bind("XF86AudioPrevious", hl.dsp.exec_cmd("playerctl previous"))
+hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"))
 hl.bind("SHIFT + XF86AudioRaiseVolume", hl.dsp.exec_cmd(scriptDir .. "/resync_a2dp"))
 hl.bind("SHIFT + XF86AudioLowerVolume", hl.dsp.exec_cmd(scriptDir .. "/resync_hfp"))
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(scriptDir .. "/volume up"))
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(scriptDir .. "/volume down"))
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(scriptDir .. "/volume up"), repeating)
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(scriptDir .. "/volume down"), repeating)
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd(scriptDir .. "/volume mute"))
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set +5%"))
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%-"))
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set +5%"), repeating)
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%-"), repeating)
 hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"))
+hl.bind("F24", hl.dsp.exec_cmd("voxtype record toggle"))

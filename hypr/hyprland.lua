@@ -11,11 +11,12 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("nextcloud --background")
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
     hl.exec_cmd("quickshell -c lg")
-    hl.exec_cmd("kitty", { workspace = 1 })
+    hl.exec_cmd("kitty --session sessions/main", { workspace = 1 })
     hl.exec_cmd("cursor-clip --daemon")
     hl.exec_cmd("hyprctl setcursor WinSur-dark-cursors 24")
     hl.exec_cmd("batsignal -b -w 20 -c 10 -d 5")
     hl.exec_cmd("gnome-keyring-daemon --start --components=secrets,pkcs11")
+    hl.exec_cmd("kdeconnectd")
 end)
 
 hl.config({
@@ -49,25 +50,42 @@ hl.config({
     general = {
         gaps_in = 5,
         gaps_out = 10,
-        border_size = 0,
         layout = "master",
         allow_tearing = true,
         resize_on_border = true,
+
+        border_size = 1,
+        col = {
+            inactive_border = "0xee444444",
+            active_border = "0xee666666",
+        },
     },
 
     layout = {
-        single_window_aspect_ratio = { 1.58, 1 },
+        single_window_aspect_ratio = { 13, 8 },
+        single_window_aspect_ratio_tolerance = 0,
     },
 
     decoration = {
-        rounding = 10,
+        rounding = 15,
 
         blur = {
             enabled = true,
             size = 3,
             passes = 2,
             popups = true,
+            popups_ignorealpha = 0.1,
         },
+
+        shadow = {
+            enabled = false,
+        },
+
+        -- glow = {
+        --     enabled = true,
+        --     color = "0x66666644",
+        --     range = 6,
+        -- },
     },
 
     animations = {

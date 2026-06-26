@@ -25,6 +25,7 @@ bind --mode insert \co edit_command_buffer
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.local/share/gem/ruby/3.4.0/bin
+fish_add_path $HOME/.local/share/flutter/bin
 
 # Nix
 if command -v nix > /dev/null
@@ -50,6 +51,8 @@ if status is-interactive
         starship init fish | source
         enable_transience
     end
+
+    # tide configure --auto --style=Lean --prompt_colors='True color' --show_time='24-hour format' --lean_prompt_height='Two lines' --prompt_connection=Solid --prompt_connection_andor_frame_color=Darkest --prompt_spacing=Sparse --icons='Many icons' --transient=Yes
 
     if command -v atuin > /dev/null
         atuin init fish --disable-up-arrow | source
