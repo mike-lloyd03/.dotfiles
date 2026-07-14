@@ -65,6 +65,7 @@ if status is-interactive
     if command -v direnv &> /dev/null
         direnv hook fish | source
     end
+
 end
 
 # Added by LM Studio CLI (lms)

@@ -37,6 +37,7 @@ return {
                 --     },
                 -- },
                 gopls = {},
+                nixd = {},
                 pyright = {},
                 ruff = {},
                 svelte = {
