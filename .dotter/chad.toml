@@ -5,8 +5,8 @@ packages = [
   "lsd",
   "metapac",
   "nvim",
-  "quickshell",
+  "niri",
+  "noctalia",
   "starship",
-  "swaync",
   "tealdeer",
 ]

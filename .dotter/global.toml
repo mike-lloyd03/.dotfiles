@@ -37,6 +37,12 @@ lsd = { target = "~/.config/lsd", type = "symbolic", recurse = false }
 [metapac.files]
 metapac = { target = "~/.config/metapac", type = "symbolic", recurse = false }
 
+[niri.files]
+niri = { target = "~/.config/niri", type = "symbolic", recurse = false }
+
+[noctalia.files]
+noctalia = { target = "~/.config/noctalia", type = "symbolic", recurse = false }
+
 [nushell.files]
 nushell = "~/.config/nushell"
 

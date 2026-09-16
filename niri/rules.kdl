@@ -1,0 +1,31 @@
+window-rule {
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
+layer-rule {
+    match namespace="^noctalia-(notification|bar|background|launcher-overlay|attached-panel|panel|osd).*$"
+    background-effect {
+        xray false
+    }
+}
+
+layer-rule {
+    match namespace="kitty-quick-access"
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
+layer-rule {
+    match namespace="^noctalia-wallpaper*"
+    place-within-backdrop true
+}
+
+window-rule {
+    geometry-corner-radius 15
+    clip-to-geometry true
+}

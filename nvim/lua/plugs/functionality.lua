@@ -60,7 +60,7 @@ return {
                 typescript = { "biome" },
                 typescriptreact = { "biome" },
                 toml = { "tombi" },
-                typst = { "typstfmt" },
+                typst = { "typstyle" },
                 vue = { "prettierd", "prettier", stop_after_first = true },
                 yaml = { "prettierd", "prettier", stop_after_first = true },
                 zsh = { "shfmt" },
@@ -155,6 +155,7 @@ return {
             markdown = true,
         },
     },
+    { "nvim-mini/mini.ai", version = false },
     {
         "folke/trouble.nvim",
         dependencies = {

@@ -26,3 +26,19 @@ hl.layer_rule({
     blur = false,
     no_anim = true,
 })
+
+hl.layer_rule({
+    name = "noctalia",
+    match = { namespace = "noctalia-background-.*$" },
+    ignore_alpha = 0.5,
+    blur = true,
+    blur_popups = true,
+})
+
+hl.layer_rule({
+    name = "noctalia",
+    match = { namespace = "^noctalia-(bar-.+|notification|dock|panel|attached-panel|osd)$" },
+    ignore_alpha = 0.5,
+    blur = true,
+    blur_popups = true,
+})

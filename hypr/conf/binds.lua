@@ -1,5 +1,6 @@
 local mainMod = "META"
 local scriptDir = "$HOME/.config/hypr/scripts"
+local ipc = "noctalia msg"
 
 local function resize(x, y)
     return { x = x, y = y, relative = true }
@@ -15,9 +16,13 @@ hl.bind("CONTROL + ALT + q", hl.dsp.exec_cmd("hyprctl kill"))
 hl.bind("CONTROL + SHIFT + x", hl.dsp.exec_cmd("hyprshutdown"))
 hl.bind(mainMod .. "+ f", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + p", hl.dsp.window.pin({ action = "toggle" }))
-hl.bind("CONTROL + space", hl.dsp.exec_cmd("fuzzel"))
-hl.bind("CONTROL + ALT + V", hl.dsp.exec_cmd("cursor-clip"))
-hl.bind("CONTROL + SHIFT + d", hl.dsp.exec_cmd("hyprctl dpms on"))
+-- hl.bind("CONTROL + space", hl.dsp.exec_cmd("fuzzel"))
+-- hl.bind("CONTROL + space", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call launcher toggle"))
+hl.bind("CONTROL + space", hl.dsp.exec_cmd(ipc .. " panel-toggle launcher"))
+-- hl.bind("CONTROL + ALT + V", hl.dsp.exec_cmd("cursor-clip"))
+-- hl.bind("CONTROL + ALT + V", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call launcher clipboard"))
+hl.bind("CONTROL + ALT + V", hl.dsp.exec_cmd(ipc .. " panel-toggle clipboard"))
+hl.bind("CONTROL + SHIFT + d", hl.dsp.exec_cmd(scriptDir .. "/wake-internal-display"))
 
 hl.bind("ALT+ TAB", hl.dsp.focus({ last = true }))
 hl.bind(mainMod .. " + return", hl.dsp.layout("swapwithmaster"))
@@ -79,12 +84,26 @@ hl.bind("CONTROL + SHIFT + 5", hl.dsp.exec_cmd("hyprshot -z -o ~/Pictures/Screen
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd(scriptDir .. "/play-pause"))
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"))
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"))
-hl.bind("SHIFT + XF86AudioRaiseVolume", hl.dsp.exec_cmd(scriptDir .. "/resync_a2dp"))
-hl.bind("SHIFT + XF86AudioLowerVolume", hl.dsp.exec_cmd(scriptDir .. "/resync_hfp"))
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(scriptDir .. "/volume up"), repeating)
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(scriptDir .. "/volume down"), repeating)
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd(scriptDir .. "/volume mute"))
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set +5%"), repeating)
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%-"), repeating)
+-- hl.bind("SHIFT + XF86AudioRaiseVolume", hl.dsp.exec_cmd(scriptDir .. "/resync_a2dp"))
+-- hl.bind("SHIFT + XF86AudioLowerVolume", hl.dsp.exec_cmd(scriptDir .. "/resync_hfp"))
+-- hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(scriptDir .. "/volume up"), repeating)
+-- hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(scriptDir .. "/volume down"), repeating)
+-- hl.bind("XF86AudioMute", hl.dsp.exec_cmd(scriptDir .. "/volume mute"))
+-- hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set +5%"), repeating)
+-- hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%-"), repeating)
 hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"))
 hl.bind("F24", hl.dsp.exec_cmd("voxtype record toggle"))
+
+-- Noctalia v4
+-- hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call volume increase"), repeating)
+-- hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call volume decrease"), repeating)
+-- hl.bind("XF86AudioMute", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call volume muteOutput"))
+-- hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call brightness increase"), repeating)
+-- hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call brightness decrease"), repeating)
+
+-- Noctalia v5
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. " volume-up"), repeating)
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. " volume-down"), repeating)
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. " volume-mute"), repeating)
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. " brightness-up"), repeating)
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. " brightness-down"), repeating)

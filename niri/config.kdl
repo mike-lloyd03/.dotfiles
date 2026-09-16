@@ -1,0 +1,145 @@
+include "binds.kdl"
+include "rules.kdl"
+
+spawn-at-startup "noctalia"
+spawn-at-startup "kanshi" 
+spawn-at-startup "udiskie"
+spawn-at-startup "nextcloud" "--background" 
+spawn-at-startup "systemctl" "--user" "start" "hyprpolkitagent" 
+spawn-at-startup "kitty" "--session sessions/main"
+spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
+spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
+spawn-at-startup "batsignal" "-b" "-w" "20" "-c" "10" "-d" "5"
+spawn-at-startup "gnome-keyring-daemon" "--start" "--components=secrets,pkcs11"
+spawn-at-startup "kdeconnectd"
+// spawn-at-startup "python" "/home/mike/.config/niri/scripts/tile_to_n.py"
+spawn-at-startup "irene"
+spawn-at-startup "wl-clip-persist" "--clipboard" "regular"
+
+workspace "terminal"
+workspace "browser"
+workspace "work1"
+workspace "comms"
+workspace "work2"
+workspace "misc"
+
+prefer-no-csd
+
+layout {
+    always-center-single-column
+    gaps 10
+    // default-column-width { proportion 1.0; }
+    background-color "transparent"
+
+    shadow {
+        on
+    }
+
+    preset-column-widths {
+        proportion 1.0
+        proportion 0.5
+        proportion 0.33333
+        proportion 0.66667
+    }
+
+
+    focus-ring {
+        width 0
+        active-color "999999"
+        inactive-color "444444"
+    }
+}
+
+input {
+    mod-key "Super"
+
+    keyboard {
+        xkb {
+            options "compose:ralt"
+        }
+
+        repeat-delay 250
+        repeat-rate 30
+    }
+
+    touchpad {
+        dwt // disable while typing
+        click-method "clickfinger"
+        accel-speed 0.6
+        scroll-factor 0.6
+    }
+
+    mouse {
+        scroll-factor 1.0
+    }
+}
+
+output "eDP-2" {
+    mode "2560x1600@165.000"
+    scale 1.25
+    // variable-refresh-rate
+}
+
+output "Microstep MSI MAG341CQ MA0H051300859" {
+    layout {
+
+     // default-column-width { fixed 2400; }
+     default-column-width { proportion 0.5; }
+
+    preset-column-widths {
+        fixed 2400
+        proportion 0.5
+    }
+
+     // struts {
+     //     left 520
+     //     right 520
+     // }
+    }
+}
+
+overview {
+    zoom 0.25
+
+    workspace-shadow {
+        off
+        // on
+        // softness 0
+        // spread 2
+        // offset x=0 y=0
+    }
+}
+
+blur {
+    passes 2
+    offset 2
+    noise 0.02
+    saturation 1
+}
+
+
+switch-events {
+    lid-close { spawn "noctalia" "msg" "session" "lock-and-suspend"; }
+}
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+
+recent-windows {
+    open-delay-ms 200
+
+    binds {
+        Alt+Tab { next-window; }
+        Alt+Shift+Tab { previous-window; }
+        Alt+grave { next-window filter="app-id"; }
+        Alt+Shift+grave { previous-window filter="app-id"; }
+    }
+}
+
+debug {
+    // Allows notification actions and window activation from Noctalia.
+    honor-xdg-activation-with-invalid-serial
+}
+

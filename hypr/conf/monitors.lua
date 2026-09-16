@@ -3,7 +3,7 @@ hl.monitor({
     mode = "2560x1600@165",
     position = "auto",
     scale = 1.25,
-    vrr = 3,
+    vrr = 0,
 })
 
 hl.monitor({
