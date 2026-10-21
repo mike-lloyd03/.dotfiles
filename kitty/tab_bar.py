@@ -1,5 +1,5 @@
 from kitty.boss import get_boss
-from kitty.fast_data_types import Screen
+from kitty.fast_data_types import Screen, get_options
 from kitty.rgb import to_color
 from kitty.tab_bar import (
     DrawData,
@@ -8,9 +8,11 @@ from kitty.tab_bar import (
     as_rgb,
 )
 
+opts = get_options()
 WHITE = to_color("#fff")
-ORANGE = to_color("#e2b86b")
-TEXT = to_color("#1a1c23")
+PRIMARY = opts.color4
+WARNING = opts.color3
+INACTIVE_BG = opts.color8
 
 
 def draw_tab_n(
@@ -42,7 +44,7 @@ def draw_tab(
     tab_title = tab.title if len(tab.title) < 16 else tab.title[:16].rstrip() + "…"
 
     if tab.is_active:
-        index_bg = as_rgb(int(draw_data.active_bg))
+        index_bg = as_rgb(int(PRIMARY))
         index_fg = as_rgb(int(draw_data.active_fg))
         tab_bg = as_rgb(int(WHITE))
         tab_fg = index_fg
@@ -106,9 +108,9 @@ def _draw_right_status(draw_data: DrawData, screen: Screen, tab: TabBarData) -> 
             mode = "pending"
 
         cells = [
-            (ORANGE, draw_data.default_bg, ""),
-            (TEXT, ORANGE, f" {mode} "),
-            (ORANGE, WHITE, ""),
+            (WARNING, draw_data.default_bg, ""),
+            (opts.background, WARNING, f" {mode} "),
+            (WARNING, WHITE, ""),
             (draw_data.active_fg, WHITE, f" {layout_name} "),
         ]
     else:
@@ -118,8 +120,8 @@ def _draw_right_status(draw_data: DrawData, screen: Screen, tab: TabBarData) -> 
         ]
 
     if session_name:
-        cells.append((draw_data.active_bg, WHITE, ""))
-        cells.append((draw_data.active_fg, draw_data.active_bg, f" {session_name} "))
+        cells.append((PRIMARY, WHITE, ""))
+        cells.append((draw_data.active_fg, PRIMARY, f" {session_name} "))
 
     right_status_length = 0
     for _, _, cell in cells:
