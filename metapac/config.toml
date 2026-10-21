@@ -1,4 +1,4 @@
-enabled_backends = ["arch", "cargo", "flatpak"]
+enabled_backends = ["arch", "cargo", "flatpak", "uv"]
 hostname_groups_enabled = true
 
 [arch]
@@ -11,4 +11,4 @@ binstall = true
 
 [hostname_groups]
 kratos = ["default", "hyprland", "gnome", "cachyos-kernel", "linux-kernel"]
-chad = ["default", "hyprland", "cachyos"]
+chad = ["default", "niri", "cachyos"]

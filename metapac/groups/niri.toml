@@ -1,0 +1,17 @@
+arch = { packages = [
+  "adw-gtk-theme",
+  "amdgpu_top",
+  "calf",
+  "cava",
+  "dankcalendar-bin",
+  "dms-shell-git",
+  "greetd-dms-greeter-git",
+  "gtk4-layer-shell",
+  "kanshi",
+  "niri-git",
+  "nwg-look",
+  "qtengine",
+  "udiskie",
+  "wl-clip-persist",
+  "xwayland-satellite",
+] }
