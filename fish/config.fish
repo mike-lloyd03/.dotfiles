@@ -22,14 +22,14 @@ bind --mode default \co edit_command_buffer
 bind --mode insert \co edit_command_buffer
 
 # Path
-fish_add_path $HOME/.local/bin
-fish_add_path $HOME/.cargo/bin
-fish_add_path $HOME/.local/share/gem/ruby/3.4.0/bin
-fish_add_path $HOME/.local/share/flutter/bin
+fish_add_path -g $HOME/.local/bin
+fish_add_path -g $HOME/.cargo/bin
+fish_add_path -g $HOME/.local/share/gem/ruby/3.4.0/bin
+fish_add_path -g $HOME/.local/share/flutter/bin
 
 # Nix
 if command -v nix > /dev/null
-    fish_add_path $HOME/.nix-profile/bin
+    fish_add_path -g $HOME/.nix-profile/bin
 end
 
 # Prompt

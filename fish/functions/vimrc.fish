@@ -13,5 +13,3 @@ function vimrc
         echo "$edit_file.lua not found in nvim config directory"
     end
 end
-
-complete -c vimrc -a "$(ls $nvim_dir/lua/ | string replace '.lua' '')" -f

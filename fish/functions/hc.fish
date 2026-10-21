@@ -13,5 +13,3 @@ function hc
         echo "$edit_file.lua not found in hypr config directory"
     end
 end
-
-complete -c hc -a "$(ls $hypr_dir/conf/ | string replace '.lua' '')" -f

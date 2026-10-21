@@ -11,6 +11,7 @@ command -v journalctl &>/dev/null && alias jc='sudo journalctl -xe'
 alias svenv="source .venv/bin/activate.fish"
 abbr -a decode base64 -d
 abbr -a hyprconf nvim ~/.config/hypr/hyprland.conf
+alias clock=clockify-cli
 
 if  command -v lsd &>/dev/null 
     alias ls="lsd --group-directories-first"
@@ -62,6 +63,28 @@ abbr -a gcob "git checkout -b"
 abbr -a gb "git branch"
 abbr -a gsu "git submodule update --recursive --remote"
 abbr -a gf "git fetch"
+
+# jj
+abbr -a j jj
+abbr -a js "jj status"
+abbr -a jl "jj log"
+abbr -a jd "jj diff"
+abbr -a jci "jj commit"
+abbr -a jcm --set-cursor 'jj commit -m "%"'
+abbr -a jdm --set-cursor 'jj describe -m "%"'
+abbr -a jn "jj new"
+abbr -a je "jj edit"
+abbr -a jsq "jj squash"
+abbr -a jsqi "jj squash -i"
+abbr -a jsp "jj split"
+abbr -a jab "jj abandon"
+abbr -a jrs "jj restore"
+abbr -a jr "jj rebase"
+abbr -a jundo "jj undo"
+abbr -a jf "jj git fetch"
+abbr -a jp "jj git push"
+abbr -a jb "jj bookmark"
+abbr -a jt "jj tug"
 
 # systemctl
 alias sc="sudo systemctl"

@@ -13,5 +13,3 @@ function fishconf
         echo "$edit_file.fish not found in fish config directory"
     end
 end
-
-complete -c fishconf -a "$(ls ~/.config/fish/ | grep -P '.*\.fish$' | string replace '.fish' '')" -f

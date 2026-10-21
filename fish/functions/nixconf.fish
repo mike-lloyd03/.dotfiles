@@ -1,16 +1,16 @@
 function nixconf
-    set conf_dir "/etc/nixos"
-    set subcommand "$argv[1]"
+    set nix_dir "$HOME/.config/nixos"
+    set edit_file "$argv[1]"
 
-    if [ $subcommand = "" ]
-        pushd $conf_dir >/dev/null ; sudo nvim "$conf_dir/configuration.nix" ; popd >/dev/null
-    else if [ $subcommand = "rebuild" ]
-        sudo nixos-rebuild switch
-    else if [ $subcommand = "flake" ]
-        pushd $conf_dir >/dev/null ; sudo nvim "$conf_dir/flake.nix" ; popd >/dev/null
-    else if [ $subcommand = "home" ]
-        pushd $conf_dir >/dev/null ; sudo nvim "$conf_dir/home.nix" ; popd >/dev/null
+    if [ "$edit_file" = "" ]
+        pushd $nix_dir >/dev/null && nvim "$nix_dir/configuration.nix" && popd >/dev/null
+        return 0
+    end
+
+    if [ -f "$nix_dir/$edit_file.nix" ]
+        pushd $nix_dir >/dev/null && nvim "$nix_dir/$edit_file.nix" && popd >/dev/null
+    else
+        echo "$edit_file.nix not found in nixos config directory"
+        return 1
     end
 end
-
-complete -c nixconf -f -a "rebuild flake home"

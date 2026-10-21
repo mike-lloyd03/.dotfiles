@@ -16,5 +16,3 @@ function unzipd
 
     unzip -d "$OUT_DIR" "$ZIP_FILE"
 end
-
-complete -c unzipd -k -a "$(__fish_complete_suffix .zip)"
