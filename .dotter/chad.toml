@@ -1,6 +1,7 @@
 packages = [
   "fish",
   "git",
+  "jj",
   "kitty",
   "lsd",
   "metapac",

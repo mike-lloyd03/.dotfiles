@@ -84,7 +84,7 @@ abbr -a jundo "jj undo"
 abbr -a jf "jj git fetch"
 abbr -a jp "jj git push"
 abbr -a jb "jj bookmark"
-abbr -a jt "jj tug"
+abbr -a jba "jj bookmark advance"
 
 # systemctl
 alias sc="sudo systemctl"

@@ -1,0 +1,5 @@
+# Identity lives in ~/.config/jj/conf.d/user.toml (not tracked)
+
+[revsets]
+# Advance bookmarks to the last finished commit, not the working-copy change
+bookmark-advance-to = "@-"

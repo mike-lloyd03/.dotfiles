@@ -10,6 +10,9 @@ fish = { target = "~/.config/fish", type = "symbolic", recurse = false }
 [git.files]
 git = { target = "~/.config/git", type = "symbolic", recurse = false }
 
+[jj.files]
+"jj/config.toml" = { target = "~/.config/jj/config.toml", type = "symbolic" }
+
 [helix.files]
 helix = { target = "~/.config/helix", type = "symbolic", recurse = false }
 
