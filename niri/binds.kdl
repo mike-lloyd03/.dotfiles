@@ -1,50 +1,106 @@
 binds {
-    Ctrl+Shift+Return { spawn "kitty" "--session" "sessions/main"; }
-    Ctrl+Shift+w { close-window; }
-    Mod+f { toggle-window-floating; }
-    Ctrl+Space { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
-    Ctrl+Alt+v { spawn "noctalia" "msg" "panel-toggle" "clipboard"; }
-    Mod+Shift+x { quit; }
-
-    Mod+m { maximize-column; }
+    Ctrl+Shift+Return {
+        spawn "kitty" "--session" "sessions/main"
+    }
+    Ctrl+Shift+w {
+        close-window
+    }
+    Mod+f {
+        toggle-window-floating
+    }
+    // Ctrl+Space { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+    // Ctrl+Alt+v { spawn "noctalia" "msg" "panel-toggle" "clipboard"; }
+    Ctrl+Space {
+        spawn "dms" "ipc" "launcher" "toggle"
+    }
+    Ctrl+Alt+v {
+        spawn "dms" "ipc" "clipboard" "toggle"
+    }
+    Mod+Shift+x {
+        quit
+    }
+    Mod+m {
+        maximize-column
+    }
     // Mod+m { maximize-window-to-edges; }
-    Mod+Shift+m { fullscreen-window; }
-    Mod+Alt+m { expel-window-from-column; }
-
+    Mod+Shift+m {
+        fullscreen-window
+    }
+    Mod+Alt+m {
+        expel-window-from-column
+    }
     // Alt+tab { focus-window-previous; }
-    Mod+h { focus-column-left; }
-    Mod+l { focus-column-right; }
-    Mod+j { focus-workspace-down; }
-    Mod+k { focus-workspace-up; }
-    Mod+Shift+k { toggle-overview; }
-
-    Alt+1 { focus-workspace "terminal"; }
-    Alt+2 { focus-workspace "browser"; }
-    Alt+3 { focus-workspace "work1"; }
-    Alt+4 { focus-workspace "comms"; }
-    Alt+5 { focus-workspace "work2"; }
-    Alt+6 { focus-workspace "misc"; }
-
-    Alt+Shift+1 { move-window-to-workspace "terminal"; }
-    Alt+Shift+2 { move-window-to-workspace "browser"; }
-    Alt+Shift+3 { move-window-to-workspace "work1"; }
-    Alt+Shift+4 { move-window-to-workspace "comms"; }
-    Alt+Shift+5 { move-window-to-workspace "work2"; }
-    Alt+Shift+6 { move-window-to-workspace "misc"; }
-
-    Alt+T { spawn "kitten" "quick-access-terminal" "--detach=yes"; }
-    Alt+Shift+T { spawn-sh "procs kitty-quick-access --json | jq -r '.[0].PID' | xargs kill -9"; }
-
-
-    Mod+R { switch-preset-column-width; }
-    Mod+Shift+R { switch-preset-column-width-back; }
-
+    Mod+h {
+        focus-column-left
+    }
+    Mod+l {
+        focus-column-right
+    }
+    Mod+j {
+        focus-workspace-down
+    }
+    Mod+k {
+        focus-workspace-up
+    }
+    Mod+Shift+k {
+        toggle-overview
+    }
+    Alt+1 {
+        focus-workspace "terminal"
+    }
+    Alt+2 {
+        focus-workspace "browser"
+    }
+    Alt+3 {
+        focus-workspace "work1"
+    }
+    Alt+4 {
+        focus-workspace "comms"
+    }
+    Alt+5 {
+        focus-workspace "work2"
+    }
+    Alt+6 {
+        focus-workspace "misc"
+    }
+    Alt+Shift+1 {
+        move-window-to-workspace "terminal"
+    }
+    Alt+Shift+2 {
+        move-window-to-workspace "browser"
+    }
+    Alt+Shift+3 {
+        move-window-to-workspace "work1"
+    }
+    Alt+Shift+4 {
+        move-window-to-workspace "comms"
+    }
+    Alt+Shift+5 {
+        move-window-to-workspace "work2"
+    }
+    Alt+Shift+6 {
+        move-window-to-workspace "misc"
+    }
+    Alt+T {
+        spawn "kitten" "quick-access-terminal" "--detach=yes"
+    }
+    Alt+Shift+T {
+        spawn-sh "procs kitty-quick-access --json | jq -r '.[0].PID' | xargs kill -9"
+    }
+    Mod+R {
+        switch-preset-column-width
+    }
+    Mod+Shift+R {
+        switch-preset-column-width-back
+    }
     //
     // (mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
     // (mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
     //
     //
-    Control+Shift+4 { screenshot; }
+    Control+Shift+4 {
+        screenshot
+    }
     // ("Ctrl + Shift + 4", hl.dsp.exec_cmd("hyprshot -z -o ~/Pictures/Screenshots -m region"))
     // ("Ctrl + Shift + 5", hl.dsp.exec_cmd("hyprshot -z -o ~/Pictures/Screenshots -m window"))
     //
@@ -55,20 +111,68 @@ binds {
     // ("F24", hl.dsp.exec_cmd("voxtype record toggle"))
     //
     // -- Noctalia v5
-    XF86AudioRaiseVolume { spawn "noctalia" "msg" "volume-up"; }
-    XF86AudioLowerVolume { spawn "noctalia" "msg" "volume-down"; }
-    XF86AudioMute { spawn "noctalia" "msg" "volume-mute"; }
-    XF86MonBrightnessUp { spawn "noctalia" "msg" "brightness-up"; }
-    XF86MonBrightnessDown { spawn "noctalia" "msg" "brightness-down"; }
-    XF86AudioMicMute { spawn "noctalia" "msg" "mic-mute"; }
-    XF86AudioPlay { spawn "noctalia" "msg" "media" "toggle"; }
-    XF86AudioNext { spawn "noctalia" "msg" "media" "next"; }
-    XF86AudioPrev { spawn "noctalia" "msg" "media" "previous"; }
-
-    Mod+WheelScrollDown { focus-workspace-down; }
-    Mod+WheelScrollUp { focus-workspace-up; }
-    Mod+WheelScrollRight { focus-column-right; }
-    Mod+WheelScrollLeft { focus-column-left; }
-
-    Mod+Shift+G { spawn "sudo" "-n" "/usr/local/bin/wake-dgpu"; }
+    // XF86AudioRaiseVolume { spawn "noctalia" "msg" "volume-up"; }
+    // XF86AudioLowerVolume { spawn "noctalia" "msg" "volume-down"; }
+    // XF86AudioMute { spawn "noctalia" "msg" "volume-mute"; }
+    // XF86MonBrightnessUp { spawn "noctalia" "msg" "brightness-up"; }
+    // XF86MonBrightnessDown { spawn "noctalia" "msg" "brightness-down"; }
+    // XF86AudioMicMute { spawn "noctalia" "msg" "mic-mute"; }
+    // XF86AudioPlay { spawn "noctalia" "msg" "media" "toggle"; }
+    // XF86AudioNext { spawn "noctalia" "msg" "media" "next"; }
+    // XF86AudioPrev { spawn "noctalia" "msg" "media" "previous"; }
+    XF86AudioRaiseVolume {
+        spawn "dms" "ipc" "audio" "increment" "5"
+    }
+    XF86AudioLowerVolume {
+        spawn "dms" "ipc" "audio" "decrement" "5"
+    }
+    XF86AudioMute {
+        spawn "dms" "ipc" "audio" "mute"
+    }
+    XF86MonBrightnessUp {
+        spawn "dms" "ipc" "brightness" "increment" "10"
+    }
+    XF86MonBrightnessDown {
+        spawn "dms" "ipc" "brightness" "decrement" "10"
+    }
+    XF86AudioMicMute {
+        spawn "dms" "ipc" "audio" "micmute"
+    }
+    XF86AudioPlay {
+        spawn "dms" "ipc" "mpris" "playPause"
+    }
+    XF86AudioNext {
+        spawn "dms" "ipc" "mpris" "next"
+    }
+    XF86AudioPrev {
+        spawn "dms" "ipc" "mpris" "pause"
+    }
+    Mod+WheelScrollDown {
+        focus-workspace-down
+    }
+    Mod+WheelScrollUp {
+        focus-workspace-up
+    }
+    Mod+WheelScrollRight {
+        focus-column-right
+    }
+    Mod+WheelScrollLeft {
+        focus-column-left
+    }
+    Mod+Shift+G {
+        spawn "sudo" "-n" "/usr/local/bin/wake-dgpu"
+    }
+    Mod+C {
+        spawn "miri" "action" "cycle-focused-workspace-mode"
+    }
+    Mod+Shift+Ctrl+T {
+        toggle-debug-tint
+    }
+    F24 {
+        spawn "voxtype" "record" "toggle"
+    }
+ // F24 {
+    //     spawn "handy" "--toggle-transcription"
+    // }
 }
+

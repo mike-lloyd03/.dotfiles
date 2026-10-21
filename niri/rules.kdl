@@ -5,6 +5,11 @@ window-rule {
     }
 }
 
+window-rule {
+    match app-id="org.gnome.NautilusPreviewer"
+    open-floating true
+}
+
 layer-rule {
     match namespace="^noctalia-(notification|bar|background|launcher-overlay|attached-panel|panel|osd).*$"
     background-effect {
@@ -22,6 +27,11 @@ layer-rule {
 
 layer-rule {
     match namespace="^noctalia-wallpaper*"
+    place-within-backdrop true
+}
+
+layer-rule {
+    match namespace="^quickshell$"
     place-within-backdrop true
 }
 

@@ -1,7 +1,8 @@
 include "binds.kdl"
 include "rules.kdl"
 
-spawn-at-startup "noctalia"
+// spawn-at-startup "noctalia"
+spawn-at-startup "dms" "run"
 spawn-at-startup "kanshi" 
 spawn-at-startup "udiskie"
 spawn-at-startup "nextcloud" "--background" 
@@ -13,8 +14,10 @@ spawn-at-startup "batsignal" "-b" "-w" "20" "-c" "10" "-d" "5"
 spawn-at-startup "gnome-keyring-daemon" "--start" "--components=secrets,pkcs11"
 spawn-at-startup "kdeconnectd"
 // spawn-at-startup "python" "/home/mike/.config/niri/scripts/tile_to_n.py"
-spawn-at-startup "irene"
+// spawn-at-startup "irene"
+spawn-at-startup "miri" "service" "start"
 spawn-at-startup "wl-clip-persist" "--clipboard" "regular"
+spawn-at-startup "voxtype" "daemon"
 
 workspace "terminal"
 workspace "browser"
@@ -81,13 +84,15 @@ output "eDP-2" {
 }
 
 output "Microstep MSI MAG341CQ MA0H051300859" {
-    layout {
+    mode "3440x1440@99.998"
+    scale 1.15
 
+    layout {
      // default-column-width { fixed 2400; }
-     default-column-width { proportion 0.5; }
+    default-column-width { proportion 0.5; }
 
     preset-column-widths {
-        fixed 2400
+                fixed 2400
         proportion 0.5
     }
 
@@ -96,6 +101,11 @@ output "Microstep MSI MAG341CQ MA0H051300859" {
      //     right 520
      // }
     }
+}
+
+environment {
+  QT_QPA_PLATFORMTHEME "qtengine"
+  QT_QPA_PLATFORMTHEME_QT6 "qtengine"
 }
 
 overview {
@@ -118,9 +128,9 @@ blur {
 }
 
 
-switch-events {
-    lid-close { spawn "noctalia" "msg" "session" "lock-and-suspend"; }
-}
+// switch-events {
+//     lid-close { spawn "noctalia" "msg" "session" "lock-and-suspend"; }
+// }
 
 hotkey-overlay {
     skip-at-startup
@@ -141,5 +151,10 @@ recent-windows {
 debug {
     // Allows notification actions and window activation from Noctalia.
     honor-xdg-activation-with-invalid-serial
+    enable-overlay-planes
 }
 
+
+// DMS Include Configs
+include "dms/layout.kdl"
+include "dms/cursor.kdl"
