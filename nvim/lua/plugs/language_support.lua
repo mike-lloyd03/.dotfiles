@@ -28,10 +28,16 @@ return {
                 notification_style = "native",
             },
             lsp = {
+                init_options = {
+                    flutterOutline = false,
+                },
                 on_attach = function(client, bufnr)
                     require("nvim-navic").attach(client, bufnr)
                 end,
             },
+        },
+        keys = {
+            { "<space>e", "<CMD>FlutterOutlineToggle<CR>", desc = "Flutter Outline" },
         },
     },
     {

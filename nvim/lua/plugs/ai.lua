@@ -99,25 +99,29 @@ return {
     {
         "coder/claudecode.nvim",
         dependencies = { "folke/snacks.nvim" },
-        config = true,
+        config = {
+            diff_opts = {
+                keep_terminal_focus = true,
+            },
+        },
         keys = {
             { "<space>v", nil, desc = "AI/Claude Code" },
-            { "<space>vg", "<cmd>ClaudeCode --continue<cr>", desc = "Toggle Claude" },
-            { "<space>vi", "<cmd>ClaudeCodeFocus --continue<cr>", desc = "Focus Claude" },
+            { "<space>vg", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
+            { "<space>vi", "<cmd>ClaudeCodeFocus<cr>", desc = "Focus Claude" },
             { "<space>vr", "<cmd>ClaudeCode --resume<cr>", desc = "Resume Claude" },
-            { "<space>vC", "<cmd>ClaudeCode --continue<cr>", desc = "Continue Claude" },
+            { "<space>vc", "<cmd>ClaudeCode --continue<cr>", desc = "Continue Claude" },
             { "<space>vm", "<cmd>ClaudeCodeSelectModel<cr>", desc = "Select Claude model" },
-            -- { "<leader>ab", "<cmd>ClaudeCodeAdd %<cr>", desc = "Add current buffer" },
-            -- { "<leader>as", "<cmd>ClaudeCodeSend<cr>", mode = "v", desc = "Send to Claude" },
+            { "<space>vb", "<cmd>ClaudeCodeAdd %<cr>", desc = "Add current buffer" },
+            { "<space>vs", "<cmd>ClaudeCodeSend<cr>", mode = "v", desc = "Send to Claude" },
             -- {
-            --   "<leader>as",
+            --   "<leader>vs",
             --   "<cmd>ClaudeCodeTreeAdd<cr>",
             --   desc = "Add file",
             --   ft = { "NvimTree", "neo-tree", "oil", "minifiles", "netrw" },
             -- },
             -- Diff management
-            -- { "<leader>aa", "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Accept diff" },
-            -- { "<leader>ad", "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Deny diff" },
+            -- { "<leader>va", "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Accept diff" },
+            -- { "<leader>vd", "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Deny diff" },
         },
     },
 }

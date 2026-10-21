@@ -292,9 +292,13 @@ N  E  O  V  I  M
             {
                 "<space>i",
                 function()
-                    Snacks.lazygit()
+                    if vim.fs.root(0, ".jj") then
+                        Snacks.terminal("jjui")
+                    else
+                        Snacks.lazygit()
+                    end
                 end,
-                desc = "Neogit",
+                desc = "jjui / lazygit",
             },
         },
     },
@@ -360,6 +364,16 @@ N  E  O  V  I  M
                 names = false,
                 tailwind = true,
             },
+        },
+    },
+    {
+        "mvllow/modes.nvim",
+        opts = {
+            colors = {
+                visual = "#777777",
+                insert = "#41a7fc",
+            },
+            set_cursor = false,
         },
     },
 }

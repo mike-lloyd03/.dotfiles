@@ -9,7 +9,6 @@ return {
         opts = {
             style = "deep",
             transparent = false,
-            toggle_style_key = "<leader>ts",
             lualine = {
                 transparent = false,
             },
@@ -39,29 +38,26 @@ return {
                 undercurl = true,
             },
         },
+        config = function(_, opts)
+            require("onedark").setup(opts)
+            -- onedark keeps style = "light" after background goes back to dark, so reset it on every change
+            vim.api.nvim_create_autocmd("OptionSet", {
+                pattern = "background",
+                callback = function()
+                    require("onedark").set_options("style", vim.o.background == "light" and "light" or "deep")
+                    vim.cmd.colorscheme("onedark")
+                end,
+            })
+        end,
+        keys = {
+            {
+                "<space>ut",
+                function()
+                    require("onedark").toggle()
+                end,
+                desc = "Toggle Theme",
+            },
+        },
     },
-    -- {
-    --     "olimorris/onedarkpro.nvim",
-    --     priority = 1000,
-    --     init = function()
-    --         vim.opt.termguicolors = true
-    --     end,
-    --     opts = {
-    --         highlights = {
-    --             Cursor = { bg = "${blue}", fg = "${white}" },
-    --             CursorLineNr = { fg = "${blue}" },
-    --         },
-    --     },
-    -- },
-    {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {},
-    },
-    {
-        "rebelot/kanagawa.nvim",
-        lazy = false,
-        priority = 1000,
-    },
+    { "shaunsingh/nord.nvim", priority = 1000 },
 }

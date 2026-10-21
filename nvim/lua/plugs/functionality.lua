@@ -38,6 +38,9 @@ return {
                         GOFUMPT_SPLIT_LONG_LINES = "on",
                     },
                 },
+                kdlfmt = {
+                    args = { "format", "--stdin", "--kdl-version", "v1" },
+                },
             },
             formatters_by_ft = {
                 arduino = { "clang-format" },
@@ -48,6 +51,7 @@ return {
                 go = { "gofumpt" },
                 html = { "prettierd", "prettier", stop_after_first = true },
                 json = { "biome" },
+                -- kdl = { "kdlfmt" },
                 lua = { "stylua" },
                 markdown = { "rumdl" },
                 nix = { "nixfmt" },
@@ -155,7 +159,33 @@ return {
             markdown = true,
         },
     },
-    { "nvim-mini/mini.ai", version = false },
+    {
+        "echasnovski/mini.ai",
+        version = false,
+        dependencies = {
+            { "nvim-treesitter/nvim-treesitter-textobjects", branch = "main" },
+        },
+        opts = function()
+            local ai = require("mini.ai")
+            local ts = ai.gen_spec.treesitter
+
+            return {
+                n_lines = 500,
+                search_method = "cover_or_nearest",
+                custom_textobjects = {
+                    f = ts({ a = "@function.outer", i = "@function.inner" }),
+                    p = ts({ a = "@parameter.outer", i = "@parameter.inner" }),
+                    c = ai.gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }),
+                    o = ai.gen_spec.treesitter({
+                        a = { "@block.outer", "@conditional.outer", "@loop.outer" },
+                        i = { "@block.inner", "@conditional.inner", "@loop.inner" },
+                    }),
+                    r = { "%b[]", "^.().*().$" },
+                    a = { "%b<>", "^.().*().$" },
+                },
+            }
+        end,
+    },
     {
         "folke/trouble.nvim",
         dependencies = {
@@ -237,10 +267,10 @@ return {
         event = "VeryLazy",
         opts = {
             preset = "helix",
-            -- triggers = {
-            --     { "m", mode = { "n", "v" } },
-            --     { "<space>", mode = { "n", "v" } },
-            -- },
+            triggers = {
+                { "m", mode = { "n", "v" } },
+                { "<space>", mode = { "n", "v" } },
+            },
         },
         keys = {
             {
@@ -271,6 +301,11 @@ return {
                     require("todo-comments").jump_prev()
                 end,
                 desc = "Previous todo comment",
+            },
+            {
+                "<space>t",
+                function() end,
+                desc = "Todos",
             },
             {
                 "<space>td",
@@ -446,6 +481,20 @@ return {
                 "<space>op",
                 "<CMD>Obsidian paste_img<CR>",
                 desc = "Paste Image",
+            },
+        },
+    },
+    {
+        "folke/lazydev.nvim",
+        ft = "lua",
+        cmd = "LazyDev",
+        opts = {
+            library = {
+                { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+                { path = "LazyVim", words = { "LazyVim" } },
+                { path = "snacks.nvim", words = { "Snacks" } },
+                { path = "lazy.nvim", words = { "LazyVim" } },
+                { path = "nvim-lspconfig", words = { "lspconfig.settings" } },
             },
         },
     },
